@@ -1,0 +1,4 @@
+Django==2.1
+django-popolo==2.0
+pytest-django
+pytest
