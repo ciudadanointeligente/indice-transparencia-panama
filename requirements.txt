@@ -1,4 +1,4 @@
-django>=2.1.2
+django>=1.11
 django-popolo==2.0
 pytest-django
 pytest
