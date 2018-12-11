@@ -1,6 +1,5 @@
 from django.db import models
 
-
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
 
 
