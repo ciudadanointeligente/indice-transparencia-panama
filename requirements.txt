@@ -2,3 +2,4 @@ django>=1.11
 django-popolo==2.0
 pytest-django
 pytest
+django-autoslug
