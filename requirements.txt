@@ -1,5 +1,4 @@
-django>=1.11
-django-popolo==2.0
+Django==2.1.4
 pytest-django
 pytest
 django-autoslug
