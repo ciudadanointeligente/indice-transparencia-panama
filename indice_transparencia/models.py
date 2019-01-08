@@ -7,6 +7,9 @@ class Party(models.Model):
     initials = models.CharField(max_length=255, verbose_name=u"Iniciales")
     slug = AutoSlugField(populate_from='name', null=True)
 
+    def __str__(self):
+        return self.initials
+
 
 class EducationalRecord(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Nombre Programa")
@@ -34,6 +37,9 @@ class JudiciaryProcessRecord(models.Model):
 
 class Benefit(models.Model):
     name = models.CharField(max_length=255, verbose_name='Nombre del beneficio')
+
+    def __str__(self):
+        return self.name
 
 
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
@@ -101,6 +107,5 @@ class Person(models.Model):
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
                                   help_text=u"Link a la planilla 172", null=True)
 
-
-
-
+    def __str__(self):
+        return self.name + " " + self.specific_type
