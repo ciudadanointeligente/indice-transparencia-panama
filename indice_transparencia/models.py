@@ -141,5 +141,7 @@ class Contact(models.Model):
                                 # template_prefix="my_emails/",
                                 # template_suffix="email",
                         )
+            self.person.email = self.email
+            self.person.save()
         super(Contact, self).save(*args, **kwargs)
 

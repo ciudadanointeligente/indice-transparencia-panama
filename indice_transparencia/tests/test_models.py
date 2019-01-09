@@ -78,4 +78,6 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         assert len(mail.outbox) == original_amount_of_mails + 1
         # Se envía un solo email, sólo cuando se guarda
         contact.save()
-        assert len(mail.outbox) == original_amount_of_mails + 1        
+        assert len(mail.outbox) == original_amount_of_mails + 1
+        p.refresh_from_db()
+        assert p.email == contact.email
