@@ -1,11 +1,15 @@
 from django.contrib import admin
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit
+from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
 
+
+class ContactAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Contact, ContactAdmin)
 
 class PartyAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Party, PartyAdmin)
-
 
 class BenefitAdmin(admin.ModelAdmin):
     pass
