@@ -1,6 +1,7 @@
 from django.test import TestCase
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
 from django.core import mail
+from django.urls import reverse
 
 
 class TestModelos(TestCase):
@@ -81,3 +82,11 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         assert len(mail.outbox) == original_amount_of_mails + 1
         p.refresh_from_db()
         assert p.email == contact.email
+
+    def test_update_url_method(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
+        original_amount_of_mails = len(mail.outbox)
+        contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
+        expected_url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
+        assert contact.update_url() == expected_url

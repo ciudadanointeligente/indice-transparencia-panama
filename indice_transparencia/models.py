@@ -3,6 +3,7 @@ from autoslug import AutoSlugField
 import uuid
 from templated_email import send_templated_mail
 from django.conf import settings
+from django.urls import reverse
 
 
 class Party(models.Model):
@@ -144,3 +145,5 @@ class Contact(models.Model):
             self.person.email = self.email
             self.person.save()
 
+    def update_url(self):
+        return reverse('update-person-data', kwargs={'identifier': self.identifier})
