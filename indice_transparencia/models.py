@@ -124,7 +124,7 @@ class Contact(models.Model):
         creating = False
         if self.id is None:
             creating = True
-
+        super(Contact, self).save(*args, **kwargs)
         if creating:
             send_templated_mail(
                                 template_name='bienvenido',
@@ -143,5 +143,4 @@ class Contact(models.Model):
                         )
             self.person.email = self.email
             self.person.save()
-        super(Contact, self).save(*args, **kwargs)
 
