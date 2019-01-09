@@ -1,5 +1,8 @@
 from django.db import models
 from autoslug import AutoSlugField
+import uuid
+from templated_email import send_templated_mail
+from django.conf import settings
 
 
 class Party(models.Model):
@@ -109,3 +112,34 @@ class Person(models.Model):
 
     def __str__(self):
         return self.name + " " + self.specific_type
+
+
+
+class Contact(models.Model):
+    person = models.ForeignKey(Person, related_name='contact', on_delete=models.CASCADE)
+    email = models.EmailField(max_length=255)
+    identifier = models.UUIDField(default=uuid.uuid4, editable=False)
+
+    def save(self, *args, **kwargs):
+        creating = False
+        if self.id is None:
+            creating = True
+
+        if creating:
+            send_templated_mail(
+                                template_name='bienvenido',
+                                from_email=settings.DEFAULT_FROM_EMAIL,
+                                recipient_list=[self.email],
+                                context={
+                                    'contact': self,
+                                    'person': self.person
+                                },
+                                # Optional:
+                                # cc=['cc@example.com'],
+                                # bcc=['bcc@example.com'],
+                                # headers={'My-Custom-Header':'Custom Value'},
+                                # template_prefix="my_emails/",
+                                # template_suffix="email",
+                        )
+        super(Contact, self).save(*args, **kwargs)
+

@@ -1,11 +1,9 @@
-import pytest
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit
+from django.test import TestCase
+from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from django.core import mail
 
-pytestmark = pytest.mark.django_db
 
-@pytest.mark.django_db
-class TestPerrito(object):
-    pytestmark = pytest.mark.django_db
+class TestModelos(TestCase):
 
     def test_instanciate_person(self):
         p = Person.objects.create(name=u'Fiera',
@@ -62,3 +60,22 @@ class TestPerrito(object):
         b = Benefit.objects.create(name="El beneficio")
         p.benefits.add(b)
         assert p.benefits.count() > 0
+
+
+class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
+    def test_instanciate_contact(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
+        contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
+        assert contact
+        assert contact.identifier
+
+    def test_sends_an_email_every_time_one_is_created(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
+        original_amount_of_mails = len(mail.outbox)
+        contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
+        assert len(mail.outbox) == original_amount_of_mails + 1
+        # Se envía un solo email, sólo cuando se guarda
+        contact.save()
+        assert len(mail.outbox) == original_amount_of_mails + 1        

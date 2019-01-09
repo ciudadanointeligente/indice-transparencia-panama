@@ -1,0 +1,8 @@
+{% block subject %}Bienvenido al índice de transparencia Panamá{% endblock %}
+{% block plain %}
+  Hola {{person.name}},
+
+  Qué tal?
+
+  Saludos
+{% endblock %}
