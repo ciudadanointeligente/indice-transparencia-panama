@@ -39,5 +39,9 @@ class TestFormularios(TestCase):
         }
         p = Person.objects.create(name=u'Fiera',
                                   specific_type='parlamentario')
-        form = PersonForm(person=p, data=data)
+        form = PersonForm(instance=p, data=data)
         assert form.is_valid()
+        form.save()
+        p.refresh_from_db()
+        assert p.web
+        assert p.birth_date

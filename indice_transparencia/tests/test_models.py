@@ -76,7 +76,7 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         original_amount_of_mails = len(mail.outbox)
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         assert len(mail.outbox) == original_amount_of_mails + 1
-        # Se envía un solo email, sólo cuando se guarda
+        # Se envía un solo email, sólo cuando se crea
         contact.save()
         assert len(mail.outbox) == original_amount_of_mails + 1
         p.refresh_from_db()

@@ -10,7 +10,3 @@ class PersonForm(ModelForm):
                   'existing_interests_declaration', 'interests_link', 'interests_doc', 'judiciary_declaration', 'extra_judiciary_declaration',
                   'judiciary_link', 'judiciary_description', 'reelection', 'benefits', 'benefits_link', 'eth_080_link', 'eth_172_link', 'eth_080_doc',
                   'eth_172_doc']
-
-
-    def __init__(self, *args, person, **kwargs):
-        super(PersonForm, self).__init__(*args, **kwargs)
