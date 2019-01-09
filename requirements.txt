@@ -4,3 +4,4 @@ pytest
 -e git+https://github.com/justinmayer/django-autoslug.git#egg=django-autoslug
 django-templated-email
 django-test-without-migrations
+django-bootstrap4

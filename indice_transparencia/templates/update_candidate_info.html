@@ -1,1 +1,16 @@
-este es el html que muestra lo que verá un candidato cuanod se conecte a su link personal de info
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block container %}
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  {% endbuttons %}
+</form>
+
+{% endblock container %}
