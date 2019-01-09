@@ -18,3 +18,8 @@ class PersonUpdateView(UpdateView):
     def form_valid(self, form):
         form.save()
         return TemplateResponse(self.request, 'thanks_for_updating_info.html', {'person': self.person})
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PersonUpdateView, self).get_context_data(*args, **kwargs)
+        context['contact'] = Contact.objects.get(identifier=self.identifier)
+        return context
