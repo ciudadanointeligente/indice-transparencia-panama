@@ -90,3 +90,11 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         expected_url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
         assert contact.update_url() == expected_url
+
+
+class RankingCalculation(TestCase):
+    def test_it_calculates_a_mark(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type=u'candidato',
+                                  birth_date='2012-02-02')
+        assert p.mark == 2012
