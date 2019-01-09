@@ -2,6 +2,7 @@ from django.db import models
 from autoslug import AutoSlugField
 import uuid
 from templated_email import send_templated_mail
+from django.contrib.sites.models import Site
 from django.conf import settings
 from django.urls import reverse
 
@@ -127,13 +128,15 @@ class Contact(models.Model):
             creating = True
         super(Contact, self).save(*args, **kwargs)
         if creating:
+            site = Site.objects.get_current()
             send_templated_mail(
                                 template_name='bienvenido',
                                 from_email=settings.DEFAULT_FROM_EMAIL,
                                 recipient_list=[self.email],
                                 context={
                                     'contact': self,
-                                    'person': self.person
+                                    'person': self.person,
+                                    'site': site,
                                 },
                                 # Optional:
                                 # cc=['cc@example.com'],

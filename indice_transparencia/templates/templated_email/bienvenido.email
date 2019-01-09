@@ -3,6 +3,9 @@
   Hola {{person.name}},
 
   Qué tal?
-  {{contact.update_url}}
+  
+  https://{{site.domain}}{{contact.update_url}}
+
+
   Saludos
 {% endblock %}
