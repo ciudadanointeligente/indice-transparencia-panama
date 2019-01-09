@@ -3,6 +3,11 @@ from indice_transparencia.models import Person, Party, Contact
 from indice_transparencia.forms import PersonForm
 from django.urls import reverse
 
+class IndexViewTestCase(TestCase):
+    def test_get_the_index(self):
+        url = reverse('index')
+        response = self.client.get(url)
+        assert response.status_code == 200
 
 
 class PersonUpdateView(TestCase):
