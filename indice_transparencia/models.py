@@ -30,7 +30,7 @@ class WorkRecord(models.Model):
     start = models.CharField(max_length=255, verbose_name=u"Fecha de ingreso")
     end = models.CharField(max_length=255, verbose_name=u"Fecha de término")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="work_records", null=True)
-    
+
 
 class JudiciaryProcessRecord(models.Model):
     number = models.CharField(max_length=255, verbose_name=u"Número")
@@ -112,8 +112,16 @@ class Person(models.Model):
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
                                   help_text=u"Link a la planilla 172", null=True, blank=True)
 
+    @property
+    def mark(self):
+        return int(self.birth_date.split('-')[0])
+
+
     def __str__(self):
         return self.name + " " + self.specific_type
+
+
+
 
 
 
