@@ -14,7 +14,7 @@
     </div>
     <div class="w-100"></div>
     <div class="col-8 offset-2">
-        <form action="{{contact.update_url}}" method="post" class="form">
+        <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
           {% bootstrap_form form %}
           {% buttons %}
