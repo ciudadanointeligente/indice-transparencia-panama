@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import UpdateView
+from django.views.generic.detail import DetailView
 from indice_transparencia.models import Person, Contact
 from indice_transparencia.forms import PersonForm
 from django.template.response import TemplateResponse
@@ -23,3 +24,7 @@ class PersonUpdateView(UpdateView):
         context = super(PersonUpdateView, self).get_context_data(*args, **kwargs)
         context['contact'] = Contact.objects.get(identifier=self.identifier)
         return context
+
+class CandidateProfileView(DetailView):
+    model = Person
+    template_name = "candidate_info.html"

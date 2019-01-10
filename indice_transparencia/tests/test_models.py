@@ -2,6 +2,7 @@ from django.test import TestCase
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
 from django.core import mail
 from django.urls import reverse
+import datetime
 
 
 class TestModelos(TestCase):
@@ -18,6 +19,7 @@ class TestModelos(TestCase):
         assert hasattr(p, 'circuit')
         assert hasattr(p, 'period')
         assert hasattr(p, 'reelection')
+        assert p.slug
 
     def test_instanciate_partido(self):
         p = Party.objects.create(name=u'Partido Feroz',
@@ -90,3 +92,26 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         expected_url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
         assert contact.update_url() == expected_url
+
+
+class RankingCalculation(TestCase):
+    def test_it_calculates_a_mark(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type=u'candidato',
+                                  birth_date=datetime.date(day=2, month=2, year=2012))
+        assert p.mark == 2012
+
+    def test_ranking(self):
+        pdo = Person.objects.create(name=u'ultima',
+                                     specific_type=u'candidato')
+        p1 = Person.objects.create(name=u'penultima',
+                                     specific_type=u'candidato',
+                                     birth_date=datetime.date(day=2, month=2, year=2012))
+        p2 = Person.objects.create(name=u'Primera',
+                                     specific_type=u'candidato',
+                                     birth_date=datetime.date(day=2, month=2, year=2014))
+        # deberiamos tener algo que devuelva el ranking
+        personas = Person.ranking.all()
+        assert personas[0] == p2
+        assert personas[1] == p1
+        assert personas[2] == pdo

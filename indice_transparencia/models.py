@@ -30,7 +30,7 @@ class WorkRecord(models.Model):
     start = models.CharField(max_length=255, verbose_name=u"Fecha de ingreso")
     end = models.CharField(max_length=255, verbose_name=u"Fecha de término")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="work_records", null=True)
-    
+
 
 class JudiciaryProcessRecord(models.Model):
     number = models.CharField(max_length=255, verbose_name=u"Número")
@@ -46,6 +46,10 @@ class Benefit(models.Model):
     def __str__(self):
         return self.name
 
+class RankingManager(models.Manager):
+    def get_queryset(self):
+        qs = super().get_queryset().filter(specific_type='candidato')
+        return sorted(qs.all(),  key=lambda m: m.mark, reverse=True)
 
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
 
@@ -111,9 +115,23 @@ class Person(models.Model):
     eth_172_doc = models.FileField(upload_to='patrimony/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
                                   help_text=u"Link a la planilla 172", null=True, blank=True)
+    slug = AutoSlugField(populate_from='name', null=True)
+
+    objects = models.Manager() # The default manager.
+    ranking = RankingManager() # The Dahl-specific manager.
+
+    @property
+    def mark(self):
+        if self.birth_date:
+            return self.birth_date.year
+        return 0
+
 
     def __str__(self):
         return self.name + " " + self.specific_type
+
+
+
 
 
 

@@ -9,6 +9,14 @@ class IndexViewTestCase(TestCase):
         response = self.client.get(url)
         assert response.status_code == 200
 
+class ProfileViewTestCase(TestCase):
+    def test_get_the_index(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='candidato')
+        url = reverse('candidate-profile', kwargs={'slug': p.slug})
+        response = self.client.get(url)
+        assert response.status_code == 200
+
 
 class PersonUpdateView(TestCase):
     def test_get_the_view(self):
