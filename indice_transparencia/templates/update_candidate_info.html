@@ -5,6 +5,14 @@
 {% block container %}
 
 <div class="row">
+    <div class="col">
+        <h1>Bienvenido/a {{person.name}}:</h1>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+        <p>Acá podrás contarnos un poco más sobre ti:</p>
+    </div>
+    <div class="w-100"></div>
     <div class="col-8 offset-2">
         <form action="{{contact.update_url}}" method="post" class="form">
           {% csrf_token %}
