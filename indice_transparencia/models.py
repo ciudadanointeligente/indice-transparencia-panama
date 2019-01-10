@@ -115,6 +115,7 @@ class Person(models.Model):
     eth_172_doc = models.FileField(upload_to='patrimony/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
                                   help_text=u"Link a la planilla 172", null=True, blank=True)
+    slug = AutoSlugField(populate_from='name', null=True)
 
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.

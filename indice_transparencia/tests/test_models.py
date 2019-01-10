@@ -19,6 +19,7 @@ class TestModelos(TestCase):
         assert hasattr(p, 'circuit')
         assert hasattr(p, 'period')
         assert hasattr(p, 'reelection')
+        assert p.slug
 
     def test_instanciate_partido(self):
         p = Party.objects.create(name=u'Partido Feroz',
