@@ -3,14 +3,19 @@
 
 
 {% block container %}
-<form action="{{contact.update_url}}" method="post" class="form">
-  {% csrf_token %}
-  {% bootstrap_form form %}
-  {% buttons %}
-    <button type="submit" class="btn btn-primary">
-      Submit
-    </button>
-  {% endbuttons %}
-</form>
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <form action="{{contact.update_url}}" method="post" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+            <button type="submit" class="btn btn-primary">
+              Enviar
+            </button>
+          {% endbuttons %}
+        </form>
+    </div>
+</div>
 
 {% endblock container %}
