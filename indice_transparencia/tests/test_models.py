@@ -108,7 +108,7 @@ class RankingCalculation(TestCase):
                                      birth_date=datetime.date(day=2, month=2, year=2012))
         p2 = Person.objects.create(name=u'Primera',
                                      specific_type=u'candidato',
-                                     birth_date=datetime.date(day=2, month=2, year=2012))
+                                     birth_date=datetime.date(day=2, month=2, year=2014))
         # deberiamos tener algo que devuelva el ranking
         personas = Person.ranking.all()
         assert personas[0] == p2
