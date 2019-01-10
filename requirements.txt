@@ -5,3 +5,4 @@ pytest
 django-templated-email
 django-test-without-migrations
 django-bootstrap4
+Pillow

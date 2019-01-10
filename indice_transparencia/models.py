@@ -60,6 +60,8 @@ class Person(models.Model):
                                      choices=TYPES_OF_PERSON,
                                      verbose_name=u"Tipo de persona",
                                      help_text=u"Parlamentario o candidato")
+    image = models.ImageField(verbose_name=u"Foto para tu perfil", upload_to='profile_images/%Y/%m/%d/',
+                                     null=True, blank=True)
     birth_date = models.DateField(verbose_name=u"Fecha de nacimiento", null=True, blank=True)
     email = models.EmailField(verbose_name=u"Correo electrónico de contacto", null=True, blank=True)
     web = models.URLField(max_length=512, verbose_name=u"Link al sitio web personal (o cuenta oficial en redes sociales)", null=True, blank=True)
