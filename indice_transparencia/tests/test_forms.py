@@ -1,6 +1,7 @@
 from django.test import TestCase
 from indice_transparencia.models import Person, Party
 from indice_transparencia.forms import PersonForm
+import datetime
 
 
 class TestFormularios(TestCase):
@@ -8,7 +9,8 @@ class TestFormularios(TestCase):
         partido = Party.objects.create(name=u'Partido Feroz',
                                        initials='PF')
         data = {
-            'birth_date': '01/31/1980',
+            'birth_date': datetime.date(day=2, month=2, year=2018),
+            'image': None,
             'web': 'https://jordipresidente.pa',
             'declared_intention_to_transparent': True,
             'party': partido.id,

@@ -2,6 +2,7 @@ from django.test import TestCase
 from indice_transparencia.models import Person, Party, Contact
 from indice_transparencia.forms import PersonForm
 from django.urls import reverse
+import datetime
 
 class IndexViewTestCase(TestCase):
     def test_get_the_index(self):
@@ -37,7 +38,8 @@ class PersonUpdateView(TestCase):
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
         data = {
-            'birth_date': '01/31/1980',
+            'birth_date': str(datetime.date(year=2019, day=2, month=2)),
+            'image': None,
             'web': 'https://jordipresidente.pa',
             'declared_intention_to_transparent': True,
             'party': partido.id,
