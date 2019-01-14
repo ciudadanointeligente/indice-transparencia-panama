@@ -114,8 +114,8 @@ class EducationalRecordFormsTestCase(TestCase):
             'educational_records-0-end': '2013',
         }
         form = PersonForm(instance=p, data=data)
-        formset = form.educational_records
-        print(formset.as_p())
+        # formset = form.educational_records
+        # print(formset.as_p())
 
         person = form.save()
         assert person.educational_records.all()

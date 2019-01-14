@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from django.forms import inlineformset_factory
 
 class PersonForm(ModelForm):
     class Meta:
@@ -10,6 +11,10 @@ class PersonForm(ModelForm):
                   'existing_interests_declaration', 'interests_link', 'interests_doc', 'judiciary_declaration', 'extra_judiciary_declaration',
                   'judiciary_link', 'judiciary_description', 'reelection', 'benefits', 'benefits_link', 'eth_080_link', 'eth_172_link', 'eth_080_doc',
                   'eth_172_doc']
+
+    def __init__(self, *args, **kwargs):
+        super(PersonForm, self).__init__(*args, **kwargs)
+        self.educational_records = inlineformset_factory(Person, EducationalRecord, form=EducationalRecordForm)
 
 
 class EducationalRecordForm(ModelForm):
