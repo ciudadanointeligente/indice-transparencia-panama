@@ -2,7 +2,9 @@ from django.test import TestCase
 from indice_transparencia.models import Person, Party
 from indice_transparencia.forms import PersonForm, EducationalRecordForm
 import datetime
-from django.forms
+from django.forms import inlineformset_factory
+from indice_transparencia.models import Person, EducationalRecord
+from indice_transparencia.forms import EducationalRecordForm
 
 class TestFormularios(TestCase):
     def test_crear_un_formulario(self):
@@ -70,9 +72,8 @@ class EducationalRecordFormsTestCase(TestCase):
 
 
     def test_inline(self):
-        from django.forms import inlineformset_factory
-        from indice_transparencia.models import Person, EducationalRecord
-        from indice_transparencia.forms import EducationalRecordForm
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
         fsf = inlineformset_factory(Person, EducationalRecord, form=EducationalRecordForm)
-        print(fs(instance=p).as_p())
+        print(fsf(instance=p).as_p())
         self.fail()
