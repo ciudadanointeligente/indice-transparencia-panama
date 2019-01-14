@@ -1,6 +1,6 @@
 from django.test import TestCase
 from indice_transparencia.models import Person, Party
-from indice_transparencia.forms import PersonForm
+from indice_transparencia.forms import PersonForm, EducationalRecordForm
 import datetime
 
 
@@ -47,3 +47,23 @@ class TestFormularios(TestCase):
         p.refresh_from_db()
         assert p.web
         assert p.birth_date
+
+
+class EducationalRecordFormsTestCase(TestCase):
+    def test_create_a_educational_record(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
+        data = {
+            'name': "Postgrado en flojeo",
+            'institution': 'Fundacao cidadania inteligente',
+            'start': '2011',
+            'end': '2013',
+        }
+        form = EducationalRecordForm(person=p, data=data)
+        assert form.is_valid()
+        record = form.save()
+        assert record.person == p
+        assert record.name
+        assert record.institution
+        assert record.start
+        assert record.end

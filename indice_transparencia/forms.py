@@ -10,3 +10,20 @@ class PersonForm(ModelForm):
                   'existing_interests_declaration', 'interests_link', 'interests_doc', 'judiciary_declaration', 'extra_judiciary_declaration',
                   'judiciary_link', 'judiciary_description', 'reelection', 'benefits', 'benefits_link', 'eth_080_link', 'eth_172_link', 'eth_080_doc',
                   'eth_172_doc']
+
+
+class EducationalRecordForm(ModelForm):
+    class Meta:
+        model = EducationalRecord
+        fields = ['name', 'institution', 'start', 'end']
+
+    def __init__(self, *args, **kwargs):
+        self.person = kwargs.pop('person')
+        super(EducationalRecordForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        record = super(EducationalRecordForm, self).save(commit=False)
+        record.person = self.person
+        if commit:
+            record.save()
+        return record
