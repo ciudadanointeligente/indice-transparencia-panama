@@ -16,18 +16,45 @@
     <div class="col-8 offset-2">
         <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
-          {% comment %}
-          {% bootstrap_form form %}
-          {% endcomment %}
-          
-          {% bootstrap_field form.image %}
-          
-          <div class="card" >
+          <!-- INICIO DEL DATOS PERSONALES -->
+          <div class="card" id="datos_personales_card">
             <div class="card-body">
-              <h5 class="card-title">Educación</h5>
-              {% bootstrap_formset inlines.0 layout='horizontal' %}
+              <h5 class="card-title">Datos Personales</h5>
+              {% if person.image %}
+                <div class="row">
+                  <div class='col-3'>
+                    <img src="{{ person.image.url }}"  class="img-thumbnail">
+                  </div>
+                </div>
+              {% endif %}
+                {% bootstrap_field form.image %}
+                {% bootstrap_field form.birth_date %}
+                {% bootstrap_field form.web %}
+
             </div>
           </div>
+          <!-- FIN DEL DATOS PERSONALES -->
+          <!-- INICIO DEL PERFIL POLÍTICO -->
+          <div class="checkbox">
+              <label data-toggle="collapse" data-target="#perfil_politico_card">
+                  {% bootstrap_field form.declared_intention_to_transparent %}
+              </label>
+          </div>
+          <div class="card collapse" id="perfil_politico_card">
+            
+            <div class="card-body">
+              <h5 class="card-title">Perfil Político</h5>
+
+              {% bootstrap_field form.party %}
+              {% bootstrap_field form.previous_parties %}
+
+            </div>
+          </div>
+          <!-- FIN DEL PERFIL POLÍTICO -->
+          
+          {% include 'includes/formset_update_candidate.html' with formset=inlines.0 title="¿Desea Ud. compartir información sobre su formación/educación?" %}
+
+
           {% buttons %}
             <button type="submit" class="btn btn-primary">
               Enviar

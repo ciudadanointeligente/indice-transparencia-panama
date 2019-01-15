@@ -1,0 +1,44 @@
+{% load bootstrap4 %}
+<div class="checkbox">
+    <label data-toggle="collapse" data-target="#collapse_{{formset.prefix}}">
+        <input type="checkbox"/> {{title}}
+    </label>
+</div>
+<div class="collapse" id="collapse_{{formset.prefix}}">
+  <div class="card" >
+    <div class="card-body">
+      <div id="{{formset.prefix}}-container">
+      {% bootstrap_formset formset layout='horizontal' %}
+      </div>
+
+      <!--- Agregar más comienzo -->
+      <script type="text/html" id="{{formset.prefix}}-template">
+      <div id="item-__prefix__">
+          {% bootstrap_form formset.empty_form layout='horizontal' %}
+      </div>
+      </script>
+      <a href="#" id="add-{{formset.prefix}}-button" class="btn btn-info add-item">Agregar más</a>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        $('#add-{{formset.prefix}}-button').click(function(ev) {
+            ev.preventDefault();
+            var count = $('#id_{{formset.prefix}}-TOTAL_FORMS').attr('value');
+            var tmplMarkup = $('#{{formset.prefix}}-template').html();
+            var compiledTmpl = tmplMarkup.replace(/__prefix__/g, count);
+            $('div#{{formset.prefix}}-container').append(compiledTmpl);
+
+            // update form count
+            $('#id_{{formset.prefix}}-TOTAL_FORMS').attr('value', count+1);
+
+            // some animate to scroll to view our new form
+            $('html, body').animate({
+                    scrollTop: $("#add-{{formset.prefix}}-button").position().top-200
+                }, 800);
+        });
+    });
+    </script>
+    <!--- Agregar más fin -->
+  </div>
+</div>

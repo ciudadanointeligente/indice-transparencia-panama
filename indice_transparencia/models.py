@@ -66,7 +66,7 @@ class Person(models.Model):
     email = models.EmailField(verbose_name=u"Correo electrónico de contacto", null=True, blank=True)
     web = models.URLField(max_length=512, verbose_name=u"Link al sitio web personal (o cuenta oficial en redes sociales)", null=True, blank=True)
     declared_intention_to_transparent = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su información política general?", blank=True)
-    party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True)
+    party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Partido político o movimiento al que representa")
     circuit = models.CharField(max_length=255, verbose_name=u"Circuito al que representa o busca representar", null=True, blank=True)
     period = models.CharField(max_length=255, verbose_name=u"¿En qué período legislativo se encuentra actualmente?", null=True, blank=True)
     previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
