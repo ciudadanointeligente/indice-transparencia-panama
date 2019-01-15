@@ -16,12 +16,18 @@
     <div class="col-8 offset-2">
         <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
+          {% comment %}
           {% bootstrap_form form %}
+          {% endcomment %}
           
-          {% for formset in inlines %}
-            {% bootstrap_formset formset layout='horizontal' %}
-          {% endfor %}
-  
+          {% bootstrap_field form.image %}
+          
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Educación</h5>
+              {% bootstrap_formset inlines.0 layout='horizontal' %}
+            </div>
+          </div>
           {% buttons %}
             <button type="submit" class="btn btn-primary">
               Enviar
