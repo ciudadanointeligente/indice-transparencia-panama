@@ -17,6 +17,17 @@
         <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
           {% bootstrap_form form %}
+          {{formset.management_form}}
+
+          <table>
+            <tbody>
+                {% for form in formset %}
+                  <tr>
+                    <td>{{form.id}}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+          </table>
           {% buttons %}
             <button type="submit" class="btn btn-primary">
               Enviar

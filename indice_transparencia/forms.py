@@ -1,4 +1,5 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, modelformset_factory
+from django.forms import inlineformset_factory
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
 
 class PersonForm(ModelForm):
@@ -27,3 +28,18 @@ class EducationalRecordForm(ModelForm):
         if commit:
             record.save()
         return record
+
+EducationalRecordFormset = modelformset_factory(
+    EducationalRecord,
+    form = EducationalRecordForm,
+    extra = 3,
+)
+
+EducationalRecordInlineFormset = inlineformset_factory(
+    Person,
+    EducationalRecord,
+    extra = 2,
+    fields = ('name', 'institution', 'start', 'end'),
+    formset = EducationalRecordFormset,
+    min_num = 1,
+)
