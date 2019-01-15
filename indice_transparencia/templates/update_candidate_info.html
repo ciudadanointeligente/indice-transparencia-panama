@@ -23,7 +23,7 @@
             <tbody>
                 {% for form in formset %}
                   <tr>
-                    <td>{{form.id}}</td>
+                    {{form.as_table}}
                   </tr>
                 {% endfor %}
             </tbody>
