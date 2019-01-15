@@ -17,6 +17,12 @@ class ProfileViewTestCase(TestCase):
         url = reverse('candidate-profile', kwargs={'slug': p.slug})
         response = self.client.get(url)
         assert response.status_code == 200
+    
+    def test_get_absolute_url(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='candidato')
+        url = reverse('candidate-profile', kwargs={'slug': p.slug})
+        assert p.get_absolute_url() == url
 
 
 class PersonUpdateView(TestCase):
@@ -66,10 +72,19 @@ class PersonUpdateView(TestCase):
             'eth_080_link': 'https://jordipresidente.pa/transparencia',
             'eth_172_link': 'https://jordipresidente.pa/transparencia',
             'eth_080_doc': None,
-            'eth_172_doc': None
+            'eth_172_doc': None,
+            'educational_records-0-name': "Postgrado en flojeo",
+            'educational_records-0-institution': 'Fundacao cidadania inteligente',
+            'educational_records-0-start': '2011',
+            'educational_records-0-end': '2013',
         }
         response = self.client.post(url, data=data)
-        assert response.status_code == 200
+        print("STATUS CODE")
+        print(response.status_code)
+        assert response.status_code in [200, 302]
         p.refresh_from_db()
         #Soy un flojo y revisaré una sola cosa
         assert p.web
+        print(p.educational_records.count())
+        assert p.educational_records.count()
+        

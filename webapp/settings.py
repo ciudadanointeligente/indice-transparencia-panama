@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'test_without_migrations',
+    'extra_views',
     'bootstrap4',
     'indice_transparencia',
 ]

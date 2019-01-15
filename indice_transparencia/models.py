@@ -127,6 +127,9 @@ class Person(models.Model):
         if self.birth_date:
             return self.birth_date.year
         return 0
+        
+    def get_absolute_url(self):
+        return reverse('candidate-profile', kwargs={'slug': self.slug})
 
 
     def __str__(self):
