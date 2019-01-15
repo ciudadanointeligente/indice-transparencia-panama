@@ -28,7 +28,11 @@ class PersonUpdateView(UpdateView):
                 educational_record.person = person
                 educational_record.save()
             return TemplateResponse(self.request, 'thanks_for_updating_info.html', {'person': self.person})
-            
+        
+        print("formset")
+        print(educational_formset.as_table())
+        print("Errores")
+        print(educational_formset.errors)
         return self.form_invalid(form)
             
 
