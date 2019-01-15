@@ -17,8 +17,19 @@ class PersonUpdateView(UpdateView):
         return self.person
 
     def form_valid(self, form):
-        form.save()
-        return TemplateResponse(self.request, 'thanks_for_updating_info.html', {'person': self.person})
+        educational_formset = EducationalRecordInlineFormset(
+            self.request.POST,
+            queryset=self.person.educational_records.all()
+        )
+        if educational_formset.is_valid():
+            person = form.save()
+            for edu_form in educational_formset:
+                educational_record = edu_form.save(commit=False)
+                educational_record.person = person
+                educational_record.save()
+            return TemplateResponse(self.request, 'thanks_for_updating_info.html', {'person': self.person})
+        return self.form_invalid(form)
+            
 
     def get_context_data(self, *args, **kwargs):
         context = super(PersonUpdateView, self).get_context_data(*args, **kwargs)
