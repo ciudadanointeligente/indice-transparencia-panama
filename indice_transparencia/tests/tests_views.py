@@ -73,18 +73,22 @@ class PersonUpdateView(TestCase):
             'eth_172_link': 'https://jordipresidente.pa/transparencia',
             'eth_080_doc': None,
             'eth_172_doc': None,
+            'educational_records-TOTAL_FORMS': 2,
+            'educational_records-INITIAL_FORMS': 0,
+            'educational_records-MIN_NUM_FORMS': 0,
+            'educational_records-MAX_NUM_FORMS': 1000,
             'educational_records-0-name': "Postgrado en flojeo",
             'educational_records-0-institution': 'Fundacao cidadania inteligente',
             'educational_records-0-start': '2011',
             'educational_records-0-end': '2013',
+            'educational_records-1-name': "Master en flojeo",
+            'educational_records-1-institution': 'Fundacao cidadania inteligente',
+            'educational_records-1-start': '2011',
+            'educational_records-1-end': '2013',
+            
         }
         response = self.client.post(url, data=data)
-        print("STATUS CODE")
-        print(response.status_code)
         assert response.status_code in [200, 302]
         p.refresh_from_db()
-        #Soy un flojo y revisaré una sola cosa
         assert p.web
-        print(p.educational_records.count())
-        assert p.educational_records.count()
-        
+        assert p.educational_records.count() == 2

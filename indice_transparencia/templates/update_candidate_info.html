@@ -17,6 +17,11 @@
         <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
           {% bootstrap_form form %}
+          
+          {% for formset in inlines %}
+            {% bootstrap_formset formset layout='horizontal' %}
+          {% endfor %}
+  
           {% buttons %}
             <button type="submit" class="btn btn-primary">
               Enviar

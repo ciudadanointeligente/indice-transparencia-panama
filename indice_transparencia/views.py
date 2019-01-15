@@ -2,15 +2,20 @@ from django.shortcuts import render
 from django.views.generic.edit import UpdateView
 from extra_views import CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetFactory
 from django.views.generic.detail import DetailView
-from indice_transparencia.models import Person, Contact
+from indice_transparencia.models import Person, Contact, EducationalRecord
 from indice_transparencia.forms import PersonForm
 from django.template.response import TemplateResponse
+
+class EducationalRecordInline(InlineFormSetFactory):
+    model = EducationalRecord
+    fields = ['name', 'institution', 'start', 'end']
 
 
 class PersonUpdateView(UpdateWithInlinesView):
     model = Person
     form_class = PersonForm
     template_name = "update_candidate_info.html"
+    inlines = [EducationalRecordInline,]
 
     def get_object(self, queryset=None):
         self.identifier = self.kwargs['identifier']
