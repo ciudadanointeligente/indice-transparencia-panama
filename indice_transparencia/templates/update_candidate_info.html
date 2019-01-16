@@ -59,6 +59,8 @@
           <!-- FIN DEL PERFIL POLÍTICO -->
           
           {% include 'includes/formset_update_candidate.html' with formset=inlines.0 title="¿Desea Ud. compartir información sobre su formación/educación?" %}
+          {% include 'includes/formset_update_candidate.html' with formset=inlines.1 title="¿Desea Ud. compartir información sobre su experiencia laboral?" %}
+          {% include 'includes/formset_update_candidate.html' with formset=inlines.2 title="¿Desea Ud. compartir información sobre los procesos judiciales en los que ha estado involucrado(a)?" %}
 
 
           {% buttons %}
