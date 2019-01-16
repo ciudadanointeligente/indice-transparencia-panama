@@ -14,6 +14,14 @@ class Party(models.Model):
 
     def __str__(self):
         return self.initials
+        
+class Circuit(models.Model):
+    name = models.CharField(max_length=255, verbose_name=u"Nombre", null=True)
+    province = models.CharField(max_length=255, verbose_name=u"Provincia", default="", null=True, blank=True)
+    district = models.CharField(max_length=255, verbose_name=u"Distritos", default="", null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class EducationalRecord(models.Model):
@@ -67,7 +75,7 @@ class Person(models.Model):
     web = models.URLField(max_length=512, verbose_name=u"Link al sitio web personal (o cuenta oficial en redes sociales)", null=True, blank=True)
     declared_intention_to_transparent = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su información política general?", blank=True)
     party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Partido político o movimiento al que representa")
-    circuit = models.CharField(max_length=255, verbose_name=u"Circuito al que representa o busca representar", null=True, blank=True)
+    circuit = models.ForeignKey(Circuit, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Circuito al que representa o busca representar")
     period = models.CharField(max_length=255, verbose_name=u"¿En qué período legislativo se encuentra actualmente?", null=True, blank=True)
     previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
     reelection = models.BooleanField(default=False, verbose_name=u"¿Va a reelección?", null=True, blank=True)
@@ -173,3 +181,5 @@ class Contact(models.Model):
 
     def update_url(self):
         return reverse('update-person-data', kwargs={'identifier': self.identifier})
+
+

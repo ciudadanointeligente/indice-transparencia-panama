@@ -1,5 +1,5 @@
 from django.test import TestCase
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact, Circuit
 from django.core import mail
 from django.urls import reverse
 import datetime
@@ -63,6 +63,15 @@ class TestModelos(TestCase):
         b = Benefit.objects.create(name="El beneficio")
         p.benefits.add(b)
         assert p.benefits.count() > 0
+        
+    def test_instanciate_circuit(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  specific_type='parlamentario')
+        c = Circuit.objects.create(name="9-9")
+        p.circuit = c
+        assert p.circuit.name == "9-9"
+        
+
 
 
 class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):

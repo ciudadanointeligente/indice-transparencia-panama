@@ -1,5 +1,5 @@
 from django.contrib import admin
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact, Circuit
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -33,3 +33,8 @@ class PersonAdmin(admin.ModelAdmin):
 
     ]
 admin.site.register(Person, PersonAdmin)
+
+class CircuitAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Circuit, CircuitAdmin)

@@ -1,5 +1,5 @@
 from django.test import TestCase
-from indice_transparencia.models import Person, Party, Contact
+from indice_transparencia.models import Person, Party, Contact, Circuit
 from indice_transparencia.forms import PersonForm
 from django.urls import reverse
 import datetime
@@ -39,6 +39,7 @@ class PersonUpdateView(TestCase):
     def test_post_to_the_view(self):
         partido = Party.objects.create(name=u'Partido Feroz',
                                        initials='PF')
+        circuit = Circuit.objects.create(name=u'1-1')
         p = Person.objects.create(name=u'Fiera',
                                   specific_type='parlamentario')
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
@@ -49,7 +50,7 @@ class PersonUpdateView(TestCase):
             'web': 'https://jordipresidente.pa',
             'declared_intention_to_transparent': True,
             'party': partido.id,
-            'circuit': 'Panama',
+            'circuit': circuit.id,
             'period': '2018',
             'previous_parties': [],
             'reelection': True,
