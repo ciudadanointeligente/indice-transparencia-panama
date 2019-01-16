@@ -12,23 +12,20 @@ class IndexViewTestCase(TestCase):
 
 class ProfileViewTestCase(TestCase):
     def test_get_the_index(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='candidato')
+        p = Person.objects.create(name=u'Fiera')
         url = reverse('candidate-profile', kwargs={'slug': p.slug})
         response = self.client.get(url)
         assert response.status_code == 200
     
     def test_get_absolute_url(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='candidato')
+        p = Person.objects.create(name=u'Fiera')
         url = reverse('candidate-profile', kwargs={'slug': p.slug})
         assert p.get_absolute_url() == url
 
 
 class PersonUpdateView(TestCase):
     def test_get_the_view(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
         response = self.client.get(url)
@@ -40,8 +37,7 @@ class PersonUpdateView(TestCase):
         partido = Party.objects.create(name=u'Partido Feroz',
                                        initials='PF')
         circuit = Circuit.objects.create(name=u'1-1')
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
         data = {
@@ -86,6 +82,25 @@ class PersonUpdateView(TestCase):
             'educational_records-1-institution': 'Fundacao cidadania inteligente',
             'educational_records-1-start': '2011',
             'educational_records-1-end': '2013',
+            # work_records
+            'work_records-TOTAL_FORMS': 1,
+            'work_records-INITIAL_FORMS': 0,
+            'work_records-MIN_NUM_FORMS': 0,
+            'work_records-MAX_NUM_FORMS': 1000,
+            'work_records-0-name': "Postgrado en flojeo",
+            'work_records-0-institution': 'Fundacao cidadania inteligente',
+            'work_records-0-start': '2011',
+            'work_records-0-end': '2013',
+            # judiciary
+            'judiciary_records-TOTAL_FORMS': 1,
+            'judiciary_records-INITIAL_FORMS': 0,
+            'judiciary_records-MIN_NUM_FORMS': 0,
+            'judiciary_records-MAX_NUM_FORMS': 1000,
+            'judiciary_records-0-number': "1 raya cuatro",
+            'judiciary_records-0-date': str(datetime.date(year=2019, day=2, month=2)),
+            'judiciary_records-0-kind': 'penal',
+            'judiciary_records-0-result': 'pagué mi condena!',
+            
             
         }
         response = self.client.post(url, data=data)
@@ -93,3 +108,5 @@ class PersonUpdateView(TestCase):
         p.refresh_from_db()
         assert p.web
         assert p.educational_records.count() == 2
+        assert p.work_records.count() == 1
+        assert p.judiciary_records.count() == 1

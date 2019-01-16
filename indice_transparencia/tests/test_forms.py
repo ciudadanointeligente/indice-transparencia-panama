@@ -41,8 +41,7 @@ class TestFormularios(TestCase):
             'eth_080_doc': None,
             'eth_172_doc': None
         }
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         form = PersonForm(instance=p, data=data)
         assert form.is_valid()
         form.save()
@@ -53,8 +52,7 @@ class TestFormularios(TestCase):
 
 class EducationalRecordFormsTestCase(TestCase):
     def test_create_a_educational_record(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         data = {
             'name': "Postgrado en flojeo",
             'institution': 'Fundacao cidadania inteligente',

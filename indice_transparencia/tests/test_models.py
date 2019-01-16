@@ -8,10 +8,8 @@ import datetime
 class TestModelos(TestCase):
 
     def test_instanciate_person(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         assert p.name == 'Fiera'
-        assert p.specific_type == 'parlamentario'
         assert hasattr(p, 'name')
         assert hasattr(p, 'email')
         assert hasattr(p, 'web')
@@ -29,44 +27,38 @@ class TestModelos(TestCase):
         assert bool(p.slug)
 
     def test_instanciate_judiciary_record(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         record = JudiciaryProcessRecord(number='1-2', date='13/04/2015', kind='judicial', person=p)
         assert record
 
     def test_instanciate_judiciary_record(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         record = JudiciaryProcessRecord(number='1-2', date='13/04/2015', kind='judicial', person=p)
         assert record
         assert record.date
 
     def test_instanciate_work_record(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         assert record
         assert record.start
         assert record.end
 
     def test_instanciate_educational_record(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         record = EducationalRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         assert record
         assert record.start
         assert record.end
 
     def test_instanciate_benefit(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         b = Benefit.objects.create(name="El beneficio")
         p.benefits.add(b)
         assert p.benefits.count() > 0
         
     def test_instanciate_circuit(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         c = Circuit.objects.create(name="9-9")
         p.circuit = c
         assert p.circuit.name == "9-9"
@@ -76,15 +68,13 @@ class TestModelos(TestCase):
 
 class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
     def test_instanciate_contact(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         assert contact
         assert contact.identifier
 
     def test_sends_an_email_every_time_one_is_created(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         original_amount_of_mails = len(mail.outbox)
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         assert len(mail.outbox) == original_amount_of_mails + 1
@@ -95,8 +85,7 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
         assert p.email == contact.email
 
     def test_update_url_method(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  specific_type='parlamentario')
+        p = Person.objects.create(name=u'Fiera')
         original_amount_of_mails = len(mail.outbox)
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
         expected_url = reverse('update-person-data', kwargs={'identifier': contact.identifier})
@@ -106,18 +95,14 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
 class RankingCalculation(TestCase):
     def test_it_calculates_a_mark(self):
         p = Person.objects.create(name=u'Fiera',
-                                  specific_type=u'candidato',
                                   birth_date=datetime.date(day=2, month=2, year=2012))
         assert p.mark == 2012
 
     def test_ranking(self):
-        pdo = Person.objects.create(name=u'ultima',
-                                     specific_type=u'candidato')
+        pdo = Person.objects.create(name=u'ultima',)
         p1 = Person.objects.create(name=u'penultima',
-                                     specific_type=u'candidato',
                                      birth_date=datetime.date(day=2, month=2, year=2012))
         p2 = Person.objects.create(name=u'Primera',
-                                     specific_type=u'candidato',
                                      birth_date=datetime.date(day=2, month=2, year=2014))
         # deberiamos tener algo que devuelva el ranking
         personas = Person.ranking.all()

@@ -30,6 +30,11 @@
                 {% bootstrap_field form.image %}
                 {% bootstrap_field form.birth_date %}
                 {% bootstrap_field form.web %}
+                {% bootstrap_field form.facebook %}
+                {% bootstrap_field form.twitter %}
+                {% bootstrap_field form.instagram %}
+                {# comment 'Jordito, puse esto del circuito aquí y no en el perfil político, por que pensé que se veia mejor' #}
+                {% bootstrap_field form.circuit %}
 
             </div>
           </div>
@@ -37,7 +42,7 @@
           <!-- INICIO DEL PERFIL POLÍTICO -->
           <div class="checkbox">
               <label data-toggle="collapse" data-target="#perfil_politico_card">
-                  {% bootstrap_field form.declared_intention_to_transparent %}
+                  {% bootstrap_field form.declared_intention_to_transparent_political_profile %}
               </label>
           </div>
           <div class="card collapse" id="perfil_politico_card">
@@ -46,6 +51,7 @@
               <h5 class="card-title">Perfil Político</h5>
 
               {% bootstrap_field form.party %}
+              {% bootstrap_field form.has_changed_party %}
               {% bootstrap_field form.previous_parties %}
 
             </div>
