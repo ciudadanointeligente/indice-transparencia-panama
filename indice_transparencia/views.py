@@ -48,3 +48,4 @@ class PersonUpdateView(UpdateWithInlinesView):
 class CandidateProfileView(DetailView):
     model = Person
     template_name = "candidate_info.html"
+    #context_object_name = "candidato"

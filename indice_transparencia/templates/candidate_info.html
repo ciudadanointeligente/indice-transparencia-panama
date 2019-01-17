@@ -3,6 +3,14 @@
 
 
 {% block container %}
-perrito fiera
+
+{{person.name}}
+
+<div class="row">
+  <div class='col-3'>
+    <img src="{% if person.image %}{{ person.image.url }}{% else %}https://thumbs.dreamstime.com/z/sentada-y-el-hacer-frente-del-perrito-de-labrador-aislados-en-blanco-40702920.jpg{% endif %}"  class="img-thumbnail">
+  </div>
+</div>
+
 
 {% endblock container %}
