@@ -12,6 +12,9 @@
     <title>Índice de Transparencia Panamá</title>
     {% endblock meta%}
 
+      <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+
     <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -25,8 +28,8 @@
 
   <body {% block extra_body_attrs%}{% endblock extra_body_attrs %}>
       {% block navbar %}
-      <nav class="navbar navbar-expand-md  bg-light fixed-top">
-          <a class="navbar-brand" href="#"><img src="images/logo-espacio-civico.svg"></a>
+      <nav class="navbar navbar-expand-md  bg-dark fixed-top">
+          <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -45,10 +48,11 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              <button class="btn btn-yellow my-2 my-sm-0" type="submit">Buscar</button>
             </form>
           </div>
         </nav>
+
         {% endblock navbar %}
 
          <main role="main" class="container-fluid">
@@ -59,6 +63,11 @@
 
          </main>
 
+
+
+
   </body>
+
+
 
 </html>
