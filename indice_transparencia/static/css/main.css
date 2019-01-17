@@ -2,15 +2,27 @@ main {
   padding: 4rem;
 }
 
+/*BOTONES*/
+
 .btn-yellow {
+  font-family:"Muli";
+  font-size:14px;
   color: white;
   border-color: #F9B903;
   background-color:#F9B903;
-  font-family:"Muli";
   padding-left:40px;
   padding-right:40px;
-  font-size:14px;
+
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #eab300;
+    border-color: #eab300;
+    margin-top: 15px;
+}
+
+/*LINKS*/
 
 a {
   color:#fff;
@@ -26,6 +38,16 @@ a {
    padding-left:10px;
    padding-right:70px;
    font-weight: 700;
+}
+
+/*BG-HERO*/
+
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top:60px;
+
 }
 
 .bg-dark{
@@ -51,6 +73,7 @@ a {
   color:white;
   text-shadow:2px 2px #333;
   padding-left: 50px;
+  padding-right:20px;
   font-size: 40px;
 }
 
@@ -59,12 +82,4 @@ a {
   padding-left: 50px;
   font-size: 20px;
   font-weight: 400;
-}
-
-.container-fluid {
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-top:55px;
-
 }
