@@ -2,3 +2,32 @@ main {
   padding: 4rem;
 }
 
+.btn-yellow {
+  color: white;
+  border-color: #F9B903;
+  background-color:#F9B903;
+  font-family:"Muli";
+  padding-left:40px;
+  padding-right:40px;
+  font-size:14px;
+}
+
+a {
+  color:#fff;
+  font-family:"Muli";
+}
+
+.form-control {
+   background-color: #e9ecef;
+   border: 1px solid #e9ecef;
+   border-radius: .20rem;
+   font-family:"Muli";
+   font-size:14px;
+   padding-left:10px;
+   padding-right:70px;
+   font-weight: 700;
+}
+
+.bg-dark{
+  background-color:#222;
+}
