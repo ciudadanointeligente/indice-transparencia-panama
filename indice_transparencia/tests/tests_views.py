@@ -9,6 +9,12 @@ class IndexViewTestCase(TestCase):
         url = reverse('index')
         response = self.client.get(url)
         assert response.status_code == 200
+        
+class AboutViewTestCase(TestCase):
+    def test_get_the_about_page(self):
+        url = reverse('about')
+        response = self.client.get(url)
+        assert response.status_code == 200
 
 class ProfileViewTestCase(TestCase):
     def test_get_the_index(self):
