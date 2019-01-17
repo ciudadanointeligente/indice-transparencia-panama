@@ -5,6 +5,8 @@ from templated_email import send_templated_mail
 from django.contrib.sites.models import Site
 from django.conf import settings
 from django.urls import reverse
+from django.core.exceptions import ValidationError
+from django.db.models.signals import m2m_changed
 
 
 class Party(models.Model):
@@ -20,6 +22,12 @@ class Circuit(models.Model):
     province = models.CharField(max_length=255, verbose_name=u"Provincia", default="", null=True, blank=True)
     district = models.CharField(max_length=255, verbose_name=u"Distritos", default="", null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+        
+class Topic(models.Model):
+    name = models.CharField(max_length=255, verbose_name=u"Nombre", null=True)
+    
     def __str__(self):
         return self.name
 
@@ -80,6 +88,7 @@ class Person(models.Model):
     circuit = models.ForeignKey(Circuit, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Circuito al que representa o busca representar")
     has_changed_party = models.BooleanField(default=False, verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
     previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado", blank=True)    
+    topics = models.ManyToManyField(Topic, related_name="person_set", blank=True, verbose_name="Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024).")
     
     #formación académica
     declared_intention_to_transparent_education = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su formación/educación?", blank=True)
@@ -139,10 +148,10 @@ class Person(models.Model):
                                      null=True,
                                      verbose_name=u"Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación", blank=True)
     
-    declared_intention_to_transparent = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su información política general?", blank=True)
-    period = models.CharField(max_length=255, verbose_name=u"¿En qué período legislativo se encuentra actualmente?", null=True, blank=True)
+    # declared_intention_to_transparent = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su información política general?", blank=True)
+    # period = models.CharField(max_length=255, verbose_name=u"¿En qué período legislativo se encuentra actualmente?", null=True, blank=True)
     
-    reelection = models.BooleanField(default=False, verbose_name=u"¿Va a reelección?", null=True, blank=True)
+    # reelection = models.BooleanField(default=False, verbose_name=u"¿Va a reelección?", null=True, blank=True)
 
     intention_to_transparent_work_plan = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su plan de trabajo de diputado(a) o candidato(a)?", blank=True)
 
@@ -192,8 +201,17 @@ class Person(models.Model):
     def __str__(self):
         return self.name
 
+    # def clean(self, *args, **kwargs):
+    #     if self.topics.count() > 3:
+    #         raise ValidationError("You can't assign more than three topics")
+    #     super(Person, self).clean(*args, **kwargs)
+
+def topics_changed(sender, **kwargs):
+    if kwargs['instance'].topics.count() > 3:
+        raise ValidationError("You can't assign more than three topics")
 
 
+m2m_changed.connect(topics_changed, sender=Person.topics.through)
 
 
 

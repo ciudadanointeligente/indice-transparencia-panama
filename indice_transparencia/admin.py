@@ -1,5 +1,7 @@
 from django.contrib import admin
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact, Circuit
+from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
+                                         WorkRecord, EducationalRecord, Benefit,
+                                         Contact, Circuit, Topic)
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -38,3 +40,8 @@ class CircuitAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Circuit, CircuitAdmin)
+
+
+class TopicAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Topic, TopicAdmin)

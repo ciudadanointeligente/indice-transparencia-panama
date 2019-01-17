@@ -1,8 +1,11 @@
 from django.test import TestCase
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact, Circuit
+from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
+                                         WorkRecord, EducationalRecord, Benefit,
+                                         Contact, Circuit, Topic)
 from django.core import mail
 from django.urls import reverse
 import datetime
+from django.db import transaction
 
 
 class TestModelos(TestCase):
@@ -15,8 +18,6 @@ class TestModelos(TestCase):
         assert hasattr(p, 'web')
         assert hasattr(p, 'party')
         assert hasattr(p, 'circuit')
-        assert hasattr(p, 'period')
-        assert hasattr(p, 'reelection')
         assert p.slug
 
     def test_instanciate_partido(self):
@@ -63,8 +64,29 @@ class TestModelos(TestCase):
         p.circuit = c
         assert p.circuit.name == "9-9"
         
-
-
+    def test_instanciate_topic(self):
+        topic = Topic.objects.create(name="tematica")
+        assert topic.name == "tematica"
+        p = Person.objects.create(name=u'Fiera')
+        p.topics.add(topic)
+        assert p.topics.count() == 1
+        assert p in topic.person_set.all()
+    
+    def test_limit_topics_per_person(self):
+        p = Person.objects.create(name=u'Fiera')
+        t1 = Topic.objects.create(name="t1")
+        t2 = Topic.objects.create(name="t2")
+        t3 = Topic.objects.create(name="t3")
+        t4 = Topic.objects.create(name="t4")
+        p.topics.add(t1)
+        p.topics.add(t2)
+        p.topics.add(t3)
+        
+        with self.assertRaises(Exception) as e:
+            with transaction.atomic():
+                p.topics.add(t4)
+        assert p.topics.count() == 3
+        
 
 class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
     def test_instanciate_contact(self):
