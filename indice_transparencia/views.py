@@ -10,16 +10,20 @@ from django.template.response import TemplateResponse
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
     fields = ['name', 'institution', 'start', 'end']
+    factory_kwargs = {'extra': 1}
 
 
 class WorkRecordInline(InlineFormSetFactory):
     model = WorkRecord
     fields = ['name', 'institution', 'start', 'end']
+    factory_kwargs = {'extra': 1}
 
 
 class JudiciaryRecordInline(InlineFormSetFactory):
     model = JudiciaryProcessRecord
     fields = ['number', 'date', 'kind', 'result']
+    factory_kwargs = {'extra': 1}
+
 
 class PersonUpdateView(UpdateWithInlinesView):
     model = Person

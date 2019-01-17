@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% load static %}
 
+{% block navbar %}
+{% endblock navbar %}
+
+{% block extra_body_attrs%}data-spy="scroll" data-target="#form-nav-sections" data-offset="0" class="scrollspy-example"{% endblock extra_body_attrs %}
+
+{% block extracss %}
+<link rel="stylesheet" href='{% static "css/candidate_form.css" %}'>
+{% endblock extracss %}
 
 {% block container %}
 
@@ -13,13 +22,28 @@
         <p>Acá podrás contarnos un poco más sobre ti:</p>
     </div>
     <div class="w-100"></div>
-    <div class="col-8 offset-2">
+    <div class="col-2">
+      <div id="form-nav-sections" class="list-group">
+        <a class="list-group-item list-group-item-action" href="#datos_personales_section">Datos Personales</a>
+        <a class="list-group-item list-group-item-action" href="#perfil_politico_section">Perfil Político</a>
+        <a class="list-group-item list-group-item-action" href="#educational_records_section">Formación Academica</a>
+        <a class="list-group-item list-group-item-action" href="#work_records_section">Experiencia Laboral</a>
+        <a class="list-group-item list-group-item-action" href="#judiciary_records_section">Procesos Judiciales</a>
+      </div>
+    </div>
+    <div class="col-8" >
+      
+      
         <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
           {% csrf_token %}
+          <div >
+          {% comment %}
+          <div data-spy="scroll" data-target="#form-nav-sections" data-offset="0" class="scrollspy-example">
+          {% endcomment %}
           <!-- INICIO DEL DATOS PERSONALES -->
-          <div class="card" id="datos_personales_card">
-            <div class="card-body">
-              <h5 class="card-title">Datos Personales</h5>
+          
+          <h5 id="datos_personales_section">Datos Personales</h5>
+              
               {% if person.image %}
                 <div class="row">
                   <div class='col-3'>
@@ -33,34 +57,36 @@
                 {% bootstrap_field form.facebook %}
                 {% bootstrap_field form.twitter %}
                 {% bootstrap_field form.instagram %}
-                {# comment 'Jordito, puse esto del circuito aquí y no en el perfil político, por que pensé que se veia mejor' #}
-                {% bootstrap_field form.circuit %}
-
-            </div>
-          </div>
+                
+          </section>
+          <hr>
           <!-- FIN DEL DATOS PERSONALES -->
           <!-- INICIO DEL PERFIL POLÍTICO -->
-          <div class="checkbox">
-              <label data-toggle="collapse" data-target="#perfil_politico_card">
-                  {% bootstrap_field form.declared_intention_to_transparent_political_profile %}
-              </label>
-          </div>
-          <div class="card collapse" id="perfil_politico_card">
-            
-            <div class="card-body">
-              <h5 class="card-title">Perfil Político</h5>
-
+          <section>
+          
+          <h5 id="perfil_politico_section">Perfil Político</h5>
+              {% bootstrap_field form.circuit %}
               {% bootstrap_field form.party %}
               {% bootstrap_field form.has_changed_party %}
               {% bootstrap_field form.previous_parties %}
-
-            </div>
-          </div>
+              {% bootstrap_field form.declared_intention_to_transparent_political_profile %}
+          </section>
+          <hr>
           <!-- FIN DEL PERFIL POLÍTICO -->
-          
-          {% include 'includes/formset_update_candidate.html' with formset=inlines.0 title="¿Desea Ud. compartir información sobre su formación/educación?" %}
-          {% include 'includes/formset_update_candidate.html' with formset=inlines.1 title="¿Desea Ud. compartir información sobre su experiencia laboral?" %}
-          {% include 'includes/formset_update_candidate.html' with formset=inlines.2 title="¿Desea Ud. compartir información sobre los procesos judiciales en los que ha estado involucrado(a)?" %}
+          <h5 id="{{inlines.0.prefix}}_section">Formación Academica</h5>
+          <section>
+            {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
+          </section>
+          <hr>
+          <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral</h5>
+          <section>
+            {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
+          </section>
+          <hr>
+          <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
+          <section>
+            {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
+          </section>
 
 
           {% buttons %}
@@ -68,7 +94,9 @@
               Enviar
             </button>
           {% endbuttons %}
+          </div>
         </form>
+      
     </div>
 </div>
 

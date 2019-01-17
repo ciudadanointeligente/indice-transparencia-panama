@@ -1,0 +1,10 @@
+.card {
+    margin: 20px 0 20px;
+}
+
+#form-nav-sections {
+    position: fixed;
+}
+.scrollspy-example {
+  position: relative;
+}
