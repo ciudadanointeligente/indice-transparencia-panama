@@ -116,3 +116,21 @@ class PersonUpdateView(TestCase):
         assert p.educational_records.count() == 2
         assert p.work_records.count() == 1
         assert p.judiciary_records.count() == 1
+
+class RankingListViweTestCase(TestCase):
+    def test_get_the_list(self):
+        url = reverse('ranking')
+        response = self.client.get(url)
+        assert response.status_code == 200
+        
+    def test_the_list_has_several_persons(self):
+        p1 = Person.objects.create(name="perro", birth_date=str(datetime.date(year=2000, day=2, month=2)))
+        p2 = Person.objects.create(name="gato", birth_date=str(datetime.date(year=2010, day=2, month=2)))
+        p3 = Person.objects.create(name="chimuelo", birth_date=str(datetime.date(year=2019, day=2, month=2)))
+        url = reverse('ranking')
+        response = self.client.get(url)
+        persons = response.context['persons']
+        assert len(persons) == 3
+        assert p1 in persons
+        assert p3 == persons[0]
+        
