@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django import forms
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
 
 class PersonForm(ModelForm):
@@ -14,6 +15,9 @@ class PersonForm(ModelForm):
                    'benefits','benefits_link','benefits_doc','intention_to_transparent_work_plan','work_plan_link',
                    'work_plan_doc','eth_001_link','eth_001_doc','eth_002_link','eth_002_doc','eth_080_link','eth_080_doc','eth_172_link','eth_172_doc','attendance',
                    'laws_worked_on']
+        widgets = {
+            'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
+        }
 
 
 class EducationalRecordForm(ModelForm):
