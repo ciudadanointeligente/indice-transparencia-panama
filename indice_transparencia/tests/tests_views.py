@@ -1,5 +1,5 @@
 from django.test import TestCase
-from indice_transparencia.models import Person, Party, Contact, Circuit
+from indice_transparencia.models import Person, Party, Contact, Circuit, EducationalRecord, WorkRecord
 from indice_transparencia.forms import PersonForm
 from django.urls import reverse
 import datetime
@@ -124,9 +124,17 @@ class RankingListViweTestCase(TestCase):
         assert response.status_code == 200
         
     def test_the_list_has_several_persons(self):
-        p1 = Person.objects.create(name="perro", birth_date=str(datetime.date(year=2000, day=2, month=2)))
-        p2 = Person.objects.create(name="gato", birth_date=str(datetime.date(year=2010, day=2, month=2)))
-        p3 = Person.objects.create(name="chimuelo", birth_date=str(datetime.date(year=2019, day=2, month=2)))
+        p1 = Person.objects.create(name="perro")
+        # Perro aún está bien atrás y mark devuelve 0
+        p2 = Person.objects.create(name="gato")
+        # Gato sólo tiene un tipo de record por lo que sólo suma 2.5
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p2)
+        p3 = Person.objects.create(name="chimuelo")
+        # Chimuelo tiene dos tipos de recors que hace que sumen 5 por lo tanto aparecerá más arriba que el resto
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p3)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p3)
+
+
         url = reverse('ranking')
         response = self.client.get(url)
         persons = response.context['persons']

@@ -204,9 +204,14 @@ class Person(models.Model):
 
     @property
     def mark(self):
-        if self.birth_date:
-            return self.birth_date.year
-        return 0
+        final_mark = 0
+        if self.educational_records.exists():
+            final_mark += 2.5
+        if self.work_records.exists():
+            final_mark += 2.5
+        if self.work_plan_link or self.work_plan_doc:
+            final_mark += 5
+        return final_mark
         
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})

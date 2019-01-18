@@ -116,16 +116,24 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
 
 class RankingCalculation(TestCase):
     def test_it_calculates_a_mark(self):
-        p = Person.objects.create(name=u'Fiera',
-                                  birth_date=datetime.date(day=2, month=2, year=2012))
-        assert p.mark == 2012
+        p = Person.objects.create(name=u'Fiera')
+        ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        assert p.mark == 2.5
+        work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        work_record.save()
+        assert p.mark == 5
+        p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
+        assert p.mark == 10
 
     def test_ranking(self):
         pdo = Person.objects.create(name=u'ultima',)
-        p1 = Person.objects.create(name=u'penultima',
-                                     birth_date=datetime.date(day=2, month=2, year=2012))
-        p2 = Person.objects.create(name=u'Primera',
-                                     birth_date=datetime.date(day=2, month=2, year=2014))
+        p1 = Person.objects.create(name=u'penultima')
+        # Le creo un educational record que suma 2.5 al p1
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p1)
+        p2 = Person.objects.create(name=u'Primera')
+        # p2 tiene dos tipos de recors que hace que sumen 5 por lo tanto aparecerá más arriba que el resto
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p2)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p2)
         # deberiamos tener algo que devuelva el ranking
         personas = Person.ranking.all()
         assert personas[0] == p2
