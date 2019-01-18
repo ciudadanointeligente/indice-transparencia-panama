@@ -4,13 +4,19 @@
 
 {% block container %}
 
-{{person.name}}
+
 
 <div class="row">
+  <h5> {{person.name}} </h5>
   <div class='col-3'>
     <img src="{% if person.image %}{{ person.image.url }}{% else %}https://thumbs.dreamstime.com/z/sentada-y-el-hacer-frente-del-perrito-de-labrador-aislados-en-blanco-40702920.jpg{% endif %}"  class="img-thumbnail">
   </div>
 </div>
 
-
+<div class="row">
+  <h4> partido: {{person.party}} </h4>
+  <div class='col-3'>
+    <img src="{% if person.party.image %}{{ person.party.image.url }}{% else %} no logo{% endif %}"  class="img-thumbnail">
+  </div>
+</div>
 {% endblock container %}

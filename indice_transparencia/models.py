@@ -13,6 +13,8 @@ class Party(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Nombre")
     initials = models.CharField(max_length=255, verbose_name=u"Iniciales")
     slug = AutoSlugField(populate_from='name', null=True)
+    image = models.ImageField(verbose_name=u"Logo del partido", upload_to='party_logos/%Y/%m/%d/',
+                                     null=True, blank=True)
 
     def __str__(self):
         return self.initials
