@@ -124,6 +124,10 @@ class RankingCalculation(TestCase):
         assert p.mark == 5
         p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
         assert p.mark == 10
+        ## querido hermanito Jordi:
+        ## Aquí está el test que te calcula toda la volá, recuerda que se pilla en el siguiente link:
+        ## https://docs.google.com/spreadsheets/d/1BNHTKEoLTuExGr8v-Ec0_7DE_bdZl36YmblhMeUoJtk/edit#gid=201033095
+        ## te quiero.
 
     def test_ranking(self):
         pdo = Person.objects.create(name=u'ultima',)

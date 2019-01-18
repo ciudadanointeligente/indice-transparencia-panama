@@ -211,6 +211,10 @@ class Person(models.Model):
             final_mark += 2.5
         if self.work_plan_link or self.work_plan_doc:
             final_mark += 5
+        ## Jordito querido hermano
+        ## Aquí se calcula el mark, pensé que sería bacán que uno fuera sumando cosas en la medida en que se van
+        ## calculando. Con el operador += sumas y eso.
+        ## Besito.
         return final_mark
         
     def get_absolute_url(self):
