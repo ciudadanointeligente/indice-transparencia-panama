@@ -17,7 +17,10 @@ class Party(models.Model):
                                      null=True, blank=True)
 
     def __str__(self):
-        return self.initials
+        return self.name
+
+    class Meta:
+        verbose_name = "Partido"
         
 class Circuit(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Nombre", null=True)
@@ -26,12 +29,18 @@ class Circuit(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Circuito"
         
 class Topic(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Nombre", null=True)
     
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Tema Prioritario"
 
 
 class EducationalRecord(models.Model):
@@ -63,6 +72,9 @@ class Benefit(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Beneficio"
 
 class RankingManager(models.Manager):
     def get_queryset(self):
@@ -203,10 +215,8 @@ class Person(models.Model):
     def __str__(self):
         return self.name
 
-    # def clean(self, *args, **kwargs):
-    #     if self.topics.count() > 3:
-    #         raise ValidationError("You can't assign more than three topics")
-    #     super(Person, self).clean(*args, **kwargs)
+    class Meta:
+        verbose_name = "Persona"
 
 def topics_changed(sender, **kwargs):
     if kwargs['instance'].topics.count() > 3:
@@ -250,5 +260,8 @@ class Contact(models.Model):
 
     def update_url(self):
         return reverse('update-person-data', kwargs={'identifier': self.identifier})
+
+    class Meta:
+        verbose_name = "Contacto"
 
 

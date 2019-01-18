@@ -5,12 +5,16 @@ from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
 
 
 class ContactAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('person',
+                    'email'
+                    )
 
 admin.site.register(Contact, ContactAdmin)
 
 class PartyAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',
+                    'initials'
+                    )
 admin.site.register(Party, PartyAdmin)
 
 class BenefitAdmin(admin.ModelAdmin):
@@ -28,6 +32,10 @@ class EducationalRecordInline(admin.TabularInline):
     model = EducationalRecord
 
 class PersonAdmin(admin.ModelAdmin):
+    list_display = ('name',
+                    'party',
+                    'circuit'
+                    )
     inlines = [
         EducationalRecordInline,
         WorkRecordInline,
@@ -37,7 +45,10 @@ class PersonAdmin(admin.ModelAdmin):
 admin.site.register(Person, PersonAdmin)
 
 class CircuitAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',
+                    'province',
+                    'district'
+                    )
 
 admin.site.register(Circuit, CircuitAdmin)
 
