@@ -36,6 +36,8 @@ class PersonAdmin(admin.ModelAdmin):
                     'party',
                     'circuit'
                     )
+    search_fields = ['name', 'party__name', 'circuit__name', 'circuit__province', 'circuit__district']
+
     inlines = [
         EducationalRecordInline,
         WorkRecordInline,
