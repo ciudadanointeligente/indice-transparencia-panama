@@ -115,7 +115,12 @@ class AddingAContactSendsAnEmailWhereCandidatesCanUpdate(TestCase):
 
 
 class RankingCalculation(TestCase):
-    def test_it_calculates_a_mark(self):
+    def test_it_calculates_a_mark_not_currently_deputy(self):
+        ## querido hermanito Jordi:
+        ## Este es para el caso de que no sea un no incumbente, es decir que aún no es electo
+        ## Aquí está el test que te calcula toda la volá, recuerda que se pilla en el siguiente link:
+        ## https://docs.google.com/spreadsheets/d/1BNHTKEoLTuExGr8v-Ec0_7DE_bdZl36YmblhMeUoJtk/edit#gid=201033095
+        ## te quiero.
         p = Person.objects.create(name=u'Fiera')
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         assert p.mark == 2.5
@@ -123,14 +128,22 @@ class RankingCalculation(TestCase):
         work_record.save()
         assert p.mark == 5
         p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
+        assert p.mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
+        # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
+
+    def test_it_calculates_a_mark_currently_deputy(self):
+        p = Person.objects.create(name=u'Fiera', is_deputy=True) ## <======== incumbente por que is_deputy=True
+        ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        assert p.mark == 2.5
+        work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        work_record.save()
+        assert p.mark == 5
+        p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
         assert p.mark == 10
-        ## querido hermanito Jordi:
-        ## Aquí está el test que te calcula toda la volá, recuerda que se pilla en el siguiente link:
-        ## https://docs.google.com/spreadsheets/d/1BNHTKEoLTuExGr8v-Ec0_7DE_bdZl36YmblhMeUoJtk/edit#gid=201033095
-        ## te quiero.
+        ## Este es para el caso de que sea un incumbente, es decir que está llendo a la reelección.
 
     def test_ranking(self):
-        pdo = Person.objects.create(name=u'ultima',)
+        pdo = Person.objects.create(name=u'ultima')
         p1 = Person.objects.create(name=u'penultima')
         # Le creo un educational record que suma 2.5 al p1
         EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p1)

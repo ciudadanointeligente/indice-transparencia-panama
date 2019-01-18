@@ -202,19 +202,36 @@ class Person(models.Model):
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.
 
+    def get_mark_non_deputy(self):
+        current_mark = 0
+        if self.work_plan_link or self.work_plan_doc:
+            current_mark += 10
+        return current_mark
+
+    def get_mark_deputy(self):
+        current_mark = 0
+        if self.work_plan_link or self.work_plan_doc:
+            current_mark += 5
+        return current_mark
+
     @property
     def mark(self):
+        ## Jordito querido hermano
+        ## Aquí se calcula el mark, pensé que sería bacán que uno fuera sumando cosas en la medida en que se van
+        ## calculando. Con el operador += sumas y eso.
+        ## Besito.
         final_mark = 0
         if self.educational_records.exists():
             final_mark += 2.5
         if self.work_records.exists():
             final_mark += 2.5
-        if self.work_plan_link or self.work_plan_doc:
-            final_mark += 5
-        ## Jordito querido hermano
-        ## Aquí se calcula el mark, pensé que sería bacán que uno fuera sumando cosas en la medida en que se van
-        ## calculando. Con el operador += sumas y eso.
-        ## Besito.
+        ## Cacha que se calculan de manera distinta
+        ## las mark si son diputados o si no lo son:
+        ## Fíjate en los tests por que son dos distintos
+        if self.is_deputy:
+            final_mark += self.get_mark_deputy()
+        else:
+            final_mark += self.get_mark_non_deputy()
         return final_mark
         
     def get_absolute_url(self):
