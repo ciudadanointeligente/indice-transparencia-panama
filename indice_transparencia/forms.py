@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
 from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from django.core.exceptions import ValidationError
 
 class PersonForm(ModelForm):
     class Meta:
@@ -18,6 +19,10 @@ class PersonForm(ModelForm):
         widgets = {
             'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
         }
+        
+    def clean_topics(self):
+        if self.cleaned_data['topics'].count() > 3:
+            raise ValidationError("Maximo 3 temas.")
 
 
 class EducationalRecordForm(ModelForm):
