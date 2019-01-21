@@ -36,6 +36,7 @@
         <a class="list-group-item list-group-item-action" href="#political_proposal_section">Propuesta Política</a>
         <a class="list-group-item list-group-item-action" href="#patrimony_interests_section">Patrimonio e Intereses</a>
         <a class="list-group-item list-group-item-action" href="#judiciary_records_section">Procesos Judiciales</a>
+        <a class="list-group-item list-group-item-action" href="#eth_section">Ética Presupuestaria</a>
       </div>
     </div>
     <div class="col-8" >
@@ -120,6 +121,28 @@
             {% bootstrap_field form.judiciary_link %}
             {% bootstrap_field form.judiciary_description %}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
+          </section><hr>
+          <h5 id="eth_section">Ética Presupuestaria</h5>
+          <section>
+            
+            {% bootstrap_field form.is_deputy %}
+            {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage %}
+            {% bootstrap_field form.benefits %}
+            {% bootstrap_field form.benefits_link %}
+            {% bootstrap_field form.benefits_doc %}
+            {% bootstrap_field form.intention_to_transparent_work_plan %}
+            {% bootstrap_field form.work_plan_link %}
+            {% bootstrap_field form.work_plan_doc %}
+            {% bootstrap_field form.eth_001_link %}
+            {% bootstrap_field form.eth_001_doc %}
+            {% bootstrap_field form.eth_002_link %}
+            {% bootstrap_field form.eth_002_doc %}
+            {% bootstrap_field form.eth_080_link %}
+            {% bootstrap_field form.eth_080_doc %}
+            {% bootstrap_field form.eth_172_link %}
+            {% bootstrap_field form.eth_172_doc %}
+            {% bootstrap_field form.attendance %}
+            {% bootstrap_field form.laws_worked_on %}
           </section>
 
 

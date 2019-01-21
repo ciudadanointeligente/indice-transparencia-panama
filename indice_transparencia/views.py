@@ -8,6 +8,7 @@ from indice_transparencia.models import (Person, Contact, EducationalRecord,
 from indice_transparencia.forms import PersonForm
 from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
+from django import forms
 
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
@@ -25,6 +26,7 @@ class JudiciaryRecordInline(InlineFormSetFactory):
     model = JudiciaryProcessRecord
     fields = ['number', 'date', 'kind', 'result']
     factory_kwargs = {'extra': 1}
+    # formset_kwargs = {'widgets' : {'date': forms.DateInput(attrs={'class':'datepicker'})}}
 
 
 class PersonUpdateView(UpdateWithInlinesView):
