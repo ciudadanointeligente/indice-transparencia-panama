@@ -127,7 +127,7 @@ class Person(models.Model):
     
     
     #delaracion de patrimonio e intereses
-    intention_to_transparent_patrimony = models.BooleanField(default=False, null=True, verbose_name=u"¿Desea Ud. compartir sus declaraciones de Patrimonio e Intereses", blank=True)
+    intention_to_transparent_patrimony = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir sus declaraciones de Patrimonio e Intereses", blank=True)
     existing_patrimony_declaration = models.BooleanField(default=False, null=True, verbose_name=u"¿Cuenta ud. con una declaración de intereses actualizada?", blank=True)
     patrimony_link = models.URLField(null=True,
                                      verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio", blank=True)
