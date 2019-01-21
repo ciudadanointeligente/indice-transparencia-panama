@@ -246,7 +246,7 @@ class Person(models.Model):
 
 def topics_changed(sender, **kwargs):
     if kwargs['instance'].topics.count() > 3:
-        raise ValidationError("You can't assign more than three topics")
+        raise ValidationError({'topics': "You can't assign more than three topics"})
 
 
 m2m_changed.connect(topics_changed, sender=Person.topics.through)
