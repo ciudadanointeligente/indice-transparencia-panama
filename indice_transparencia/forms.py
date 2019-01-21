@@ -19,6 +19,13 @@ class PersonForm(ModelForm):
             'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
         }
 
+    def clean(self):
+        cleaned_data = super(PersonForm, self).clean()
+        if len(self.cleaned_data['topics']) > 3:
+            raise forms.ValidationError('No se puede tener más de 3 temas')
+        return cleaned_data
+
+
 
 class EducationalRecordForm(ModelForm):
     class Meta:
