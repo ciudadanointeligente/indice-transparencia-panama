@@ -33,6 +33,8 @@
         <a class="list-group-item list-group-item-action" href="#perfil_politico_section">Perfil Político</a>
         <a class="list-group-item list-group-item-action" href="#educational_records_section">Formación Academica</a>
         <a class="list-group-item list-group-item-action" href="#work_records_section">Experiencia Laboral</a>
+        <a class="list-group-item list-group-item-action" href="#political_proposal_section">Propuesta Política</a>
+        <a class="list-group-item list-group-item-action" href="#patrimony_interests_section">Patrimonio e Intereses</a>
         <a class="list-group-item list-group-item-action" href="#judiciary_records_section">Procesos Judiciales</a>
       </div>
     </div>
@@ -81,16 +83,42 @@
           <!-- FIN DEL PERFIL POLÍTICO -->
           <h5 id="{{inlines.0.prefix}}_section">Formación Academica</h5>
           <section>
+            {% bootstrap_field form.declared_intention_to_transparent_education %}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
           </section>
           <hr>
           <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral</h5>
           <section>
+            {% bootstrap_field form.declared_intention_to_transparent_work %}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
+          </section>
+          <hr>
+          <h5 id="political_proposal_section">Propuesta Política</h5>
+          <section>
+            {% bootstrap_field form.declared_intention_to_transparent_political_proposal %}
+            {% bootstrap_field form.has_political_proposal %}
+            {% bootstrap_field form.political_proposal_link %}
+            {% bootstrap_field form.political_proposal_doc %}
+          </section><hr>
+          <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
+          <section>
+            {% bootstrap_field form.intention_to_transparent_patrimony %}
+            {% bootstrap_field form.existing_patrimony_declaration %}
+            {% bootstrap_field form.patrimony_link %}
+            {% bootstrap_field form.patrimony_doc %}
+            {% bootstrap_field form.existing_interests_declaration %}
+            {% bootstrap_field form.interests_link %}
+            {% bootstrap_field form.interests_doc %}
           </section>
           <hr>
           <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
           <section>
+            
+            {% bootstrap_field form.declared_intention_to_transparent_judiciary_records %}
+            {% bootstrap_field form.judiciary_processes_involved %}
+            {% bootstrap_field form.extra_judiciary_declaration %}
+            {% bootstrap_field form.judiciary_link %}
+            {% bootstrap_field form.judiciary_description %}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
           </section>
 
