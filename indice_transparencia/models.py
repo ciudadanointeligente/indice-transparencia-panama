@@ -174,23 +174,23 @@ class Person(models.Model):
                                      null=True,
                                      verbose_name=u"Si respondió 'sí' pero no tiene su plan de trabajo online, acá tiene la posibilidad de adjuntar el archivo", blank=True)
     eth_001_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 001",
-                                   help_text=u"Link a la planilla 001", null=True, blank=True)
+                                    null=True, blank=True)
     eth_001_doc = models.FileField(upload_to='eth_001/%Y/%m/%d/', null=True, blank=True, 
                                     verbose_name=u"Si su planilla 001 no se encuentra publicada online, puede subir el archivo a continuación")
     eth_002_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 002",
-                                   help_text=u"Link a la planilla 002", null=True, blank=True)
+                                    null=True, blank=True)
     eth_002_doc = models.FileField(upload_to='eth_002/%Y/%m/%d/', null=True, blank=True, 
                                     verbose_name=u"Si su planilla 002 no se encuentra publicada online, puede subir el archivo a continuación")
     eth_080_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 080",
                                    help_text=u"Link a la planilla 080", null=True, blank=True)
     eth_080_doc = models.FileField(upload_to='eth_080/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 080 no se encuentra publicada online, puede subir el archivo a continuación",
-                                  help_text=u"Link a la planilla 080", null=True, blank=True)
+                                   null=True, blank=True)
     eth_172_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 172",
                                    help_text=u"Link a la planilla 172", null=True, blank=True)
     eth_172_doc = models.FileField(upload_to='eth_172/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
-                                  help_text=u"Link a la planilla 172", null=True, blank=True)
+                                   null=True, blank=True)
     attendance = models.FloatField(verbose_name="Indique su porcentaje de asistencia a la Asamblea Nacional durante este período legislativo", null=True, blank=True)
     laws_worked_on = models.IntegerField(verbose_name="Indique el número de leyes que ud. ha sancionado en el último período legislativo", null=True, blank=True)
 
