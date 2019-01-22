@@ -8,3 +8,4 @@ django-bootstrap4
 Pillow
 django-extra-views
 PyYaml==3.13
+django-analytical

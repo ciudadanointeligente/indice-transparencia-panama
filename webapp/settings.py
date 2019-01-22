@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'extra_views',
     'bootstrap4',
     'indice_transparencia',
+    'analytical',
 ]
 
 MIDDLEWARE = [
