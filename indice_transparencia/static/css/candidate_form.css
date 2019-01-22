@@ -18,6 +18,12 @@ h1 {
   color:#feb61e;
 }
 
+/*links*/
+a {
+  font-family: "Muli";
+  font-weight:600;
+}
+
 /*Bajada titulo*/
 
 p{
@@ -111,4 +117,45 @@ padding-left:5%
 .list-group-item.active{
 border-color: #F9B903;
 background-color:#F9B903;
+}
+
+/*Info boxes*/
+
+#id_judiciary_records-0-date{
+  margin-bottom:10px;
+}
+
+#id_judiciary_records-0-kind{
+  margin-bottom:10px;
+}
+
+#id_judiciary_records-0-number{
+  margin-bottom:10px;
+}
+
+#id_judiciary_records-0-result{
+  margin-bottom:0px;
+}
+
+#id_educational_records-0-name{
+  margin-bottom:0px;
+}
+
+#id_educational_records-0-institution{
+  margin-bottom:0px;
+}
+
+#id_educational_records-0-start{margin-bottom:0px;
+}
+
+#id_work_records-0-name{
+  margin-bottom:0px;
+}
+
+#id_work_records-0-institution{
+  margin-bottom:0px;
+}
+
+#id_work_records-0-start{
+  margin-bottom:0px;
 }
