@@ -133,13 +133,13 @@ class Person(models.Model):
                                      verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio", blank=True)
     patrimony_doc = models.FileField(upload_to='patrimony/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Si respondió 'sí' pero no tiene su declaración de patrimonio publicada online, acá tiene la oportunidad de adjuntar el archivo. (Formato: http://bit.ly/indicepat)", blank=True)
+                                     verbose_name=u"Si respondió 'sí' pero no tiene su declaración de patrimonio publicada online, acá tiene la oportunidad de adjuntar el archivo. (Utilizar el siguiente formato: http://bit.ly/indicepat)", blank=True)
     existing_interests_declaration = models.BooleanField(default=False, null=True, verbose_name=u"¿Cuenta ud. con una declaración de intereses actualizada?", blank=True)
     interests_link = models.CharField(max_length=255, null=True,
                                       verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses", blank=True)
     interests_doc = models.FileField(upload_to='patrimony/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Si respondió 'sí' pero no tiene su declaración de intereses publicada online, acá tiene la oportunidad de adjuntar el archivo. (Formato: http://bit.ly/indiceint)", blank=True)
+                                     verbose_name=u"Si respondió 'sí' pero no tiene su declaración de intereses publicada online, acá tiene la oportunidad de adjuntar el archivo. (Utilizar el siguiente formato: http://bit.ly/indiceint)", blank=True)
     
     
     #procesos judiciales    
