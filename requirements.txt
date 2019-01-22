@@ -7,5 +7,5 @@ django-test-without-migrations
 django-bootstrap4
 Pillow
 django-extra-views
-PyYaml==3.13
+PyYaml==4.2b1
 django-analytical

@@ -119,7 +119,7 @@ class Person(models.Model):
     
     #propuesta política
     declared_intention_to_transparent_political_proposal = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir su propuesta política de diputado(a) o candidato(a)?", blank=True)
-    has_political_proposal = models.BooleanField(default=False, verbose_name=u"Ya sea diputado(a) o candidato(a), ¿Cuenta ud. con una propuesta política para su gestión (2019-2024)?", null=True, blank=True)
+    has_political_proposal = models.BooleanField(default=False, verbose_name=u"Ya sea diputado(a) o candidato(a), ¿Cuenta ud. con una propuesta política para su gestión (2019-2024)?", blank=True)
     political_proposal_link = models.URLField(null=True, max_length=255, verbose_name=u"Si respondió \"sí\", indique en qué link se puede acceder a su propuesta política", blank=True)
     political_proposal_doc = models.FileField(upload_to='political_proposals/%Y/%m/%d/',
                                      null=True,

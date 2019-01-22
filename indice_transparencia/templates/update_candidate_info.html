@@ -130,9 +130,13 @@
             {% bootstrap_field form.benefits %}
             {% bootstrap_field form.benefits_link %}
             {% bootstrap_field form.benefits_doc %}
-            {% bootstrap_field form.intention_to_transparent_work_plan %}
-            {% bootstrap_field form.work_plan_link %}
-            {% bootstrap_field form.work_plan_doc %}
+            
+            {% comment %}
+              {% bootstrap_field form.intention_to_transparent_work_plan %}
+              {% bootstrap_field form.work_plan_link %}
+              {% bootstrap_field form.work_plan_doc %}
+            {% endcomment %}
+            
             {% bootstrap_field form.eth_001_link %}
             {% bootstrap_field form.eth_001_doc %}
             {% bootstrap_field form.eth_002_link %}
