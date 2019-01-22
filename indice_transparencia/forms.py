@@ -27,7 +27,7 @@ class PersonForm(ModelForm):
     def clean(self):
         cleaned_data = super(PersonForm, self).clean()
         if len(self.cleaned_data['topics']) > 3:
-            raise forms.ValidationError('No se puede tener más de 3 temas')
+            raise forms.ValidationError({'topics':'No se puede tener más de 3 temas'})
         return cleaned_data
 
 
