@@ -11,6 +11,7 @@
 
 
 
+
 /*Bienvenido*/
 h1 {
   text-align:center;
@@ -23,6 +24,7 @@ h1 {
 a {
   font-family: "Muli";
   font-weight:600;
+
 }
 
 /*Bajada titulo*/
@@ -45,7 +47,7 @@ h5 {
   font-weight:1000;
   margin-top:30px;
   margin-bottom:30px;
-  color:#feb61e;
+  color:#626c7d;
 }
 
 /*Etiquetas de campos*/
@@ -76,7 +78,7 @@ label{
    padding-right:10px;
    font-weight: 100;
    margin-bottom:40px;
-   border: 1.5px solid #c0c6d1;
+   border: 1.5px solid #626c7d;
 }
 
 /*checkbox*/
