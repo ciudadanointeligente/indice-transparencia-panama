@@ -182,12 +182,12 @@ class Person(models.Model):
     eth_002_doc = models.FileField(upload_to='eth_002/%Y/%m/%d/', null=True, blank=True, 
                                     verbose_name=u"Si su planilla 002 no se encuentra publicada online, puede subir el archivo a continuación")
     eth_080_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 080",
-                                   help_text=u"Link a la planilla 080", null=True, blank=True)
+                                   null=True, blank=True)
     eth_080_doc = models.FileField(upload_to='eth_080/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 080 no se encuentra publicada online, puede subir el archivo a continuación",
                                    null=True, blank=True)
     eth_172_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 172",
-                                   help_text=u"Link a la planilla 172", null=True, blank=True)
+                                   null=True, blank=True)
     eth_172_doc = models.FileField(upload_to='eth_172/%Y/%m/%d/',
                                   verbose_name=u"Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación",
                                    null=True, blank=True)

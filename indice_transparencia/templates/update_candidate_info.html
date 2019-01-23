@@ -100,17 +100,17 @@
             {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.has_political_proposal %}
             {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
-            {% bootstrap_field form.political_proposal_doc %}
+            {% bootstrap_field form.political_proposal_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
           </section><hr>
           <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
           <section>
             {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.existing_patrimony_declaration %}
             {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
-            {% bootstrap_field form.patrimony_doc %}
+            {% bootstrap_field form.patrimony_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.existing_interests_declaration %}
             {% bootstrap_field form.interests_link placeholder='Especifique link declaración de intereses'%}
-            {% bootstrap_field form.interests_doc %}
+            {% bootstrap_field form.interests_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
           </section>
           <hr>
           <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
@@ -130,22 +130,22 @@
             {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.benefits %}
             {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
-            {% bootstrap_field form.benefits_doc %}
+            {% bootstrap_field form.benefits_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
 
             {% comment %}
               {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
               {% bootstrap_field form.work_plan_link %}
-              {% bootstrap_field form.work_plan_doc %}
+              {% bootstrap_field form.work_plan_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% endcomment %}
 
             {% bootstrap_field form.eth_001_link placeholder='Especifique link planilla 001'%}
-            {% bootstrap_field form.eth_001_doc %}
+            {% bootstrap_field form.eth_001_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_002_link placeholder='Especifique link planilla 002' %}
-            {% bootstrap_field form.eth_002_doc %}
+            {% bootstrap_field form.eth_002_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_080_link placeholder='Especifique link planilla 080'%}
-            {% bootstrap_field form.eth_080_doc %}
+            {% bootstrap_field form.eth_080_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_172_link placeholder='Especifique link planilla 172'%}
-            {% bootstrap_field form.eth_172_doc %}
+            {% bootstrap_field form.eth_172_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.attendance placeholder='Especifique % de asistencia a la Asamblea Nacional'%}
             {% bootstrap_field form.laws_worked_on placeholder='Especifique número de leyes que ud. ha sancionado'%}
           </section>
@@ -178,6 +178,7 @@
   $(function(){ 
     $('.custom-switch .form-check-input').addClass('custom-control-input'); 
     $('.custom-switch .form-check-label').addClass('custom-control-label'); 
+    //$(":file").addClass('custom-file-input')
   });
   </script>
 {% endblock extra_end_js %}
