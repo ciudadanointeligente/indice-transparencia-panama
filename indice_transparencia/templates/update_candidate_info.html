@@ -78,32 +78,33 @@
               {% bootstrap_field form.has_changed_party %}
               {% bootstrap_field form.previous_parties %}
               {% bootstrap_field form.topics %}
-              {% bootstrap_field form.declared_intention_to_transparent_political_profile %}
+              {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
+              
           </section>
           <hr>
           <!-- FIN DEL PERFIL POLÍTICO -->
           <h5 id="{{inlines.0.prefix}}_section">Formación Academica</h5>
           <section>
-            {% bootstrap_field form.declared_intention_to_transparent_education %}
+            {% bootstrap_field form.declared_intention_to_transparent_education form_group_class='custom-control custom-switch'%}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
           </section>
           <hr>
           <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral</h5>
           <section>
-            {% bootstrap_field form.declared_intention_to_transparent_work %}
+            {% bootstrap_field form.declared_intention_to_transparent_work form_group_class='custom-control custom-switch'%}
             {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
           </section>
           <hr>
           <h5 id="political_proposal_section">Propuesta Política</h5>
           <section>
-            {% bootstrap_field form.declared_intention_to_transparent_political_proposal %}
+            {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.has_political_proposal %}
             {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
             {% bootstrap_field form.political_proposal_doc %}
           </section><hr>
           <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
           <section>
-            {% bootstrap_field form.intention_to_transparent_patrimony %}
+            {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.existing_patrimony_declaration %}
             {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
             {% bootstrap_field form.patrimony_doc %}
@@ -115,7 +116,7 @@
           <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
           <section>
 
-            {% bootstrap_field form.declared_intention_to_transparent_judiciary_records %}
+            {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
             {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
             {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
             {% bootstrap_field form.judiciary_link placeholder='Especifique link procesos judiciales' %}
@@ -126,13 +127,13 @@
           <section>
 
             {% bootstrap_field form.is_deputy %}
-            {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage %}
+            {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.benefits %}
             {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
             {% bootstrap_field form.benefits_doc %}
 
             {% comment %}
-              {% bootstrap_field form.intention_to_transparent_work_plan %}
+              {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
               {% bootstrap_field form.work_plan_link %}
               {% bootstrap_field form.work_plan_doc %}
             {% endcomment %}
@@ -162,3 +163,21 @@
 </div>
 
 {% endblock container %}
+{% block extra_end_js %}
+  <script>
+    $(function() {
+      $( ".datepicker" ).datepicker({
+        dateFormat: "yyyy-mm-dd",
+        altFormat: "yyyy-mm-dd",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2100",
+      });
+    });
+    
+  $(function(){ 
+    $('.custom-switch .form-check-input').addClass('custom-control-input'); 
+    $('.custom-switch .form-check-label').addClass('custom-control-label'); 
+  });
+  </script>
+{% endblock extra_end_js %}

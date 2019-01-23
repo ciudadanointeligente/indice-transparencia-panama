@@ -1,3 +1,4 @@
+
 {% load analytical %}
 {% load static %}
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <meta name="keywords" content="Panamá, Transparencia, Indice">
     <meta name="author" content="">
     <title>Índice de Transparencia Panamá</title>
-    {% endblock meta%}
+    {% endblock meta %}
 
       <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
@@ -74,18 +75,9 @@
                 {% endblock container%}
 
          </main>
- 
-    <script>
-      $(function() {
-        $( ".datepicker" ).datepicker({
-          dateFormat: "yyyy-mm-dd",
-          altFormat: "yyyy-mm-dd",
-          changeMonth: true,
-          changeYear: true,
-          yearRange: "1900:2100",
-        });
-      });
-    </script>
+{% block extra_end_js %}
+
+{% endblock extra_end_js %}
 {% analytical_body_bottom %}
   </body>
 
