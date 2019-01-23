@@ -111,6 +111,11 @@ label{
   background-color:#c0c6d1;
   border-color:white;
 }
+
+.custom-switch {
+  padding-left:20px;
+}
+
 /*columnas*/
 
 .col-12 {
