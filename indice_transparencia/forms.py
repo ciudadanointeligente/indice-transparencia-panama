@@ -7,7 +7,8 @@ class PersonForm(ModelForm):
     class Meta:
         model = Person
         fields = [ 'image','birth_date','web','twitter','instagram','facebook','declared_intention_to_transparent_political_profile',
-                   'party','circuit','has_changed_party','previous_parties','declared_intention_to_transparent_education','extra_education',
+                   'party','circuit','has_changed_party','previous_parties','declared_intention_to_transparent_education',
+                #   'extra_education',
                    'declared_intention_to_transparent_work','declared_intention_to_transparent_political_proposal','has_political_proposal',
                    'political_proposal_link','political_proposal_doc','intention_to_transparent_patrimony','existing_patrimony_declaration',
                    'patrimony_link','patrimony_doc','existing_interests_declaration','interests_link','interests_doc',
