@@ -10,7 +10,6 @@
 }
 
 
-
 /*Bienvenido*/
 h1 {
   text-align:center;
@@ -163,6 +162,14 @@ background-color:#F9B903;
 
 #id_patrimony_doc{
   margin-bottom:30px;
+}
+
+#id_work_records-0-end{
+  margin-bottom:0px;
+}
+
+#id_educational_records-0-end{
+  margin-bottom:0px;
 }
 
 @media screen and (max-width: 1080px)
