@@ -204,7 +204,7 @@ class Person(models.Model):
 
     def get_mark_non_deputy(self):
         current_mark = 0
-        if self.work_plan_link or self.work_plan_doc:
+        if self.political_proposal_link or self.political_proposal_doc:
             current_mark += 10
         if self.declared_intention_to_transparent_judiciary_records:
             current_mark += 35
@@ -216,7 +216,7 @@ class Person(models.Model):
 
     def get_mark_deputy(self):
         current_mark = 0
-        if self.work_plan_link or self.work_plan_doc:
+        if self.political_proposal_link or self.political_proposal_doc:
             current_mark += 5
         if self.benefits_link or self.benefits_doc:
             current_mark += 10
