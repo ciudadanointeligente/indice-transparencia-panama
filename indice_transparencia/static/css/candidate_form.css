@@ -11,19 +11,19 @@
 
 
 
-
 /*Bienvenido*/
 h1 {
   text-align:center;
-  font-family: "Muli";
-  font-weight:600;
+  font-family: "Montserrat";
+  font-weight:200;
   color:#feb61e;
 }
 
 /*links*/
 a {
-  font-family: "Muli";
-  font-weight:600;
+  font-family: "Montserrat";
+  font-weight:500;
+
 
 }
 
@@ -32,8 +32,8 @@ a {
 p{
   padding-left:0px;
   text-align:center;
-  font-family: "Muli";
-  font-weight:600;
+  font-family: "Montserrat";
+  font-weight:400;
   font-size:20px;
   color:#626c7d;
   margin-bottom:20px;
@@ -42,7 +42,7 @@ p{
 /*Titulos secciones*/
 
 h5 {
-  font-family: "Muli";
+  font-family: "Montserrat";
   font-size:28px;
   font-weight:1000;
   margin-top:30px;
@@ -54,8 +54,8 @@ h5 {
 
 label{
   margin-left: 0px;
-  font-family: "Muli";
-  font-weight:800;
+  font-family: "Montserrat";
+  font-weight:500;
   color:#626c7d;
 }
 
@@ -71,7 +71,7 @@ label{
 .form-control {
    background-color: #fff;
    border-radius: 0.20rem;
-   font-family:"Muli";
+   font-family: "Montserrat";
    font-size:14px;
    color:#626c7d;
    padding-left:10px;
@@ -93,7 +93,7 @@ label{
 /*botoncitos*/
 
 .btn{
-  font-family:"Muli";
+  font-family: "Montserrat"
   font-size:14px;
   color: white;
   border-color: #F9B903;
