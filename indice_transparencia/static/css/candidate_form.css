@@ -5,11 +5,10 @@
 #form-nav-sections {
     position: fixed;
 }
+
 .scrollspy-example {
   position: relative;
 }
-
-
 
 /*Bienvenido*/
 h1 {
@@ -60,6 +59,15 @@ label{
   font-family: "Montserrat";
   font-weight:500;
   color:#626c7d;
+}
+
+.custom-file-label{
+  font-size:12px;
+  font-weight:400;
+}
+
+.custom-file{
+  padding-bottom:70px;
 }
 
 /*diagramacion*/
