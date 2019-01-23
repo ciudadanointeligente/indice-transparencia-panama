@@ -167,12 +167,12 @@ class Person(models.Model):
     
     # reelection = models.BooleanField(default=False, verbose_name=u"¿Va a reelección?", null=True, blank=True)
 
-    intention_to_transparent_work_plan = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su plan de trabajo de diputado(a) o candidato(a)?", blank=True)
+    # intention_to_transparent_work_plan = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su plan de trabajo de diputado(a) o candidato(a)?", blank=True)
 
-    work_plan_link = models.URLField(null=True, max_length=255, verbose_name=u"Si respondió 'sí', indique en qué link se puede acceder a su programa de trabajo", blank=True)
-    work_plan_doc = models.FileField(upload_to='work_plans/%Y/%m/%d/',
-                                     null=True,
-                                     verbose_name=u"Si respondió 'sí' pero no tiene su plan de trabajo online, acá tiene la posibilidad de adjuntar el archivo", blank=True)
+    # work_plan_link = models.URLField(null=True, max_length=255, verbose_name=u"Si respondió 'sí', indique en qué link se puede acceder a su programa de trabajo", blank=True)
+    # work_plan_doc = models.FileField(upload_to='work_plans/%Y/%m/%d/',
+    #                                  null=True,
+    #                                  verbose_name=u"Si respondió 'sí' pero no tiene su plan de trabajo online, acá tiene la posibilidad de adjuntar el archivo", blank=True)
     eth_001_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 001",
                                     null=True, blank=True)
     eth_001_doc = models.FileField(upload_to='eth_001/%Y/%m/%d/', null=True, blank=True, 
