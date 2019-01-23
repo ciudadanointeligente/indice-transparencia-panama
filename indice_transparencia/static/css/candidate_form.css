@@ -10,6 +10,7 @@
 }
 
 
+
 /*Bienvenido*/
 h1 {
   text-align:center;
@@ -106,6 +107,7 @@ label{
 .col-12 {
 margin-left:0px;
 margin-right:0px;
+padding-left:0px;
 }
 
 .col-md-8 {
@@ -170,6 +172,35 @@ background-color:#F9B903;
 
 #id_educational_records-0-end{
   margin-bottom:0px;
+}
+
+#id_image{
+  margin-bottom:15px;
+}
+
+#id_political_proposal_doc{
+  margin-bottom:30px;
+
+}
+
+#id_interests_doc{
+  margin-bottom:30px;
+}
+
+#id_benefits_doc{
+  margin-bottom:30px;
+}
+
+#id_eth_001_doc{
+  margin-bottom:30px;
+}
+
+#id_eth_002_doc{
+  margin-bottom:30px;
+}
+
+#id_eth_172_doc{
+  margin-bottom:30px;
 }
 
 @media screen and (max-width: 1080px)
