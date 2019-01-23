@@ -59,7 +59,7 @@
                   </div>
                 </div>
               {% endif %}
-                {% bootstrap_field form.image %}
+                {% bootstrap_field form.image form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
                 {% bootstrap_field form.birth_date placeholder='Ej: 23/01/1950'%}
                 {% bootstrap_field form.web placeholder='Ej: www.sitioweb.com'%}
                 {% bootstrap_field form.facebook placeholder='Ej: https://www.facebook.com/candidato'%}

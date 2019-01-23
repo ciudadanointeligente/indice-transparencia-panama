@@ -206,12 +206,32 @@ class Person(models.Model):
         current_mark = 0
         if self.work_plan_link or self.work_plan_doc:
             current_mark += 10
+        if self.declared_intention_to_transparent_judiciary_records:
+            current_mark += 35
+        if self.patrimony_link or self.patrimony_doc:
+            current_mark += 25
+        if self.interests_link or self.interests_doc:
+            current_mark += 25
         return current_mark
 
     def get_mark_deputy(self):
         current_mark = 0
         if self.work_plan_link or self.work_plan_doc:
             current_mark += 5
+        if self.benefits_link or self.benefits_doc:
+            current_mark += 10
+        if self.eth_001_link or self.eth_001_doc:
+            current_mark += 2.5
+        if self.eth_002_link or self.eth_002_doc:
+            current_mark += 2.5
+        if self.eth_080_link or self.eth_080_doc:
+            current_mark += 2.5
+        if self.eth_172_link or self.eth_172_doc:
+            current_mark += 2.5
+        if self.patrimony_link or self.patrimony_doc:
+            current_mark += 25
+        if self.interests_link or self.interests_doc:
+            current_mark += 25
         return current_mark
 
     @property
