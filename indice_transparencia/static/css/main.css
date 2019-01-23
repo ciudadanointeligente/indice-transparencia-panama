@@ -2,56 +2,67 @@ main {
   padding: 4rem;
 }
 
+.table td, .table th{
+  padding-left:50px;
+  padding-right:70px;
+}
 /*BOTONES*/
 
-.btn-yellow {
-  font-family:"Muli";
-  font-size:14px;
-  color: white;
-  border-color: #F9B903;
-  background-color:#F9B903;
-  padding-left:40px;
-  padding-right:40px;
-
-}
-
 .btn-primary {
-    color: #fff;
+    color:white;
     background-color: #eab300;
     border-color: #eab300;
+    margin-top: 15px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.btn-primary:hover {
+    background-color: #c0c6d1;
+    border-color: #c0c6d1;
     margin-top: 15px;
 }
 
 /*LINKS*/
 
-a {
-  color:#fff;
-  font-family:"Muli";
+.navbar {
+  padding-left:50px;
 }
 
-.form-control {
-   background-color: #e9ecef;
-   border: 1px solid #e9ecef;
-   border-radius: .20rem;
-   font-family:"Muli";
-   font-size:14px;
-   padding-left:10px;
-   padding-right:70px;
-   font-weight: 700;
+.nav-link {
+  color:#b3b3b3;
+  font-family:"Montserrat";
+  font-size:14px;
 }
 
+.nav-link:hover {
+  color:#eab300;
+  font-family:"Montserrat";
+  font-size:14px;
+}
+
+a{
+  color:#8892a2;
+  font-family:"Montserrat";
+  font-size:15px;
+  font-weight:600;
+
+}
+
+a:hover{
+  color:#eab300;
+  font-fmily:"Montserrat";
+  font-size:14px;
+  font-weight:600;
+
+}
 /*BG-HERO*/
 
 .container-fluid {
     width: 100%;
     padding-right: 0px;
     padding-left: 0px;
-    padding-top:60px;
-
-}
-
-.bg-dark{
-  background-color:#222;
+    padding-top:50px;
 }
 
 .bgimage {
@@ -66,11 +77,12 @@ a {
   position: relative;
   opacity: 1;
   display: block;
-  z-index: 2;"
+  z-index: 2;
 
 }
 .bgimage h5 {
   color:white;
+  font-family:"Montserrat";
   text-shadow:2px 2px #333;
   padding-left: 50px;
   padding-right:20px;
@@ -79,7 +91,19 @@ a {
 
 .bgimage p {
   color:white;
+  font-family:"Montserrat";
   padding-left: 50px;
   font-size: 20px;
   font-weight: 400;
+}
+
+.img-fluid{
+  border-radius:5px;
+}
+
+.table td, .table th {
+  padding-top:20px;
+  padding-bottom:20px;
+  font-family:"Montserrat";
+  color:#8892a2;
 }
