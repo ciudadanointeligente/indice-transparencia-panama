@@ -37,6 +37,7 @@ class PersonAdmin(admin.ModelAdmin):
                     'circuit'
                     )
     search_fields = ['name', 'party__name', 'circuit__name', 'circuit__province', 'circuit__district']
+    exclude = ('extra_education',)
 
     inlines = [
         EducationalRecordInline,
