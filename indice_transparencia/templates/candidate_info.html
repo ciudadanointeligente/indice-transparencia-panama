@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+
+{% load staticfiles %}
 {% load bootstrap4 %}
 
 
@@ -9,7 +11,7 @@
 <div class="row">
   <h5> {{person.name}} </h5>
   <div class='col-3'>
-    <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person.png" %}{% endif %}"  class="img-thumbnail">
+    <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}"  class="img-thumbnail">
   </div>
 </div>
 
