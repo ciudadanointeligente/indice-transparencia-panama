@@ -1,7 +1,14 @@
 language: python
 python:
-  - "3.5"
+- '3.5'
 install:
-  - "pip install -r requirements.txt"
+- pip install -r requirements.txt
 script:
-  - python manage.py test
+- python manage.py test
+notifications:
+  webhooks:
+    urls:
+    - http://172.104.219.254:9000/hooks/redeploy-webhook
+    on_success: always
+  slack:
+    secure: MqOIuperoTiOvAHmR0444uSMAKbeHL/Pki6yInmBvDTTC4Q9VmHleJ6lPkQ+T96wxbeKggoZqKJrNcz1dQqc9XoQd8BYihF4L/cLne6ttuuayERrj0KPH9YPqCUrWvq1EFf+JonftmYEK9zn/3qa0kTyQsSdXgEeULJhH+iaMWGBIqjhj3CO1mXojXLv0vheb+e9BelqiIHQzh1LQEbM6ThfMJFvvolTWEiqOwHFE8DH8bcyTaz4OdO+afobYxH1O6/GYfAnPL5i5gs7T8pIz6PU1VCgdq+V45lrr+BpkScQcm+9BxEWHJv6DvAbgYbjpKzmtzscSeO4zpiueisUdOIxeTx4wlySJpub5iIUVQhaeTFg05k3/Z5ERCtlTxtbDQMggU3ojanuo6B7GRR2DG1VxHUM652b8MF5R7DtQ3QjBD7HevL+pG+a4pcHF3qF1D1Eaa/DJYjep4TVElKRn4pvRmLw4FHJHcNB02c/wLhf6C/7xoUSofeJ/EMWLwxMYOVm6UuppacCb/3rmFLlRT0g59G5gL4CHRvml7Q7Cbu1P092e/7J/8kJbFv5m4nJESyGhwjqQE/3DArLRz4HUK6dt0V4HioUCBSlF2+jpHgNtYUo+LcdenMnQrq7yRSZmIXp/oblHp+AXJyuHH470qJBn1bLtcnPUX6FovXv6Ag=
