@@ -127,7 +127,7 @@ class RankingCalculation(TestCase):
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         assert p.mark == 5
-        p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
+        p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         assert p.mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
         # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
 
@@ -138,7 +138,7 @@ class RankingCalculation(TestCase):
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         assert p.mark == 5
-        p.work_plan_link = 'https://ellinkalprogramapuntocom.com'
+        p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         assert p.mark == 10
         ## Este es para el caso de que sea un incumbente, es decir que está llendo a la reelección.
 

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block container %}
 
 <section class="bgimage">
@@ -31,7 +31,7 @@
              <td>{{forloop.counter}}</td>
            <td><a href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
-                  <img src="{% if person.image %}{{ person.image.url }}{% else %} {% endif %}" class="img-fluid">
+                  <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
              </div>
               {{person.name }} </a></td>
            <td>{{ person.party }}</td>

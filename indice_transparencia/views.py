@@ -9,6 +9,7 @@ from indice_transparencia.forms import PersonForm
 from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
 from django import forms
+from django.conf import settings
 
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
@@ -74,5 +75,6 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['persons'] = Person.ranking.all()[:10]
+        context['debug'] = settings.DEBUG
         return context    
     
