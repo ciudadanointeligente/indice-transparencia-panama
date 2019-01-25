@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 from indice_transparencia.models import (Person, Contact, EducationalRecord,
                                          WorkRecord, JudiciaryProcessRecord)
 from indice_transparencia.forms import PersonForm
+from indice_transparencia.filters import PersonFilter
 from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
 from django import forms
@@ -60,14 +61,14 @@ class RankingListView(ListView):
     template_name = 'ranking.html'
     context_object_name = "persons"
     
-    def get_queryset(self):
-        qs = Person.ranking.all()
-        return qs
+    # def get_queryset(self):
+    #     qs = Person.ranking.all()
+    #     return qs
     
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['persons'] = Person.ranking.all()
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset())
+        return context
     
 class IndexView(TemplateView):
     template_name = 'index.html'

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'indice_transparencia',
     'analytical',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
