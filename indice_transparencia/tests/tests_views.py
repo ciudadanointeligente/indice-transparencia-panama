@@ -116,6 +116,12 @@ class PersonUpdateView(TestCase):
         assert p.educational_records.count() == 2
         assert p.work_records.count() == 1
         assert p.judiciary_records.count() == 1
+        
+        assert p.position_in_ranking is not None
+        assert p.ranking_mark is not None
+
+        assert p.ranking_mark
+        assert p.position_in_ranking
 
 class RankingListViweTestCase(TestCase):
     def test_get_the_list(self):

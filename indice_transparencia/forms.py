@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord,
+                                         Benefit, Contact)
 from django.core.exceptions import ValidationError
 
 class PersonForm(ModelForm):
@@ -27,7 +28,6 @@ class PersonForm(ModelForm):
         if len(self.cleaned_data['topics']) > 3:
             raise forms.ValidationError({'topics':'No se puede tener más de 3 temas'})
         return cleaned_data
-
 
 
 class EducationalRecordForm(ModelForm):

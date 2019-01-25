@@ -1,7 +1,8 @@
 from django.contrib import admin
 from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          WorkRecord, EducationalRecord, Benefit,
-                                         Contact, Circuit, Topic)
+                                         Contact, Circuit, Topic,
+                                         update_mark_and_position_in_ranking)
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -45,6 +46,14 @@ class PersonAdmin(admin.ModelAdmin):
         JudiciaryProcessRecordInline,
 
     ]
+    def save_model(self, request, obj, form, change):
+        '''
+        Jordito querido mi corazón
+        acá se recalcula el ranking y la mark cuando un voluntario crea la wea
+        '''
+        super().save_model(request, obj, form, change)
+        update_mark_and_position_in_ranking(obj)
+
 admin.site.register(Person, PersonAdmin)
 
 class CircuitAdmin(admin.ModelAdmin):
