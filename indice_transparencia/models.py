@@ -104,6 +104,7 @@ class Person(models.Model):
     has_changed_party = models.BooleanField(default=False, verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
     previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado", blank=True)    
     topics = models.ManyToManyField(Topic, related_name="person_set", blank=True, verbose_name="Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024).")
+    other_topic = models.CharField(max_length=255, verbose_name=u"Otro tema prioritario", blank=True, null=True)
     
     #formación académica
     declared_intention_to_transparent_education = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su formación/educación?", blank=True)
