@@ -241,10 +241,7 @@ class Person(models.Model):
 
     def update_mark(self):
         self.ranking_mark = self.get_mark()
-
-    def save(self, *args, **kwargs):
-        self.update_mark()
-        super(Person, self).save(*args, **kwargs)
+        self.save()
         
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})
@@ -313,5 +310,8 @@ def update_positions_in_ranking():
         counter += 1
 
 
+def update_mark_and_position_in_ranking(person):
+    person.update_mark()
+    update_positions_in_ranking()
 
 
