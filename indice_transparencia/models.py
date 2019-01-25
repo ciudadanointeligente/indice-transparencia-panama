@@ -196,6 +196,7 @@ class Person(models.Model):
     laws_worked_on = models.IntegerField(verbose_name="Indique el número de leyes que ud. ha sancionado en el último período legislativo", null=True, blank=True)
 
     ranking_mark = models.IntegerField(null=True, blank=True)
+    position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
                                   
 
 
@@ -300,5 +301,17 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name = "Contacto"
+
+
+
+def update_positions_in_ranking():
+    ## Aquí hago la wea J!
+    counter = 1
+    for p in Person.objects.all().order_by('-ranking_mark'):
+        p.position_in_ranking = counter
+        p.save()
+        counter += 1
+
+
 
 

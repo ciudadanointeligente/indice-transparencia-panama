@@ -21,10 +21,6 @@ class PersonForm(ModelForm):
         widgets = {
             'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
         }
-        
-    # def clean_topics(self):
-    #     if self.cleaned_data['topics'].count() > 3:
-    #         raise ValidationError("Maximo 3 temas.")
 
     def clean(self):
         cleaned_data = super(PersonForm, self).clean()

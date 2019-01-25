@@ -1,7 +1,8 @@
 from django.test import TestCase
 from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          WorkRecord, EducationalRecord, Benefit,
-                                         Contact, Circuit, Topic)
+                                         Contact, Circuit, Topic,
+                                         update_positions_in_ranking)
 from django.core import mail
 from django.urls import reverse
 import datetime
@@ -171,3 +172,28 @@ class RankingCalculation(TestCase):
         assert personas[0] == p2
         assert personas[1] == p1
         assert personas[2] == pdo
+
+    def test_update_position_in_ranking(self):
+        ### CREANDO DATOS
+        pdo = Person.objects.create(name=u'ultima')
+        p1 = Person.objects.create(name=u'penultima')
+        # Le creo un educational record que suma 2.5 al p1
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p1)
+        p2 = Person.objects.create(name=u'Primera')
+        # p2 tiene dos tipos de recors que hace que sumen 5 por lo tanto aparecerá más arriba que el resto
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p2)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p2)
+        # deberiamos tener algo que devuelva el ranking
+        p1.save()
+        p2.save()
+        pdo.save()
+
+        ## Ejecuto la funcion
+        update_positions_in_ranking()
+
+        pdo.refresh_from_db()
+        p1.refresh_from_db()
+        p2.refresh_from_db()
+        assert p2.position_in_ranking == 1
+        assert p1.position_in_ranking == 2
+        assert pdo.position_in_ranking == 3
