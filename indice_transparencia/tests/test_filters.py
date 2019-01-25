@@ -14,7 +14,6 @@ class PersonFilterTestCase(TestCase):
     def test_filter_with_party(self):
         data = {'party': self.party_1.id}
         f = PersonFilter(data=data)
-        print(f.qs)
         self.assertIn(self.person_1, f.qs)
         self.assertNotIn(self.person_2, f.qs)
         self.assertNotIn(self.person_3, f.qs)

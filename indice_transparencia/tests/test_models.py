@@ -134,6 +134,12 @@ class RankingCalculation(TestCase):
         assert p.ranking_mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
         # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
 
+    def test_person_has_a_update_mark_method(self):
+        p = Person.objects.create(name=u'Fiera')
+        ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.update_mark()
+        assert p.ranking_mark == 2.5
+
     def test_it_calculates_a_mark_currently_deputy(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=True) ## <======== incumbente por que is_deputy=True
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)

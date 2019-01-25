@@ -204,50 +204,46 @@ class Person(models.Model):
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.
 
-    # def get_mark_non_deputy(self):
-    #     current_mark = 0
-    #     if self.political_proposal_link or self.political_proposal_doc:
-    #         current_mark += 10
-    #     if self.declared_intention_to_transparent_judiciary_records:
-    #         current_mark += 35
-    #     if self.patrimony_link or self.patrimony_doc:
-    #         current_mark += 25
-    #     if self.interests_link or self.interests_doc:
-    #         current_mark += 25
-    #     return current_mark
+    def get_mark(self):
+        final_mark = 0
+        if self.educational_records.exists():
+            final_mark += 2.5
+        if self.work_records.exists():
+            final_mark += 2.5
+        if self.is_deputy:
+            if self.political_proposal_link or self.political_proposal_doc:
+                final_mark += 5
+            if self.benefits_link or self.benefits_doc:
+                final_mark += 10
+            if self.eth_001_link or self.eth_001_doc:
+                final_mark += 2.5
+            if self.eth_002_link or self.eth_002_doc:
+                final_mark += 2.5
+            if self.eth_080_link or self.eth_080_doc:
+                final_mark += 2.5
+            if self.eth_172_link or self.eth_172_doc:
+                final_mark += 2.5
+            if self.patrimony_link or self.patrimony_doc:
+                final_mark += 25
+            if self.interests_link or self.interests_doc:
+                final_mark += 25
+        else:
+            if self.political_proposal_link or self.political_proposal_doc:
+                final_mark += 10
+            if self.declared_intention_to_transparent_judiciary_records:
+                final_mark += 35
+            if self.patrimony_link or self.patrimony_doc:
+                final_mark += 25
+            if self.interests_link or self.interests_doc:
+                final_mark += 25
+        return final_mark
 
-    # def get_mark_deputy(self):
-    #     current_mark = 0
-    #     if self.political_proposal_link or self.political_proposal_doc:
-    #         current_mark += 5
-    #     if self.benefits_link or self.benefits_doc:
-    #         current_mark += 10
-    #     if self.eth_001_link or self.eth_001_doc:
-    #         current_mark += 2.5
-    #     if self.eth_002_link or self.eth_002_doc:
-    #         current_mark += 2.5
-    #     if self.eth_080_link or self.eth_080_doc:
-    #         current_mark += 2.5
-    #     if self.eth_172_link or self.eth_172_doc:
-    #         current_mark += 2.5
-    #     if self.patrimony_link or self.patrimony_doc:
-    #         current_mark += 25
-    #     if self.interests_link or self.interests_doc:
-    #         current_mark += 25
-    #     return current_mark
+    def update_mark(self):
+        self.ranking_mark = self.get_mark()
 
-    # # @property
-    # def mark(self):
-    #     final_mark = 0
-    #     if self.educational_records.exists():
-    #         final_mark += 2.5
-    #     if self.work_records.exists():
-    #         final_mark += 2.5
-    #     if self.is_deputy:
-    #         final_mark += self.get_mark_deputy()
-    #     else:
-    #         final_mark += self.get_mark_non_deputy()
-    #     return final_mark
+    def save(self, *args, **kwargs):
+        self.update_mark()
+        super(Person, self).save(*args, **kwargs)
         
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})
@@ -262,41 +258,6 @@ class Person(models.Model):
 def topics_changed(sender, **kwargs):
     if kwargs['instance'].topics.count() > 3:
         raise ValidationError({'topics': "You can't assign more than three topics"})
-
-@receiver(pre_save, sender = Person)
-def set_mark(sender, instance, *args, **kwargs):
-    final_mark = 0
-    if instance.educational_records.exists():
-        final_mark += 2.5
-    if instance.work_records.exists():
-        final_mark += 2.5
-    if instance.is_deputy:
-        if instance.political_proposal_link or instance.political_proposal_doc:
-            final_mark += 5
-        if instance.benefits_link or instance.benefits_doc:
-            final_mark += 10
-        if instance.eth_001_link or instance.eth_001_doc:
-            final_mark += 2.5
-        if instance.eth_002_link or instance.eth_002_doc:
-            final_mark += 2.5
-        if instance.eth_080_link or instance.eth_080_doc:
-            final_mark += 2.5
-        if instance.eth_172_link or instance.eth_172_doc:
-            final_mark += 2.5
-        if instance.patrimony_link or instance.patrimony_doc:
-            final_mark += 25
-        if instance.interests_link or instance.interests_doc:
-            final_mark += 25
-    else:
-        if instance.political_proposal_link or instance.political_proposal_doc:
-            final_mark += 10
-        if instance.declared_intention_to_transparent_judiciary_records:
-            final_mark += 35
-        if instance.patrimony_link or instance.patrimony_doc:
-            final_mark += 25
-        if instance.interests_link or instance.interests_doc:
-            final_mark += 25
-    instance.ranking_mark = final_mark
 
 m2m_changed.connect(topics_changed, sender=Person.topics.through)
 
