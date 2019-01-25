@@ -123,23 +123,29 @@ class RankingCalculation(TestCase):
         ## te quiero.
         p = Person.objects.create(name=u'Fiera')
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
-        assert p.mark == 2.5
+        p.save()
+        assert p.ranking_mark == 2.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
-        assert p.mark == 5
+        p.save()
+        assert p.ranking_mark == 5
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
-        assert p.mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
+        p.save()
+        assert p.ranking_mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
         # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
 
     def test_it_calculates_a_mark_currently_deputy(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=True) ## <======== incumbente por que is_deputy=True
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
-        assert p.mark == 2.5
+        p.save()
+        assert p.ranking_mark == 2.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
-        assert p.mark == 5
+        p.save()
+        assert p.ranking_mark == 5
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
-        assert p.mark == 10
+        p.save()
+        assert p.ranking_mark == 10
         ## Este es para el caso de que sea un incumbente, es decir que está llendo a la reelección.
 
     def test_ranking(self):
@@ -152,6 +158,9 @@ class RankingCalculation(TestCase):
         EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p2)
         WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p2)
         # deberiamos tener algo que devuelva el ranking
+        p1.save()
+        p2.save()
+        pdo.save()
         personas = Person.ranking.all()
         assert personas[0] == p2
         assert personas[1] == p1
