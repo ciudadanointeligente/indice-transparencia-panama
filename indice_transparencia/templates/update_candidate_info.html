@@ -78,6 +78,7 @@
               {% bootstrap_field form.has_changed_party %}
               {% bootstrap_field form.previous_parties %}
               {% bootstrap_field form.topics %}
+              {% bootstrap_field form.other_topic %}
               {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
               
           </section>
@@ -98,7 +99,7 @@
           <h5 id="political_proposal_section">Propuesta Política</h5>
           <section>
             {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
-            {% bootstrap_field form.has_political_proposal %}
+            {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
             {% bootstrap_field form.political_proposal_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
           </section><hr>

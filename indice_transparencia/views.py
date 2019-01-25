@@ -4,7 +4,8 @@ from extra_views import CreateWithInlinesView, UpdateWithInlinesView, InlineForm
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from indice_transparencia.models import (Person, Contact, EducationalRecord,
-                                         WorkRecord, JudiciaryProcessRecord)
+                                         WorkRecord, JudiciaryProcessRecord,
+                                         update_mark_and_position_in_ranking)
 from indice_transparencia.forms import PersonForm
 from indice_transparencia.filters import PersonFilter
 from django.template.response import TemplateResponse
@@ -42,9 +43,14 @@ class PersonUpdateView(UpdateWithInlinesView):
         self.person = Person.objects.get(contact__identifier=self.identifier)
         return self.person
 
-    #def form_valid(self, form):
-    #    form.save()
-    #    return TemplateResponse(self.request, 'thanks_for_updating_info.html', {'person': self.person})
+    def forms_valid(self, form, inlines):
+        '''
+        Jordito querido mi corazón
+        acá se recalcula el ranking y la mark cuando un candidato responde el formulario
+        '''
+        response = super(PersonUpdateView, self).forms_valid(form, inlines)
+        update_mark_and_position_in_ranking(self.object)
+        return response
 
     def get_context_data(self, *args, **kwargs):
         context = super(PersonUpdateView, self).get_context_data(*args, **kwargs)

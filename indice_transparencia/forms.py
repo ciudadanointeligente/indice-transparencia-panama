@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
-from indice_transparencia.models import Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord, Benefit, Contact
+from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord,
+                                         Benefit, Contact)
 from django.core.exceptions import ValidationError
 
 class PersonForm(ModelForm):
@@ -17,21 +18,16 @@ class PersonForm(ModelForm):
                    'benefits','benefits_link','benefits_doc',
                 #   'intention_to_transparent_work_plan','work_plan_link', 'work_plan_doc',
                    'eth_001_link','eth_001_doc','eth_002_link','eth_002_doc','eth_080_link','eth_080_doc','eth_172_link','eth_172_doc','attendance',
-                   'laws_worked_on','topics']
+                   'laws_worked_on','topics', 'other_topic']
         widgets = {
             'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
         }
-        
-    # def clean_topics(self):
-    #     if self.cleaned_data['topics'].count() > 3:
-    #         raise ValidationError("Maximo 3 temas.")
 
     def clean(self):
         cleaned_data = super(PersonForm, self).clean()
         if len(self.cleaned_data['topics']) > 3:
             raise forms.ValidationError({'topics':'No se puede tener más de 3 temas'})
         return cleaned_data
-
 
 
 class EducationalRecordForm(ModelForm):
