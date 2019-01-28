@@ -52,13 +52,7 @@
 
           <h5 id="datos_personales_section">Datos Personales</h5>
 
-              {% if person.image %}
-                <div class="row">
-                  <div class='col-3'>
-                    <img src="{{ person.image.url }}"  class="img-thumbnail">
-                  </div>
-                </div>
-              {% endif %}
+          
               <h6 id="eth_section">Foto para su perfil</h6>
                 {% bootstrap_field form.image form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
                 {% bootstrap_field form.birth_date placeholder='Ej: 23/01/1950'%}
