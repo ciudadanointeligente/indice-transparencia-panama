@@ -59,6 +59,7 @@
                   </div>
                 </div>
               {% endif %}
+              <h6 id="eth_section">Foto para su perfil</h6>
                 {% bootstrap_field form.image form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
                 {% bootstrap_field form.birth_date placeholder='Ej: 23/01/1950'%}
                 {% bootstrap_field form.web placeholder='Ej: www.sitioweb.com'%}
@@ -80,7 +81,7 @@
               {% bootstrap_field form.topics %}
               {% bootstrap_field form.other_topic %}
               {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
-              
+
           </section>
           <hr>
           <!-- FIN DEL PERFIL POLÍTICO -->
@@ -101,6 +102,7 @@
             {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
+            <h6 id="eth_section">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</h6>
             {% bootstrap_field form.political_proposal_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
           </section><hr>
           <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
@@ -108,9 +110,12 @@
             {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.existing_patrimony_declaration %}
             {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
+            <h6 id="eth_section">En el siguiente <a href="http://bit.ly/indicepat" target="_blank">link</a> puede descargar una plantilla para crear su declaración y luego cargarla acá</h6>
+
             {% bootstrap_field form.patrimony_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.existing_interests_declaration %}
             {% bootstrap_field form.interests_link placeholder='Especifique link declaración de intereses'%}
+              <h6 id="eth_section">Si no tiene su declaración de intereses, en este <a href="http://bit.ly/indiceint" target="_blank">link</a> puede descargar un formato para crearla y luego cargarla acá</h6>
             {% bootstrap_field form.interests_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
           </section>
           <hr>
@@ -131,6 +136,7 @@
             {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
             {% bootstrap_field form.benefits %}
             {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
+              <h6 id="eth_section">Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación</h6>
             {% bootstrap_field form.benefits_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
 
             {% comment %}
@@ -140,13 +146,17 @@
             {% endcomment %}
 
             {% bootstrap_field form.eth_001_link placeholder='Especifique link planilla 001'%}
+            <h6 id="eth_section">Si su planilla 001 no se encuentra publicada online, puede subir el archivo a continuación</h6>
             {% bootstrap_field form.eth_001_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_002_link placeholder='Especifique link planilla 002' %}
+            <h6 id="eth_section">Si su planilla 002 no se encuentra publicada online, puede subir el archivo a continuación</h6>
             {% bootstrap_field form.eth_002_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_080_link placeholder='Especifique link planilla 080'%}
+            <h6 id="eth_section">Si su planilla 080 no se encuentra publicada online, puede subir el archivo a continuación</h6>
             {% bootstrap_field form.eth_080_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
             {% bootstrap_field form.eth_172_link placeholder='Especifique link planilla 172'%}
-            {% bootstrap_field form.eth_172_doc form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
+            <h6 id="eth_section">Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación</h6>
+            {% bootstrap_field form.eth_172_doc show_label=True form_group_class='custom-file' label_class='custom-file-label' %}
             {% bootstrap_field form.attendance placeholder='Especifique % de asistencia a la Asamblea Nacional'%}
             {% bootstrap_field form.laws_worked_on placeholder='Especifique número de leyes que ud. ha sancionado'%}
           </section>
@@ -175,11 +185,11 @@
         yearRange: "1900:2100",
       });
     });
-    
-  $(function(){ 
-    $('.custom-switch .form-check-input').addClass('custom-control-input'); 
-    $('.custom-switch .form-check-input').addClass('btn-toggle'); 
-    $('.custom-switch .form-check-label').addClass('custom-control-label'); 
+
+  $(function(){
+    $('.custom-switch .form-check-input').addClass('custom-control-input');
+    $('.custom-switch .form-check-input').addClass('btn-toggle');
+    $('.custom-switch .form-check-label').addClass('custom-control-label');
     $(":file").addClass('custom-file-input')
   });
   </script>
