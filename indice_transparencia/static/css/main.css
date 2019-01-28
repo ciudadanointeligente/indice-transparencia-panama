@@ -6,6 +6,7 @@ main {
   padding-left:50px;
   padding-right:70px;
 }
+
 /*BOTONES*/
 
 .btn-primary {
@@ -45,18 +46,12 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-
-
-
-
 
 
 /*LINKS*/
@@ -82,8 +77,6 @@ a{
   font-family:"Montserrat";
   font-size:16px;
   font-weight:600;
-
-
 }
 
 a:hover{
@@ -91,7 +84,6 @@ a:hover{
   font-fmily:"Montserrat";
   font-size:16px;
   font-weight:600;
-
 }
 
 /*BG-HERO*/
@@ -116,8 +108,8 @@ a:hover{
   opacity: 1;
   display: block;
   z-index: 2;
-
 }
+
 .bgimage h5 {
   color:white;
   font-family:"Montserrat";
@@ -135,8 +127,10 @@ a:hover{
   font-weight: 400;
 }
 
-.img-fluid{
-  border-radius:5px;
+.img-fluid {
+   height: 100px;
+   border-radius:50px;
+   max-width: 100px;
 }
 
 .table thead th {
