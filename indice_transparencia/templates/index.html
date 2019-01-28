@@ -28,7 +28,7 @@
           <tbody>
         {% for person in persons %}
            <tr>
-             <td>{{forloop.counter}}</td>
+             <td> {{ person.position_in_ranking }} </td>
            <td><a href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
                   <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
@@ -36,7 +36,7 @@
               {{person.name }} </a></td>
            <td>{{ person.party }}</td>
            <td>{{ person.circuit }}</td>
-           <td>{{ person.mark }}</td>
+           <td>{{ person.ranking_mark }}</td>
            </tr>
         {% endfor %}
           </tbody>
