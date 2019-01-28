@@ -1,4 +1,7 @@
-.card {
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+  .card {
     margin: 20px 0 20px;
 }
 
@@ -10,11 +13,13 @@
   position: relative;
 }
 
+
 /*Bienvenido*/
 h1 {
   text-align:center;
-  font-family: "Montserrat";
-  font-weight:200;
+    font-family: "Montserrat";
+    font-size: 24px;
+  font-weight:500;
   color:#feb61e;
 }
 
@@ -41,15 +46,23 @@ p{
   margin-bottom:20px;
 }
 
+h6 {
+  margin-left: 0px;
+  font-family: "Montserrat";
+  font-weight:800;
+  font-size:16px;
+
+}
+
 /*Titulos secciones*/
 
 h5 {
   font-family: "Montserrat";
-  font-size:28px;
+  font-size:24px;
   font-weight:1000;
   margin-top:30px;
   margin-bottom:30px;
-  color:#626c7d;
+  color:#feb61e;
 }
 
 /*Etiquetas de campos*/
@@ -57,8 +70,8 @@ h5 {
 label{
   margin-left: 0px;
   font-family: "Montserrat";
-  font-weight:500;
-  color:#626c7d;
+  font-weight:800;
+
 }
 
 .custom-file-label{
