@@ -32,6 +32,7 @@ class JudiciaryRecordInline(InlineFormSetFactory):
     # formset_kwargs = {'widgets' : {'date': forms.DateInput(attrs={'class':'datepicker'})}}
 
 
+
 class PersonUpdateView(UpdateWithInlinesView):
     model = Person
     form_class = PersonForm
@@ -57,12 +58,20 @@ class PersonUpdateView(UpdateWithInlinesView):
         context['contact'] = Contact.objects.get(identifier=self.identifier)
         return context
 
-class CandidateProfileView(DetailView):
+
+class UnderDevelopmentMixin(object):
+    def get_template_names(self):
+        if settings.SHOW_UNDER_DEVELOPMENT_TEMPLATE:
+            return ['working.html']
+        return super().get_template_names()
+
+
+class CandidateProfileView(UnderDevelopmentMixin, DetailView):
     model = Person
     template_name = "candidate_info.html"
 
 
-class RankingListView(ListView):
+class RankingListView(UnderDevelopmentMixin, ListView):
     model = Person
     template_name = 'ranking.html'
     context_object_name = "persons"
@@ -76,7 +85,7 @@ class RankingListView(ListView):
         context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset())
         return context
     
-class IndexView(TemplateView):
+class IndexView(UnderDevelopmentMixin, TemplateView):
     template_name = 'index.html'
     
     def get_context_data(self, **kwargs):
