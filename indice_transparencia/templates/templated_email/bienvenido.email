@@ -1,5 +1,5 @@
 {% extends 'templated_email/base.email' %}
-{% block subject %}Bienvenido al índice de transparencia Panamá{% endblock %}
+{% block subject %}Índice de Transparencia de Candidatos a Diputados{% endblock %}
 
 
 {% block message %}
@@ -9,8 +9,12 @@
       <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
         <tr>
           <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hola {{person.name}},</p>
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Esta es una invitación para que ingreses tus datos a nuestra plataforma.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Estimado Candidato(a) a Diputado(a), {{person.name}},</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">La Fundación Espacio Cívico –una organización sin fines de lucro, panameña, sin afiliaciones político-partidistas e independiente, creada en el 2018— evalúa y publica los niveles de transparencia y rendición de cuentas de los políticos. Nuestro objetivo es proporcionar un marco de información objetiva que permita a la ciudadanía y a los medios monitorear y evaluar el desempeño de los responsables de la gestión pública.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">En marzo lanzaremos nuestra primera herramienta digital, el Índice de Transparencia de Candidatos a Diputados. Esta herramienta dará a conocer el perfil de cada uno de los candidatos a diputados con información sobre su trayectoria política, profesional y otros datos relevantes, en una plataforma de formato estándar que facilitará la rápida visualización y comparación, para que el electorado pueda ejercer un voto consciente e informado.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">El proyecto es de carácter investigativo-social, además de ser neutral en cuanto a preferencias partidistas o ideológicas. Para garantizar el uso de altos estándares y la objetividad del proyecto, mantenemos un convenio con la Fundación Ciudadanía Inteligente (organización latinoamericana sin fines de lucro, también apartidista y con sede en Chile), que apoya el uso innovador de la tecnología para promover la transparencia y la participación ciudadana.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Esperamos contar con su participación completando sus datos a través del <a href="https://{{site.domain}}{{contact.update_url}}">siguiente link</a>. Para asegurar que su información sea incorporada en la plataforma, le solicitamos completar el formulario a más tardar el 15 de febrero 2019. Una vez completado el formulario, le agradecemos notificarnos vía email a <a href="mailto:denisse@espaciocivico.org">denisse@espaciocivico.org</a>. En caso de que requiera ayuda para llenar el formulario, puede llamarnos al <a href="tel:+507 6510-1886">+507 6510-1886</a>.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Aprovechamos la oportunidad para destacar que este es un esfuerzo colaborativo y la experticia que nos han aportado el Capítulo Panameño de Transparencia Internacional, la Comisión de Justicia y Paz, Praxis, APEDE y el Tribunal Electoral, entre otros. </p>
             <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
               <tbody>
                 <tr>
@@ -18,7 +22,7 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
                       <tbody>
                         <tr>
-                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;"> <a href="https://{{site.domain}}{{contact.update_url}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">haz click en este aquí.</a> </td>
+                          <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;"> <a href="https://{{site.domain}}{{contact.update_url}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">Completa tu información.</a> </td>
                         </tr>
                       </tbody>
                     </table>
@@ -26,7 +30,8 @@
                 </tr>
               </tbody>
             </table>
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Saludos!</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Atentamente,</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Fundación Espacio Cívico</p>
           </td>
         </tr>
       </table>

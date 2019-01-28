@@ -277,7 +277,7 @@ class Contact(models.Model):
         if creating:
             site = Site.objects.get_current()
             send_templated_mail(
-                                template_name='bienvenido',
+                                template_name=settings.TEMPLATE_TO_USE_WHEN_SENDING_EMAIL,
                                 from_email=settings.DEFAULT_FROM_EMAIL,
                                 recipient_list=[self.email],
                                 context={
