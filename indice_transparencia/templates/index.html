@@ -19,7 +19,7 @@
           <table class="table table-inverse">
           <thead>
             <tr>
-              <th></th>
+              <th>#</th>
               <th>Nombre</th>
               <th>Partido</th>
               <th>Circuito</th>
@@ -30,7 +30,7 @@
         {% for person in persons %}
            <tr>
              <td>{{forloop.counter}}</td>
-           <td><a href="{{ person.get_absolute_url }}">
+           <td><a id="link-persona" href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
                   <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
              </div>
