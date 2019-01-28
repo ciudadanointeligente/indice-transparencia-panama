@@ -81,6 +81,8 @@ label{
 
 .custom-file{
   padding-bottom:70px;
+  margin-top: 10px;
+
 }
 
 /*diagramacion*/
@@ -126,6 +128,11 @@ label{
   padding-right:20px;
   font-weight:500;
   margin:0;
+}
+
+.btn-primary{
+border-radius:0.3rem;
+margin-top:0px;
 }
 
 .btn-primary:hover{

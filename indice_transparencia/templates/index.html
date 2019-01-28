@@ -9,31 +9,33 @@
         <p>Índice de Transparencia de parlamentarios</p>
         <h5>La participación ciudadana maximiza la rendición de cuentas de nuestros políticos</h5>
 
-        <p><a href="#" class="btn btn-primary btn-large">Botoncito CTA</a></p>
+        <p><a href="#" class="btn btn-primary btn-large">Ver índice</a></p>
       </div>
     </div>
   </div>
 </section>
 <section id=tabla-index>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <table class="table table-inverse">
           <thead>
             <tr>
-              <th></th>
-              <th>Nombre</th>
-              <th>Partido</th>
-              <th>Circuito</th>
-              <th>Nota</th>
+              <th id="numero">#</th>
+              <th id="foto"></th>
+              <th id="nombre">Nombre</th>
+              <th id="partido">Partido</th>
+              <th id="circuito">Circuito</th>
+              <th id="nota">Nota</th>
             </tr>
           </thead>
           <tbody>
         {% for person in persons %}
            <tr>
-             <td> {{ person.position_in_ranking }} </td>
-           <td><a href="{{ person.get_absolute_url }}">
+             <td>{{person.position_in_ranking}}</td>
+           <td><a id="link-persona" href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
                   <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
-             </div>
-              {{person.name }} </a></td>
+             </div></a></td>
+            <td><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
            <td>{{ person.party }}</td>
            <td>{{ person.circuit }}</td>
            <td>{{ person.ranking_mark }}</td>
@@ -41,5 +43,6 @@
         {% endfor %}
           </tbody>
         </table>
+        <div>
 </section>
 {% endblock container %}

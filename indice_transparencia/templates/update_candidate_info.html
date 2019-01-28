@@ -52,13 +52,7 @@
 
           <h5 id="datos_personales_section">Datos Personales</h5>
 
-              {% if person.image %}
-                <div class="row">
-                  <div class='col-3'>
-                    <img src="{{ person.image.url }}"  class="img-thumbnail">
-                  </div>
-                </div>
-              {% endif %}
+
 
               <h6 id="eth_section">Foto para su perfil</h6>
                 {% bootstrap_field form.image form_group_class='custom-file' show_label=True label_class='custom-file-label' %}
@@ -75,13 +69,14 @@
           <section>
 
           <h5 id="perfil_politico_section">Perfil Político</h5>
+          {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
               {% bootstrap_field form.circuit %}
               {% bootstrap_field form.party %}
               {% bootstrap_field form.has_changed_party %}
               {% bootstrap_field form.previous_parties %}
               {% bootstrap_field form.topics %}
               {% bootstrap_field form.other_topic %}
-              {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
+
 
           </section>
           <hr>

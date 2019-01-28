@@ -6,6 +6,7 @@ main {
   padding-left:50px;
   padding-right:70px;
 }
+
 /*BOTONES*/
 
 .btn-primary {
@@ -45,18 +46,12 @@ main {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-
-
-
-
 
 
 /*LINKS*/
@@ -78,20 +73,19 @@ main {
 }
 
 a{
-  color:#8892a2;
+  color: #eab300;
   font-family:"Montserrat";
-  font-size:15px;
+  font-size:16px;
   font-weight:600;
-
 }
 
 a:hover{
   color:#eab300;
   font-fmily:"Montserrat";
-  font-size:14px;
+  font-size:16px;
   font-weight:600;
-
 }
+
 /*BG-HERO*/
 
 .container-fluid {
@@ -114,8 +108,8 @@ a:hover{
   opacity: 1;
   display: block;
   z-index: 2;
-
 }
+
 .bgimage h5 {
   color:white;
   font-family:"Montserrat";
@@ -133,16 +127,27 @@ a:hover{
   font-weight: 400;
 }
 
-.img-fluid{
-  border-radius:5px;
+.img-fluid {
+   height: 90px;
+   border-radius:50px;
+   width:90px;
+   max-width: 90px;
+}
+
+.table thead th {
+border-bottom: 2px solid #eab300;
 }
 
 .table td, .table th {
-  padding-top:20px;
-  padding-bottom:20px;
-  font-family:"Montserrat";
-  color:#8892a2;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 20px;
+padding-right: 100px;
+background-color:#fff;
+font-family: "Montserrat";
+color: #8892a2;
 }
+
 
 .custom-toggler.navbar-toggler {
     border-color: #eab300;
@@ -152,10 +157,57 @@ a:hover{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+#numero {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#nombre {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#partido {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#circuito {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#nota{
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+
 @media screen and (max-width: 1150px){
 
 .bgimage h5 {
 font-size: 30px;
+}
+
+.table td, .table th {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#link-persona{
+    font-size:12px;
+}
+
+.img-fluid {
+ height: 40px;
+ border-radius:50px;
+ width:40px;
+ max-width: 40px;
 }
 }
 
@@ -167,5 +219,52 @@ font-size: 25px;
 
 .bgimage p {
 font-size: 12px;
+}
+
+.table td, .table th {
+    padding-left: 10px;
+    padding-right: 10px;
+   font-size:10px;
+}
+
+#link-persona{
+ font-size:10px;
+}
+
+.img-fluid {
+height: 40px;
+border-radius:50px;
+width:40px;
+max-width: 40px;
+}
+
+#numero {
+  font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#nombre {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#partido {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#circuito {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#nota{
+   font-size:14px;
+  color:#222;
+  font-weight:700;
 }
 }
