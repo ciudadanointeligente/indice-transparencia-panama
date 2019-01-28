@@ -238,6 +238,41 @@ background-color:#F9B903;
   margin-bottom:30px;
 }
 
+#id_educational_records-1-name{
+  margin-bottom:0px;
+}
+
+#id_educational_records-1-institution{
+  margin-bottom:0px;
+}
+
+#id_educational_records-1-start{
+  margin-bottom:0px;
+}
+
+#id_educational_records-1-end{
+   margin-bottom:0px;
+}
+
+#id_work_records-1-institution{
+  margin-bottom:0px;
+}
+
+#id_work_records-1-institution{
+  margin-bottom:0px;
+}
+
+#id_work_records-1-start{
+  margin-bottom:0px;
+}
+#id_work_records-1-end{
+  margin-bottom:0px;
+}
+
+#id_work_records-1-name{
+   margin-bottom:0px;
+}
+
 @media screen and (max-width: 1080px)
 {
 .col-2 {
