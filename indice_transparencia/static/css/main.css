@@ -157,6 +157,37 @@ color: #8892a2;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+#numero {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#nombre {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#partido {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#circuito {
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+#nota{
+  font-size:21px;
+  color:#222;
+  font-weight:700;
+}
+
+
 @media screen and (max-width: 1150px){
 
 .bgimage h5 {
@@ -172,6 +203,12 @@ font-size: 30px;
     font-size:12px;
 }
 
+.img-fluid {
+ height: 40px;
+ border-radius:50px;
+ width:40px;
+ max-width: 40px;
+}
 }
 
 @media screen and (max-width: 600px){
@@ -192,5 +229,42 @@ font-size: 12px;
 
 #link-persona{
  font-size:10px;
+}
+
+.img-fluid {
+height: 40px;
+border-radius:50px;
+width:40px;
+max-width: 40px;
+}
+
+#numero {
+  font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#nombre {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#partido {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#circuito {
+   font-size:14px;
+  color:#222;
+  font-weight:700;
+}
+
+#nota{
+   font-size:14px;
+  color:#222;
+  font-weight:700;
 }
 }
