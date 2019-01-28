@@ -128,9 +128,10 @@ a:hover{
 }
 
 .img-fluid {
-   height: 100px;
+   height: 90px;
    border-radius:50px;
-   max-width: 100px;
+   width:90px;
+   max-width: 90px;
 }
 
 .table thead th {
