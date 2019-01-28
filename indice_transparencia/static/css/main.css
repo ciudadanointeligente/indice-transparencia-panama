@@ -139,13 +139,6 @@ a:hover{
   border-radius:5px;
 }
 
-.table td, .table th {
-  padding-top:20px;
-  padding-bottom:20px;
-  font-family:"Montserrat";
-  color:#8892a2;
-}
-
 .table thead th {
 border-bottom: 2px solid #eab300;
 }
@@ -153,10 +146,13 @@ border-bottom: 2px solid #eab300;
 .table td, .table th {
 padding-top: 20px;
 padding-bottom: 20px;
+padding-left: 20px;
+padding-right: 100px;
 background-color:#fff;
 font-family: "Montserrat";
 color: #8892a2;
 }
+
 
 .custom-toggler.navbar-toggler {
     border-color: #eab300;
@@ -171,6 +167,16 @@ color: #8892a2;
 .bgimage h5 {
 font-size: 30px;
 }
+
+.table td, .table th {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#link-persona{
+    font-size:10px;
+}
+
 }
 
 @media screen and (max-width: 600px){
@@ -181,5 +187,15 @@ font-size: 25px;
 
 .bgimage p {
 font-size: 12px;
+}
+
+.table td, .table th {
+    padding-left: 10px;
+    padding-right: 10px;
+   font-size:10px;
+}
+
+#link-persona{
+ font-size:10px;
 }
 }
