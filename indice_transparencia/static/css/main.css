@@ -78,20 +78,22 @@ main {
 }
 
 a{
-  color:#8892a2;
+  color: #eab300;
   font-family:"Montserrat";
-  font-size:15px;
+  font-size:16px;
   font-weight:600;
+
 
 }
 
 a:hover{
   color:#eab300;
   font-fmily:"Montserrat";
-  font-size:14px;
+  font-size:16px;
   font-weight:600;
 
 }
+
 /*BG-HERO*/
 
 .container-fluid {
@@ -142,6 +144,18 @@ a:hover{
   padding-bottom:20px;
   font-family:"Montserrat";
   color:#8892a2;
+}
+
+.table thead th {
+border-bottom: 2px solid #eab300;
+}
+
+.table td, .table th {
+padding-top: 20px;
+padding-bottom: 20px;
+background-color:#fff;
+font-family: "Montserrat";
+color: #8892a2;
 }
 
 .custom-toggler.navbar-toggler {
