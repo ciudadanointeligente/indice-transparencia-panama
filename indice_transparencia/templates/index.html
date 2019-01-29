@@ -14,6 +14,9 @@
     </div>
   </div>
 </section>
+
+<!-- tabla antigua
+
 <section id=tabla-index>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <table class="table table-inverse">
@@ -30,7 +33,7 @@
           <tbody>
         {% for person in persons %}
            <tr>
-             <td>{{person.position_in_ranking}}</td>
+             <td>{{forloop.counter}}</td>
            <td><a id="link-persona" href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
                   <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
@@ -38,11 +41,51 @@
             <td><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
            <td>{{ person.party }}</td>
            <td>{{ person.circuit }}</td>
-           <td>{{ person.ranking_mark }}</td>
+           <td>{{ person.mark }}</td>
            </tr>
         {% endfor %}
           </tbody>
         </table>
         <div>
 </section>
+
+tabla antigua -->
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100">
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th id="numero">#</th>
+              <th id="foto"></th>
+              <th id="nombre">Nombre</th>
+              <th id="partido">Partido</th>
+              <th id="circuito">Circuito</th>
+              <th id="nota">Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+        {% for person in persons %}
+           <tr>
+             <td>{{forloop.counter}}</td>
+           <td><a id="link-persona" href="{{ person.get_absolute_url }}">
+             <div class="col-md-1 px-0">
+                  <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+             </div></a></td>
+            <td><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
+           <td>{{ person.party }}</td>
+           <td>{{ person.circuit }}</td>
+           <td>{{ person.mark }}</td>
+           </tr>
+        {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock container %}
