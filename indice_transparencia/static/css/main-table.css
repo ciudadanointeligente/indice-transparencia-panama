@@ -112,7 +112,16 @@ iframe {
     padding-right: 100px;
 }
 
+#contador-ranking{
+color:#adb5bd;
+font-weight:800;
+font-size:16px;
+text-align:center;
+}
 
+#link-persona{
+  font-size:14px; 
+}
 
 
 
