@@ -119,6 +119,10 @@ a:hover{
   font-size: 40px;
 }
 
+.navbar-dark{
+background-color: #1d1f24;
+}
+
 .bgimage p {
   color:white;
   font-family:"Montserrat";
