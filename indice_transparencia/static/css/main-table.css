@@ -82,35 +82,41 @@ iframe {
 }
 
 #nombre {
-    font-size: 18px;
-    font-family:montserrat;
+    font-size: 14px;
+    font-family: montserrat;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 #partido {
-    font-size: 18px;
-    font-family:montserrat;
+    font-size: 14px;
+    font-family: montserrat;
     color: #fff;
-    font-weight: 700;
-   padding-right:100px;
+    font-weight: 500;
+    padding-right: 100px;
 }
 
 #circuito {
-    font-size: 18px;
-    font-family:montserrat;
+    font-size: 14px;
+    font-family: montserrat;
     color: #fff;
-    font-weight: 700;
-   padding-right:50px;
+    font-weight: 500;
+    padding-right: 50px;
 }
 
 #nota {
-    font-size: 18px;
-    font-family:montserrat;
+    font-size: 14px;
+    font-family: montserrat;
     color: #fff;
-    font-weight: 700;
-  padding-right:100px;
+    font-weight: 500;
+    padding-right: 100px;
 }
+
+
+
+
+
+
 
 
 
