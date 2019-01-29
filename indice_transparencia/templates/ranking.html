@@ -1,36 +1,60 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load bootstrap4 %}
 
 {% block container %}
 
 <section class="">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>Índice de Transparencia de parlamentarios</p>
-        
+        <div class="col-12">
+          <p>Índice de Transparencia de parlamentarios</p>
+        </div>
+        </div>
+         <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
+              pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado.
+              Esto hace que todos los labels se vean a la misma altura.
+              -->
+        <style type="text/css">
+          
+          .label_filter_ranking {
+                min-height: 57px;
+              }
+        </style>
         <form action="" method="get" class="filter_form">
-            <!--{{ filter.form.as_table }}-->
-            <div class="form-group col-sm-4 col-md-3">
-              es diputado ?
-              {{ filter.form.is_deputy }}
+          <div class="row">    
+            <div class="col-3">
+             
+              <div class="label_filter_ranking">
+              {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
+              </div>
+              {% bootstrap_field filter.form.is_deputy show_label=False %}
             </div>
-            <div class="form-group col-sm-4 col-md-3">
-              circuito ?
-              {{ filter.form.circuit }}
+            <div class="col-3">
+              <div class="label_filter_ranking">
+              {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
+              </div>
+              {% bootstrap_field filter.form.circuit  show_label=False  %}
             </div>
-            <div class="form-group col-sm-4 col-md-3">
-              partido ?
-              {{ filter.form.party }}
+            <div class="col-3">
+              <div class="label_filter_ranking">
+              {% bootstrap_label filter.form.party.label label_for='party' %}
+              </div>
+              {% bootstrap_field filter.form.party show_label=False  %}
             </div>
-            <div class="form-group col-sm-4 col-md-3">
-              ordenar 
-              {{ filter.form.ordering }}
+            <div class="col-3">
+              <div class="label_filter_ranking">
+              {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
+              </div>
+              {% bootstrap_field filter.form.ordering show_label=False  %}
+            </div>
             </div>
             <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
             <!--  <span class="glyphicon glyphicon-search"></span> Search-->
             <!--</button>-->
+            
         </form>
+        <div class="col-12">
         
         <table class="table table-inverse">
           <thead>
