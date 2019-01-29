@@ -113,20 +113,21 @@ a:hover{
   font-family:"Montserrat";
   text-shadow:2px 2px #333;
   padding-left: 50px;
-  padding-right:20px;
-  font-size: 40px;
+  padding-right:300px;
+  font-size: 28px;
+  line-height: 1.4;
 }
 
 .navbar-dark{
-background-color: #1d1f24;
+background-color: #1e262f;
 }
 
 .bgimage p {
-  color:white;
+  color:#eab300;
   font-family:"Montserrat";
   padding-left: 50px;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .img-fluid {
@@ -199,8 +200,10 @@ color: #8892a2;
 @media screen and (max-width: 1150px){
 
 .bgimage h5 {
-font-size: 30px;
+font-size: 25px;
+padding-right:270px;
 }
+
 
 .table td, .table th {
     padding-left: 20px;
@@ -219,11 +222,19 @@ font-size: 30px;
 }
 }
 
+@media screen and (max-width: 700px){
+  .bgimage h5 {
+  font-size: 22px;
+  padding-right:40px;
+  }
+}
+
 @media screen and (max-width: 600px){
 
-.bgimage h5 {
-font-size: 25px;
-}
+  .bgimage h5 {
+  font-size: 22px;
+  padding-right:40px;
+  }
 
 .bgimage p {
 font-size: 12px;
