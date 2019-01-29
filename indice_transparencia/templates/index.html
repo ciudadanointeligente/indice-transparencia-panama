@@ -69,7 +69,7 @@ tabla antigua -->
           <tbody>
         {% for person in persons %}
            <tr>
-             <td>{{forloop.counter}}</td>
+             <td id="contador-ranking">{{forloop.counter}}</td>
            <td><a id="link-persona" href="{{ person.get_absolute_url }}">
              <div class="col-md-1 px-0">
                   <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
