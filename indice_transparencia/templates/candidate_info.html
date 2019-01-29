@@ -10,16 +10,21 @@
 
 
 <div class="row">
-  <h5> {{person.name}} </h5>
-  <div class='col-3'>
-    <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}"  class="img-thumbnail">
+  <div class='col-12 text-center' >
+    <h2> {{person.name}} </h2>
   </div>
 </div>
 
-<div class="row">
-  <h4> partido: {{person.party}} </h4>
-  <div class='col-3'>
-    <img src="{% if person.party.image %}{{ person.party.image.url }}{% else %} no logo{% endif %}"  class="img-thumbnail">
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-6">
+      <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
   </div>
-</div>
+
 {% endblock container %}
