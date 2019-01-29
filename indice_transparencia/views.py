@@ -90,7 +90,7 @@ class IndexView(UnderDevelopmentMixin, TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['persons'] = Person.objects.order_by('position_in_ranking')
+        context['persons'] = Person.objects.order_by('position_in_ranking')[:10]
         context['debug'] = settings.DEBUG
         return context    
     
