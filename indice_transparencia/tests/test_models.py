@@ -171,6 +171,7 @@ class RankingCalculation(TestCase):
         p1.update_mark()
         p2.update_mark()
         pdo.update_mark()
+        update_positions_in_ranking()
         personas = Person.ranking.all()
         assert personas[0] == p2
         assert personas[1] == p1

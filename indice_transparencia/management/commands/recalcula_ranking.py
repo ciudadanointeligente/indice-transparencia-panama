@@ -7,7 +7,7 @@ class Command(BaseCommand):
     
     def handle(self, *args, **options):
         """ Do your work here """
-        self.stdout.write("Recalculando Ranking")
+        # self.stdout.write("Recalculando Ranking")
         for p in Person.objects.all():
             p.update_mark()
 
