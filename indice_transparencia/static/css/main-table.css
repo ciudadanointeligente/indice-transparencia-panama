@@ -305,22 +305,30 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "#";
+    content: "";
   }
   table tbody tr td:nth-child(2):before {
     content: "";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Nombre";
+    content: "Nombre:";
+    color:#1e262f;
+    font-weight: bold;
   }
   table tbody tr td:nth-child(4):before {
-    content: "Partido";
+    content: "Partido:";
+    color:#1e262f;
+    font-weight: bold;
   }
   table tbody tr td:nth-child(5):before {
-    content: "Circuito";
+    content: "Circuito:";
+    color:#1e262f;
+    font-weight: bold;
   }
   table tbody tr td:nth-child(6):before {
-    content: "Nota";
+    content: "Nota:";
+    color:#eab300;
+    font-weight: bold;
   }
 
   .column4,
@@ -339,7 +347,9 @@ tbody tr:hover {
   }
 
   tbody tr {
-    font-size: 14px;
+      font-size:14px;
+      font-weight:bold;
+      background-color: #fff;
   }
 
 #contador-ranking{
