@@ -8,22 +8,32 @@
 {% block container %}
 
 
-
-<div class="row">
-  <div class='col-12 text-center' >
-    <h2> {{person.name}} </h2>
-  </div>
-</div>
-
   <div class="row">
     <div class="col">
-      1 of 3
     </div>
     <div class="col-6">
-      <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+      <div class='row'>
+        <div class='col'>
+        <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+        </div>
+        <div class='col'>
+          <div>
+          <h2>{{person.name}}</h2>
+        </div>
+        <div>
+          {% if person.birth_date %}
+          <span>{{person.birth_date}}</span>
+          {% endif %}
+        </div>
+        <div>
+          {% if person.web %}
+          <span>{{person.web}}</span>
+          {% endif %}
+        </div>
+        </div>
+      </div>
     </div>
     <div class="col">
-      3 of 3
     </div>
   </div>
 
