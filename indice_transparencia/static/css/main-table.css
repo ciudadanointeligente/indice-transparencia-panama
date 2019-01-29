@@ -28,6 +28,15 @@ a:hover {
 	text-decoration: none;
 }
 
+#link-persona{
+    font-size:12px;
+}
+
+#link-persona:hover{
+  color:grey;
+  font-weight: 600;
+}
+
 /* ------------------------------------ */
 
 ul, li {
@@ -167,13 +176,14 @@ background: linear-gradient(45deg, #dee2e6, #e9ecef);
 table {
   border-spacing: 1;
   border-collapse: collapse;
-  background: white;
+  background: #FAFAFA;
   border-radius: 0px;
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
   position: relative;
 }
+
 table * {
   position: relative;
 }
@@ -213,7 +223,7 @@ table td.r, table th.r {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: #EEEEEE;
 }
 
 tbody tr {
@@ -272,7 +282,9 @@ tbody tr:hover {
   }
   table tbody tr {
     height: auto;
-    padding: 37px 0;
+    padding-top: 20px;
+    padding-bottom:60px;
+    padding-right: 30px;
   }
   table tbody tr td {
     padding-left: 40% !important;
@@ -296,7 +308,7 @@ tbody tr:hover {
     content: "#";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Foto";
+    content: "";
   }
   table tbody tr td:nth-child(3):before {
     content: "Nombre";
