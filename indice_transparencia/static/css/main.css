@@ -158,34 +158,44 @@ color: #8892a2;
 }
 
 #numero {
-  font-size:21px;
-  color:#222;
-  font-weight:700;
+    font-size: 18px;
+    font-family:montserrat;
+    color: #fff;
+    font-weight: 700;
+    padding-left:30px
 }
 
 #nombre {
-  font-size:21px;
-  color:#222;
-  font-weight:700;
+    font-size: 18px;
+    font-family:montserrat;
+    color: #fff;
+    font-weight: 700;
 }
 
 #partido {
-  font-size:21px;
-  color:#222;
-  font-weight:700;
+    font-size: 18px;
+    font-family:montserrat;
+    color: #fff;
+    font-weight: 700;
+   padding-right:100px;
 }
 
 #circuito {
-  font-size:21px;
-  color:#222;
-  font-weight:700;
+    font-size: 18px;
+    font-family:montserrat;
+    color: #fff;
+    font-weight: 700;
+   padding-right:50px;
 }
 
-#nota{
-  font-size:21px;
-  color:#222;
-  font-weight:700;
+#nota {
+    font-size: 18px;
+    font-family:montserrat;
+    color: #fff;
+    font-weight: 700;
+  padding-right:100px;
 }
+
 
 
 @media screen and (max-width: 1150px){
