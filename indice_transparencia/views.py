@@ -82,7 +82,7 @@ class RankingListView(UnderDevelopmentMixin, ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset().order_by('position_in_ranking'))
         return context
     
 class IndexView(UnderDevelopmentMixin, TemplateView):

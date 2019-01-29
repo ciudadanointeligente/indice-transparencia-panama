@@ -15,7 +15,7 @@ class PersonFilter(django_filters.FilterSet):
         fields = {'circuit', 'party', 'is_deputy'}
         
     def filter_by_order(self, queryset, name, value):
-        expression = 'ranking_mark' if value == 'asc' else '-ranking_mark'
+        expression = '-position_in_ranking' if value == 'desc' else 'position_in_ranking'
         
         return queryset.order_by(expression)
         # return queryset

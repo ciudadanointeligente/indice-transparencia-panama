@@ -80,7 +80,7 @@ class Benefit(models.Model):
 class RankingManager(models.Manager):
     def get_queryset(self):
         qs = super().get_queryset()
-        return sorted(qs.all(),  key=lambda m: m.ranking_mark, reverse=True)
+        return sorted(qs.all(),  key=lambda m: m.position_in_ranking, reverse=False)
 
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
 
