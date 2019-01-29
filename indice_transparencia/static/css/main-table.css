@@ -78,7 +78,9 @@ iframe {
     font-family:montserrat;
     color: #fff;
     font-weight: 700;
-    padding-left:30px
+    padding-left:20px;
+    padding-right:20px;
+    text-align: center;
 }
 
 #nombre {
@@ -120,7 +122,7 @@ text-align:center;
 }
 
 #link-persona{
-  font-size:14px; 
+  font-size:14px;
 }
 
 
@@ -176,14 +178,14 @@ table * {
   position: relative;
 }
 table td, table th {
-  padding-left: 8px;
+  padding-left: 20px;
 }
 table thead tr {
-  height: 50px;
-  background: #1d1f24;
+  height: 40px;
+  background: #1e262f;
 }
 table tbody tr {
-  height: 50px;
+  height: 40px;
 }
 table tbody tr:last-child {
   border: 0;
@@ -274,7 +276,7 @@ tbody tr:hover {
   }
   table tbody tr td {
     padding-left: 40% !important;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
   table tbody tr td:last-child {
     margin-bottom: 0;
@@ -327,11 +329,20 @@ tbody tr:hover {
   tbody tr {
     font-size: 14px;
   }
+
+#contador-ranking{
+  display: none;
+}
+
 }
 
 @media (max-width: 576px) {
   .container-table100 {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  #contador-ranking{
+    display: none;
   }
 }
