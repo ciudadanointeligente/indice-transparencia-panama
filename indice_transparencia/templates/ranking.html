@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'lista_candidatos_base.html' %}
 {% load staticfiles %}
 {% load bootstrap4 %}
 
-{% block container %}
 
-<section class="">
-  <div class="container-fluid">
+{% block contenido_head %}
     <div class="row">
         <div class="col-12">
           <p>Índice de Transparencia de parlamentarios</p>
@@ -56,42 +54,10 @@
         </form>
         <div class="col-12">
         
-        <!--table class="table table-inverse">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Nombre</th>
-              <th>Partido</th>
-              <th>Circuito</th>
-              <th>Nota</th>
-            </tr>
-          </thead>
-          <tbody>
-        {% for person in filter.qs %}
-           <tr>
-             <td>{{ person.position_in_ranking }}</td>
-           <td><a href="{{ person.get_absolute_url }}">
-             <div class="col-md-1 px-0">
-                  <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
-             </div>
-              {{person.name }} </a></td>
-           <td>{{ person.party }}</td>
-           <td>{{ person.circuit }}</td>
-           <td>{{ person.ranking_mark }}</td>
-           </tr>
-        {% endfor %}
-          </tbody>
-        </table-->
-        
-        
-        
       </div>
     </div>
-  </div>
-</section>
+{% endblock contenido_head %}
 
-{% include 'includes/lista_candidatos.html' with persons=persons %}
-{% endblock container %}
 
 {% block extra_end_js %}
 <script type="text/javascript" >

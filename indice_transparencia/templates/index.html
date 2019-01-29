@@ -1,20 +1,2 @@
-{% extends 'base.html' %}
+{% extends 'lista_candidatos_base.html' %}
 {% load staticfiles %}
-{% block container %}
-
-<section class="bgimage">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
-        <p>Índice de Transparencia de parlamentarios</p>
-        <h5>La participación ciudadana maximiza la rendición de cuentas de nuestros políticos</h5>
-
-        <p><a href="{% url 'index' %}" class="btn btn-primary btn-large">Ver índice</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% include 'includes/lista_candidatos.html' with persons=persons %}
-
-{% endblock container %}
