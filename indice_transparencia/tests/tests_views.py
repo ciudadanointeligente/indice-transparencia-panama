@@ -2,6 +2,7 @@ from django.test import TestCase
 from indice_transparencia.models import Person, Party, Contact, Circuit, EducationalRecord, WorkRecord
 from indice_transparencia.forms import PersonForm
 from django.urls import reverse
+from django.core.management import call_command
 import datetime
 
 class IndexViewTestCase(TestCase):
@@ -140,7 +141,7 @@ class RankingListViweTestCase(TestCase):
         EducationalRecord.objects.create(name='Junior de la empresa', institution='B', start='04/07/2011', end='31/01/2018', person=p3)
         WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p3)
 
-
+        call_command('recalcula_ranking')
         url = reverse('ranking')
         response = self.client.get(url)
         persons = response.context['persons']

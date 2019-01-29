@@ -76,9 +76,9 @@ class RankingListView(UnderDevelopmentMixin, ListView):
     template_name = 'ranking.html'
     context_object_name = "persons"
     
-    # def get_queryset(self):
-    #     qs = Person.ranking.all()
-    #     return qs
+    def get_queryset(self):
+        qs = super().get_queryset().order_by('position_in_ranking')
+        return qs
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -90,7 +90,7 @@ class IndexView(UnderDevelopmentMixin, TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['persons'] = Person.ranking.all()[:10]
+        context['persons'] = Person.objects.order_by('position_in_ranking')
         context['debug'] = settings.DEBUG
         return context    
     
