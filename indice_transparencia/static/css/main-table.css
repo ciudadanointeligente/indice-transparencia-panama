@@ -131,7 +131,7 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
- background-color: #e9ecef;
+ background-color: #fff;
 background: linear-gradient(45deg, #dee2e6, #e9ecef);
   display: -webkit-box;
   display: -webkit-flex;
@@ -144,6 +144,9 @@ background: linear-gradient(45deg, #dee2e6, #e9ecef);
   padding: 33px 30px;
 }
 
+
+
+
 .wrap-table100 {
   width: 1170px;
 }
@@ -152,7 +155,7 @@ table {
   border-spacing: 1;
   border-collapse: collapse;
   background: white;
-  border-radius: 10px;
+  border-radius: 0px;
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
@@ -165,8 +168,8 @@ table td, table th {
   padding-left: 8px;
 }
 table thead tr {
-  height: 60px;
-  background: #36304a;
+  height: 50px;
+  background: #1d1f24;
 }
 table tbody tr {
   height: 50px;
@@ -277,22 +280,22 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
+    content: "#";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Order ID";
+    content: "Foto";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Name";
+    content: "Nombre";
   }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "Partido";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
+    content: "Circuito";
   }
   table tbody tr td:nth-child(6):before {
-    content: "Total";
+    content: "Nota";
   }
 
   .column4,
