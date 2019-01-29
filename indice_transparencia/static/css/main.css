@@ -131,10 +131,10 @@ background-color: #1d1f24;
 }
 
 .img-fluid {
-   height: 90px;
+   height: 60px;
    border-radius:50px;
-   width:90px;
-   max-width: 90px;
+   width:60px;
+   max-width: 60px;
 }
 
 .table thead th {
