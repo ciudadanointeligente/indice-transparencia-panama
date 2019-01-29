@@ -16,8 +16,6 @@
     {% endblock meta %}
 
       <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
-
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     {% comment %}
@@ -40,7 +38,7 @@
     {% analytical_body_top %}
       {% block navbar %}
 
-      <nav class="navbar navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-dark fixed-top">
             <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
           <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
               <span class="navbar-toggler-icon"></span>
