@@ -120,12 +120,13 @@
 
             {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
             {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
+            {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
             {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
             {% bootstrap_field form.judiciary_link placeholder='Especifique link procesos judiciales' %}
             {% bootstrap_field form.judiciary_description placeholder='Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados'%}
-            {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
           </section><hr>
           <h5 id="ethi_section">Ética Presupuestaria</h5>
+          <h6>SOLO PARA CANDIDATOS A LA REELECCIÓN</h6>
           <section>
 
             {% bootstrap_field form.is_deputy %}
