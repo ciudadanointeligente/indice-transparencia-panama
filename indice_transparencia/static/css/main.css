@@ -229,7 +229,50 @@ color: #8892a2;
       font-size: 12px;
 }
 
-/*footer*/
+/*logo alianzas*/
+
+
+
+.logo {
+  width: auto;
+  height: 2em;
+  animation: bounceIn 0.6s;
+  transform: rotate(0deg) scale(1) translateZ(0);
+  transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+  cursor: pointer;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+}
+
+.logo:hover {
+  transform: rotate(2deg) scale(1.1);
+}
+
+.bubble { fill: #e76853; }
+.icon { fill:  #fff; }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 1;
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 @media screen and (max-width: 1150px){
 
@@ -252,6 +295,9 @@ padding-right:270px;
  width:40px;
  max-width: 40px;
 }
+
+
+
 }
 
 @media screen and (max-width: 700px){
@@ -276,6 +322,20 @@ font-size: 12px;
     padding-left: 10px;
     padding-right: 10px;
    font-size:10px;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+
+}
+
+#alianzas{
+  margin-top:30px;
+    margin-bottom:30px;
 }
 
 #link-persona{
