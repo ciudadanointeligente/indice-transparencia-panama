@@ -249,6 +249,43 @@ color: #8892a2;
   transform: rotate(2deg) scale(1.1);
 }
 
+.fa-facebook-f{
+
+  animation: bounceIn 0.6s;
+  transform: rotate(0deg) scale(1) translateZ(0);
+  transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+  cursor: pointer;
+}
+
+.fa-facebook-f:hover{
+transform: rotate(2deg) scale(1.2);
+}
+
+.fa-twitter{
+
+  animation: bounceIn 0.6s;
+  transform: rotate(0deg) scale(1) translateZ(0);
+  transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+  cursor: pointer;
+}
+
+.fa-twitter:hover{
+transform: rotate(2deg) scale(1.2);
+}
+
+.fa-linkedin{
+
+  animation: bounceIn 0.6s;
+  transform: rotate(0deg) scale(1) translateZ(0);
+  transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+  cursor: pointer;
+}
+
+.fa-linkedin:hover{
+transform: rotate(2deg) scale(1.2);
+}
+
+
 .bubble { fill: #e76853; }
 .icon { fill:  #fff; }
 
