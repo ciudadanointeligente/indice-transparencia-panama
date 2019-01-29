@@ -127,7 +127,12 @@ label{
   padding-left:20px;
   padding-right:20px;
   font-weight:500;
-  margin:0;
+  margin-bottom:50px;
+  margin-top:0px;
+}
+
+#solo-candidatos{
+  margin-bottom:20px;
 }
 
 .btn-primary{
