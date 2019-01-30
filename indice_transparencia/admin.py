@@ -10,8 +10,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('person',
                     'email'
                     )
-    raw_id_fields = ('person', )
-
+    # raw_id_fields = ('person', )
+    autocomplete_fields = ['person']
 admin.site.register(Contact, ContactAdmin)
 
 class PartyAdmin(admin.ModelAdmin):
