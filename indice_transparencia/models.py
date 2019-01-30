@@ -7,6 +7,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.db.models.signals import m2m_changed, pre_save
+from picklefield.fields import PickledObjectField
 from django.dispatch import receiver
 
 
@@ -200,9 +201,8 @@ class Person(models.Model):
     ranking_mark = models.IntegerField(null=True, blank=True)
     position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
 
-
-
     slug = AutoSlugField(populate_from='name', null=True)
+    volunteer_changed = PickledObjectField(default=list)
 
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.
@@ -215,6 +215,7 @@ class Person(models.Model):
             final_mark += 2.5
         if self.is_deputy:
             if self.political_proposal_link or self.political_proposal_doc:
+                # volunteer_changed_politcal_proposal = 'political_proposal_link' in self.volunteer_changed or 'political_proposal_doc' in self.volunteer_changed
                 final_mark += 5
             if self.benefits_link or self.benefits_doc:
                 final_mark += 10

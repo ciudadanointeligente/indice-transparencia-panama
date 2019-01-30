@@ -10,3 +10,4 @@ django-extra-views
 PyYaml==4.2b1
 django-analytical
 django-filter
+django-picklefield==2.0
