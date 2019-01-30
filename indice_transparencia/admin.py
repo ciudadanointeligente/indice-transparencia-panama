@@ -88,7 +88,9 @@ class PersonAdmin(admin.ModelAdmin):
         '''En este se hace el calculo del ranking.
         Esto es por que en el super() de la clase superior se hace un for
         sobre todos los inlines.
-        Pero después del super está todo bien.'''
+        Pero después del super está todo bien.
+        codigo original: https://docs.djangoproject.com/en/2.1/_modules/django/contrib/admin/options/#ModelAdmin.save_related
+        '''
         super().save_related(request, form, formsets, change)
         ## Esto es una marquita para entender el flujo
         # print('save_related')

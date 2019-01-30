@@ -108,7 +108,6 @@ class PersonUpdateView(TestCase):
             'judiciary_records-0-kind': 'penal',
             'judiciary_records-0-result': 'pagué mi condena!',
             
-            
         }
         response = self.client.post(url, data=data)
         assert response.status_code in [200, 302]

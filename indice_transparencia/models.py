@@ -51,7 +51,9 @@ class EducationalRecord(models.Model):
     start = models.CharField(max_length=255, verbose_name=u"Fecha de ingreso")
     end = models.CharField(max_length=255, verbose_name=u"Fecha de término")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="educational_records", null=True)
-
+    
+## p = Person.objects.create(name='fiera')
+## p.educational_records.all() 
 
 class WorkRecord(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Cargo")
@@ -67,6 +69,7 @@ class JudiciaryProcessRecord(models.Model):
     kind = models.CharField(max_length=255, verbose_name=u"Tipo")
     result = models.TextField(max_length=255, verbose_name=u"Fallo")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="judiciary_records", null=True)
+    
 
 
 class Benefit(models.Model):
@@ -213,33 +216,59 @@ class Person(models.Model):
             final_mark += 2.5
         if self.work_records.exists():
             final_mark += 2.5
+        if self.patrimony_link or self.patrimony_doc:
+            if 'patrimony' in self.volunteer_changed:
+                final_mark += 12.5
+            else:
+                final_mark += 25
+        if self.interests_link or self.interests_doc:
+            if 'interests' in self.volunteer_changed:
+                final_mark += 12.5
+            else:
+                final_mark += 25
         if self.is_deputy:
+            if self.declared_intention_to_transparent_judiciary_records:
+                if 'declared_intention_to_transparent_judiciary_records' in self.volunteer_changed:
+                    final_mark += 10
+                else:
+                    final_mark += 20
             if self.political_proposal_link or self.political_proposal_doc:
                 # volunteer_changed_politcal_proposal = 'political_proposal_link' in self.volunteer_changed or 'political_proposal_doc' in self.volunteer_changed
                 final_mark += 5
             if self.benefits_link or self.benefits_doc:
-                final_mark += 10
+                if 'benefits' in self.volunteer_changed:
+                    final_mark += 5
+                else:
+                    final_mark += 10
             if self.eth_001_link or self.eth_001_doc:
-                final_mark += 2.5
+                if 'eth_001' in self.volunteer_changed:
+                    final_mark += 1.25
+                else:
+                    final_mark += 2.5
             if self.eth_002_link or self.eth_002_doc:
-                final_mark += 2.5
+                if 'eth_002' in self.volunteer_changed:
+                    final_mark += 1.25
+                else:
+                    final_mark += 2.5
             if self.eth_080_link or self.eth_080_doc:
-                final_mark += 2.5
+                if 'eth_080' in self.volunteer_changed:
+                    final_mark += 1.25
+                else:
+                    final_mark += 2.5
             if self.eth_172_link or self.eth_172_doc:
-                final_mark += 2.5
-            if self.patrimony_link or self.patrimony_doc:
-                final_mark += 25
-            if self.interests_link or self.interests_doc:
-                final_mark += 25
+                if 'eth_172' in self.volunteer_changed:
+                    final_mark += 1.25
+                else:
+                    final_mark += 2.5
         else:
             if self.political_proposal_link or self.political_proposal_doc:
                 final_mark += 10
             if self.declared_intention_to_transparent_judiciary_records:
-                final_mark += 35
-            if self.patrimony_link or self.patrimony_doc:
-                final_mark += 25
-            if self.interests_link or self.interests_doc:
-                final_mark += 25
+                if 'declared_intention_to_transparent_judiciary_records' in self.volunteer_changed:
+                    final_mark += 17.5
+                else:
+                    final_mark += 35
+            
         return final_mark
 
     def update_mark(self):

@@ -227,3 +227,78 @@ class RankingCalculation(TestCase):
         update_mark_and_position_in_ranking(p1)
         p1.refresh_from_db()
         assert p1.position_in_ranking == 2
+    
+    def test_deputy_100(self):
+        p = Person.objects.create(name=u'Fiera', is_deputy=True)
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.political_proposal_link = 'http://perrito.com'
+        p.declared_intention_to_transparent_judiciary_records = True
+        p.benefits_link = 'http://perrito.com'
+        p.eth_001_link = 'http://perrito.com'
+        p.eth_002_link = 'http://perrito.com'
+        p.eth_080_link = 'http://perrito.com'
+        p.eth_172_link = 'http://perrito.com'
+        
+        p.patrimony_link = 'http://perrito.com'
+        p.interests_link = 'http://perrito.com'
+        assert p.get_mark() == 100, 'en realidad da: ' + str(p.get_mark())
+    
+    def test_not_deputy_100(self):
+        p = Person.objects.create(name=u'Fiera', is_deputy=False)
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.political_proposal_link = 'http://perrito.com'
+        p.declared_intention_to_transparent_judiciary_records = True
+        p.patrimony_link = 'http://perrito.com'
+        p.interests_link = 'http://perrito.com'
+        assert p.get_mark() == 100, 'en realidad da: ' + str(p.get_mark())
+    
+    def test_deputy_55(self):
+        p = Person.objects.create(name=u'Fiera',
+                                  is_deputy=True,
+                                  volunteer_changed=[
+                                      'declared_intention_to_transparent_judiciary_records',
+                                      'patrimony',
+                                      'interests',
+                                      'judiciary_records',
+                                      'benefits',
+                                      'eth_001',
+                                      'eth_002',
+                                      'eth_080',
+                                      'eth_172',
+                                        ])
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.political_proposal_link = 'http://perrito.com'
+        p.declared_intention_to_transparent_judiciary_records = True
+        p.benefits_link = 'http://perrito.com'
+        p.eth_001_link = 'http://perrito.com'
+        p.eth_002_link = 'http://perrito.com'
+        p.eth_080_link = 'http://perrito.com'
+        p.eth_172_link = 'http://perrito.com'
+        
+        p.patrimony_link = 'http://perrito.com'
+        p.interests_link = 'http://perrito.com'
+        assert p.get_mark() == 55, 'en realidad da: ' + str(p.get_mark())
+    
+    def test_not_deputy_57_5(self):
+        p = Person.objects.create(name=u'Fiera', is_deputy=False,
+                                  volunteer_changed=[
+                                      'declared_intention_to_transparent_judiciary_records',
+                                      'patrimony',
+                                      'interests',
+                                      'political_proposal',
+                                      'benefits',
+                                      'eth_001',
+                                      'eth_002',
+                                      'eth_080',
+                                      'eth_172',
+                                        ])
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        WorkRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.political_proposal_link = 'http://perrito.com'
+        p.declared_intention_to_transparent_judiciary_records = True
+        p.patrimony_link = 'http://perrito.com'
+        p.interests_link = 'http://perrito.com'
+        assert p.get_mark() == 57.5, 'en realidad da: ' + str(p.get_mark())
