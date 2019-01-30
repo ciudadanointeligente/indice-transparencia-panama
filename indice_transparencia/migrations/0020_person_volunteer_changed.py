@@ -7,7 +7,7 @@ import picklefield.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('indice_transparencia', '0019_auto_20190130_1353'),
+        ('indice_transparencia', '0019_auto_20190130_1329'),## Eso!!
     ]
 
     operations = [
