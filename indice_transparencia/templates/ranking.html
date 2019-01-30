@@ -6,7 +6,7 @@
 {% block contenido_head %}
     <div class="row">
         <div class="col-12">
-          <p>Índice de Transparencia de parlamentarios</p>
+          <p id="filtro-titulo">Índice de Transparencia de parlamentarios</p>
         </div>
         </div>
          <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
@@ -14,48 +14,50 @@
               Esto hace que todos los labels se vean a la misma altura.
               -->
         <style type="text/css">
-
           .label_filter_ranking {
                 min-height: 57px;
               }
         </style>
-        <form action="" method="get" class="filter_form">
-          <div class="row">
-            <div class=".col-sm-3">
 
-              <div class="label_filter_ranking">
-              {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
-              </div>
-              {% bootstrap_field filter.form.is_deputy show_label=False %}
-            </div>
-            <div class=".col-sm-3">
-              <div class="label_filter_ranking">
-              {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
-              </div>
-              {% bootstrap_field filter.form.circuit  show_label=False  %}
-            </div>
-            <div class=".col-sm-3">
-              <div class="label_filter_ranking">
-              {% bootstrap_label filter.form.party.label label_for='party' %}
-              </div>
-              {% bootstrap_field filter.form.party show_label=False  %}
-            </div>
-            <div class=".col-sm-3">
-              <div class="label_filter_ranking">
-              {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
-              </div>
-              {% bootstrap_field filter.form.ordering show_label=False  %}
-            </div>
-            </div>
             <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
             <!--  <span class="glyphicon glyphicon-search"></span> Search-->
             <!--</button>-->
 
-        </form>
-        <div class="col-12">
 
-      </div>
-    </div>
+        <form action="" method="get" class="filter_form">
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="label_filter_ranking">
+                    {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
+                    </div>
+                    {% bootstrap_field filter.form.is_deputy show_label=False %}
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="label_filter_ranking">
+                    {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
+                    </div>
+                    {% bootstrap_field filter.form.circuit  show_label=False  %}
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="label_filter_ranking">
+                    {% bootstrap_label filter.form.party.label label_for='party' %}
+                    </div>
+                    {% bootstrap_field filter.form.party show_label=False  %}
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-xl-3">
+                    <div class="label_filter_ranking">
+                    {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
+                    </div>
+                    {% bootstrap_field filter.form.ordering show_label=False  %}
+                  </div>
+
+                </div>
+              </form>
+
 {% endblock contenido_head %}
 
 

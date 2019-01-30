@@ -13,6 +13,10 @@ body {
   flex-direction: column;
 }
 
+.form-control.is-valid, .was-validated .form-control:valid{
+  background-image:none;
+}
+
 /*tablas*/
 
 .table td, .table th{
@@ -162,8 +166,15 @@ a:hover{
   color:#eab300;
   font-family:"Montserrat";
   padding-left: 50px;
-  font-size: 16px;
   font-weight: 200;
+  text-align: left;
+  font-size: 18px;
+}
+
+#filtro-titulo {
+ text-align:center;
+  font-size:18px;
+  padding-left:0px;
 }
 
 .img-fluid {
@@ -223,15 +234,15 @@ a:hover{
   margin-right:30px;
 }
 
-.label_filter_ranking{
-  color:white;
-  padding-top:20px;
-  padding-bottom:20px;
-  margin-left:30px;
-  margin right:10px;
-  max-width:250px;
-  text-align:center;
-  font-size:16px;
+.label_filter_ranking {
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-left: 35px;
+    margin right: 0px;
+    text-align:left;
+    max-width: 210px;
+    font-size: 14px;
 }
 
 .filter_field{
