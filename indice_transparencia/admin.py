@@ -54,6 +54,10 @@ class PersonAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         update_mark_and_position_in_ranking(obj)
 
+    def save_formset(self, request, form, formset, change):
+        # print(formset.prefix, formset.has_changed())
+        super().save_formset(request, form, formset, change)
+
 admin.site.register(Person, PersonAdmin)
 
 class CircuitAdmin(admin.ModelAdmin):

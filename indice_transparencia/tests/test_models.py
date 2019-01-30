@@ -22,6 +22,12 @@ class TestModelos(TestCase):
         assert hasattr(p, 'circuit')
         assert p.slug
 
+    def test_a_person_can_have_a_list_of_fields(self):
+        '''El modelo persona puede guardar un arreglo de campos guardados por las voluntarias'''
+        p = Person.objects.create(name=u'Fiera', volunteer_changed=['name', 'email'])
+        p.refresh_from_db()
+        assert len(p.volunteer_changed) == 2
+
     def test_instanciate_partido(self):
         p = Party.objects.create(name=u'Partido Feroz',
                                  initials='PF')

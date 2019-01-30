@@ -7,6 +7,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.db.models.signals import m2m_changed, pre_save
+from picklefield.fields import PickledObjectField
 from django.dispatch import receiver
 
 
@@ -203,6 +204,7 @@ class Person(models.Model):
 
 
     slug = AutoSlugField(populate_from='name', null=True)
+    volunteer_changed = PickledObjectField(default=list)
 
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.

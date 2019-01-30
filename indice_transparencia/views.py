@@ -52,6 +52,14 @@ class PersonUpdateView(UpdateWithInlinesView):
         '''
         response = super(PersonUpdateView, self).forms_valid(form, inlines)
         update_mark_and_position_in_ranking(self.object)
+        for field_name in form.changed_data:
+            if field_name in self.person.volunteer_changed:
+                self.person.volunteer_changed.remove(field_name)
+        for formset in inlines:
+            field_name = formset.prefix
+            if formset.has_changed() and field_name in self.person.volunteer_changed:
+                self.person.volunteer_changed.remove(field_name)
+        self.person.save()
         return response
 
     def get_context_data(self, *args, **kwargs):
