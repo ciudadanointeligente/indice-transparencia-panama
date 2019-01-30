@@ -14,33 +14,33 @@
               Esto hace que todos los labels se vean a la misma altura.
               -->
         <style type="text/css">
-          
+
           .label_filter_ranking {
                 min-height: 57px;
               }
         </style>
         <form action="" method="get" class="filter_form">
-          <div class="row">    
-            <div class="col-3">
-             
+          <div class="row">
+            <div class=".col-sm-3">
+
               <div class="label_filter_ranking">
               {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
               </div>
               {% bootstrap_field filter.form.is_deputy show_label=False %}
             </div>
-            <div class="col-3">
+            <div class=".col-sm-3">
               <div class="label_filter_ranking">
               {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
               </div>
               {% bootstrap_field filter.form.circuit  show_label=False  %}
             </div>
-            <div class="col-3">
+            <div class=".col-sm-3">
               <div class="label_filter_ranking">
               {% bootstrap_label filter.form.party.label label_for='party' %}
               </div>
               {% bootstrap_field filter.form.party show_label=False  %}
             </div>
-            <div class="col-3">
+            <div class=".col-sm-3">
               <div class="label_filter_ranking">
               {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
               </div>
@@ -50,10 +50,10 @@
             <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
             <!--  <span class="glyphicon glyphicon-search"></span> Search-->
             <!--</button>-->
-            
+
         </form>
         <div class="col-12">
-        
+
       </div>
     </div>
 {% endblock contenido_head %}
