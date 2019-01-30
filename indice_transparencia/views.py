@@ -12,6 +12,7 @@ from django.template.response import TemplateResponse
 from django.views.generic.base import TemplateView
 from django import forms
 from django.conf import settings
+from django.core.cache import cache
 
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
@@ -90,7 +91,16 @@ class IndexView(UnderDevelopmentMixin, TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['persons'] = Person.objects.order_by('position_in_ranking')[:10]
+        persons_index_cache_key = 'persons_index'
+        if cache.get(persons_index_cache_key):
+
+            persons = cache.get('persons_index')
+            
+        else:
+            persons = Person.objects.order_by('position_in_ranking')[:10]
+
+            cache.set(persons_index_cache_key, persons, 300)
+        context['persons'] = persons
         context['debug'] = settings.DEBUG
         return context    
     
