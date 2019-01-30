@@ -9,6 +9,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('person',
                     'email'
                     )
+    raw_id_fields = ('person', )
 
 admin.site.register(Contact, ContactAdmin)
 
