@@ -133,7 +133,8 @@ class PersonUpdateView(TestCase):
         p = Person.objects.create(name=u'Fiera',
                                   volunteer_changed=['birth_date', ## Esta wea va a cambiar por que el candidato la seleccionará
                                                     'web', ## Esta wea va a cambiar por que el candidato la seleccionará
-                                                    'judiciary_records', ## Esta wea va a cambiar por que el candidato la seleccionará
+                                                    'judiciary_records', ## Esta wea va a cambiar por que el candidato la seleccionará,
+                                                    'eth_080', ## A pesar que sólo está mandando el eth_080_link esto se borrará
                                                     'image', ## Esta wea NOOOOOO va a cambiar por que el candidato la seleccionará
                                                     ])
         contact = Contact.objects.create(person=p, email='jordi@cidadaniai.org')
@@ -210,6 +211,7 @@ class PersonUpdateView(TestCase):
         assert 'birth_date' not in p.volunteer_changed
         assert 'web' not in p.volunteer_changed
         assert 'judiciary_records' not in p.volunteer_changed
+        assert 'eth_080' not in p.volunteer_changed
 
 
 class RankingListViweTestCase(TestCase):

@@ -215,6 +215,7 @@ class Person(models.Model):
             final_mark += 2.5
         if self.is_deputy:
             if self.political_proposal_link or self.political_proposal_doc:
+                # volunteer_changed_politcal_proposal = 'political_proposal_link' in self.volunteer_changed or 'political_proposal_doc' in self.volunteer_changed
                 final_mark += 5
             if self.benefits_link or self.benefits_doc:
                 final_mark += 10

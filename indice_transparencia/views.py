@@ -13,6 +13,7 @@ from django.views.generic.base import TemplateView
 from django import forms
 from django.conf import settings
 from django.core.cache import cache
+from indice_transparencia import normalize_field_name
 
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
@@ -53,10 +54,12 @@ class PersonUpdateView(UpdateWithInlinesView):
         response = super(PersonUpdateView, self).forms_valid(form, inlines)
         update_mark_and_position_in_ranking(self.object)
         for field_name in form.changed_data:
+            field_name = normalize_field_name(field_name)
             if field_name in self.person.volunteer_changed:
                 self.person.volunteer_changed.remove(field_name)
         for formset in inlines:
             field_name = formset.prefix
+            field_name = normalize_field_name(field_name)
             if formset.has_changed() and field_name in self.person.volunteer_changed:
                 self.person.volunteer_changed.remove(field_name)
         self.person.save()
