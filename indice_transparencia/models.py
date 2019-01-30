@@ -201,8 +201,6 @@ class Person(models.Model):
     ranking_mark = models.IntegerField(null=True, blank=True)
     position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
 
-
-
     slug = AutoSlugField(populate_from='name', null=True)
     volunteer_changed = PickledObjectField(default=list)
 
