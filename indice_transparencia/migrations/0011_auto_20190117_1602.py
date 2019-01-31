@@ -32,6 +32,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='person',
             name='topics',
-            field=models.ManyToManyField(blank=True, related_name='person_set', to='indice_transparencia.Topic', verbose_name='Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024).'),
+            field=models.ManyToManyField(blank=True, related_name='person_set', to='indice_transparencia.Topic', verbose_name='Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024). Debes mantener presionada la tecla "Control" o "Command" (en Mac) para seleccionar más de una opción.'),
         ),
     ]

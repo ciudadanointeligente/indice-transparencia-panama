@@ -51,9 +51,9 @@ class EducationalRecord(models.Model):
     start = models.CharField(max_length=255, verbose_name=u"Fecha de ingreso")
     end = models.CharField(max_length=255, verbose_name=u"Fecha de término")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="educational_records", null=True)
-    
+
 ## p = Person.objects.create(name='fiera')
-## p.educational_records.all() 
+## p.educational_records.all()
 
 class WorkRecord(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Cargo")
@@ -69,7 +69,7 @@ class JudiciaryProcessRecord(models.Model):
     kind = models.CharField(max_length=255, verbose_name=u"Tipo")
     result = models.TextField(max_length=255, verbose_name=u"Fallo")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="judiciary_records", null=True)
-    
+
 
 
 class Benefit(models.Model):
@@ -98,7 +98,7 @@ class Person(models.Model):
     twitter = models.URLField(max_length=255, verbose_name=u"Cuenta de twitter", null=True, blank=True)
     instagram = models.URLField(max_length=255, verbose_name=u"Cuenta de instagram", null=True, blank=True)
     facebook = models.URLField(max_length=255, verbose_name=u"Cuenta de facebook", null=True, blank=True)
-    image = models.ImageField(verbose_name=u"Subir foto", upload_to='profile_images/%Y/%m/%d/',
+    image = models.ImageField(verbose_name=u"", upload_to='profile_images/%Y/%m/%d/',
                                      null=True, blank=True)
 
     #perfil político
@@ -106,8 +106,8 @@ class Person(models.Model):
     party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Partido político o movimiento al que representa")
     circuit = models.ForeignKey(Circuit, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Circuito al que representa o busca representar")
     has_changed_party = models.BooleanField(default=False, verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
-    previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado", blank=True)
-    topics = models.ManyToManyField(Topic, related_name="person_set", blank=True, verbose_name="Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024).")
+    previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado. Mantener “Control” o “Command” (en Mac) para seleccionar más de una opción.", blank=True)
+    topics = models.ManyToManyField(Topic, related_name="person_set", blank=True, verbose_name="Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024). Mantener “Control” o “Command” (en Mac) para seleccionar más de una opción.")
     other_topic = models.CharField(max_length=255, verbose_name=u"Otro tema prioritario", blank=True, null=True)
 
     #formación académica
@@ -129,7 +129,7 @@ class Person(models.Model):
     political_proposal_link = models.URLField(null=True, max_length=255, verbose_name=u"Si respondió \"sí\", indique en qué link se puede acceder a su propuesta política", blank=True)
     political_proposal_doc = models.FileField(upload_to='political_proposals/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Adjuntar archivo propuesta política", blank=True)
+                                     verbose_name=u"", blank=True)
 
 
     #delaracion de patrimonio e intereses
@@ -139,13 +139,13 @@ class Person(models.Model):
                                      verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio", blank=True)
     patrimony_doc = models.FileField(upload_to='patrimony/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Subir declaración de patrimonio", blank=True)
+                                     verbose_name=u"", blank=True)
     existing_interests_declaration = models.BooleanField(default=False, null=True, verbose_name=u"¿Cuenta ud. con una declaración de intereses actualizada?", blank=True)
     interests_link = models.CharField(max_length=255, null=True,
                                       verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses", blank=True)
     interests_doc = models.FileField(upload_to='interests/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Subir declaración intereses", blank=True)
+                                     verbose_name=u"", blank=True)
 
 
     #procesos judiciales
@@ -166,7 +166,7 @@ class Person(models.Model):
                                      null=True, blank=True)
     benefits_doc = models.FileField(upload_to='benefits/%Y/%m/%d/',
                                      null=True,
-                                     verbose_name=u"Subir beneficios", blank=True)
+                                     verbose_name=u"", blank=True)
 
     # declared_intention_to_transparent = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. transparentar su información política general?", blank=True)
     # period = models.CharField(max_length=255, verbose_name=u"¿En qué período legislativo se encuentra actualmente?", null=True, blank=True)
@@ -182,20 +182,20 @@ class Person(models.Model):
     eth_001_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 001",
                                     null=True, blank=True)
     eth_001_doc = models.FileField(upload_to='eth_001/%Y/%m/%d/', null=True, blank=True,
-                                    verbose_name=u"Subir planilla 001")
+                                    verbose_name=u"")
     eth_002_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 002",
                                     null=True, blank=True)
     eth_002_doc = models.FileField(upload_to='eth_002/%Y/%m/%d/', null=True, blank=True,
-                                    verbose_name=u"Subir planilla 002")
+                                    verbose_name=u"")
     eth_080_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 080",
                                    null=True, blank=True)
     eth_080_doc = models.FileField(upload_to='eth_080/%Y/%m/%d/',
-                                  verbose_name=u"Subir planilla 080",
+                                  verbose_name=u"",
                                    null=True, blank=True)
     eth_172_link = models.URLField(verbose_name=u"Indique en qué link es posible acceder al detalle de su planilla 172",
                                    null=True, blank=True)
     eth_172_doc = models.FileField(upload_to='eth_172/%Y/%m/%d/',
-                                  verbose_name=u"Subir planilla 172",
+                                  verbose_name=u"",
                                    null=True, blank=True)
 
     attendance = models.FloatField(verbose_name="Indique su porcentaje de asistencia a la Asamblea Nacional durante este período legislativo", null=True, blank=True)
@@ -271,7 +271,7 @@ class Person(models.Model):
                     final_mark += 17.5
                 else:
                     final_mark += 35
-            
+
         return final_mark
 
     def update_mark(self):

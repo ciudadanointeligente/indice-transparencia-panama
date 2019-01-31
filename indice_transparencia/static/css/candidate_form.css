@@ -285,6 +285,40 @@ background-color:#F9B903;
    margin-bottom:0px;
 }
 
+.bootstrap4-multi-input{
+  display:inline-block;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+#image-clear_id{
+  display:none;
+}
+
+#eth_172_doc-clear_id{
+  display:none;
+}
+
+label{
+  display:;
+}
+
+.form-group {
+    margin-top: 25px;
+}
+
+#eth_080_doc-clear_id{
+  display:none;
+}
+
+#eth_002_doc-clear_id{
+  display:none;
+}
+
+#eth_001_doc-clear_id{
+  display:none;
+}
+
 @media screen and (max-width: 1080px)
 {
 .col-2 {
