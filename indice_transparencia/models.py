@@ -9,7 +9,7 @@ from django.core.exceptions import ValidationError
 from django.db.models.signals import m2m_changed, pre_save
 from picklefield.fields import PickledObjectField
 from django.dispatch import receiver
-
+from model_utils.fields import AutoCreatedField, AutoLastModifiedField
 
 class Party(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Nombre")
@@ -206,7 +206,10 @@ class Person(models.Model):
 
     slug = AutoSlugField(populate_from='name', null=True)
     volunteer_changed = PickledObjectField(default=list)
-
+    
+    created = AutoCreatedField()
+    modified = AutoLastModifiedField()
+    
     objects = models.Manager() # The default manager.
     ranking = RankingManager() # The Dahl-specific manager.
 
