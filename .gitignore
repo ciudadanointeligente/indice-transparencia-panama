@@ -56,7 +56,9 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+*.sqlite3
+mailing_1.csv
+mails_76.py
 
 # Flask stuff:
 instance/
