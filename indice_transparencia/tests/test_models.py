@@ -20,6 +20,8 @@ class TestModelos(TestCase):
         assert hasattr(p, 'web')
         assert hasattr(p, 'party')
         assert hasattr(p, 'circuit')
+        assert p.created
+        assert p.modified
         assert p.slug
 
     def test_a_person_can_have_a_list_of_fields(self):

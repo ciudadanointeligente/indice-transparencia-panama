@@ -5,6 +5,8 @@ from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          Contact, Circuit, Topic,
                                          update_positions_in_ranking,
                                          update_mark_and_position_in_ranking)
+from django.utils import timezone
+import datetime
 
 
 class TestManagementCommands(TestCase):
@@ -37,3 +39,29 @@ class TestManagementCommands(TestCase):
         assert p1.ranking_mark
         assert pdo.position_in_ranking == 3
         assert pdo.ranking_mark == 0
+
+    def test_hay_un_comando_q_envia_un_mail_digest(self):
+        p1 = Person.objects.create(name='perrito')
+        now = timezone.now()
+        una_semana_atras = now - datetime.timedelta(days=7)
+        Person.objects.filter(id=p1.id).update(modified=una_semana_atras) ## Esto es un hack!
+        p1.refresh_from_db()
+        assert p1.modified.day != now.day
+        '''Jordito mira eso de arriba es un culo hacerlo y no aporta mucho, además de los
+        tests, por eso te lo escribí. Y lo que hace es setearle el modified a 1
+        semana atrás a p1.'''
+        
+        p2 = Person.objects.create(name='gatito')
+        
+        '''
+        Yo creo que hay que crear una clase que tenga dos métodos
+        1 que devuelva los candidatos que fueron modificados (context)
+        y
+        2 que envíe el mail al info@nosequepunto.com con la lista de candidatos
+        seleccionados en el método anterior.
+        '''
+        
+        digester = EmailDigest()
+        assert p1 not in digester.get_context()
+        assert p2 in digester.get_context()
+        
