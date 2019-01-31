@@ -295,13 +295,6 @@ background-color:#F9B903;
   display:none;
 }
 
-#eth_172_doc-clear_id{
-  display:none;
-}
-
-label{
-  display:;
-}
 
 .form-group {
     margin-top: 25px;
@@ -316,6 +309,10 @@ label{
 }
 
 #eth_001_doc-clear_id{
+  display:none;
+}
+
+#eth_172_doc-clear_id{
   display:none;
 }
 
