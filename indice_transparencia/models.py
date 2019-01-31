@@ -315,12 +315,6 @@ class Contact(models.Model):
                                     'person': self.person,
                                     'site': site,
                                 },
-                                # Optional:
-                                # cc=['cc@example.com'],
-                                # bcc=['bcc@example.com'],
-                                # headers={'My-Custom-Header':'Custom Value'},
-                                # template_prefix="my_emails/",
-                                # template_suffix="email",
                         )
             self.person.email = self.email
             self.person.save()
