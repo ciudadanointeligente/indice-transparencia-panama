@@ -6,7 +6,9 @@ from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          update_positions_in_ranking,
                                          update_mark_and_position_in_ranking)
 from django.utils import timezone
+from django.core import mail
 import datetime
+from indice_transparencia.digesters import EmailDigest
 
 
 class TestManagementCommands(TestCase):
@@ -62,6 +64,20 @@ class TestManagementCommands(TestCase):
         '''
         
         digester = EmailDigest()
-        assert p1 not in digester.get_context()
-        assert p2 in digester.get_context()
+        assert p1 not in digester.get_context()['persons']
+        assert p2 in digester.get_context()['persons']
+        original_email_count = len(mail.outbox)
+        digester.send_mail()
+        assert len(mail.outbox) == original_email_count + 1
         
+    def test_hay_un_comando_q_envia_un_mail_digest(self):
+        p1 = Person.objects.create(name='perrito')
+        now = timezone.now()
+        una_semana_atras = now - datetime.timedelta(days=7)
+        Person.objects.filter(id=p1.id).update(modified=una_semana_atras) ## Esto es un hack!
+        p1.refresh_from_db()
+        assert p1.modified.day != now.day
+        p2 = Person.objects.create(name='gatito')
+        original_email_count = len(mail.outbox)
+        call_command('send_digest')
+        assert len(mail.outbox) == original_email_count + 1
