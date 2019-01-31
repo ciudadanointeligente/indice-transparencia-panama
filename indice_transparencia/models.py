@@ -51,9 +51,9 @@ class EducationalRecord(models.Model):
     start = models.CharField(max_length=255, verbose_name=u"Fecha de ingreso")
     end = models.CharField(max_length=255, verbose_name=u"Fecha de término")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="educational_records", null=True)
-    
+
 ## p = Person.objects.create(name='fiera')
-## p.educational_records.all() 
+## p.educational_records.all()
 
 class WorkRecord(models.Model):
     name = models.CharField(max_length=255, verbose_name=u"Cargo")
@@ -69,7 +69,7 @@ class JudiciaryProcessRecord(models.Model):
     kind = models.CharField(max_length=255, verbose_name=u"Tipo")
     result = models.TextField(max_length=255, verbose_name=u"Fallo")
     person = models.ForeignKey('Person', on_delete=models.CASCADE, related_name="judiciary_records", null=True)
-    
+
 
 
 class Benefit(models.Model):
@@ -106,7 +106,7 @@ class Person(models.Model):
     party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Partido político o movimiento al que representa")
     circuit = models.ForeignKey(Circuit, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Circuito al que representa o busca representar")
     has_changed_party = models.BooleanField(default=False, verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
-    previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado", blank=True)
+    previous_parties = models.ManyToManyField(Party, related_name="ex_members", verbose_name=u"Si respondió \"sí\", seleccione a qué otros partidos ha pertenecido en el pasado. Debes mantener presionada la tecla \"Control\" o \"Command\" (en Mac) para seleccionar más de una opción." , blank=True)
     topics = models.ManyToManyField(Topic, related_name="person_set", blank=True, verbose_name="Por favor indique los tres temas o problemáticas en las que le gustaría enfocarse durante su gestión (2019-2024).")
     other_topic = models.CharField(max_length=255, verbose_name=u"Otro tema prioritario", blank=True, null=True)
 
@@ -268,7 +268,7 @@ class Person(models.Model):
                     final_mark += 17.5
                 else:
                     final_mark += 35
-            
+
         return final_mark
 
     def update_mark(self):
