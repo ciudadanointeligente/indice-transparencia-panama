@@ -25,8 +25,19 @@
             <td id="columna-persona"><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
            <td>{{ person.party }}</td>
            <td>{{ person.circuit }}</td>
-           <td>{{ person.ranking_mark }}</td>
+           
 
+
+          <td> <div class="progress yellow">
+               <span class="progress-left">
+                   <span class="progress-bar"></span>
+               </span>
+               <span class="progress-right">
+                   <span class="progress-bar"></span>
+               </span>
+               <div class="progress-value"> {{ person.ranking_mark }}</div>
+           </div>
+         </td>
 
 
 
