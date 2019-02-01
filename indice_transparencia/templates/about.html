@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
+
 {% block container %}
 <section class="bgimage" id="about-img">
    <div class="container-fluid">
       <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <p>Índice de Transparencia de políticos</p>
-            <h5 id="about">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h5>
+            <h5 id="about">Este proyecto surge por la necesidad de educar al votante y erradicar el voto clientelar. Ya que la perpetuidad en el poder de varios diputados ha debilitado la institucionalidad de la Asamblea Nacional, resultando en graves casos de corrupción, malversación de fondos, fraude, nepotismo y desacato ante la Corte Suprema de Justicia, entre otros. Muchos ciudadanos votan cada cinco años sin tener acceso a información básica sobre la trayectoria y la integridad de quienes aspiran a cargos de elección popular.
+Estos se perpetúan en el poder sin rendir cuentas sobre su gestión, aprovechando la cultura clientelar, que es alimentada a a su vez por la pobreza, falta de educación y una baja conciencia cívica. Esta situación se agrava con la práctica de muchos actores políticos que utilizan fondos del estado, para comprar la voluntad y dignidad de los electores.</h5>
          </div>
       </div>
    </div>
 </section>
+
+{% include 'includes/alianzas.html' %}
 {% endblock container %}
 {% block extra_end_js %}
 {% endblock extra_end_js %}
