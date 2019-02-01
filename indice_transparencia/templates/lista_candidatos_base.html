@@ -10,7 +10,7 @@
             <p id="index-titulo">Índice de Transparencia de Políticos</p>
             <h5>La participación ciudadana maximiza la rendición de cuentas de nuestros políticos</h5>
 
-            <p><a href="{% url 'ranking' %}" class="btn btn-primary btn-large">Ver índice</a></p>
+            <p><a href="{% url 'ranking' %}" class="btn btn-sm animated-button thar-two">Ver índice</a></p>
           </div>
         </div>
         {% endblock contenido_head %}
@@ -18,6 +18,26 @@
 </section>
 
 {% include 'includes/lista_candidatos.html' with persons=persons %}
+
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-3 col-sm-6">
+            <div class="progress yellow">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="container" id="alianzas">
   <div class="row">
@@ -37,3 +57,10 @@
 </div>
 
 {% endblock container %}
+
+{% block extra_end_js %}
+<script type="text/javascript" >
+
+
+</script>
+{% endblock extra_end_js %}
