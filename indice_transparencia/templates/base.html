@@ -1,117 +1,92 @@
-
 {% load analytical %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% analytical_head_top %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% block meta %}
-    <meta name="description" content="Índice de transparencia Panamá">
-    <meta name="keywords" content="Panamá, Transparencia, Indice">
-    <meta name="author" content="">
-    <title>Índice de Transparencia Panamá</title>
-    {% endblock meta %}
-
-      <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    {% comment %}
+   <head>
+      {% analytical_head_top %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      {% block meta %}
+      <meta name="description" content="Índice de transparencia Panamá">
+      <meta name="keywords" content="Panamá, Transparencia, Indice">
+      <meta name="author" content="">
+      <title>Índice de Transparencia Panamá</title>
+      {% endblock meta %}
+      <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      {% comment %}
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    {% endcomment %}
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-    {% block extrajs %}
-    {% endblock extrajs %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    {% block extracss %}
-    {% endblock extracss %}
-    <link rel="stylesheet" href='{% static "css/main.css" %}'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href='{% static "css/main-table.css" %}'>
-
-    {% analytical_head_bottom %}
-
-  </head>
-
-  <body {% block extra_body_attrs%}{% endblock extra_body_attrs %}>
-    {% analytical_body_top %}
-      {% block navbar %}
-
-      <nav class="navbar navbar-dark fixed-top">
-            <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
-          <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="navbar-collapse collapse" id="collapsingNavbar4">
-              <ul class="navbar-nav">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="{% url "index" %}">Inicio <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url "ranking" %}">Índice de Transparencia</a>
-                  </li>
-                  <li class="nav-item">
-                        <a class="nav-link" href="{% url "about" %}">Nosotros</a>
-                  </li>
-                    {% if debug %}
-                  <li class="nav-item">
-                        <a class="nav-link" href="">dev mode: ON, last commit is:  </a>
-                  </li>
-                  {% endif %}
-              </ul>
-          </div>
-      </nav>
-
-                <!-- BOTON DE BÚSQUEDA
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
-                <button class="btn btn-yellow my-2 my-sm-0" type="submit">Buscar</button> </form>
-                -->
-
-
-
-        {% endblock navbar %}
-
-         <main role="main" class="container-fluid">
-
-                {% block container %}
-
-                {% endblock container%}
-
-         </main>
-
-         <div id="footer">
-               {% block footer %}
-               <!--footer starts from here-->
-   <footer class="footer">
-   <div class="container">
-     <p class="text-center">Copyright @2019 | Índice de Transparencia de Políticos</p>
-     <ul class="social_footer_ul">
-     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-     <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-     </ul>
+      {% endcomment %}
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+      {% block extrajs %}
+      {% endblock extrajs %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      {% block extracss %}
+      {% endblock extracss %}
+      <link rel="stylesheet" href='{% static "css/main.css" %}'>
+      <link rel="stylesheet" href='{% static "css/main-table.css" %}'>
+      {% analytical_head_bottom %}
+   </head>
+   <body {% block extra_body_attrs%}{% endblock extra_body_attrs %}>
+   {% analytical_body_top %}
+   {% block navbar %}
+   <nav class="navbar navbar-dark fixed-top">
+      <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
+      <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="collapsingNavbar4">
+         <ul class="navbar-nav">
+            <li class="nav-item active">
+               <a class="nav-link" href="{% url "index" %}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url "ranking" %}">Índice de Transparencia</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url "about" %}">Nosotros</a>
+            </li>
+            {% if debug %}
+            <li class="nav-item">
+               <a class="nav-link" href="">dev mode: ON, last commit is:  </a>
+            </li>
+            {% endif %}
+         </ul>
+      </div>
+   </nav>
+   <!-- BOTON DE BÚSQUEDA
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
+      <button class="btn btn-yellow my-2 my-sm-0" type="submit">Buscar</button> </form>
+      -->
+   {% endblock navbar %}
+   <main role="main" class="container-fluid">
+      {% block container %}
+      {% endblock container%}
+   </main>
+   <div id="footer">
+      {% block footer %}
+      <!--footer starts from here-->
+      <footer class="footer">
+         <div class="container">
+            <p class="text-center">Copyright @2019 | Índice de Transparencia de Políticos</p>
+            <ul class="social_footer_ul">
+               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+         </div>
+         <!--social_footer_ul ends here-->
+      </footer>
+      {% endblock %}
    </div>
-
-
-   <!--social_footer_ul ends here-->
-
-
-   </footer>
-               {% endblock %}
-             </div>
-
-{% block extra_end_js %}
-{% endblock extra_end_js %}
-{% analytical_body_bottom %}
-  </body>
-
-
-
+   {% block extra_end_js %}
+   {% endblock extra_end_js %}
+   {% analytical_body_bottom %}
+   </body>
 </html>
