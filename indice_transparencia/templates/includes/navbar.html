@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar navbar-dark fixed-top">
+   <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
+   <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="navbar-collapse collapse" id="collapsingNavbar4">
+      <ul class="navbar-nav">
+         <li class="nav-item active">
+            <a class="nav-link" href="{% url "index" %}">Inicio <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url "ranking" %}">Índice de Transparencia</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url "about" %}">Nosotros</a>
+         </li>
+         {% if debug %}
+         <li class="nav-item">
+            <a class="nav-link" href="">dev mode: ON, last commit is:  </a>
+         </li>
+         {% endif %}
+      </ul>
+   </div>
+</nav>
+<!-- BOTON DE BÚSQUEDA
+   <form class="form-inline my-2 my-lg-0">
+   <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
+   <button class="btn btn-yellow my-2 my-sm-0" type="submit">Buscar</button> </form>
+   -->
