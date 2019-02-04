@@ -18,7 +18,7 @@ class EmailDigest(object):
         send_templated_mail(
                         template_name='digest_mail',
                         from_email=settings.DEFAULT_FROM_EMAIL,
-                        recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                        recipient_list=[settings.DIGEST_MAIL_RECEIVER],
                         context={
                             'last_date': timezone.now() - datetime.timedelta(days=7),
                             'persons': self.get_context()['persons'],
