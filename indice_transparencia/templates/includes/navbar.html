@@ -1,4 +1,46 @@
 {% load static %}
+{% load bootstrap4 %}
+
+<!-- header
+================================================== -->
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" href="index.html">
+            <img src="images/logo.png" alt="Homepage">
+        </a>
+    </div>
+
+    <nav class="header-nav">
+
+        <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+        <div class="header-nav__content">
+
+
+            <ul class="header-nav__list">
+                <li class="current"><a class="smoothscroll"  href="#home" title="home">Inicio</a></li>
+                <li><a class="smoothscroll"  href="#" title="about">Índice</a></li>
+                <li><a class="smoothscroll"  href="#services" title="services"></a>Nosotros</li>
+
+
+            </ul>
+
+
+
+        </div> <!-- end header-nav__content -->
+
+    </nav>  <!-- end header-nav -->
+
+    <a class="header-menu-toggle" href="#0">
+        <span class="header-menu-text">Menu</span>
+        <span class="header-menu-icon"></span>
+    </a>
+
+</header> <!-- end s-header -->
+
+
+<!-- nav antiguo
 <nav class="navbar navbar-dark fixed-top">
    <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
@@ -22,7 +64,8 @@
          {% endif %}
       </ul>
    </div>
-</nav>
+</nav>-->
+
 <!-- BOTON DE BÚSQUEDA
    <form class="form-inline my-2 my-lg-0">
    <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
