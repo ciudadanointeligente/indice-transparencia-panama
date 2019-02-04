@@ -132,6 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATE_TO_USE_WHEN_SENDING_EMAIL = 'initial' 
 SHOW_UNDER_DEVELOPMENT_TEMPLATE = False
+DIGEST_MAIL_RECEIVER='test@example.com'
 
 try:
     from .local_settings import *
