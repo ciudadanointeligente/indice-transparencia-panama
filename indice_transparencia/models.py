@@ -80,11 +80,21 @@ class Benefit(models.Model):
 
     class Meta:
         verbose_name = "Beneficio"
+        
+class RankingData(models.Model):
+    ranking_mark = models.FloatField(null=True, blank=True)
+    position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
+    # person = models.OneToOneField(Person, null=False, related_name="ranking_data", on_delete=models.CASCADE, blank=False, verbose_name=u"")
+
+    def save(self, *args, **kwargs):
+        super(RankingData, self).save(*args, **kwargs)
+        
 
 class RankingManager(models.Manager):
     def get_queryset(self):
+        print("RankingManager")
         qs = super().get_queryset()
-        return sorted(qs.all(),  key=lambda m: m.position_in_ranking, reverse=False)
+        return sorted(qs.all(),  key=lambda m: m.ranking_data.position_in_ranking, reverse=False)
 
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
 
@@ -203,6 +213,8 @@ class Person(models.Model):
 
     ranking_mark = models.IntegerField(null=True, blank=True)
     position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
+    
+    ranking_data = models.OneToOneField(RankingData, null=True, on_delete=models.CASCADE, related_name="person", blank=True, verbose_name=u"")
 
     slug = AutoSlugField(populate_from='name', null=True)
     volunteer_changed = PickledObjectField(default=list)
@@ -275,15 +287,33 @@ class Person(models.Model):
         return final_mark
 
     def update_mark(self):
-        self.ranking_mark = self.get_mark()
-        self.save()
+        # self.ranking_mark = self.get_mark()
+        # ranking_data=RankingData.objects.get(person=self)
+        # print("ranking_data.id "+str(ranking_data.id))
+        # print("update_mark(): pre "+str(ranking_data.ranking_mark))
+        self.ranking_data.ranking_mark = self.get_mark()
+        self.ranking_data.save()
+        # print("update_mark(): post "+str(self.ranking_data.ranking_mark))
+        # self.save()
 
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})
 
-
     def __str__(self):
         return self.name
+        
+    def save(self, *args, **kwargs):
+        creating = False
+        if self.id is None:
+            creating = True    
+        if creating:
+            ranking_data = RankingData.objects.create(person=self)
+            self.ranking_data = ranking_data
+        else:
+            ranking_data = RankingData.objects.get(person=self)
+            self.ranking_data = ranking_data
+        super(Person, self).save(*args, **kwargs)
+        self.update_mark()
 
     class Meta:
         verbose_name = "Persona"
@@ -293,7 +323,6 @@ def topics_changed(sender, **kwargs):
         raise ValidationError({'topics': "You can't assign more than three topics"})
 
 m2m_changed.connect(topics_changed, sender=Person.topics.through)
-
 
 
 
@@ -332,13 +361,36 @@ class Contact(models.Model):
 
 def update_positions_in_ranking():
     ## Aquí hago la wea J!
+    # print('Aquí hago la wea J!')
+    # print('update_positions_in_ranking')
+    # counter = 1
+    # for p in Person.objects.all().order_by('-ranking_mark'):
+    #     p.position_in_ranking = counter
+    #     p.save()
+    #     counter += 1
+        
     counter = 1
-    for p in Person.objects.all().order_by('-ranking_mark'):
-        p.position_in_ranking = counter
-        p.save()
+    # for p in Person.objects.all().order_by('-ranking_mark'):
+    for p in Person.objects.all().order_by('-ranking_data__ranking_mark'):
+        # print('update_positions_in_ranking: '+str(counter))
+        # print('person id: '+str(p.id))
+        # print('person.ranking_data.mark: '+str(p.ranking_data.ranking_mark))
+        # print('person position: '+str(counter))
+        p.ranking_data.position_in_ranking = counter
+        # print('a-update_positions_in_ranking: '+str(p.ranking_data.position_in_ranking))
+        p.ranking_data.save()
+        # p.save()
+        # print('b-update_positions_in_ranking: '+str(p.ranking_data.position_in_ranking))
+        
+        # ranking_data = RankingData.objects.get(id=p.ranking_data.id)
+        # print('ranking_data id: '+str(ranking_data.id))
+        # ranking_data.position_in_ranking = counter
+        # ranking_data.save()
         counter += 1
 
 
 def update_mark_and_position_in_ranking(person):
+    # print('update_mark_and_position_in_ranking')
     person.update_mark()
+    # person.ranking_data.update_mark()
     update_positions_in_ranking()

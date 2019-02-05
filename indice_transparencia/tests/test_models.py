@@ -1,13 +1,14 @@
 from django.test import TestCase
 from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          WorkRecord, EducationalRecord, Benefit,
-                                         Contact, Circuit, Topic,
+                                         Contact, Circuit, Topic,RankingData,
                                          update_positions_in_ranking,
                                          update_mark_and_position_in_ranking)
 from django.core import mail
 from django.urls import reverse
 import datetime
 from django.db import transaction
+from django.core.management import call_command
 
 
 class TestModelos(TestCase):
@@ -23,6 +24,7 @@ class TestModelos(TestCase):
         assert p.created
         assert p.modified
         assert p.slug
+        assert p.ranking_data
 
     def test_a_person_can_have_a_list_of_fields(self):
         '''El modelo persona puede guardar un arreglo de campos guardados por las voluntarias'''
@@ -81,6 +83,35 @@ class TestModelos(TestCase):
         p.topics.add(topic)
         assert p.topics.count() == 1
         assert p in topic.person_set.all()
+        
+    def test_instanciate_ranking_data(self):
+        p = Person.objects.create(name=u'Fiera')
+        EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
+        p.update_mark()
+        p2 = Person.objects.create(name=u'Fiera2')
+        # EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p2)
+        # EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p2)
+        p2.update_mark()
+        update_positions_in_ranking()
+        
+        # print("p1.ranking_data.ranking_mark:"+str(p.ranking_data.ranking_mark))
+        # print("p1.ranking_data.position_in_ranking:"+str(p.ranking_data.position_in_ranking))
+        # print("p1.ranking_data.id:"+str(RankingData.objects.get(id=p.ranking_data.id).id))
+        # print("p1.ranking_data.p:"+str(RankingData.objects.get(id=p.ranking_data.id).position_in_ranking))
+        # print("p1.ranking_data.m:"+str(RankingData.objects.get(id=p.ranking_data.id).ranking_mark))
+        
+        # print("p2.ranking_data.ranking_mark:"+str(p2.ranking_data.ranking_mark))
+        # print("p2.ranking_data.position_in_ranking:"+str(p2.ranking_data.position_in_ranking))
+        # print("p2.ranking_data.id:"+str(RankingData.objects.get(id=p2.ranking_data.id).id))
+        # print("p2.ranking_data.p:"+str(RankingData.objects.get(id=p2.ranking_data.id).position_in_ranking))
+        # print("p2.ranking_data.m:"+str(RankingData.objects.get(id=p2.ranking_data.id).ranking_mark))
+        r1 = RankingData.objects.get(id=p.ranking_data.id)
+        assert p.ranking_data.id == r1.id
+        # print("nota: "+str(r1.ranking_mark))
+        # print("posicion: "+str(r1.position_in_ranking))
+        assert r1.ranking_mark
+        assert r1.position_in_ranking
+        # assert p.ranking_data.position_in_ranking
     
     def test_limit_topics_per_person(self):
         p = Person.objects.create(name=u'Fiera')
@@ -134,14 +165,14 @@ class RankingCalculation(TestCase):
         p = Person.objects.create(name=u'Fiera')
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         p.update_mark()
-        assert p.ranking_mark == 2.5
+        assert p.ranking_data.ranking_mark == 2.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         p.update_mark()
-        assert p.ranking_mark == 5
+        assert p.ranking_data.ranking_mark == 5
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         p.update_mark()
-        assert p.ranking_mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
+        assert p.ranking_data.ranking_mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
         # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
 
     def test_person_has_a_update_mark_method(self):
@@ -150,20 +181,22 @@ class RankingCalculation(TestCase):
         ed_record.save()
         p.update_mark()
         # p.refresh_from_db()
-        assert p.ranking_mark == 2.5
+        assert p.ranking_data.ranking_mark == 2.5
 
     def test_it_calculates_a_mark_currently_deputy(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=True) ## <======== incumbente por que is_deputy=True
+        p.update_mark()
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         p.update_mark()
-        assert p.ranking_mark == 2.5
+        # r=RankingData.objects.get(person=p)
+        assert p.ranking_data.ranking_mark == 2.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         p.update_mark()
-        assert p.ranking_mark == 5
+        assert p.ranking_data.ranking_mark == 5
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         p.update_mark()
-        assert p.ranking_mark == 10
+        assert p.ranking_data.ranking_mark == 10
         ## Este es para el caso de que sea un incumbente, es decir que está llendo a la reelección.
 
     def test_ranking(self):
@@ -208,9 +241,9 @@ class RankingCalculation(TestCase):
         pdo.refresh_from_db()
         p1.refresh_from_db()
         p2.refresh_from_db()
-        assert p2.position_in_ranking == 1
-        assert p1.position_in_ranking == 2
-        assert pdo.position_in_ranking == 3
+        assert p2.ranking_data.position_in_ranking == 1
+        assert p1.ranking_data.position_in_ranking == 2
+        assert pdo.ranking_data.position_in_ranking == 3
 
     def test_update_mark_and_position_in_ranking(self):
         ### CREANDO DATOS
@@ -228,7 +261,7 @@ class RankingCalculation(TestCase):
 
         update_mark_and_position_in_ranking(p1)
         p1.refresh_from_db()
-        assert p1.position_in_ranking == 2
+        assert p1.ranking_data.position_in_ranking == 2
     
     def test_deputy_100(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=True)
