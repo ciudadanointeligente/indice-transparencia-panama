@@ -89,12 +89,13 @@ class RankingListView(UnderDevelopmentMixin, ListView):
     context_object_name = "persons"
     
     def get_queryset(self):
-        qs = super().get_queryset().order_by('position_in_ranking')
+        qs = super().get_queryset().order_by('ranking_data__position_in_ranking')
         return qs
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset().order_by('position_in_ranking'))
+        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset().order_by('ranking_data__position_in_ranking'))
+        context['persons'] = context['filter'].qs
         return context
     
 class IndexView(UnderDevelopmentMixin, TemplateView):
@@ -108,7 +109,7 @@ class IndexView(UnderDevelopmentMixin, TemplateView):
             persons = cache.get('persons_index')
             
         else:
-            persons = Person.objects.order_by('position_in_ranking')[:10]
+            persons = Person.objects.order_by('ranking_data__position_in_ranking')[:10]
 
             cache.set(persons_index_cache_key, persons, 300)
         context['persons'] = persons

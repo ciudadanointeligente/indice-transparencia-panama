@@ -118,11 +118,11 @@ class PersonUpdateView(TestCase):
         assert p.work_records.count() == 1
         assert p.judiciary_records.count() == 1
 
-        assert p.position_in_ranking is not None
-        assert p.ranking_mark is not None
+        assert p.ranking_data.position_in_ranking is not None
+        assert p.ranking_data.ranking_mark is not None
 
-        assert p.ranking_mark
-        assert p.position_in_ranking
+        assert p.ranking_data.ranking_mark
+        assert p.ranking_data.position_in_ranking
 
 
     def test_it_removes_fields_from_volunteers_changed(self):

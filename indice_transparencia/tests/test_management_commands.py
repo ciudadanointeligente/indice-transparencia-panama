@@ -2,7 +2,7 @@ from django.core.management import call_command
 from django.test import TestCase
 from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          WorkRecord, EducationalRecord, Benefit,
-                                         Contact, Circuit, Topic,
+                                         Contact, Circuit, Topic, RankingData,
                                          update_positions_in_ranking,
                                          update_mark_and_position_in_ranking)
 from django.utils import timezone
@@ -34,13 +34,16 @@ class TestManagementCommands(TestCase):
         pdo.refresh_from_db()
         p1.refresh_from_db()
         p2.refresh_from_db()
+        r1=RankingData.objects.get(person=p1)
+        r2=RankingData.objects.get(person=p2)
+        rdo=RankingData.objects.get(person=pdo)
 
-        assert p2.position_in_ranking == 1
-        assert p2.ranking_mark
-        assert p1.position_in_ranking == 2
-        assert p1.ranking_mark
-        assert pdo.position_in_ranking == 3
-        assert pdo.ranking_mark == 0
+        assert r2.position_in_ranking == 1
+        assert r2.ranking_mark
+        assert r1.position_in_ranking == 2
+        assert r1.ranking_mark
+        assert rdo.position_in_ranking == 3
+        assert rdo.ranking_mark == 0
 
     def test_hay_un_comando_q_envia_un_mail_digest(self):
         p1 = Person.objects.create(name='perrito')

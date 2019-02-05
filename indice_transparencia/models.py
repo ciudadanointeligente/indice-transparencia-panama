@@ -80,11 +80,19 @@ class Benefit(models.Model):
 
     class Meta:
         verbose_name = "Beneficio"
+        
+class RankingData(models.Model):
+    ranking_mark = models.FloatField(null=True, blank=True)
+    position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
+
+    def save(self, *args, **kwargs):
+        super(RankingData, self).save(*args, **kwargs)
+        
 
 class RankingManager(models.Manager):
     def get_queryset(self):
         qs = super().get_queryset()
-        return sorted(qs.all(),  key=lambda m: m.position_in_ranking, reverse=False)
+        return sorted(qs.all(),  key=lambda m: m.ranking_data.position_in_ranking, reverse=False)
 
 TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'), )
 
@@ -203,6 +211,8 @@ class Person(models.Model):
 
     ranking_mark = models.IntegerField(null=True, blank=True)
     position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
+    
+    ranking_data = models.OneToOneField(RankingData, null=True, on_delete=models.CASCADE, related_name="person", blank=True, verbose_name=u"")
 
     slug = AutoSlugField(populate_from='name', null=True)
     volunteer_changed = PickledObjectField(default=list)
@@ -275,15 +285,27 @@ class Person(models.Model):
         return final_mark
 
     def update_mark(self):
-        self.ranking_mark = self.get_mark()
-        self.save()
+        self.ranking_data.ranking_mark = self.get_mark()
+        self.ranking_data.save()
 
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})
 
-
     def __str__(self):
         return self.name
+        
+    def save(self, *args, **kwargs):
+        # creating = False
+        # if self.id is None:
+        #     creating = True    
+        # if creating:
+        #     ranking_data = RankingData.objects.create(person=self)
+        #     self.ranking_data = ranking_data
+        # else:
+        ranking_data = RankingData.objects.get_or_create(person=self)
+        self.ranking_data = ranking_data[0]
+        super(Person, self).save(*args, **kwargs)
+        self.update_mark()
 
     class Meta:
         verbose_name = "Persona"
@@ -293,7 +315,6 @@ def topics_changed(sender, **kwargs):
         raise ValidationError({'topics': "You can't assign more than three topics"})
 
 m2m_changed.connect(topics_changed, sender=Person.topics.through)
-
 
 
 
@@ -332,10 +353,11 @@ class Contact(models.Model):
 
 def update_positions_in_ranking():
     ## Aquí hago la wea J!
+        
     counter = 1
-    for p in Person.objects.all().order_by('-ranking_mark'):
-        p.position_in_ranking = counter
-        p.save()
+    for p in Person.objects.all().order_by('-ranking_data__ranking_mark'):
+        p.ranking_data.position_in_ranking = counter
+        p.ranking_data.save()
         counter += 1
 
 
