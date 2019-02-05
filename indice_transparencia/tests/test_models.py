@@ -94,24 +94,12 @@ class TestModelos(TestCase):
         p2.update_mark()
         update_positions_in_ranking()
         
-        # print("p1.ranking_data.ranking_mark:"+str(p.ranking_data.ranking_mark))
-        # print("p1.ranking_data.position_in_ranking:"+str(p.ranking_data.position_in_ranking))
-        # print("p1.ranking_data.id:"+str(RankingData.objects.get(id=p.ranking_data.id).id))
-        # print("p1.ranking_data.p:"+str(RankingData.objects.get(id=p.ranking_data.id).position_in_ranking))
-        # print("p1.ranking_data.m:"+str(RankingData.objects.get(id=p.ranking_data.id).ranking_mark))
-        
-        # print("p2.ranking_data.ranking_mark:"+str(p2.ranking_data.ranking_mark))
-        # print("p2.ranking_data.position_in_ranking:"+str(p2.ranking_data.position_in_ranking))
-        # print("p2.ranking_data.id:"+str(RankingData.objects.get(id=p2.ranking_data.id).id))
-        # print("p2.ranking_data.p:"+str(RankingData.objects.get(id=p2.ranking_data.id).position_in_ranking))
-        # print("p2.ranking_data.m:"+str(RankingData.objects.get(id=p2.ranking_data.id).ranking_mark))
         r1 = RankingData.objects.get(id=p.ranking_data.id)
         assert p.ranking_data.id == r1.id
-        # print("nota: "+str(r1.ranking_mark))
-        # print("posicion: "+str(r1.position_in_ranking))
+        assert p.ranking_data.ranking_mark
         assert r1.ranking_mark
-        assert r1.position_in_ranking
         # assert p.ranking_data.position_in_ranking
+        assert r1.position_in_ranking == 1
     
     def test_limit_topics_per_person(self):
         p = Person.objects.create(name=u'Fiera')
@@ -188,7 +176,6 @@ class RankingCalculation(TestCase):
         p.update_mark()
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         p.update_mark()
-        # r=RankingData.objects.get(person=p)
         assert p.ranking_data.ranking_mark == 2.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()

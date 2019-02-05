@@ -84,7 +84,6 @@ class Benefit(models.Model):
 class RankingData(models.Model):
     ranking_mark = models.FloatField(null=True, blank=True)
     position_in_ranking = models.IntegerField(null=True, blank=True, default=None)
-    # person = models.OneToOneField(Person, null=False, related_name="ranking_data", on_delete=models.CASCADE, blank=False, verbose_name=u"")
 
     def save(self, *args, **kwargs):
         super(RankingData, self).save(*args, **kwargs)
@@ -92,7 +91,6 @@ class RankingData(models.Model):
 
 class RankingManager(models.Manager):
     def get_queryset(self):
-        print("RankingManager")
         qs = super().get_queryset()
         return sorted(qs.all(),  key=lambda m: m.ranking_data.position_in_ranking, reverse=False)
 
@@ -287,14 +285,8 @@ class Person(models.Model):
         return final_mark
 
     def update_mark(self):
-        # self.ranking_mark = self.get_mark()
-        # ranking_data=RankingData.objects.get(person=self)
-        # print("ranking_data.id "+str(ranking_data.id))
-        # print("update_mark(): pre "+str(ranking_data.ranking_mark))
         self.ranking_data.ranking_mark = self.get_mark()
         self.ranking_data.save()
-        # print("update_mark(): post "+str(self.ranking_data.ranking_mark))
-        # self.save()
 
     def get_absolute_url(self):
         return reverse('candidate-profile', kwargs={'slug': self.slug})
@@ -303,15 +295,15 @@ class Person(models.Model):
         return self.name
         
     def save(self, *args, **kwargs):
-        creating = False
-        if self.id is None:
-            creating = True    
-        if creating:
-            ranking_data = RankingData.objects.create(person=self)
-            self.ranking_data = ranking_data
-        else:
-            ranking_data = RankingData.objects.get(person=self)
-            self.ranking_data = ranking_data
+        # creating = False
+        # if self.id is None:
+        #     creating = True    
+        # if creating:
+        #     ranking_data = RankingData.objects.create(person=self)
+        #     self.ranking_data = ranking_data
+        # else:
+        ranking_data = RankingData.objects.get_or_create(person=self)
+        self.ranking_data = ranking_data[0]
         super(Person, self).save(*args, **kwargs)
         self.update_mark()
 
@@ -361,36 +353,14 @@ class Contact(models.Model):
 
 def update_positions_in_ranking():
     ## Aquí hago la wea J!
-    # print('Aquí hago la wea J!')
-    # print('update_positions_in_ranking')
-    # counter = 1
-    # for p in Person.objects.all().order_by('-ranking_mark'):
-    #     p.position_in_ranking = counter
-    #     p.save()
-    #     counter += 1
         
     counter = 1
-    # for p in Person.objects.all().order_by('-ranking_mark'):
     for p in Person.objects.all().order_by('-ranking_data__ranking_mark'):
-        # print('update_positions_in_ranking: '+str(counter))
-        # print('person id: '+str(p.id))
-        # print('person.ranking_data.mark: '+str(p.ranking_data.ranking_mark))
-        # print('person position: '+str(counter))
         p.ranking_data.position_in_ranking = counter
-        # print('a-update_positions_in_ranking: '+str(p.ranking_data.position_in_ranking))
         p.ranking_data.save()
-        # p.save()
-        # print('b-update_positions_in_ranking: '+str(p.ranking_data.position_in_ranking))
-        
-        # ranking_data = RankingData.objects.get(id=p.ranking_data.id)
-        # print('ranking_data id: '+str(ranking_data.id))
-        # ranking_data.position_in_ranking = counter
-        # ranking_data.save()
         counter += 1
 
 
 def update_mark_and_position_in_ranking(person):
-    # print('update_mark_and_position_in_ranking')
     person.update_mark()
-    # person.ranking_data.update_mark()
     update_positions_in_ranking()

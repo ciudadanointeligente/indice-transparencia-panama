@@ -10,7 +10,10 @@ class Command(BaseCommand):
         # print("Recalculando Ranking")
         # self.stdout.write("Recalculando Ranking")
         for p in Person.objects.all():
-            ranking_data=RankingData.objects.get_or_create(person=p)
+            ranking_data, is_new = RankingData.objects.get_or_create(person=p)
+            if is_new:
+                p.ranking_data=ranking_data
+                p.save()
             p.update_mark()
 
         update_positions_in_ranking()
