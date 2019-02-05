@@ -691,7 +691,7 @@ transform: translate3d(0, -50%, 0);
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: .4;
+    opacity: 2.8;
     background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -761,8 +761,9 @@ transform: translate3d(0, -50%, 0);
   display: block;
   width: 100%;
   cursor: pointer;
-  margin-left:50px;
+
 }
+
 
 /*------------------------------------*/
 /*------ Basic Underline Styles ------*/
@@ -772,8 +773,6 @@ transform: translate3d(0, -50%, 0);
 .custom-underline {
   position: relative;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 400;
   text-align: center;
   padding-bottom:10px;
 }
@@ -811,4 +810,8 @@ transform: translate3d(0, -50%, 0);
 .box-e:hover .custom-underline::after {
   width: 100%;
   transition: 0.3s ease all;
+}
+
+#indice-titulo1{
+  margin-left:50px;
 }
