@@ -17,6 +17,8 @@ transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 width:150px;
 margin-top:15px;
 border-radius: 0px;
+margin-left:15px;
+
 }
 
 a.animated-button.thar-two:hover {
@@ -217,6 +219,12 @@ padding-right: 250px;
 #about-img{
 height: 490px;
 }
+
+#header-menu-text{
+font-size:14px;
+color:white;
+}
+
 .form-control.is-valid, .was-validated .form-control:valid{
 background-image:none;
 }
@@ -345,10 +353,11 @@ z-index: 2;
 color:white;
 font-family:"Montserrat";
 text-shadow:2px 2px #333;
-padding-left: 50px;
+padding-left: 65px;
 padding-right:300px;
 font-size: 28px;
 line-height: 1.4;
+
 }
 .bgimage p {
 color:#eab300;
@@ -615,4 +624,194 @@ padding-bottom:0px;
 font-size: 14px;
 padding-right: 30px;
 }
+}
+
+.home-social {
+font-family: "montserrat-regular";
+list-style: none;
+margin: 0;
+position: absolute;
+top: 50%;
+right: 5.4rem;
+-webkit-transform: translate3d(0, -50%, 0);
+-ms-transform: translate3d(0, -50%, 0);
+transform: translate3d(0, -50%, 0);
+}
+
+.home-social i {
+    font-size: 14px;
+    right: 0;
+    text-align: center;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    line-height: calc(33px - 4px);
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.home-social i, .home-social span {
+    position: absolute;
+    top: 0;
+    line-height: 30px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.home-social li {
+    position: relative;
+    padding: .9rem 0;
+}
+
+.home-social li a {
+    display: block;
+    width: 33px;
+    height: 33px;
+}
+
+.home-social a {
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.s-home {
+    width: 100%;
+    height: 100%;
+    min-height: 786px;
+    background-color: transparent;
+    position: relative;
+    display: table;
+  background: url('/static/images/panama.jpg');
+}
+
+.s-home .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 2.8;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000', GradientType=0);
+}
+
+#h5-about {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+  line-height: 2;
+  font-size: 16px;
+}
+
+#h3-about {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1rem;
+    color: #fdc63b;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.home-content__main {
+    animation-duration: 2s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    max-width: 800px;
+    padding-top: 4rem;
+    position: relative;
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-content__line {
+    display: block;
+    width: 2px;
+    height: 10.2rem;
+    background-color: #fdc63b;
+    position: absolute;
+    right: 6.4rem;
+    bottom: 0;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f09a";
+}
+
+.box-e {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+
+/*------------------------------------*/
+/*------ Basic Underline Styles ------*/
+/*------------------------------------*/
+
+.normal-underline,
+.custom-underline {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding-bottom:10px;
+}
+
+.normal-underline,
+.normal-underline:hover {
+  color: #ebb400;
+  text-decoration: underline;
+
+}
+
+.custom-underline,
+.custom-underline:hover,
+.custom-underline:focus,
+.custom-underline:active {
+  color: #ebb400;
+  text-decoration: none;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+}
+
+/*--- Red Box (box-e) ---*/
+.box-e .custom-underline::after {
+  top: 65%;
+  height: 2px;
+  width: 0%;
+  left: 0%;
+  background-color: #ebb400;
+    transition: 0.5s ease all .3s;
+}
+
+.box-e:hover .custom-underline::after {
+  width: 100%;
+  transition: 0.3s ease all;
+}
+
+#indice-titulo1{
+  margin-left:50px;
 }

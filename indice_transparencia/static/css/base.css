@@ -1,8 +1,11 @@
 
 @import url("font-awesome/css/font-awesome.min.css");
+@import url("micons/micons.css");
+@import url("fonts.css");
+
 
 html {
-    font-family: "Montserrat";
+    font-family: sans-serif;
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -43,7 +46,7 @@ hr {
 }
 
 pre {
-    font-family: "Montserrat";
+    font-family: monospace, monospace;
     font-size: 1em;
 }
 
@@ -76,7 +79,7 @@ strong {
 code,
 kbd,
 samp {
-    font-family: "Montserrat";
+    font-family: monospace, monospace;
     font-size: 1em;
 }
 
@@ -132,7 +135,7 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: "Montserrat";
+    font-family: sans-serif;
     font-size: 100%;
     line-height: 1.15;
     margin: 0;
