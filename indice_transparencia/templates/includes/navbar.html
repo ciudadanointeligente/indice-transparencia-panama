@@ -1,5 +1,6 @@
 {% load static %}
 
+{% block container %}
 
 <nav class="navbar navbar-dark fixed-top">
    <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
@@ -27,6 +28,12 @@
       </ul>
    </div>
 </nav>
+
+{% endblock container %}
+
+{% block extra_end_js %}
+
+{% endblock extra_end_js %}
 
 <!-- BOTON DE BÚSQUEDA
    <form class="form-inline my-2 my-lg-0">
