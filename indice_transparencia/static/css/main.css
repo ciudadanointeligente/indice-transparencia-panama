@@ -544,7 +544,7 @@ padding-right: 200px;
 
 @media screen and (max-width: 700px){
 .bgimage h5 {
-font-size: 22px;
+font-size: 20px;
 padding-right:40px;
 }
 #about {
@@ -555,7 +555,7 @@ padding-right: 30px;
 
 @media screen and (max-width: 600px){
 .bgimage h5 {
-font-size: 22px;
+font-size: 20px;
 padding-right:40px;
 }
 .bgimage p {
