@@ -1,6 +1,8 @@
 {% load static %}
 
 {% block container %}
+
+<div id=navbar-barra>
 <div class="header-logo">
     <a class="site-logo" href="index.html">
       <img src="{% static "images/logo-espacio-civico.png" %}"
@@ -10,7 +12,7 @@
 <nav class="header-nav navbar navbar-dark fixed-top">
 
 
-            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+            <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
 
             <div class="header-nav__content">
 
@@ -33,7 +35,7 @@
             <span class="header-menu-text">Menu</span>
             <span class="header-menu-icon"></span>
         </a>
-
+<div>
 {% endblock container %}
 
 {% block extra_end_js %}
