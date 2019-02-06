@@ -401,6 +401,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     text-shadow: none;
     color: transparent;
     z-index: 800;
+    font-family: montserrat;
+    font-size:10px;
 }
 
 .header-nav__close span::before,
