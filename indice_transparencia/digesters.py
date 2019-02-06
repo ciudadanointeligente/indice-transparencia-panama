@@ -9,7 +9,7 @@ class EmailDigest(object):
     def get_context(self):
         context = {}
         now = timezone.now()
-        una_semana_atras = now - datetime.timedelta(days=7)
+        una_semana_atras = now - datetime.timedelta(days=settings.DIGEST_MAIL_DAYS_REPORT)
         context['persons'] = Person.objects.filter(modified__gte=una_semana_atras)
         return context
         
@@ -20,7 +20,7 @@ class EmailDigest(object):
                         from_email=settings.DEFAULT_FROM_EMAIL,
                         recipient_list=[settings.DIGEST_MAIL_RECEIVER],
                         context={
-                            'last_date': timezone.now() - datetime.timedelta(days=7),
+                            'last_date': timezone.now() - datetime.timedelta(days=settings.DIGEST_MAIL_DAYS_REPORT),
                             'persons': self.get_context()['persons'],
                             'site': site
                             }
