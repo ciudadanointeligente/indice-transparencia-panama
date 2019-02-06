@@ -3,6 +3,7 @@ from indice_transparencia.digesters import EmailDigest
 from indice_transparencia.models import Person
 from django.utils import timezone
 import csv
+import os
 
 
 class Command(BaseCommand):
@@ -11,6 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         
         model = Person
+        os.mkdir(os.path.join('media', 'reports'))
         outfile_path = 'media/reports/report_'+str(timezone.now()).split(" ")[0]+'.csv'
         writer = csv.writer(open(outfile_path, 'w'))
         
