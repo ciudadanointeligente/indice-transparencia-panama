@@ -296,7 +296,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     line-height: 1.846;
     padding: 3.6rem 3rem 3.6rem 3.6rem;
     height: 100%;
-    width: 280px;
     position: fixed;
     right: 0;
     top: 0;
