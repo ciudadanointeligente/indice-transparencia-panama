@@ -170,6 +170,7 @@ background: linear-gradient(45deg, #dee2e6, #e9ecef);
 
 .wrap-table100 {
   width: 1170px;
+	margin-top:250px;
 }
 
 table {
@@ -269,7 +270,13 @@ tbody tr:hover {
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
+
+	.wrap-table100 {
+	  width: 1170px;
+		margin-top:350px;
+	}
+
   table {
     display: block;
   }
@@ -357,7 +364,7 @@ tbody tr:hover {
 
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .container-table100 {
     padding-left: 15px;
     padding-right: 15px;
@@ -366,4 +373,9 @@ tbody tr:hover {
   #contador-ranking{
     display: none;
   }
+
+	.wrap-table100 {
+	  width: 1170px;
+		margin-top:480px;
+	}
 }
