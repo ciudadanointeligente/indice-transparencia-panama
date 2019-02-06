@@ -759,24 +759,22 @@ transform: translate3d(0, -50%, 0);
 #h5-about {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    margin-left: 15%;
-    margin-right: 15%;
     color: white;
   line-height: 2;
   font-size: 16px;
+  margin-left: 0px;
+  margin-right:0px;
 }
 
 #h3-about {
     font-family: "montserrat-medium", sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
     color: #fdc63b;
     text-transform: uppercase;
     letter-spacing: .3rem;
     position: relative;
     margin-top: 70px;
     margin-bottom: 1.2rem;
-    margin-left: 15%;
-    margin-right: 15%;
 }
 
 .home-content__main {
@@ -878,11 +876,11 @@ transform: translate3d(0, -50%, 0);
 
 @media screen and (max-width: 600px){
 #h3-about {
-    font-size: 1rem;
+    font-size: 16px;
     margin-top:30px;
     margin-bottom: .1rem;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left:0px;
+    margin-right:0px;
 }
 
 .normal-underline, .custom-underline {
@@ -895,10 +893,10 @@ transform: translate3d(0, -50%, 0);
 
 #h5-about {
     margin-top: 0.5rem;
-    margin-left: 10%;
-    margin-right: 10%;
     line-height: 1.7;
-    font-size: 14px;
+    font-size: 16px;
+    margin-left:0px;
+    margin-right:0px;
 }
 
 .home-content__line {
