@@ -263,19 +263,20 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .header-logo {
     display: inline-block;
     position: absolute;
-    margin: 0;
-    padding: 0;
+    margin-top: 40px;
+    padding: 10px;
     left: 40px;
-    top: 6%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 501;
+
 }
+
+
 
 .header-logo a {
     display: block;
-    margin: 9px 0 0 0;
     padding: 0;
     outline: 0;
     border: none;
@@ -542,9 +543,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
     .header-logo {
         left: 30px;
+
+
     }
     .header-menu-toggle {
         right: 25px;
+        background-color: black;
     }
 }
 
