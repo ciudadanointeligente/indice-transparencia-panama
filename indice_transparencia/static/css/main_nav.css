@@ -262,7 +262,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 .header-logo {
     display: inline-block;
-    position: absolute;
+    position: fixed;
     margin-top: 40px;
     padding: 10px;
     left: 40px;
@@ -543,8 +543,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
     .header-logo {
         left: 30px;
-
-
+          
     }
     .header-menu-toggle {
         right: 25px;
