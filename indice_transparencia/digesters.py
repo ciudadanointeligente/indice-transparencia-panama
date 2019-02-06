@@ -22,6 +22,7 @@ class EmailDigest(object):
                         context={
                             'last_date': timezone.now() - datetime.timedelta(days=settings.DIGEST_MAIL_DAYS_REPORT),
                             'persons': self.get_context()['persons'],
-                            'site': site
+                            'site': site,
+                            'report_url': 'media/reports/report_'+str(timezone.now()).split(" ")[0]+'.csv'
                             }
                         )
