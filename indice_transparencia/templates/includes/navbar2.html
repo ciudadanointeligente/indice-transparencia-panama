@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block container %}
+
+<nav class="header-nav navbar navbar-dark fixed-top">
+    <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+
+
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Inicio</a></li>
+                    <li><a class="smoothscroll"  href="#" title="about">Índice</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services"></a>Nosotros</li>
+
+
+                </ul>
+
+
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+{% endblock container %}
+
+{% block extra_end_js %}
+
+{% endblock extra_end_js %}
+
+<!-- BOTON DE BÚSQUEDA
+   <form class="form-inline my-2 my-lg-0">
+   <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
+   <button class="btn btn-yellow my-2 my-sm-0" type="submit">Buscar</button> </form>
+   -->

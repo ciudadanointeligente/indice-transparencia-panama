@@ -27,7 +27,7 @@
    {% analytical_body_top %}
 
    {% block navbar %}
-   {% include 'includes/navbar.html' %}
+   {% include 'includes/navbar2.html' %}
    {% endblock navbar %}
 
    <main role="main" class="container-fluid">
@@ -43,6 +43,7 @@
 
    {% block extra_end_js %}
    {% endblock extra_end_js %}
+   <script src="{% static "js/main.js" %}" ></script>
 
    {% analytical_body_bottom %}
    </body>
