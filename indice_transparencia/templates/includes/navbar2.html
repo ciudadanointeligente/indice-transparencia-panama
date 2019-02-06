@@ -1,6 +1,11 @@
 {% load static %}
 
 {% block container %}
+<div class="header-logo">
+    <a class="site-logo" href="index.html">
+      <img src="{% static "images/logo-espacio-civico.png" %}"
+    </a>
+</div>
 
 <nav class="header-nav navbar navbar-dark fixed-top">
     <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
