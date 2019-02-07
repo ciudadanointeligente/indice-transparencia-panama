@@ -1,5 +1,5 @@
 {% extends 'templated_email/base.email' %}
-{% block subject %}Modificaciones al Índice de Transparencia de Candaditos{% endblock %}
+{% block subject %}Modificaciones al Índice de Transparencia de Políticos{% endblock %}
 
 
 {% block message %}
@@ -17,7 +17,7 @@
             {% endfor %} 
             <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"> </p>
             <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Atentamente,</p>
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Indice de Transparencia de Candaditos</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Indice de Transparencia de Políticos</p>
           </td>
         </tr>
       </table>
