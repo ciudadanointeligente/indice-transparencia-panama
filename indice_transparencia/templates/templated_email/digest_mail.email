@@ -9,11 +9,11 @@
       <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
         <tr>
           <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Estimado Espacio Cívico,</p>
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Para acceder al reporte de hoy <a href="https://{{site.domain}}/{{ report_url }}">haz click aqui</a></p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">¡Hola, Espacio Cívico!</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hemos generado el reporte de data almacenada hasta la fecha (<a href="https://{{site.domain}}/{{ report_url }}">revisa el reporte de hoy aquí</a>).</p>
             <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">A continuación se detallan los candidatos modificados desde {{ last_date }} hasta hoy.</p>
             {% for p in persons %}
-            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"> - {{ p }} y puedes revisar los cambios <a href="https://{{site.domain}}{{ p.get_absolute_url }}">aqui</a></p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"> - {{ p }} y puedes revisar su perfil <a href="https://{{site.domain}}{{ p.get_absolute_url }}">aqui</a></p>
             {% endfor %} 
             <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"> </p>
             <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Atentamente,</p>
