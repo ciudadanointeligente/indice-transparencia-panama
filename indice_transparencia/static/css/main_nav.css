@@ -453,16 +453,20 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transition-timing-function: ease-in-out;
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
-    left: 0;
+    left: -20px;
+
 }
 
+.header-nav__list a, .header-nav__list a:hover{
+color:#ebb400;
+}
 
 /* -------------------------------------------------------------------
  * ## mobile menu toggle
  * ------------------------------------------------------------------- */
 .header-menu-toggle {
     position: fixed;
-    right: 38px;
+    right: 40px;
     top: 24px;
     height: 42px;
     width: 42px;
@@ -546,7 +550,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
     }
     .header-menu-toggle {
-        right: 25px;
+        right: 40px;
         background-color: black;
     }
 }
