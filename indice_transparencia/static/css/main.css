@@ -465,9 +465,12 @@ color:white;
   background: url('/static/images/bg-indice.jpg');
   height: 300px;
   width: 100%;
-  position:static;
+  margin-bottom:40px;
+
 
 }
+
+
 
 /*tabla-variables*/
 #numero {
@@ -968,4 +971,9 @@ transform: translate3d(0, -50%, 0);
 
 .home-content__line {
 display:none;
+}
+
+#container-perfil{
+  margin-top:40px;
+  margin-bottom:40px;
 }
