@@ -970,7 +970,9 @@ display:none;
 
 
 /* Tabs*/
-
+#navtabs{
+  margin-top:400px;
+}
 
 #tabs-ranking.container-ranking{
   margin-bottom: 450px;
