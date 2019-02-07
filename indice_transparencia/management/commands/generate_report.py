@@ -12,6 +12,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         
         model = Person
+        if os.path.exists("media/") == False:
+            os.mkdir(os.path.join('.', 'media'))
         if os.path.exists("media/reports/") == False:
             os.mkdir(os.path.join('media', 'reports'))
         outfile_path = 'media/reports/report_'+str(timezone.now()).split(" ")[0]+'.csv'
