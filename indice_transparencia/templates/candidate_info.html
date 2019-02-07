@@ -7,22 +7,21 @@
 
 {% block container %}
 
-
-  <div class="row">
+  <div class="row" id="background-image2">
     <div class="col">
     </div>
     <div class="col-6">
       <div class='row'>
         <div class='col'>
-        <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+        <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid-perfil">
         </div>
         <div class='col'>
           <div>
-          <h2>{{person.name}}</h2>
+          <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
         </div>
         <div>
           {% if person.birth_date %}
-          <span>{{person.birth_date}}</span>
+          <span id="fecha-nacimiento-perfil">{{person.birth_date}}</span>
           {% endif %}
         </div>
         <div>
@@ -36,5 +35,23 @@
     <div class="col">
     </div>
   </div>
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
 
 {% endblock container %}
