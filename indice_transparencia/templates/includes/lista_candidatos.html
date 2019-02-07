@@ -12,11 +12,11 @@
               <th id="partido">Partido</th>
               <th id="circuito">Circuito</th>
               <th id="nota">Nota</th>
-              <th id="nota">Nota</th>
+            
             </tr>
           </thead>
           <tbody>
-        
+
         {% for person in persons %}
            <tr>
              <td id="contador-ranking">{{person.ranking_data.position_in_ranking}}</td>
@@ -27,19 +27,10 @@
             <td id="columna-persona"><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
            <td>{{ person.party }}</td>
            <td>{{ person.circuit }}</td>
-           
 
 
-          <td> <div class="progress yellow">
-               <span class="progress-left">
-                   <span class="progress-bar"></span>
-               </span>
-               <span class="progress-right">
-                   <span class="progress-bar"></span>
-               </span>
-               <div class="progress-value"> {{ person.ranking_data.ranking_mark }}</div>
-           </div>
-         </td>
+
+
           <td> <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
                         <span>{{ person.ranking_data.ranking_mark }}%</span>
                         <div class="slice">
