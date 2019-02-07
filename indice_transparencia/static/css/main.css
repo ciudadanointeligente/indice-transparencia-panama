@@ -438,7 +438,11 @@ width: 150px;
 max-width: 150px;
 margin-top: 100px;
 margin-bottom: 120px;
+<<<<<<< HEAD
 position: fixed;
+=======
+
+>>>>>>> dno_nati
 }
 
 #nombre-candidato-perfil{
@@ -460,6 +464,16 @@ color:white;
   position:static;
   margin-bottom:200px;
 }
+
+#background-image3{
+  background: url('/static/images/bg-indice.jpg');
+  height: 300px;
+  margin-bottom:40px;
+
+
+}
+
+
 
 /*tabla-variables*/
 #numero {
@@ -962,6 +976,7 @@ transform: translate3d(0, -50%, 0);
 display:none;
 }
 
+<<<<<<< HEAD
 
 /*------------------------------------*/
 /*------ Basic Underline Styles ------*/
@@ -994,4 +1009,9 @@ margin-top:1700px;
     border-top-right-radius: .25rem;
     color: #eee;
     font-size: 20px;
+=======
+#container-perfil{
+  margin-top:40px;
+  margin-bottom:40px;
+>>>>>>> dno_nati
 }
