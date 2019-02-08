@@ -148,7 +148,7 @@ text-align:center;
 .limiter {
   width: 100%;
   margin: 0 auto;
-	margin-top: 165px;
+
 }
 
 .container-table100 {
@@ -171,7 +171,7 @@ background: linear-gradient(45deg, #dee2e6, #e9ecef);
 
 .wrap-table100 {
   width: 1170px;
-	margin-top:370px;
+	margin-top:250px;
 }
 
 table {
@@ -272,11 +272,13 @@ tbody tr:hover {
 }
 
 
+
+
 @media screen and (max-width: 1200px) {
 
 	.wrap-table100 {
 	  width: 1170px;
-		margin-top:350px;
+
 	}
 
   table {
@@ -370,6 +372,7 @@ tbody tr:hover {
   .container-table100 {
     padding-left: 15px;
     padding-right: 15px;
+		padding-top: 200px;
   }
 
   #contador-ranking{
