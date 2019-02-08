@@ -607,9 +607,17 @@ transform: scale(1);
 }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
 #bg-index{height:300px;
 }
+.filter_form {
+  margin-left: auto;
+  margin-right: auto;
+  flex: unset;
+  float: none;
+  display: table;
+}
+
 
 .bgimage {
 margin-bottom:-350px;
@@ -629,9 +637,7 @@ border-radius:50px;
 width:40px;
 max-width: 40px;
 }
-.bgimage2 {
-height:400px;
-}
+
 
 #about {
 font-size: 16px;
@@ -662,7 +668,7 @@ height:380px;
   }
 
   .form-group{
-    margin-left:-35px;
+
   }
 
   #filtro-titulo {
@@ -678,7 +684,7 @@ padding-right:40px;
 }
 
 .bgimage2 {
-height:800px;
+height:480px;
 position: absolute;
 
 }
@@ -750,10 +756,12 @@ margin-bottom:-490px;
 background: url('/static/images/bg-indice.jpg');
 }
 .label_filter_ranking {
-padding-top:0px;
-padding-bottom:0px;
-margin-left:0px;
-max-width: 210px;
+  padding-top: 0px;
+      padding-bottom: 0px;
+      margin-left: 52px;
+      max-width: 250px;
+      min-width: 250px;
+  
 }
 #about {
 font-size: 14px;
@@ -1019,3 +1027,14 @@ margin-top:1700px;
   margin-bottom:40px;
 >>>>>>> dno_nati
 }
+
+@media screen and (max-width: 950px){
+
+  .label_filter_ranking {
+    margin-left: 10px;
+    text-align: left;
+    max-width: 160px;
+    font-size: 9px;
+}
+
+	}
