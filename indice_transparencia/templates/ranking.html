@@ -1,90 +1,70 @@
 {% extends 'lista_candidatos_base.html' %}
 {% load staticfiles %}
 {% load bootstrap4 %}
-
 {% block container %}
-<section class="bgimage">
-   <div class="container-fluid">
-
-     {% block contenido_head %}
-
-     <div class="">
-       <div class="">
-         <p id="filtro-titulo">Índice de Transparencia de parlamentarios</p>
-       </div>
-
-       <form action="" method="get" class="filter_form" "col-12">
-
-               <div class="row fluid" id="row-filtros">
-                 <div class="col-sm-6 col-md-6 col-xl-3">
-                   <div class="label_filter_ranking">
-                   {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
-                   </div>
-                   {% bootstrap_field filter.form.is_deputy show_label=False %}
-                 </div>
-
-                 <div class="col-sm-6 col-md-6 col-xl-3">
-                   <div class="label_filter_ranking">
-                   {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
-                   </div>
-                   {% bootstrap_field filter.form.circuit  show_label=False  %}
-                 </div>
-
-                 <div class="col-sm-6 col-md-6 col-xl-3">
-                   <div class="label_filter_ranking">
-                   {% bootstrap_label filter.form.party.label label_for='party' %}
-                   </div>
-                   {% bootstrap_field filter.form.party show_label=False  %}
-                 </div>
-
-                 <div class="col-sm-6 col-md-6 col-xl-3">
-                   <div class="label_filter_ranking">
-                   {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
-                   </div>
-                   {% bootstrap_field filter.form.ordering show_label=False  %}
-                 </div>
-               </div>
-             </form>
-     </div>
 
 
-              <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
-                   pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado.
-                   Esto hace que todos los labels se vean a la misma altura.
-                   -->
+   <div class="container-fluid bgimage">
+      {% block contenido_head %}
+      <p id="filtro-titulo">Índice de Transparencia de parlamentarios</p>
+
+      <form action="" method="get" class="filter_form">
+        <div class="form-row">
+
+          <div class="label_filter_ranking">
+             {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
+             {% bootstrap_field filter.form.is_deputy show_label=False %}
+          </div>
+          <div class="label_filter_ranking">
+             {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
+             {% bootstrap_field filter.form.circuit  show_label=False  %}
+          </div>
+          <div class="label_filter_ranking">
+             {% bootstrap_label filter.form.party.label label_for='party' %}
+             {% bootstrap_field filter.form.party show_label=False  %}
+          </div>
+          <div class="label_filter_ranking">
+             {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
+             {% bootstrap_field filter.form.ordering show_label=False  %}
+          </div>
+
+        </div>
 
 
-                 <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
-                 <!--  <span class="glyphicon glyphicon-search"></span> Search-->
-                 <!--</button>-->
+        </div>
+      </form>  </div>
 
 
 
 
-     {% endblock contenido_head %}
-   </div>
-</section>
+
+      <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
+         pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado.
+         Esto hace que todos los labels se vean a la misma altura.
+         -->
+      <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
+      <!--  <span class="glyphicon glyphicon-search"></span> Search-->
+      <!--</button>-->
+      {% endblock contenido_head %}
+
+
 {% include 'includes/lista_candidatos.html' with persons=persons %}
-
 {% endblock container %}
-
-
-
 {% block extra_end_js %}
 <script type="text/javascript" >
-    $(document).ready(function() {
-        $(".filter_form :input").each(
-            function(index){
-                var input = $(this);
-                var id = input.attr('id')
-                $("#"+id).addClass("filter_field")
-                $("#"+id).on('change', function(event) {
-                    event.preventDefault();
-                    var input = $(this);
-                    $(".filter_form")[0].submit();
-                });
-            }
-        );
-    });
+   $(document).ready(function() {
+       $(".filter_form :input").each(
+           function(index){
+               var input = $(this);
+               var id = input.attr('id')
+               $("#"+id).addClass("filter_field")
+               $("#"+id).on('change', function(event) {
+                   event.preventDefault();
+                   var input = $(this);
+                   $(".filter_form")[0].submit();
+               });
+           }
+       );
+   });
 </script>
 {% endblock extra_end_js %}
