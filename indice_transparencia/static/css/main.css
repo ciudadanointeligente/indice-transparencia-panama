@@ -420,7 +420,7 @@ font-size: 18px;
 text-align:center;
 font-size:24px;
 padding-left:0px;
-margin-top:80px;
+padding-top:80px;
 }
 .img-fluid {
 height: 50px;
@@ -634,7 +634,7 @@ width:40px;
 max-width: 40px;
 }
 .bgimage2 {
-height:350px;
+height:400px;
 }
 
 #about {
