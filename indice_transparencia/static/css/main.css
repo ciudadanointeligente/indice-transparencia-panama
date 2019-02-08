@@ -661,6 +661,19 @@ height:380px;
 
 @media screen and (max-width: 600px){
 
+  #nombre-candidato-perfil{
+  margin-top:-100px;
+  color:white;
+  font-size:14px;
+  margin-bottom: 15px;
+  }
+
+  .img-fluid-perfil{
+    height:100px;
+    width: 100px;
+    margin-top:100px;
+  }
+
   .filter_field{
   min-width:100px;
   max-width:260px;
@@ -750,7 +763,7 @@ margin-bottom: -480px;
 
 .bgimage3 {
 max-width:auto;
-height:320px;
+height:340px;
 margin-bottom:-490px;
 background: url('/static/images/bg-indice.jpg');
 }
