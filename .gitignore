@@ -115,7 +115,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-media/
+media/*
+!media/reports/
+media/reports/*
+
 
 # Para los macs
 .DS_Store
