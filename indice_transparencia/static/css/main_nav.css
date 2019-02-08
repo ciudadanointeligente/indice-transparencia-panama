@@ -482,11 +482,11 @@ color:#ebb400;
 }
 
 .header-menu-toggle.opaque {
-    background-color: #000000;
+    background-color: #212529;
 }
 
 .header-menu-toggle.opaque .header-menu-text {
-    background-color: #000000;
+    background-color: #212529;
 }
 
 .header-menu-toggle:hover, .header-menu-toggle:focus {
@@ -551,7 +551,8 @@ color:#ebb400;
     }
     .header-menu-toggle {
         right: 40px;
-        background-color: black;
+        top:18px;
+        background-color: #212529;
     }
 }
 
