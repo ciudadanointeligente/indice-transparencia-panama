@@ -31,17 +31,14 @@
                {% endif %}
             </div>
 
-            <div id="birth-date">
-               {% if person.birth_date %}
-                <p>Fecha de nacimiento: {{person.birth_date}}</p>
+            <div id="party">
+               {% if person.party %}
+                <p style="color:white;font-size:14px;">Partido: {{person.party}}</p>
                {% endif %}
             </div>
-                        <div>
-                           {% if person.web %}
-                           <span>{{person.web}}</span>
-                           {% endif %}
-                        </div>
-
+            <div>
+               <h6 style="color:white;font-size:10px">Fecha nacimiento: {{person.birth_date}}</h6>
+            </div>
 
 
 
