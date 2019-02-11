@@ -25,18 +25,15 @@
                       </div>
 
             <div id="circuito">
+
                {% if person.circuit %}
-               <span>{{ person.circuit }}</span>
+               <p>Circuito: {{ person.circuit }}</p>
                {% endif %}
             </div>
-            <div id="nombreparty">
-               {% if person.party %}
-               <span>{{ person.party }}</span>
-               {% endif %}
-            </div>
-            <div>
+
+            <div id="birth-date">
                {% if person.birth_date %}
-               <span id="fecha-nacimiento-perfil">{{person.birth_date}}</span>
+                <p>Fecha de nacimiento: {{person.birth_date}}</p>
                {% endif %}
             </div>
                         <div>
