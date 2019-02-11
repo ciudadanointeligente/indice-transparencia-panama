@@ -11,22 +11,43 @@
             <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid-perfil">
          </div>
          <div class='col'>
+
             <div>
                <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
+            </div>
+
+            <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
+                          <span>{{ person.ranking_data.ranking_mark }}%</span>
+                          <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                          </div>
+                      </div>
+
+            <div id="circuito">
+               {% if person.circuit %}
+               <span>{{ person.circuit }}</span>
+               {% endif %}
+            </div>
+            <div id="nombreparty">
+               {% if person.party %}
+               <span>{{ person.party }}</span>
+               {% endif %}
             </div>
             <div>
                {% if person.birth_date %}
                <span id="fecha-nacimiento-perfil">{{person.birth_date}}</span>
                {% endif %}
             </div>
-            <div>
-               {% if person.web %}
-               <span>{{person.web}}</span>
-               {% endif %}
-            </div>
-            <div id="facebook-compartir">
-               <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Findicedetransparencia.org.co%2F&layout=button_count&size=small&mobile_iframe=true&width=103&height=20&appId" width="103" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-            </div>
+                        <div>
+                           {% if person.web %}
+                           <span>{{person.web}}</span>
+                           {% endif %}
+                        </div>
+
+
+
+
          </div>
       </div>
 
