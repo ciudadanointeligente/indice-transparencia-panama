@@ -271,7 +271,7 @@ tbody tr:hover {
   padding-right: 62px;
 }
 
-media screen and (max-width: 800px) {
+media screen and (max-width: 1200px) {
 
 	.wrap-table100 {
 	  width: 1170px;
