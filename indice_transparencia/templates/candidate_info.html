@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 {% block container %}
 <div class="row" id="background-image3">
@@ -11,47 +10,34 @@
             <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid-perfil">
          </div>
          <div class='col'>
-
             <div>
                <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
             </div>
-
             <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
-                          <span>{{ person.ranking_data.ranking_mark }}%</span>
-                          <div class="slice">
-                              <div class="bar"></div>
-                              <div class="fill"></div>
-                          </div>
-                      </div>
-
-            <div id="circuito">
-
-               {% if person.circuit %}
-               <p>Circuito: {{ person.circuit }}</p>
-               {% endif %}
+            <span>{{ person.ranking_data.ranking_mark }}%</span>
+            <div class="slice">
+               <div class="bar"></div>
+               <div class="fill"></div>
             </div>
-
-            <div id="party">
-               {% if person.party %}
-                <p style="color:white;font-size:14px;">Partido: {{person.party}}</p>
-               {% endif %}
-            </div>
-            <div>
-               <h6 style="color:white;font-size:10px">Fecha nacimiento: {{person.birth_date}}<br>Facebook: {{person.facebook}}<br>Twitter: {{person.twitter}}<br>Sitio: {{person.web}}</h6>
-            </div>
-
-
-
-
+         </div>
+         <div id="circuito">
+            {% if person.circuit %}
+            <p>Circuito: {{ person.circuit }}</p>
+            {% endif %}
+         </div>
+         <div id="party">
+            {% if person.party %}
+            <p style="color:white;font-size:14px;">Partido: {{person.party}}</p>
+            {% endif %}
+         </div>
+         <div>
+            <h6 style="color:white;font-size:10px">Fecha nacimiento: {{person.birth_date}}<br>Facebook: {{person.facebook}}<br>Twitter: {{person.twitter}}<br>Sitio: {{person.web}}</h6>
          </div>
       </div>
-
-   </div>
-   <div class="col">
    </div>
 </div>
-
-
-
+<div class="col">
+</div>
+</div>
 {% include 'includes/tabs.html' %}
 {% endblock container %}
