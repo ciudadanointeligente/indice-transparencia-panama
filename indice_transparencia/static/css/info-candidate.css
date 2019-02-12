@@ -14,11 +14,21 @@
 .panel-title > a:focus  {
     text-decoration:none;
 }
+.panel-title{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.panel-body{
+  margin-bottom:0px;
+}
 
 #accordion{
   max-width:100%;
   margin-left:30px;
   margin-right:30px;
+  margin-bottom:30px;
+  margin-top:30px;
 }
 
 .nav-tabs .nav-link{
