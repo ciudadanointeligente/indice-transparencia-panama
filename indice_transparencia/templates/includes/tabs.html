@@ -1,6 +1,9 @@
 {% load static %}
 <nav>
    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+
+
       <a class="nav-item nav-link active" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true">Formación<br>Académica</a>
       <a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false">Experiencia<br>Profesional</a>
       <a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false">Propuesta<br>Política</a>
@@ -16,42 +19,56 @@
       <div class="col">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
+              <div class="panel-heading" role="tab" id="heading1">
                    <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Institución #1
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                Institución #1<hr>
               </a>
             </h4>
 
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.le VHS.</div>
+              <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                  <div class="panel-body">
+                    <ul>
+                      <li>Nombre cargo</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de salida</li>
+                    </ul>
+                    </div>
               </div>
           </div>
           <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
+              <div class="panel-heading" role="tab" id="heading2">
                    <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Institución #2
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                Institución #2<hr>
               </a>
             </h4>
 
               </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+              <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                  <div class="panel-body">  <ul>
+                      <li>Nombre cargo</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de salida</li>
+                    </ul></div>
               </div>
           </div>
           <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
+              <div class="panel-heading" role="tab" id="heading3">
                    <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Institución #3
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                Institución #3<hr>
               </a>
             </h4>
 
               </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+              <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                  <div class="panel-body">  <ul>
+                      <li>Nombre cargo</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de salida</li>
+                    </ul> </div>
               </div>
           </div>
       </div>
@@ -60,291 +77,327 @@
       <!--contenido-->
    </div>
    <div class="tab-pane fade" id="nav-experiencia" role="tabpanel" aria-labelledby="nav-experiencia-tab">
-      <!--contenido-->
-      <div id="accordion-experiencia">
-         <div class="card">
-            <div class="card-header" id="nav-experiencia">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                     <p id="titulos-info">Experiencia #1</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse4" class="nav-experiencia" aria-labelledby="heading4" data-parent="#accordion">
-               <div class="card-body">
-                  <ul>
-                     <li>Cargo</li>
-                     <li>Institución</li>
-                     <li>Fecha de ingreso</li>
-                     <li>Fecha de término</li>
-                  </ul>
-               </div>
-            </div>
+     <!--contenido-->
+     <div class="row">
+     <div class="col">
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading4">
+                  <h4 class="panel-title">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+               Experiencia #1<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
+                 <div class="panel-body">
+                   <ul>
+                      <li>Cargo</li>
+                      <li>Institución</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de término</li>
+                   </ul>
+                   </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-experiencia">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                     <p id="titulos-info">Experiencia #2</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-               <div class="card-body">
-                  <ul>
-                     <li>Cargo</li>
-                     <li>Institución</li>
-                     <li>Fecha de ingreso</li>
-                     <li>Fecha de término</li>
-                  </ul>
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading5">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+               Experiencia #2<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                 <div class="panel-body">
+                   <ul>
+                      <li>Cargo</li>
+                      <li>Institución</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de término</li>
+                   </ul>
+                 </div>
+             </div>
          </div>
-      </div>
-      <!--contenido-->
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading6">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+               Experiencia #3<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                 <div class="panel-body">
+                   <ul>
+                      <li>Cargo</li>
+                      <li>Institución</li>
+                      <li>Fecha de ingreso</li>
+                      <li>Fecha de término</li>
+                   </ul>
+                  </div>
+             </div>
+         </div>
+     </div>
+     </div>
+     </div>
+     <!--contenido-->
+
    </div>
    <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
-      <!--contenido-->
-      <div id="accordion-propuesta">
-         <div class="card">
-            <div class="card-header" id="nav-propuesta">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                     <p id="titulos-info">Link propuesta política para gestión (2019-2024)</p>
-                  </button>
-               </h5>
+    <!--contenido-->
+
+    <div class="row">
+    <div class="col">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading7">
+                 <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
+              Link Propuesta Política para gestión 2019 - 2024<hr>
+            </a>
+          </h4>
+
             </div>
-            <div id="collapse6" class="nav-propuesta" aria-labelledby="heading6" data-parent="#accordion">
-               <div class="card-body">
-                  Link Propuesta Política.
-               </div>
+            <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
+                <div class="panel-body">
+                  Link Propuesta Política
+                  </div>
             </div>
-         </div>
-         <div class="card">
-            <div class="card-header" id="nav-propuesta">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                     <p id="titulos-info">Archivo adjunto propuesta política para gestión (2019-2024)</p>
-                  </button>
-               </h5>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading8">
+                 <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+              Archivo adjunto propuesta política para gestión 2019 - 2024<hr>
+            </a>
+          </h4>
+
             </div>
-            <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
-               <div class="card-body">
-                    Archivo adjunto propuesta política.
-               </div>
+            <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                <div class="panel-body">
+                  Archivo adjunto propuesta política.
+                </div>
             </div>
-         </div>
-      </div>
-      <!--contenido-->
+        </div>
+
+    </div>
+    </div>
+    </div>
+    <!--contenido-->
    </div>
-   <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaraciona-tab">
-      <div id="accordion-declaracion">
-         <div class="card">
-            <div class="card-header" id="nav-declaracion">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                     <p id="titulos-info">Declaración de patrimonio actualizada</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse8" class="nav-declaracion" aria-labelledby="heading8" data-parent="#accordion">
-               <div class="card-body">
-                  Link para acceder a su declaración de patrimonio actualizada.
-               </div>
-            </div>
+   <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaracion-tab">
+     <!--contenido-->
+
+     <div class="row">
+     <div class="col">
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading9">
+                  <h4 class="panel-title">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="true" aria-controls="collapse9">
+               Declaración de patrimonio actualizada<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
+                 <div class="panel-body">
+                   Link para acceder a declaración de patrimonio actualizada.
+                   </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-declaracion">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                     <p id="titulos-info">Declaración de patrimonio actualizada</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
-               <div class="card-body">
-                  Archivo adjunto declaración de patrimonio actualizada.
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading10">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+               Declaración de patrimonio actualizada<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                 <div class="panel-body">
+                   Archivo adjunto declaración de patrimonio actualizada.
+                 </div>
+             </div>
          </div>
-      </div>
-      <!--contenido-->
+
+     </div>
+     </div>
+     </div>
+     <!--contenido-->
    </div>
+
    <div class="tab-pane fade" id="nav-procesos" role="tabpanel" aria-labelledby="nav-procesos-tab">
-      <!--contenido-->
-      <div id="accordion-procesos">
-         <div class="card">
-            <div class="card-header" id="nav-procesos">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                     <p id="titulos-info">Procesos judiciales en los que se ha visto involucrado en los últimos 10 años</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse10" class="nav-propuesta" aria-labelledby="heading10" data-parent="#accordion">
-               <div class="card-body">
-                  Número<br>Fecha<br>Tipo<br>Fallo
-               </div>
-            </div>
+     <!--contenido-->
+
+     <div class="row">
+     <div class="col">
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading11">
+                  <h4 class="panel-title">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11">
+               Procesos judiciales en los que se ha visto involucrado en los últimos 10 años<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse11" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading11">
+                 <div class="panel-body">
+                  <ul>
+                    <li>Número</li>
+                    <li>Fecha</li>
+                    <li>Tipo</li>
+                    <li>Fallo</li>
+                  </ul>
+                   </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-procesos">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                     <p id="titulos-info">Otros procesos judiciales en los que se ha visto involucrado en los últimos 10 años</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
-               <div class="card-body">
-                  Número<br>Fecha<br>Tipo<br>Fallo
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+              Otros procesos judiciales en los que se ha visto involucrado en los últimos 10 años<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                 <div class="panel-body">
+                   <ul>
+                     <li>Número</li>
+                     <li>Fecha</li>
+                     <li>Tipo</li>
+                     <li>Fallo</li>
+                   </ul>
+                 </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-procesos">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                     <p id="titulos-info"> Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
-               <div class="card-body">
-                Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados.
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading13">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+              Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                 <div class="panel-body">
+                   Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados.
+                 </div>
+             </div>
          </div>
-      </div>
-      <!--contenido-->
+
+     </div>
+     </div>
+     </div>
+     <!--contenido-->
    </div>
 
    <div class="tab-pane fade" id="nav-etica" role="tabpanel" aria-labelledby="nav-etica-tab">
-      <!--contenido-->
-      <div id="accordion-etica">
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
-                     <p id="titulos-info">Actualmente diputado/a</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse15" class="nav-etica" aria-labelledby="heading15" data-parent="#accordion">
-               <div class="card-body">
-                  Sí
-               </div>
-            </div>
+     <!--contenido-->
+
+     <div class="row">
+     <div class="col">
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading14">
+                  <h4 class="panel-title">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="true" aria-controls="collapse14">
+               Actualmente diputado/a<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse14" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading14">
+                 <div class="panel-body">
+                Sí
+                   </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
-                     <p id="titulos-info">Beneficios</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
-               <div class="card-body">
-                 <ul>
-                   <li>1. Franquicia postal y telefónica dentro del territorio nacional.</li>
-                  <li>1. Importación libre de gravámenes de dos vehículos durante el periodo constitucional para el uso personal.</li>
-                  <li>1. Placa oficial.</li>
-                  <li>1. Pasaporte diplomático.</li>
-                  <li>1. Bono navideño 2014 por $25.000 (para diputados)</li>
-                </ul>
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading15">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+              Beneficios<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+                 <div class="panel-body">
+                   <ul>
+                     <li>  1. Franquicia postal y telefónica dentro del territorio nacional.</li>
+                     <li>  1. Importación libre de gravámenes de dos vehículos durante el periodo constitucional para el uso personal.</li>
+                     <li>  1. Placa oficial.</li>
+                     <li>  1. Pasaporte diplomático.</li>
+                     <li>  1. Bono navideño 2014 por $25.000 (para diputados)</li>
+                   </ul>
+
+
+
+
+
+                 </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
-                     <p id="titulos-info">Link montos asociados a uso de beneficios</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
-               <div class="card-body">
-                 Link montos asociados a uso de beneficios
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading16">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+              Link montos asociados a uso de beneficios<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                 <div class="panel-body">
+                   Link montos asociados a uso de beneficios
+                 </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
-                     <p id="titulos-info">Archivo adjunto montos asociados a uso de beneficios</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordion">
-               <div class="card-body">
-                 Archivo adjunto montos asociados a uso de beneficios
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading17">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+              Archivos adjuntos montos asociados a uso de beneficios<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+                 <div class="panel-body">
+                   Archivos adjuntos montos asociados a uso de beneficios
+                 </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
-                     <p id="titulos-info">Link detalle de su planilla 001</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse19" class="collapse" aria-labelledby="heading19" data-parent="#accordion">
-               <div class="card-body">
-                 Link detalle de su planilla 001
-               </div>
-            </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading18">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+              Link detalle de su planilla  001<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+                 <div class="panel-body">
+                   Link detalle de su plantilla 001
+                 </div>
+             </div>
          </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
-                     <p id="titulos-info">Link detalle de su planilla 172</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse20" class="collapse" aria-labelledby="heading20" data-parent="#accordion">
-               <div class="card-body">
-                 Link detalle de su planilla 172
-               </div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
-                     <p id="titulos-info">Porcentaje de asistencia a la Asamblea Nacional durante este período legislativo</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse21" class="collapse" aria-labelledby="heading21" data-parent="#accordion">
-               <div class="card-body">
-                 Indique su porcentaje de asistencia a la Asamblea Nacional durante este período legislativo
-               </div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="card-header" id="nav-etica">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
-                     <p id="titulos-info">Número de leyes que ud. ha sancionado en el último período legislativo</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse22" class="collapse" aria-labelledby="heading22" data-parent="#accordion">
-               <div class="card-body">
-                 Número de leyes que ud. ha sancionado en el último período legislativo.
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--contenido-->
+
+     </div>
+     </div>
+     </div>
+     <!--contenido-->
    </div>
-
-
 
 
 
