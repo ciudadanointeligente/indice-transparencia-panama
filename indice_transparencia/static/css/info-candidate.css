@@ -10,7 +10,8 @@
 
 .collapsed:hover {
   background-color:transparent;
-  color:black;
+  border-color: transparent;
+  color:#f0c039;
   border-radius: 10px;
   padding-right:20px;
 }
