@@ -375,17 +375,23 @@ media screen and (max-width: 1200px) {
 
 @media (max-width: 600px) {
   .container-table100 {
-    padding-left: 15px;
-    padding-right: 15px;
-		padding-top: 200px;
+    padding-top: 200px;
   }
 
+	#partido{
+		display:none;
+	}
+
+	#circuito{
+		display:none;
+	}
   #contador-ranking{
     display: none;
   }
 
+
 	.wrap-table100 {
-	  width: 1170px;
+	  width: 400px;
 		margin-top:300px;
 	}
 }
