@@ -31,7 +31,11 @@
             {% endif %}
          </div><br>
          <div>
-            <p style="color:white;font-size:12px">Fecha nacimiento: {{person.birth_date}}<br>Facebook: {{person.facebook}}<br>Twitter: {{person.twitter}}<br>Sitio: {{person.web}}</p>
+            <p style="color:white;font-size:12px">Fecha nacimiento: {{person.birth_date}}<br><a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> Twitter</a>
+            <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> Sitio</a>
+             </p>
          </div>
       </div>
    </div>
