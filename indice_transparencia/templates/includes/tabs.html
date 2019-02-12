@@ -12,61 +12,50 @@
 <div class="tab-content" id="nav-tabContent">
    <div class="tab-pane fade show active" id="nav-formacion" role="tabpanel" aria-labelledby="nav-formacion-tab">
       <!--contenido-->
-      <div id="accordion-institucion">
-         <div class="card">
-            <div class="card-header" id="formacion1">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                     <p id="titulos-info">Institución #1</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-               <div class="card-body" id="formacion1">
-                  <ul>
-                     <li>Nombre cargo</li>
-                     <li>fecha de ingreso</li>
-                     <li>fecha de salida</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="card-header" id="formacion2">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                     <p id="titulos-info">Institución #2</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-               <div class="card-body" id="formacion2">
-                  <ul>
-                     <li>Nombre cargo</li>
-                     <li>fecha de ingreso</li>
-                     <li>fecha de salida</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <div class="card">
-            <div class="card-header" id="formacion3">
-               <h5 id="titulos-tabs">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                     <p id="titulos-info">Institución #3</p>
-                  </button>
-               </h5>
-            </div>
-            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-               <div class="card-body" id="formacion3">
-                  <ul>
-                     <li>Nombre cargo</li>
-                     <li>fecha de ingreso</li>
-                     <li>fecha de salida</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
+      <div class="row">
+      <div class="col">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                   <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Institución #1
+              </a>
+            </h4>
+
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.le VHS.</div>
+              </div>
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                   <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Institución #2
+              </a>
+            </h4>
+
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+              </div>
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                   <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Institución #3
+              </a>
+            </h4>
+
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+              </div>
+          </div>
+      </div>
+      </div>
       </div>
       <!--contenido-->
    </div>
@@ -354,5 +343,13 @@
       </div>
       <!--contenido-->
    </div>
+
+
+
+
+
+
+
+
 </div>
 </div>
