@@ -17,26 +17,22 @@
 
     <!--contenido-->
     <div id="accordion-institucion">
-       <div class="card">
-          <div class="card-header" id="formacion1">
-             <h5 class="mb-0">
-                <button id="institution" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <p id="titulos-info">Institución #1</p>
-                </button>
-             </h5>
-          </div>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-
-
-             <div class="card-body" id="formacion1">
-               {% for ed in person.educational_records.object %}
-               <p>Institución: {{ ed.institution }}</p>
-                <p>Fecha de Inicio: {{ ed.start }}</p>
-                <p>Institución: {{ ed.end }}</p>
-               {% endfor %}
-             </div>
-          </div>
-       </div>
+      <div class="card">
+         <div class="card-header" id="formacion1">
+            <h5 class="mb-0">
+               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+               <p id="titulos-info">Institución #1</p>
+               </button>
+            </h5>
+         </div>
+         <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+           <div class="card-body" id="formacion1">
+             <ul><li>Nombre cargo</li>
+             <li>fecha de ingreso</li>
+             <li>fecha de salida</li></ul>
+           </div>
+         </div>
+      </div>
        <div class="card">
           <div class="card-header" id="formacion2">
              <h5 class="mb-0">
@@ -46,10 +42,10 @@
              </h5>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body" id="formacion-academica">
-              {% for ed in person.start.object %}
-              <p>Institución: {{ ed.institution }}</p>
-              {% endfor %}
+            <div class="card-body" id="formacion2">
+              <ul><li>Nombre cargo</li>
+              <li>fecha de ingreso</li>
+              <li>fecha de salida</li></ul>
             </div>
           </div>
        </div>
@@ -62,7 +58,7 @@
              </h5>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">
+            <div class="card-body" id="formacion3">
                <ul><li>Nombre cargo</li>
                <li>fecha de ingreso</li>
                <li>fecha de salida</li></ul>
