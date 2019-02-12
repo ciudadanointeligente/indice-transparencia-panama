@@ -20,17 +20,17 @@
        <div class="card">
           <div class="card-header" id="formacion1">
              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Institución
+                <button id="institution" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <p id="titulos-info">Institución #1</p>
                 </button>
              </h5>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 
 
-             <div class="card-body" id="formacion-academica">
+             <div class="card-body" id="formacion1">
                {% for ed in person.educational_records.object %}
-               <p style="font-size:12px;color:black">Institución: {{ ed.institution }}</p>
+               <p>Institución: {{ ed.institution }}</p>
                 <p>Fecha de Inicio: {{ ed.start }}</p>
                 <p>Institución: {{ ed.end }}</p>
                {% endfor %}
@@ -41,7 +41,7 @@
           <div class="card-header" id="formacion2">
              <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Institución #2
+                <p id="titulos-info">Institución #2</p>
                 </button>
              </h5>
           </div>
@@ -57,7 +57,7 @@
           <div class="card-header" id="formacion3">
              <h5 class="mb-0">
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Institución #3
+                <p id="titulos-info">Institución #3</p>
                 </button>
              </h5>
           </div>
