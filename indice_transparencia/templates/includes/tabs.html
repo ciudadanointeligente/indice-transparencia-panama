@@ -26,10 +26,14 @@
              </h5>
           </div>
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-             <div class="card-body">
-                <ul><li>Nombre cargo</li>
-                <li>fecha de ingreso</li>
-                <li>fecha de salida</li></ul>
+
+
+             <div class="card-body" id="formacion-academica">
+               {% for ed in person.educational_records.object %}
+               <p style="font-size:12px;color:black">Institución: {{ ed.institution }}</p>
+                <p>Fecha de Inicio: {{ ed.start }}</p>
+                <p>Institución: {{ ed.end }}</p>
+               {% endfor %}
              </div>
           </div>
        </div>
@@ -42,10 +46,10 @@
              </h5>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-               <ul><li>Nombre cargo</li>
-               <li>fecha de ingreso</li>
-               <li>fecha de salida</li></ul>
+            <div class="card-body" id="formacion-academica">
+              {% for ed in person.start.object %}
+              <p>Institución: {{ ed.institution }}</p>
+              {% endfor %}
             </div>
           </div>
        </div>
