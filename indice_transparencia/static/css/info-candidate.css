@@ -21,6 +21,8 @@
 
 .panel-body{
   margin-bottom:0px;
+  font-size:14px;
+  color:#b3b3b3;
 }
 
 #accordion{
@@ -43,4 +45,12 @@
     color: #f0c039;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.fa-file-pdf{
+  padding-right: 5px;
+}
+
+.fa-link{
+  padding-right: 5px;
 }
