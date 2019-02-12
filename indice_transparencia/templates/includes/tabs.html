@@ -1,312 +1,303 @@
 {% load static %}
-
-
-
 <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true">Formación<br>Académica</a>
-    <a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false">Experiencia<br>Profesional</a>
-    <a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false">Propuesta<br>Política</a>
-    <a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false">Declaración<br>Patrimonio</a>
-    <a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false">Procesos<br>Judiciales</a>
-    <a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false">Ética<br>Presupuestaria</a>
-  </div>
+   <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true">Formación<br>Académica</a>
+      <a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false">Experiencia<br>Profesional</a>
+      <a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false">Propuesta<br>Política</a>
+      <a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false">Declaración<br>Patrimonio</a>
+      <a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false">Procesos<br>Judiciales</a>
+      <a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false">Ética<br>Presupuestaria</a>
+   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-formacion" role="tabpanel" aria-labelledby="nav-formacion-tab">
-
-    <!--contenido-->
-    <div id="accordion-institucion">
-      <div class="card">
-         <div class="card-header" id="formacion1">
-            <h5 id="titulos-tabs">
-               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-               <p id="titulos-info">Institución #1</p>
-               </button>
-            </h5>
+   <div class="tab-pane fade show active" id="nav-formacion" role="tabpanel" aria-labelledby="nav-formacion-tab">
+      <!--contenido-->
+      <div id="accordion-institucion">
+         <div class="card">
+            <div class="card-header" id="formacion1">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                     <p id="titulos-info">Institución #1</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+               <div class="card-body" id="formacion1">
+                  <ul>
+                     <li>Nombre cargo</li>
+                     <li>fecha de ingreso</li>
+                     <li>fecha de salida</li>
+                  </ul>
+               </div>
+            </div>
          </div>
-         <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-           <div class="card-body" id="formacion1">
-             <ul><li>Nombre cargo</li>
-             <li>fecha de ingreso</li>
-             <li>fecha de salida</li></ul>
-           </div>
+         <div class="card">
+            <div class="card-header" id="formacion2">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                     <p id="titulos-info">Institución #2</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+               <div class="card-body" id="formacion2">
+                  <ul>
+                     <li>Nombre cargo</li>
+                     <li>fecha de ingreso</li>
+                     <li>fecha de salida</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="formacion3">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                     <p id="titulos-info">Institución #3</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+               <div class="card-body" id="formacion3">
+                  <ul>
+                     <li>Nombre cargo</li>
+                     <li>fecha de ingreso</li>
+                     <li>fecha de salida</li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </div>
-       <div class="card">
-          <div class="card-header" id="formacion2">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                <p id="titulos-info">Institución #2</p>
-                </button>
-             </h5>
-          </div>
-          <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-            <div class="card-body" id="formacion2">
-              <ul><li>Nombre cargo</li>
-              <li>fecha de ingreso</li>
-              <li>fecha de salida</li></ul>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-experiencia" role="tabpanel" aria-labelledby="nav-experiencia-tab">
+      <!--contenido-->
+      <div id="accordion-experiencia">
+         <div class="card">
+            <div class="card-header" id="nav-experiencia">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                     <p id="titulos-info">Experiencia #1</p>
+                  </button>
+               </h5>
             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="formacion3">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                <p id="titulos-info">Institución #3</p>
-                </button>
-             </h5>
-          </div>
-          <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-            <div class="card-body" id="formacion3">
-               <ul><li>Nombre cargo</li>
-               <li>fecha de ingreso</li>
-               <li>fecha de salida</li></ul>
+            <div id="collapse4" class="nav-experiencia" aria-labelledby="heading4" data-parent="#accordion">
+               <div class="card-body">
+                  <ul>
+                     <li>Cargo</li>
+                     <li>Institución</li>
+                     <li>Fecha de ingreso</li>
+                     <li>Fecha de término</li>
+                  </ul>
+               </div>
             </div>
-          </div>
-       </div>
-    </div>
-    <!--contenido-->
-
-  </div>
-
-
-  <div class="tab-pane fade" id="nav-experiencia" role="tabpanel" aria-labelledby="nav-experiencia-tab">
-    <!--contenido-->
-    <div id="accordion-experiencia">
-       <div class="card">
-          <div class="card-header" id="nav-experiencia">
-             <h5 id="titulos-tabs">
-
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                <p id="titulos-info">Experiencia #1</p>
-                </button>
-             </h5>
-          </div>
-          <div id="collapse4" class="nav-experiencia" aria-labelledby="heading4" data-parent="#accordion">
-             <div class="card-body">
-                <ul><li>Cargo</li>
-                <li>Institución</li>
-                <li>Fecha de ingreso</li>
-              <li>Fecha de término</li></ul>
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-experiencia">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                <p id="titulos-info">Experiencia 2</p>
-                </button>
-             </h5>
-          </div>
-          <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-            <div class="card-body">
-              <ul><li>Cargo</li>
-              <li>Institución</li>
-              <li>Fecha de ingreso</li>
-            <li>Fecha de término</li></ul>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-experiencia">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                     <p id="titulos-info">Experiencia 2</p>
+                  </button>
+               </h5>
             </div>
-          </div>
-       </div>
-
-    </div>
-    <!--contenido-->
-
-  </div>
-  <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
-    <!--contenido-->
-    <div id="accordion-propuesta">
-       <div class="card">
-          <div class="card-header" id="nav-propuesta">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                    <p id="titulos-info">¿Cuenta ud. con una propuesta política para su gestión (2019-2024)?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse6" class="nav-propuesta" aria-labelledby="heading6" data-parent="#accordion">
-             <div class="card-body">
-                Si respondió "sí", indique en qué link se puede acceder a su propuesta política
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-propuesta">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                  <p id="titulos-info">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
-            <div class="card-body">
-              Si respondió "sí", indique en qué link se puede acceder a su propuesta política
+            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+               <div class="card-body">
+                  <ul>
+                     <li>Cargo</li>
+                     <li>Institución</li>
+                     <li>Fecha de ingreso</li>
+                     <li>Fecha de término</li>
+                  </ul>
+               </div>
             </div>
-          </div>
-       </div>
-
-    </div>
-    <!--contenido--></div>
-  <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaraciona-tab">  <div id="accordion-declaracion">
-       <div class="card">
-          <div class="card-header" id="nav-declaracion">
-            <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                  <p id="titulos-info">¿Cuenta ud. con una declaración de patrimonio actualizada?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse8" class="nav-declaracion" aria-labelledby="heading8" data-parent="#accordion">
-             <div class="card-body">
-                Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-declaracion">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                  <p id="titulos-info">¿Cuenta ud. con una declaración de intereses actualizada?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
-            <div class="card-body">
-              Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
+      <!--contenido-->
+      <div id="accordion-propuesta">
+         <div class="card">
+            <div class="card-header" id="nav-propuesta">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                     <p id="titulos-info">¿Cuenta ud. con una propuesta política para su gestión (2019-2024)?</p>
+                  </button>
+               </h5>
             </div>
-          </div>
-       </div>
-
-    </div>
-    <!--contenido-->
-  </div>
-  <div class="tab-pane fade" id="nav-procesos" role="tabpanel" aria-labelledby="nav-procesos-tab">  <!--contenido-->
-    <div id="accordion-procesos">
-       <div class="card">
-          <div class="card-header" id="nav-procesos">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                  <p id="titulos-info">¿En cuántos procesos judiciales ud. se ha visto involucrado en los últimos 10 años?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse10" class="nav-propuesta" aria-labelledby="heading10" data-parent="#accordion">
-             <div class="card-body">
-                Número<br>Fecha<br>Tipo<br>Fallo
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-procesos">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                  <p id="titulos-info">  ¿Se ha visto involucrado en más procesos judiciales en los últimos 10 años?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
-            <div class="card-body">
-              Si respondió 'sí', por favor indique dónde se puede acceder a esta información (facilite un link u otro recurso)
+            <div id="collapse6" class="nav-propuesta" aria-labelledby="heading6" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió "sí", indique en qué link se puede acceder a su propuesta política
+               </div>
             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-procesos">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                  <p id="titulos-info"> ¿Desea agregar comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados? Puede hacerlo a continuación</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
-            <div class="card-body">
-              blabla
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-propuesta">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                     <p id="titulos-info">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</p>
+                  </button>
+               </h5>
             </div>
-          </div>
-       </div>
-
-    </div>
-    <!--contenido--></div>
-  <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
-    <!--contenido--></div>
-  <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaraciona-tab">  <div id="accordion-declaracion">
-       <div class="card">
-          <div class="card-header" id="nav-declaracion">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
-                  <p id="titulos-info"> ¿Cuenta ud. con una declaración de patrimonio actualizada?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse13" class="nav-declaracion" aria-labelledby="heading13" data-parent="#accordion">
-             <div class="card-body">
-                Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-declaracion">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">  <p id="titulos-info">¿Cuenta ud. con una declaración de intereses actualizada?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
-            <div class="card-body">
-              Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses
+            <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió "sí", indique en qué link se puede acceder a su propuesta política
+               </div>
             </div>
-          </div>
-       </div>
-
-    </div>
-    <!--contenido-->
-  </div>
-  <div class="tab-pane fade" id="nav-etica" role="tabpanel" aria-labelledby="nav-etica-tab">
-
-    <!--contenido-->
-    <div id="accordion-etica">
-       <div class="card">
-          <div class="card-header" id="nav-etica">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
-                  <p id="titulos-info">¿En cuántos procesos judiciales ud. se ha visto involucrado en los últimos 10 años?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse15" class="nav-etica" aria-labelledby="heading15" data-parent="#accordion">
-             <div class="card-body">
-                Número<br>Fecha<br>Tipo<br>Fallo
-             </div>
-          </div>
-       </div>
-       <div class="card">
-          <div class="card-header" id="nav-etica">
-             <h5 id="titulos-tabs">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
-                  <p id="titulos-info">¿Se ha visto involucrado en más procesos judiciales en los últimos 10 años?</p>
-
-                </button>
-             </h5>
-          </div>
-          <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
-            <div class="card-body">
-              Si respondió 'sí', por favor indique dónde se puede acceder a esta información (facilite un link u otro recurso)
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaraciona-tab">
+      <div id="accordion-declaracion">
+         <div class="card">
+            <div class="card-header" id="nav-declaracion">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                     <p id="titulos-info">¿Cuenta ud. con una declaración de patrimonio actualizada?</p>
+                  </button>
+               </h5>
             </div>
-          </div>
-       </div>
-
-
-    </div>
-    <!--contenido--></div></div>
+            <div id="collapse8" class="nav-declaracion" aria-labelledby="heading8" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-declaracion">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                     <p id="titulos-info">¿Cuenta ud. con una declaración de intereses actualizada?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-procesos" role="tabpanel" aria-labelledby="nav-procesos-tab">
+      <!--contenido-->
+      <div id="accordion-procesos">
+         <div class="card">
+            <div class="card-header" id="nav-procesos">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                     <p id="titulos-info">¿En cuántos procesos judiciales ud. se ha visto involucrado en los últimos 10 años?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse10" class="nav-propuesta" aria-labelledby="heading10" data-parent="#accordion">
+               <div class="card-body">
+                  Número<br>Fecha<br>Tipo<br>Fallo
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-procesos">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                     <p id="titulos-info">  ¿Se ha visto involucrado en más procesos judiciales en los últimos 10 años?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí', por favor indique dónde se puede acceder a esta información (facilite un link u otro recurso)
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-procesos">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                     <p id="titulos-info"> ¿Desea agregar comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados? Puede hacerlo a continuación</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
+               <div class="card-body">
+                  blabla
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaraciona-tab">
+      <div id="accordion-declaracion">
+         <div class="card">
+            <div class="card-header" id="nav-declaracion">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                     <p id="titulos-info"> ¿Cuenta ud. con una declaración de patrimonio actualizada?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse13" class="nav-declaracion" aria-labelledby="heading13" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-declaracion">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                     <p id="titulos-info">¿Cuenta ud. con una declaración de intereses actualizada?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de Intereses
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+   <div class="tab-pane fade" id="nav-etica" role="tabpanel" aria-labelledby="nav-etica-tab">
+      <!--contenido-->
+      <div id="accordion-etica">
+         <div class="card">
+            <div class="card-header" id="nav-etica">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                     <p id="titulos-info">¿En cuántos procesos judiciales ud. se ha visto involucrado en los últimos 10 años?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse15" class="nav-etica" aria-labelledby="heading15" data-parent="#accordion">
+               <div class="card-body">
+                  Número<br>Fecha<br>Tipo<br>Fallo
+               </div>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-header" id="nav-etica">
+               <h5 id="titulos-tabs">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                     <p id="titulos-info">¿Se ha visto involucrado en más procesos judiciales en los últimos 10 años?</p>
+                  </button>
+               </h5>
+            </div>
+            <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
+               <div class="card-body">
+                  Si respondió 'sí', por favor indique dónde se puede acceder a esta información (facilite un link u otro recurso)
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--contenido-->
+   </div>
+</div>
 </div>
