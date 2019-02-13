@@ -21,60 +21,28 @@
 
         {% for e in person.educational_records.all %}
 
-<div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading1">
-                  <h4 class="panel-title">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-               <i class="far fa-check-circle"></i> {{ e.institution }} <hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
-                 <div class="panel-body">
-                   <ul>
-                     <li>{{ e.name }}</li>
-                     <li>{{ e.start }}</li>
-                     <li>{{ e.end }}</li>
-                   </ul>
-                   </div>
-             </div>
-         </div>
-{% endfor %}
-          <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading2">
+             <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                    <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                <i class="far fa-check-circle"></i> Institución #2<hr>
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+                <i class="far fa-check-circle"></i> {{ e.institution }} <hr>
               </a>
             </h4>
 
               </div>
-              <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-                  <div class="panel-body">  <ul>
-                      <li>Nombre cargo</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de salida</li>
-                    </ul></div>
+              <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+                  <div class="panel-body">
+                    <ul>
+                      <li>{{ e.name }}</li>
+                      <li>{{ e.start }}</li>
+                      <li>{{ e.end }}</li>
+                    </ul>
+                    </div>
               </div>
           </div>
-          <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading3">
-                   <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                <i class="far fa-check-circle"></i> Institución #3<hr>
-              </a>
-            </h4>
+         {% endfor %}
 
-              </div>
-              <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-                  <div class="panel-body">  <ul>
-                      <li>Nombre cargo</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de salida</li>
-                    </ul> </div>
-              </div>
-          </div>
+      
       </div>
       </div>
       </div>
