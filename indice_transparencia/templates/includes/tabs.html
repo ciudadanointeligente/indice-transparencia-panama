@@ -18,25 +18,29 @@
       <div class="row">
       <div class="col">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading1">
-                   <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                <i class="far fa-check-circle"></i> Institución #1<hr>
-              </a>
-            </h4>
 
-              </div>
-              <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
-                  <div class="panel-body">
-                    <ul>
-                      <li>Nombre cargo</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de salida</li>
-                    </ul>
-                    </div>
-              </div>
-          </div>
+        {% for e in person.educational_records.all %}
+
+<div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading1">
+                  <h4 class="panel-title">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+               <i class="far fa-check-circle"></i> {{ e.institution }} <hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                 <div class="panel-body">
+                   <ul>
+                     <li>{{ e.name }}</li>
+                     <li>{{ e.start }}</li>
+                     <li>{{ e.end }}</li>
+                   </ul>
+                   </div>
+             </div>
+         </div>
+{% endfor %}
           <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="heading2">
                    <h4 class="panel-title">
