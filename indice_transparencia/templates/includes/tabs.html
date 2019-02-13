@@ -174,46 +174,31 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading11">
-                  <h4 class="panel-title">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11">
-               <i class="far fa-check-circle"></i> Procesos judiciales en los que se ha visto involucrado en los últimos 10 años<hr>
-             </a>
-           </h4>
 
-             </div>
-             <div id="collapse11" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading11">
-                 <div class="panel-body">
+       {% for e in person.judiciary_records.all %}
+
+           <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                 <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+              <i class="far fa-check-circle"></i> Proceso Judicial involucrado {{ e.kind}} <hr>
+            </a>
+          </h4>
+
+            </div>
+            <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+                <div class="panel-body">
                   <ul>
-                    <li>Número</li>
-                    <li>Fecha</li>
-                    <li>Tipo</li>
-                    <li>Fallo</li>
+                    <li>Número de procesos judiciales: {{ e.number }}</li>
+                    <li>Fecha: {{ e.date }}</li>
+                    <li>Tipo: {{ e.kind }}</li>
+                    <li>Fallo: {{ e.result }}</li>
                   </ul>
-                   </div>
-             </div>
-         </div>
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
-              <i class="far fa-check-circle"></i> Otros procesos judiciales en los que se ha visto involucrado en los últimos 10 años<hr>
-             </a>
-           </h4>
+                  </div>
+            </div>
+        </div>
+       {% endfor %}
 
-             </div>
-             <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
-                 <div class="panel-body">
-                   <ul>
-                     <li>Número</li>
-                     <li>Fecha</li>
-                     <li>Tipo</li>
-                     <li>Fallo</li>
-                   </ul>
-                 </div>
-             </div>
-         </div>
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading13">
                   <h4 class="panel-title">
