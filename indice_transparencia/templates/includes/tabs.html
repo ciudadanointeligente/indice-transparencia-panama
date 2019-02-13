@@ -42,7 +42,7 @@
           </div>
          {% endfor %}
 
-      
+
       </div>
       </div>
       </div>
@@ -53,66 +53,30 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading4">
-                  <h4 class="panel-title">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
-               <i class="far fa-check-circle"></i> Experiencia #1<hr>
-             </a>
-           </h4>
 
-             </div>
-             <div id="collapse4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
-                 <div class="panel-body">
-                   <ul>
-                      <li>Cargo</li>
-                      <li>Institución</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de término</li>
-                   </ul>
-                   </div>
-             </div>
-         </div>
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading5">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-               <i class="far fa-check-circle"></i> Experiencia #2<hr>
-             </a>
-           </h4>
+       {% for e in person.work_records.all %}
 
-             </div>
-             <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
-                 <div class="panel-body">
-                   <ul>
-                      <li>Cargo</li>
-                      <li>Institución</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de término</li>
-                   </ul>
+          <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                <h4 class="panel-title">
+           <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+             <i class="far fa-check-circle"></i> {{ e.name }} <hr>
+           </a>
+         </h4>
+
+           </div>
+           <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+               <div class="panel-body">
+                 <ul>
+                   <li>{{ e.institution }}</li>
+                   <li>{{ e.start }}</li>
+                   <li>{{ e.end }}</li>
+                 </ul>
                  </div>
-             </div>
-         </div>
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading6">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
-               <i class="far fa-check-circle"></i> Experiencia #3<hr>
-             </a>
-           </h4>
+           </div>
+       </div>
+      {% endfor %}
 
-             </div>
-             <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
-                 <div class="panel-body">
-                   <ul>
-                      <li>Cargo</li>
-                      <li>Institución</li>
-                      <li>Fecha de ingreso</li>
-                      <li>Fecha de término</li>
-                   </ul>
-                  </div>
-             </div>
-         </div>
      </div>
      </div>
      </div>
@@ -136,7 +100,7 @@
             </div>
             <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
-                  <i class="fas fa-link"></i> Link Propuesta Política
+                  <i class="fas fa-link"></i> <a href="#">Link Propuesta Política</a>
                   </div>
             </div>
         </div>
@@ -151,7 +115,7 @@
             </div>
             <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> Archivo adjunto propuesta política.
+                  <i class="far fa-file-pdf"></i> <a href="#">Archivo adjunto Propuesta Política</a>
                 </div>
             </div>
         </div>
@@ -178,7 +142,7 @@
              </div>
              <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i> Link para acceder a declaración de patrimonio actualizada.
+                   <i class="fas fa-link"></i><a href="#"> Link para acceder a declaración de patrimonio actualizada</a>
                    </div>
              </div>
          </div>
@@ -193,7 +157,7 @@
              </div>
              <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> Archivo adjunto declaración de patrimonio actualizada.
+                   <i class="far fa-file-pdf"></i> <a href="#">Archivo adjunto declaración de patrimonio actualizada</a>
                  </div>
              </div>
          </div>
