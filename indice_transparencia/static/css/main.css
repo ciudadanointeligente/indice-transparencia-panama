@@ -316,6 +316,8 @@ text-align:left;
 color:#eab300;
 font-family:"Montserrat";
 font-size:14px;
+border-bottom: 1px;
+border-color: inherit;
 }
 .navbar-dark{
 background-color: #1e262f;
