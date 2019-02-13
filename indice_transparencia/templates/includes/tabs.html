@@ -100,7 +100,7 @@
             </div>
             <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a href="#">Link Propuesta Política</a>
+                  <i class="fas fa-link"></i> <a href="{{ political_proposal_link }}">Link Propuesta Política</a>
                   </div>
             </div>
         </div>
@@ -115,7 +115,8 @@
             </div>
             <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a href="#">Archivo adjunto Propuesta Política</a>
+                  <i class="far fa-file-pdf"></i>
+                  <a href="{{ political_proposal_doc }}">Archivo adjunto Propuesta Política</a>
                 </div>
             </div>
         </div>
@@ -142,7 +143,7 @@
              </div>
              <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i><a href="#"> Link para acceder a declaración de patrimonio actualizada</a>
+                   <i class="fas fa-link"></i><a href="{{ existing_patrimony_declaration }}"> Link para acceder a declaración de patrimonio actualizada</a>
                    </div>
              </div>
          </div>
@@ -157,7 +158,39 @@
              </div>
              <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a href="#">Archivo adjunto declaración de patrimonio actualizada</a>
+                   <i class="far fa-file-pdf"></i> <a href="{{ patrimony_doc }}">Archivo adjunto declaración de patrimonio actualizada</a>
+                 </div>
+             </div>
+         </div>
+
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading11">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+               <i class="far fa-check-circle"></i> Link declaración de intereses actualizada<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                 <div class="panel-body">
+                   <i class="fas fa-link"></i> <a href="{{ interests_link }}">Link declaración de intereses actualizada</a>
+                 </div>
+             </div>
+         </div>
+
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+               <i class="far fa-check-circle"></i> Archivo adjunto declaración de intereses actualizada<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                 <div class="panel-body">
+                   <i class="far fa-file-pdf"></i> <a href="{{ existing_interests_declaration }}">Archivo adjunto declaración de intereses actualizada</a>
                  </div>
              </div>
          </div>
@@ -210,7 +243,8 @@
              </div>
              <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
                  <div class="panel-body">
-                   Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados.
+                   Descripción: <br>{{ person.judiciary_description }}
+
                  </div>
              </div>
          </div>
@@ -227,48 +261,7 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading14">
-                  <h4 class="panel-title">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="true" aria-controls="collapse14">
-<i class="far fa-check-circle"></i> Actualmente diputado/a<hr>
-             </a>
-           </h4>
 
-             </div>
-             <div id="collapse14" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading14">
-                 <div class="panel-body">
-                Sí
-                   </div>
-             </div>
-         </div>
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading15">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
-
-              <i class="far fa-check-circle"></i> Beneficios<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
-                 <div class="panel-body">
-                   <ul>
-                     <li>  1. Franquicia postal y telefónica dentro del territorio nacional.</li>
-                     <li>  1. Importación libre de gravámenes de dos vehículos durante el periodo constitucional para el uso personal.</li>
-                     <li>  1. Placa oficial.</li>
-                     <li>  1. Pasaporte diplomático.</li>
-                     <li>  1. Bono navideño 2014 por $25.000 (para diputados)</li>
-                   </ul>
-
-
-
-
-
-                 </div>
-             </div>
-         </div>
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading16">
                   <h4 class="panel-title">
@@ -280,7 +273,7 @@
              </div>
              <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i> Link montos asociados a uso de beneficios
+                   <i class="fas fa-link"></i> <a href="{{ benefits_link }}">Link montos asociados a uso de beneficios </a>
                  </div>
              </div>
          </div>
@@ -295,7 +288,7 @@
              </div>
              <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
                  <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> Archivos adjuntos montos asociados a uso de beneficios
+                  <i class="far fa-file-pdf"></i> <a href="{{ benefits_doc}}">Archivos adjuntos montos asociados a uso de beneficios</a>
                  </div>
              </div>
          </div>
@@ -303,14 +296,120 @@
              <div class="panel-heading" role="tab" id="heading18">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
-              <i class="far fa-check-circle"></i> Link detalle de su planilla  001<hr>
+              <i class="far fa-check-circle"></i> Link detalle de planilla 001<hr>
              </a>
            </h4>
 
              </div>
              <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
                  <div class="panel-body">
-                  <i class="fas fa-link"></i> Link detalle de su plantilla 001
+                  <i class="fas fa-link"></i> <a href="{{ eth_001_link }}">Link detalle de plantilla 001</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading19">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 001<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+                 <div class="panel-body">
+                  <i class="far fa-file-pdf"></i> <a href="{{ eth_001_doc }}"> Archivos adjuntos detalle de plantilla 001</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading20">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
+              <i class="far fa-check-circle"></i> Link detalle de planilla 002<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+                 <div class="panel-body">
+                  <i class="fas fa-link"></i> <a href="{{ eth_002_link }}">Link detalle de plantilla 002</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading21">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 002<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+                 <div class="panel-body">
+                  <i class="far fa-file-pdf"></i> <a href="{{ eth_002_doc }}"> Archivos adjuntos detalle de plantilla 002</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading21">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+              <i class="far fa-check-circle"></i> Link detalle de planilla 080<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+                 <div class="panel-body">
+                  <i class="fas fa-link"></i> <a href="{{ eth_080_link }}">Link detalle de plantilla 080</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading22">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
+              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 080<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
+                 <div class="panel-body">
+                  <i class="far fa-file-pdf"></i> <a href="{{ eth_080_doc }}"> Archivos adjuntos detalle de plantilla 080</a>
+                 </div>
+             </div>
+         </div>
+
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading23">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
+              <i class="far fa-check-circle"></i> Link detalle de planilla 172<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
+                 <div class="panel-body">
+                  <i class="fas fa-link"></i> <a href="{{ eth_172_link }}">Link detalle de plantilla 172</a>
+                 </div>
+             </div>
+         </div>
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading24">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapse24">
+              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 172<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24">
+                 <div class="panel-body">
+                  <i class="far fa-file-pdf"></i> <a href="{{ eth_172_doc }}"> Archivos adjuntos detalle de plantilla 172</a>
                  </div>
              </div>
          </div>
