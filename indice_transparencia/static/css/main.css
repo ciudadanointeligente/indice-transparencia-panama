@@ -536,7 +536,7 @@ min-width:210px;
 .social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
 .social_footer_ul li i {  width:20px; height:20px; text-align:center;}
 #footer{
-padding-bottom:30px;
+padding-bottom:45px;
 padding-top:30px;
 background-color: #1e262f;
 margin-top:0px;
@@ -545,6 +545,18 @@ margin-bottom:0px;
 .text-center{
 color: #f0c039;
 font-size: 12px;
+padding-top:20px;
+}
+
+.text-center a{
+color: white;
+font-size: 14px;
+padding-top:20px;
+}
+
+.text-center a:hover{
+color:#f0c039;
+font-size: 14px;
 }
 
 /*logo alianzas*/
