@@ -699,10 +699,7 @@ transform: scale(1);
 margin-bottom: -240px;
 }
 
-.bgimage h5 {
-font-size: 30px;
-padding-right:550px;
-}
+
 .table td, .table th {
 padding-left: 20px;
 padding-right: 20px;
@@ -724,7 +721,7 @@ padding-right: 200px;
 @media screen and (max-width: 700px){
 .bgimage h5 {
 font-size: 20px;
-padding-right:40px;
+margin-right:20px;
 }
 #about {
 font-size: 14px;
@@ -740,6 +737,10 @@ height:380px;
 
   #background-image3{
     height: 480px;
+  }
+
+  .bgimage h5 {
+  margin-right:20px;
   }
 
   #nombre-candidato-perfil {
@@ -798,10 +799,7 @@ height:380px;
 
   }
 
-.bgimage h5 {
 
-padding-right:40px;
-}
 
 .bgimage2 {
 height:480px;
