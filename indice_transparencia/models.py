@@ -355,7 +355,7 @@ def update_positions_in_ranking():
     ## Aquí hago la wea J!
         
     counter = 1
-    for p in Person.objects.all().order_by('-ranking_data__ranking_mark'):
+    for p in Person.objects.all().order_by('-ranking_data__ranking_mark','name'):
         p.ranking_data.position_in_ranking = counter
         p.ranking_data.save()
         counter += 1
