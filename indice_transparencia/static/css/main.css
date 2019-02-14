@@ -6,6 +6,22 @@ padding-top: 4rem;
 padding-bottom: 0rem;
 }
 
+#circuito-perfil {
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+}
+
+#party-perfil{
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+}
+
+#birth-perfil{
+    font-size:14px;
+    color:#fff;
+}
 
 /*boton ranking*/
 a.animated-button.thar-two {
@@ -367,7 +383,7 @@ color:white;
 font-family:"Montserrat";
 text-shadow:2px 2px #333;
 padding-left: 65px;
-padding-right:500px;
+margin-right:500px;
 font-size: 28px;
 line-height: 1.4;
 margin-top:0px;
@@ -434,18 +450,15 @@ margin-bottom: 10px;
 }
 
 .img-fluid-perfil {
-height: 150px;
-border-radius: 100px;
-width: 150px;
-max-width: 150px;
-margin-top: 120px;
-margin-bottom: 120px;
-<<<<<<< HEAD
-position: fixed;
-=======
-
->>>>>>> dno_nati
+    height: 160px;
+    border-radius: 100px;
+    width: 180px;
+    max-width: 200px;
+    margin-top: 122px;
+    margin-bottom: 112px;
+    position: static;
 }
+
 
 #nombre-candidato-perfil{
 margin-top:120px;
@@ -471,8 +484,6 @@ color:white;
   background: url('/static/images/bg-indice-perfil.png');
   height: 390px;
   margin-bottom:40px;
-
-
 }
 
 
@@ -727,18 +738,49 @@ height:380px;
 
 @media screen and (max-width: 600px){
 
-  #nombre-candidato-perfil{
-  margin-top:-100px;
-  color:white;
-  font-size:14px;
-  margin-bottom: 15px;
+  #background-image3{
+    height: 480px;
   }
 
-  .img-fluid-perfil{
-    height:100px;
-    width: 100px;
-    margin-top:100px;
-  }
+  #nombre-candidato-perfil {
+    margin-top: -100px;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#circuito-perfil {
+    font-size: 14px;
+    font-family: montserrat;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+#party-perfil{
+    font-size: 14px;
+    font-family: montserrat;
+    color: #fff;
+    font-weight: 500;
+    /* padding-right: 0px; */
+    text-align: center;
+}
+
+#birth-perfil{
+    font-size:10px;
+    color:#fff;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.img-fluid-perfil {
+    height: fit-content;
+    margin-top: 90px;
+}
+}
+
+
 
   .filter_field{
   min-width:100px;
@@ -757,7 +799,7 @@ height:380px;
   }
 
 .bgimage h5 {
-font-size: 20px;
+
 padding-right:40px;
 }
 
