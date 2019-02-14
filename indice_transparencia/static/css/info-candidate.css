@@ -1,19 +1,23 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
 .panel-title > a:before {
     float: right !important;
     font-family: FontAwesome;
     content:"\f068";
-    padding-right: 5px;
+    padding-right:5px;
 }
+
 .panel-title > a.collapsed:before {
     float: right !important;
     content:"\f067";
 }
+
 .panel-title > a:hover,
 .panel-title > a:active,
 .panel-title > a:focus  {
     text-decoration:none;
 }
+
 .panel-title{
   margin-top:10px;
   margin-bottom:10px;
@@ -41,8 +45,6 @@
     border-bottom:transparent;
 }
 
-
-
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #f0c039;
     background-color: #fff;
@@ -55,18 +57,16 @@
 
 .fa-link{
   padding-right: 5px;
+  padding-left: 10px;
 }
 
 #link-perfil{
-  color: #1e262f;
+color: #1e262f;
 font-family: "Montserrat";
-font-size: 14px;
-font-weight: 600;
-}
-
-#link-perfil:hover{
-  color: #eab300;
 font-size: 14px;
 font-weight: 800;
 }
+
+#link-perfil:hover{
+color: #eab300;
 }
