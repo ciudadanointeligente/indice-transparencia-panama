@@ -793,17 +793,16 @@ height:380px;
   }
 
   #filtro-titulo {
-  text-align:left;
-  font-size:18px;
-  padding-left:50px;
-
-  }
+    text-align: center;
+    font-size: 18px;
+    padding-left: 50px;
+}
 
 
 
 .bgimage2 {
-height:480px;
-position: absolute;
+height:230px;
+position: fixed;
 
 }
 
