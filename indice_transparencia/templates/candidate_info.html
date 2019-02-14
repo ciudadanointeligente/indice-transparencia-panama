@@ -21,20 +21,20 @@
             </div>
 
          </div>
-      
 
-         <div id="circuito">
+
+         <div id="circuito-perfil">
             {% if person.circuit %}
             <p>Circuito: {{ person.circuit }}</p>
             {% endif %}
          </div>
-         <div id="party">
+         <div id="party-perfil">
             {% if person.party %}
-            <p style="color:white;font-size:14px;">Partido: {{person.party}}</p>
+            <p>Partido: {{person.party}}</p>
             {% endif %}
          </div><br>
          <div>
-            <p style="color:white;font-size:12px">Fecha nacimiento:<br> {{person.birth_date}}<br><a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
+            <p id="birth-perfil">Fecha nacimiento:<br> {{person.birth_date}}<br><a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
             <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
             <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
             <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
