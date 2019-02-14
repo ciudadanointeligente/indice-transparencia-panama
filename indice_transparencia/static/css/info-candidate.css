@@ -56,3 +56,17 @@
 .fa-link{
   padding-right: 5px;
 }
+
+#link-perfil{
+  color: #1e262f;
+font-family: "Montserrat";
+font-size: 14px;
+font-weight: 600;
+}
+
+#link-perfil:hover{
+  color: #eab300;
+font-size: 14px;
+font-weight: 800;
+}
+}
