@@ -3,51 +3,38 @@
 {% load bootstrap4 %}
 {% block container %}
 
+<div class="container-fluid bgimage2">
+   {% block contenido_head %}
+   <p id="filtro-titulo">Índice de Transparencia de parlamentarios</p>
+   <form method="get" class="filter_form">
+      <div class="form-row">
+         <div class="label_filter_ranking" id="filter_button">
+            Filtrar diputados actuales
+            {% bootstrap_field filter.form.is_deputy show_label=False %}
+         </div>
+         <div class="label_filter_ranking">
+            Filtrar por circuito
+            {% bootstrap_field filter.form.circuit show_label=False %}
+         </div>
+         <div class="label_filter_ranking">
+            Filtrar por partido o movimiento
+            {% bootstrap_field filter.form.party show_label=False %}
+         </div>
+         <div class="label_filter_ranking">
+            Ordenar por puntaje
+            {% bootstrap_field filter.form.ordering show_label=False %}
+         </div>
+      </div>
+</div>
+</form>
+</div>
+<!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
+   pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado. Esto hace que todos los labels se vean a la misma altura.-->
+<!--<button type="submit" class="btn btn-primary" id="filter_button">-->
+<!--  <span class="glyphicon glyphicon-search"></span> Search-->
+<!--</button>-->
 
-   <div class="container-fluid bgimage2">
-      {% block contenido_head %}
-      <p id="filtro-titulo">Índice de Transparencia de parlamentarios</p>
-
-      <form method="get" class="filter_form">
-        <div class="form-row">
-
-          <div class="label_filter_ranking">
-             {% bootstrap_label filter.form.is_deputy.label label_for='is_deputy' %}
-             {% bootstrap_field filter.form.is_deputy show_label=False %}
-          </div>
-          <div class="label_filter_ranking">
-             {% bootstrap_label filter.form.circuit.label label_for='circuit' %}
-             {% bootstrap_field filter.form.circuit  show_label=False  %}
-          </div>
-          <div class="label_filter_ranking">
-             {% bootstrap_label filter.form.party.label label_for='party' %}
-             {% bootstrap_field filter.form.party show_label=False  %}
-          </div>
-          <div class="label_filter_ranking">
-             {% bootstrap_label filter.form.ordering.label label_for='ordering' %}
-             {% bootstrap_field filter.form.ordering show_label=False  %}
-          </div>
-
-        </div>
-
-
-        </div>
-      </form>  </div>
-
-
-
-
-
-      <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
-         pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado.
-         Esto hace que todos los labels se vean a la misma altura.
-         -->
-      <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
-      <!--  <span class="glyphicon glyphicon-search"></span> Search-->
-      <!--</button>-->
-      {% endblock contenido_head %}
-
-
+{% endblock contenido_head %}
 {% include 'includes/lista_candidatos.html' with persons=persons %}
 {% endblock container %}
 {% block extra_end_js %}
