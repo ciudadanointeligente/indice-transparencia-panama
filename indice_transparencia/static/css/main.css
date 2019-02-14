@@ -306,7 +306,8 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 padding-left:50px;
 }
 .nav-link {
-color:#b3b3b3;
+color:#1e262f;
+font-weight: 600;
 font-family:"Montserrat";
 font-size:14px;
 padding: 1rem 4rem;
@@ -351,8 +352,8 @@ padding-left: 0px;
 padding-top:0px;
 }
 .bgimage {
-    height: 350px;
-    background: url(/static/images/bg-indice.jpg);
+    height: 380px;
+    background: url(/static/images/bg-indice2.png);
     background-repeat: no-repeat;
     background-position: center;
     position: sticky;
@@ -688,8 +689,8 @@ margin-bottom: -240px;
 }
 
 .bgimage h5 {
-font-size: 25px;
-padding-right:270px;
+font-size: 30px;
+padding-right:550px;
 }
 .table td, .table th {
 padding-left: 20px;
