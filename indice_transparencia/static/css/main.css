@@ -166,14 +166,13 @@ padding-right: 0px;
 padding-left: 0px;
 }
 .bgimage {
-height: 600px;
+height: 300px;
 background: url(/static/images/bg-indice2.png);
-
 background-position: center;
 position: sticky;
 opacity: 1;
 display: block;
-margin-bottom: -240px;
+margin-bottom: 0px;
 }
 .bgimage h5 {
 color:white;
@@ -497,6 +496,11 @@ height:500px;
 @media screen and (max-width: 600px){
 #background-image3{
 height: 480px;
+}
+
+a{
+font-size:12px;
+
 }
 .bgimage h5 {
 margin-right:20px;
