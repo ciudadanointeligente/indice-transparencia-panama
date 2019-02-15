@@ -2,7 +2,7 @@
 main {
 padding-left: 4rem;
 padding-right: 4rem;
-padding-top: 4rem;
+padding-top: 0rem;
 padding-bottom: 0rem;
 }
 
@@ -166,9 +166,9 @@ padding-right: 0px;
 padding-left: 0px;
 }
 .bgimage {
-height: 380px;
+height: 600px;
 background: url(/static/images/bg-indice2.png);
-background-repeat: no-repeat;
+
 background-position: center;
 position: sticky;
 opacity: 1;
@@ -206,7 +206,6 @@ position: fixed;
 opacity: 1;
 display: block;
 z-index: 2;
-margin-top:-40px;
 }
 .bgimage2 h5 {
 color:white;
@@ -465,7 +464,7 @@ display: table;
 }
 .bgimage {
 margin-bottom: -240px;
-margin-top:-40px;
+
 }
 .table td, .table th {
 padding-left: 20px;
