@@ -1,290 +1,78 @@
-/* ------------------------------------ */
-#link-persona{
-font-size:14px;
-}
-#link-persona:hover{
-font-size:14px;
-color:#fdc63b;
-text-decoration: none;
-}
-/* ------------------------------------ */
-textarea {
-display: block;
-outline: none;
-}
-textarea:focus, input:focus {
-border-color: transparent !important;
-}
-/* ------------------------------------ */
-ul, li {
-margin: 0px;
-list-style-type: none;
-}
-input {
-display: block;
-}
-iframe {
-border: none !important;
-}
-button {
-outline: none !important;
-border: none;
-background: transparent;
-}
-button:hover {
-cursor: pointer;
+.table td {
+    padding: 0rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
 }
 
-#numero {
-font-size: 14px;
-font-family:montserrat;
-color: #fff;
-font-weight: 700;
-padding-left:20px;
-padding-right:20px;
-text-align: center;
-}
-#nombre {
-font-size: 14px;
-font-family: montserrat;
-color: #fff;
-font-weight: 700;
-}
-#partido {
-font-size: 14px;
-font-family: montserrat;
-color: #fff;
-font-weight: 500;
-padding-right: 100px;
-}
-#circuito {
-font-size: 14px;
-font-family: montserrat;
-color: #fff;
-font-weight: 500;
-padding-right: 50px;
-}
-#nota {
-font-size: 14px;
-font-family: montserrat;
-color: #fff;
-font-weight: 500;
-padding-right: 100px;
-}
-#contador-ranking{
-color:#adb5bd;
-font-weight:800;
-font-size:16px;
-text-align:center;
+.table th {
+    padding: 1.55rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-.limiter {
-width: 100%;
-margin: 0 auto;
+.table thead th {
+    vertical-align: bottom;
+    font-size: 14px;
+    background-color: #1e262f;
+    color:white;
+    padding-left: 50px;
 }
-.container-table100 {
-width: 100%;
-background-color: #fff;
-background: linear-gradient(45deg, #dee2e6, #e9ecef);
-display: -webkit-box;
-display: -webkit-flex;
-display: -moz-box;
-display: -ms-flexbox;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-padding: 33px 30px;
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: middle;
+    border-top: 0px;
+    padding-left: 50px;
+    font-size: 14px;
 }
-.wrap-table100 {
-margin-top:0px;
+
+.table tbody+tbody {
+    border-top: 2px solid #fff;
 }
-table {
-border-spacing: 1;
-border-collapse: collapse;
-background: #FAFAFA;
-border-radius: 0px;
-overflow: hidden;
-width: 100%;
-margin: 0 auto;
-position: relative;
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
-table * {
-position: relative;
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
-table td, table th {
-padding: 10px;
-}
-table thead tr {
-    height: 40px;
-    background: #1e262f;
+
+
+@media screen and (max-width: 1400px){
+.table {
     width: 100%;
-		z-index:100;
+    margin-top:240px;
+    background-color: transparent;
+}
+}
 
+@media screen and (max-width: 900px){
+#columna-circuito{
+  display: none;
 }
-table tbody tr {
-height: 40px;
+.table td, .table th {
+    padding: .35rem;
+    vertical-align: middle;
+    border-top: 0px;
+    padding-left: 20px;
+    font-size: 14px;
 }
-table tbody tr:last-child {
-border: 0;
-}
-table td, table th {
-text-align: left;
-}
-table td.l, table th.l {
-text-align: right;
-}
-table td.c, table th.c {
-text-align: center;
-}
-table td.r, table th.r {
-text-align: center;
-}
-.table100-head th{
-font-family: Montserrat;
-font-size: 18px;
-color: #fff;
-line-height: 1.2;
-font-weight: unset;
-}
-tbody tr:nth-child(even) {
-background-color: #EEEEEE;
-}
-tbody tr {
-font-family: Montserrat;
-font-size: 15px;
-color: #1e2630;
-line-height: 1.2;
-font-weight: unset;
-}
-tbody tr:hover {
-color: #555555;
-background-color: #f5f5f5;
-cursor: pointer;
-}
-.column1 {
-width: 260px;
-padding-left: 40px;
-}
-.column2 {
-width: 160px;
-}
-.column3 {
-width: 245px;
-}
-.column4 {
-width: 110px;
-text-align: right;
-}
-.column5 {
-width: 170px;
-text-align: right;
-}
-.column6 {
-width: 222px;
-text-align: right;
-padding-right: 62px;
-}
-@media screen and (max-width: 1200px) {
 
-table {
-display: block;
+#fila-datos{
+  display:none;
 }
-table > *, table tr, table td, table th {
-display: block;
-}
-table thead {
-display: none;
-}
-table tbody tr {
-height: auto;
-padding-top: 20px;
-padding-bottom:60px;
-padding-right: 30px;
-}
-table tbody tr td {
-padding-left: 40% !important;
-margin-bottom: 10px;
-}
-table tbody tr td:last-child {
-margin-bottom: 0;
-}
-table tbody tr td:before {
-font-family: Montserrat;
-font-size: 14px;
-color: #999999;
-line-height: 1.2;
-font-weight: unset;
-position: absolute;
-width: 40%;
-left: 30px;
-top: 0;
-}
-table tbody tr td:nth-child(1):before {
-content: "";
-}
-table tbody tr td:nth-child(2):before {
-content: "";
-}
-table tbody tr td:nth-child(3):before {
-content: "Nombre:";
-color:#1e262f;
-font-weight: bold;
-}
-table tbody tr td:nth-child(4):before {
-content: "Partido:";
-color:#1e262f;
-font-weight: bold;
-}
-table tbody tr td:nth-child(5):before {
-content: "Circuito:";
-color:#1e262f;
-font-weight: bold;
-}
-table tbody tr td:nth-child(6):before {
-content: "Nota:";
-color:#eab300;
-font-weight: bold;
-}
-.column4,
-.column5,
-.column6 {
-text-align: left;
-}
-.column4,
-.column5,
-.column6,
-.column1,
-.column2,
-.column3 {
-width: 100%;
-}
-tbody tr {
-font-size:14px;
-font-weight:bold;
-background-color: #fff;
-}
-#contador-ranking{
-display: none;
-}
-}
-@media (max-width: 600px) {
-.container-table100 {
-padding-top: 200px;
-}
-#partido{
-display:none;
-}
-#circuito{
-display:none;
-}
-#contador-ranking{
-display: none;
-}
-.wrap-table100 {
 
-margin-top:400px;
+.table td, .table th a{
+    font-size: 10px;
 }
+
 }
