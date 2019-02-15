@@ -575,6 +575,7 @@ color:#ebb400;
     background-color: transparent;
     position: relative;
     display: table;
+    margin-top:-40px;
 }
 
 .s-home .shadow-overlay {
