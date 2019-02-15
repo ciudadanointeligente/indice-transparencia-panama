@@ -74,5 +74,7 @@
 .table td, .table th a{
     font-size: 10px;
 }
-
+#columna-circuito{
+padding-right:20px;
+}
 }
