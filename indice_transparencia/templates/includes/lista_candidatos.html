@@ -4,44 +4,46 @@
 
     <div class="wrap-table100">
       <div class="table100">
-        <table>
-          <thead>
-            <tr class="table100-head">
-              <th id="numero">#</th>
-              <th id="foto"></th>
-              <th id="nombre">Nombre</th>
-              <th id="partido">Partido</th>
-              <th id="circuito">Circuito</th>
-              <th id="nota">Datos obtenidos %</th>
-
-            </tr>
-          </thead>
-          <tbody>
-
-        {% for person in persons %}
-           <tr>
-             <td id="contador-ranking">{{person.ranking_data.position_in_ranking}}</td>
-           <td><a id="link-persona" href="{{ person.get_absolute_url }}">
-             <div class="col-md-1 px-0">
-                  <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
-             </div></a></td>
-            <td id="columna-persona"><a id="link-persona" href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
-           <td>{{ person.party }}</td>
-           <td>{{ person.circuit }}</td>
-
-          <td> <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
-                        <span>{{ person.ranking_data.ranking_mark }}%</span>
-                        <div class="slice">
-                            <div class="bar"></div>
-                            <div class="fill"></div>
-                        </div>
-                    </div>
-         </td>
+        <table class="table table-sm">
+  <thead>
+    <tr id="fila-datos">
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">Nombre</th>
+      <th id="columna-circuito" scope="col">Partido</th>
+      <th id="columna-circuito" scope="col">Circuito</th>
+      <th scope="col">Datos obtenidos %</th>
 
 
+    </tr>
+  </thead>
+    {% for person in persons %}
+  <tbody>
+    <tr>
+      <td>{{person.ranking_data.position_in_ranking}}</td>
+      <td><a class="hvr-grow" href="{{ person.get_absolute_url }}">
+        <div class="col-md-1 px-0">
+             <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.png" %}{% endif %}" class="img-fluid">
+        </div></a></td>
+        <td><a href="{{ person.get_absolute_url }}">{{person.name }}</a></td>
+        <td id="columna-circuito"> {{ person.party }}</td>
+        <td id="columna-circuito"> {{ person.circuit }} </td>
 
-           </tr>
-        {% endfor %}
+                  <td> <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
+                                <span>{{ person.ranking_data.ranking_mark }}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                 </td>
+
+    </tr>
+
+
+      {% endfor %}
+
+
           </tbody>
         </table>
       </div>
