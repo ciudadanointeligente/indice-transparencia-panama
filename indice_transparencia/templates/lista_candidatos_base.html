@@ -2,33 +2,21 @@
 {% load staticfiles %}
 {% block container %}
 
-
-
-<div id="main-content-wrap">
 <section id="intro">
-
-
-
-  <div class="row intro-content">
-   <div class="col-twelve">
-
-     <h3 class="animate-intro">Indice de transparencia de políticos</h3>
-
-     <h1 class="animate-intro">
-       La participación ciudadana maximiza la rendición de cuentas de nuestros políticos
-     </h1>
-
-     <div class="buttons">
-       <a class="button stroke smoothscroll animate-intro" href="{% url 'ranking' %}"  title="">Ver índice</a>
-       <a class="button stroke smoothscroll animate-intro" href="#" title="">Nosotros</a>
-     </div>
-
-     <img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
-
-     </div> <!-- /twelve -->
-  </div> <!-- /row -->
-
-</section> <!-- /intro --><div>
+   <div class="row intro-content">
+      <div class="col-twelve">
+         <h3 class="animate-intro">Indice de transparencia de políticos</h3>
+         <h1 class="animate-intro">
+            La participación ciudadana maximiza la rendición de cuentas de nuestros políticos
+         </h1>
+         <div class="buttons">
+            <a class="button stroke smoothscroll animate-intro" href="{% url 'ranking' %}"  title="">Ver índice</a>
+            <a class="button stroke smoothscroll animate-intro" href="#" title="">Nosotros</a>
+         </div>
+         <img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
+      </div>
+   </div>
+</section>
 
 {% include 'includes/lista_candidatos.html' with persons=persons %}
 {% include 'includes/alianzas.html' %}
