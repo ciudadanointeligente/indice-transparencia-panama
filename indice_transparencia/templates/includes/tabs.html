@@ -131,6 +131,7 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         {% if patrimony_link %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading9">
                   <h4 class="panel-title">
@@ -142,10 +143,12 @@
              </div>
              <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i><a id="link-perfil" href="{{ existing_patrimony_declaration }}"> Link para acceder a declaración de patrimonio actualizada</a>
+                   <i class="fas fa-link"></i><a id="link-perfil" href="{{ patrimony_link }}"> Link para acceder a declaración de patrimonio actualizada</a>
                    </div>
              </div>
          </div>
+         {% endif %}
+         {% if patrimony_doc %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading10">
                   <h4 class="panel-title">
@@ -161,7 +164,8 @@
                  </div>
              </div>
          </div>
-
+         {% endif %}
+        {% if interests_link %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading11">
                   <h4 class="panel-title">
@@ -177,7 +181,8 @@
                  </div>
              </div>
          </div>
-
+        {% endif %}
+        {% if interests_link %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12">
                   <h4 class="panel-title">
@@ -189,10 +194,28 @@
              </div>
              <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ existing_interests_declaration }}">Archivo adjunto declaración de intereses actualizada</a>
+                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ interests_link }}">Archivo adjunto declaración de intereses actualizada</a>
                  </div>
              </div>
          </div>
+         {% endif %}
+         {% if not interests_link and not interests_doc and not patrimony_doc and not patrimony_link%}
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+               <i class="far fa-check-circle"></i> No hay datos<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                 <div class="panel-body">
+                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="#">No hay datos</a>
+                 </div>
+             </div>
+         </div>
+         {% endif %}
 
      </div>
      </div>
