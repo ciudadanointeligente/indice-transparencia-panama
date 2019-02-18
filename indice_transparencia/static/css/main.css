@@ -130,7 +130,7 @@ color:#1e262f;
 font-weight: bold;
 font-family:"Montserrat";
 font-size:14px;
-padding: 1rem 4rem;
+
 text-align:left;
 }
 .nav-link:hover {
@@ -249,13 +249,13 @@ margin-top: 10px;
 margin-bottom: 10px;
 }
 .img-fluid-perfil {
-height: 160px;
-border-radius: 100px;
-width: 180px;
-max-width: 200px;
-margin-top: 122px;
-margin-bottom: 112px;
-position: static;
+    height: 160px;
+    border-radius: 100px;
+    max-width: 200px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    position: static;
+
 }
 #nombre-candidato-perfil{
 margin-top:120px;
@@ -510,7 +510,12 @@ height:500px;
   font-family:"Montserrat";
   font-size:12px;
   text-align:center;
+  padding:0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
   }
+
   .nav-link:hover {
   color:white;
   }
@@ -529,7 +534,6 @@ margin-right:20px;
 #nombre-candidato-perfil {
 margin-top: -100px;
 color: white;
-font-size: 16px;
 margin-bottom: 0px;
 text-align: center;
 font-family: montserrat;
@@ -545,19 +549,20 @@ text-align: center;
 font-size: 14px;
 font-family: montserrat;
 color: #fff;
-font-weight: 500;
+font-weight: bold;
 text-align: center;
+
 }
 #birth-perfil{
-font-size:10px;
+font-size:12px;
 color:#fff;
-font-weight: 500;
-padding-top: 10px;
+font-weight: bold;
+padding-top: 14px;
 font-family: montserrat;
+text-align: centeR;
 }
 .img-fluid-perfil {
-height: fit-content;
-margin-top: 90px;
+height:inherit;
 }
 .filter_field{
 min-width:100px;
