@@ -283,8 +283,8 @@ display: block;
 content: " ";
 border-radius: 50%;
 background-color: transparent;
-width: 0.84em;
-height: 0.84em;
+width: 0.8em;
+height: 0.8em;
 -webkit-transition-property: all;
 -moz-transition-property: all;
 -o-transition-property: all;
@@ -1008,8 +1008,8 @@ transform: rotate(360deg);
 cursor: default;
 }
 .c100:hover > span {
-width: 3.33em;
-line-height: 3.33em;
+width: 3.1em;
+line-height: 3.1em;
 font-size: 0.3em;
 color: #eab300;
 }
