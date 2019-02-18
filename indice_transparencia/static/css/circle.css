@@ -1063,3 +1063,10 @@
 .c100.orange.dark:hover > span {
   color: #eab300;
 }
+
+#porcentaje{
+  color:white;
+  font-family: Montserrat;
+  font-size:12px;
+  font-style: italic;
+}
