@@ -33,7 +33,7 @@ margin-bottom:50px;
 margin-top:50px;
 }
 .nav-tabs .nav-link{
-color:#ffdc83;
+color:white;
 border:none;
 animation: bounceIn 0.6s;
 transform: rotate(0deg) scale(1) translateZ(0);
