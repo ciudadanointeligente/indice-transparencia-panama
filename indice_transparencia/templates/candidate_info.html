@@ -4,26 +4,21 @@
 
 <section id="intro3">
    <div class="row intro-content">
-     <div class="col-md-3">
-     </div>
+     <div class="col-md-3"></div>
      <div class="col-6">
         <div class='row'>
+
            <div class='col'>
               <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
            </div>
+
            <div class='col-md-6'>
-              <div>
-                 <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
-              </div>
+              <div> <h2 id="nombre-candidato-perfil">{{person.name}}</h2></div>
+              <div id="birth-perfil"><p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p></div>
 
-              <div>
-               <a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
-               <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
-               <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
-               <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
-              </div>
 
-              <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
+
+              <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} medium orange">
               <span>{{ person.ranking_data.ranking_mark }}%</span>
               <div class="slice">
                  <div class="bar"></div>
@@ -33,21 +28,28 @@
 
            <div id="circuito-perfil">
               {% if person.circuit %}
-              <p>Circuito: {{ person.circuit }}</p>
+              <p><i class="fas fa-map-marked-alt"></i> Circuito: {{ person.circuit }}</p>
               {% endif %}
            </div>
            <div id="party-perfil">
               {% if person.party %}
-              <p>Partido: {{person.party}}</p>
+              <p><i class="fas fa-flag"></i> Partido: {{person.party}}</p>
               {% endif %}
            </div>
-           <div id="birth-perfil">
-            <p> Fecha Nacimiento: <br>{{person.birth_date}}</p>
-           </div>
+
+
+
+           <div id="redes">
+           <a target="_blank" href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
+           <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
+           <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
+           <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
+
+          </div>
         </div>
      </div>
   </div>
-  <div class="col-md-3"></div>
+  <div class="col-md-4"></div>
    </div>
 </section>
 
