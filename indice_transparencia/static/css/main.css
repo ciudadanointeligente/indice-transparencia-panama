@@ -35,16 +35,19 @@ background-color: #c0c6d1;
 #circuito-perfil {
 font-size: 14px;
 text-align: left;
+font-family: montserrat;
 color: #fff;
 }
 #party-perfil{
 font-size: 14px;
 text-align: left;
 color: #fff;
+font-family: montserrat;
 }
 #birth-perfil{
 font-size:14px;
 color:#fff;
+font-family: montserrat;
 }
 /*about*/
 #about{
@@ -124,18 +127,14 @@ padding-left:50px;
 
 .nav-link {
 color:#1e262f;
-font-weight: 600;
+font-weight: bold;
 font-family:"Montserrat";
 font-size:14px;
 padding: 1rem 4rem;
 text-align:left;
 }
 .nav-link:hover {
-color:#eab300;
-font-family:"Montserrat";
-font-size:14px;
-border-bottom: 1px;
-border-color: inherit;
+color:white;
 }
 .navbar-dark{
 background-color: #1e262f;
@@ -263,6 +262,7 @@ margin-top:120px;
 color:white;
 font-size:20px;
 margin-bottom: 15px;
+text-align: left;
 }
 #fecha-nacimiento-perfil{
 font-size:16px;
@@ -507,16 +507,12 @@ height:500px;
 @media screen and (max-width: 600px){
 
   .nav-link {
+  font-family:"Montserrat";
   font-size:12px;
-  padding: 1rem 4rem;
-  text-align:left;
+  text-align:center;
   }
   .nav-link:hover {
-  color:#eab300;
-  font-family:"Montserrat";
-  font-size:14px;
-  border-bottom: 1px;
-  border-color: inherit;
+  color:white;
   }
 
 #background-image3{
@@ -536,6 +532,7 @@ color: white;
 font-size: 16px;
 margin-bottom: 0px;
 text-align: center;
+font-family: montserrat;
 }
 #circuito-perfil {
 font-size: 14px;
@@ -549,7 +546,6 @@ font-size: 14px;
 font-family: montserrat;
 color: #fff;
 font-weight: 500;
-/* padding-right: 0px; */
 text-align: center;
 }
 #birth-perfil{
@@ -557,6 +553,7 @@ font-size:10px;
 color:#fff;
 font-weight: 500;
 padding-top: 10px;
+font-family: montserrat;
 }
 .img-fluid-perfil {
 height: fit-content;
@@ -572,6 +569,7 @@ max-width:260px;
 text-align: center;
 font-size: 18px;
 padding-left: 50px;
+font-family: montserrat;
 }
 .bgimage2 {
 height:420px;
@@ -853,11 +851,10 @@ margin-top:1700px;
 margin-bottom: 150px;
 }
 #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-color: #f3f3f3;
+color: white;
 background-color: transparent;
 border-color: transparent;
 border-bottom: transparent;
-font-size: 20px;
 font-weight: bold;
 }
 #tabs .nav-tabs .nav-link {
