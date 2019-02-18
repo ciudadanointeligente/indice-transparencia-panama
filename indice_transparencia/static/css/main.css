@@ -320,12 +320,13 @@ margin-left:25%;
 margin-right:10%;
 }
 .label_filter_ranking {
+font-family: Montserrat;
 color: white;
 padding-bottom: 0px;
 margin-left:10px;
 text-align:left;
 max-width: 210px;
-font-size: 14px;
+font-size: 12px;
 }
 .filter_field{
 min-width:210px;
@@ -646,7 +647,7 @@ padding-bottom: 0px;
 margin-left: 65px;
 max-width: 250px;
 min-width: 250px;
-font-family: Montserrat;
+
 }
 #about {
 font-size: 14px;
