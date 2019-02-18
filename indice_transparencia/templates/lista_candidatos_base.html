@@ -1,21 +1,35 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block container %}
-<section class="bgimage">
-   <div class="container-fluid">
-      {% block contenido_head %}
-      <div class="row" id="index-text">
-         <div class="">
-            <div class="box-e"><a href="#" class="custom-underline" id="indice-titulo1">Índice de Transparencia de Políticos</a></div>
 
-    </div>
-            <h5>La participación ciudadana maximiza la rendición de cuentas de nuestros políticos</h5>
-            <p><a href="{% url 'ranking' %}" class="btn btn-sm animated-button thar-two">Ver índice</a></p>
-         </div>
-      </div>
-      {% endblock contenido_head %}
-   </div>
-</section>
+
+
+<div id="main-content-wrap">
+<section id="intro">
+
+  <!-- <div class="shadow-overlay"></div> -->
+
+  <div class="row intro-content">
+   <div class="col-twelve">
+
+     <h3 class="animate-intro">Indice de transparencia de políticos</h3>
+
+     <h1 class="animate-intro">
+       La participación ciudadana maximiza la rendición de cuentas de nuestros políticos
+     </h1>
+
+     <div class="buttons">
+       <a class="button stroke smoothscroll animate-intro" href="{% url 'ranking' %}"  title="">Ver índice</a>
+       <a class="button stroke smoothscroll animate-intro" href="#" title="">Nosotros</a>
+     </div>
+
+     <img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
+
+     </div> <!-- /twelve -->
+  </div> <!-- /row -->
+
+</section> <!-- /intro --><div>
+
 {% include 'includes/lista_candidatos.html' with persons=persons %}
 {% include 'includes/alianzas.html' %}
 {% endblock container %}
