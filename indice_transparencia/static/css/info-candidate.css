@@ -40,7 +40,15 @@
 }
 
 .nav-tabs .nav-link{
+  color:#ffdc83;
   border:none;
+  animation: bounceIn 0.6s;
+transform: rotate(0deg) scale(1) translateZ(0);
+transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+cursor: pointer;}
+
+.nav-tabs .nav-link:hover{
+transform: rotate(0deg) scale(1.1);
 }
 
 .nav-tabs {
@@ -50,7 +58,6 @@
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: white;
     background-color: transparent;
-    border-color: #dee2e6 #dee2e6 #fff;
 }
 
 .fa-file-pdf{
