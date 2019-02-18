@@ -24,9 +24,11 @@
 }
 
 .panel-body{
+  font-family: Montserrat;
   margin-bottom:0px;
-  font-size:14px;
+  font-size:12px;
   color:#1e2630;
+  font-weight: bold;
 }
 
 #accordion{
@@ -53,6 +55,7 @@
 
 .fa-file-pdf{
   padding-right: 5px;
+  padding-left: 10px;
 }
 
 .fa-link{
