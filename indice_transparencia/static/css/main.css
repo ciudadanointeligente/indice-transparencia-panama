@@ -231,6 +231,16 @@ padding-left:10%;
 padding-right:10%;
 padding-top:80px;
 }
+
+#filtro-titulo2 {
+  font-family: Montserrat;
+text-align:center;
+font-size:24px;
+padding-left:10%;
+padding-right:10%;
+padding-top:0px;
+color:#eab300;
+}
 .img-fluid {
 height: 50px;
 border-radius: 50px;
