@@ -504,6 +504,20 @@ height:500px;
 }
 }
 @media screen and (max-width: 600px){
+
+  .nav-link {
+  font-size:12px;
+  padding: 1rem 4rem;
+  text-align:left;
+  }
+  .nav-link:hover {
+  color:#eab300;
+  font-family:"Montserrat";
+  font-size:14px;
+  border-bottom: 1px;
+  border-color: inherit;
+  }
+
 #background-image3{
 height: 480px;
 }
@@ -632,6 +646,7 @@ padding-bottom: 0px;
 margin-left: 65px;
 max-width: 250px;
 min-width: 250px;
+font-family: Montserrat;
 }
 #about {
 font-size: 14px;
