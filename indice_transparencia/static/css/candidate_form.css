@@ -1,325 +1,249 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-
-  .card {
-    margin: 20px 0 20px;
+.card {
+margin: 20px 0 20px;
 }
-
 #form-nav-sections {
-    position: fixed;
+position: fixed;
 }
-
 .scrollspy-example {
-  position: relative;
+position: relative;
 }
-
-
 /*Bienvenido*/
 h1 {
-  text-align:center;
-    font-family: "Montserrat";
-    font-size: 24px;
-  font-weight:500;
-  color:#feb61e;
+text-align:center;
+font-family: "Montserrat";
+font-size: 24px;
+font-weight:500;
+color:#feb61e;
 }
-
 /*links*/
 a {
-  font-family: "Montserrat";
-  font-weight:500;
+font-family: "Montserrat";
+font-weight:500;
 }
-
 .add-item:hover {
-  background-color:#c0c6d1;
-  border-color:white;
+background-color:#c0c6d1;
+border-color:white;
 }
-
 /*Bajada titulo*/
-
 p{
-  padding-left:0px;
-  text-align:center;
-  font-family: "Montserrat";
-  font-weight:400;
-  font-size:20px;
-  color:#626c7d;
-  margin-bottom:20px;
+padding-left:0px;
+text-align:center;
+font-family: "Montserrat";
+font-weight:400;
+font-size:20px;
+color:#626c7d;
+margin-bottom:20px;
 }
-
 h6 {
-  margin-left: 0px;
-  font-family: "Montserrat";
-  font-weight:700;
-  font-size:16px;
-
+margin-left: 0px;
+font-family: "Montserrat";
+font-weight:700;
+font-size:16px;
 }
-
 /*Titulos secciones*/
-
 h5 {
-  font-family: "Montserrat";
-  font-size:24px;
-  font-weight:1000;
-  margin-top:30px;
-  margin-bottom:30px;
-  color:#feb61e;
+font-family: "Montserrat";
+font-size:24px;
+font-weight:1000;
+margin-top:30px;
+margin-bottom:30px;
+color:#feb61e;
 }
-
 /*Etiquetas de campos*/
-
 label{
-  margin-left: 0px;
-  font-family: "Montserrat";
-  font-weight:800;
-
+margin-left: 0px;
+font-family: "Montserrat";
+font-weight:800;
 }
-
 .custom-file-label{
-  font-size:12px;
-  font-weight:400;
+font-size:12px;
+font-weight:400;
 }
-
 .custom-file{
-  padding-bottom:70px;
-  margin-top: 10px;
-
+padding-bottom:70px;
+margin-top: 10px;
 }
-
 /*diagramacion*/
-
 .row {
-  margin-left: 0;
-  margin-right: 0;
+margin-left: 0;
+margin-right: 0;
 }
-
 /*formulario*/
-
 .form-control {
-   background-color: #fff;
-   border-radius: 0.20rem;
-   font-family: "Montserrat";
-   font-size:14px;
-   color:#626c7d;
-   padding-left:10px;
-   padding-right:10px;
-   font-weight: 100;
-   margin-bottom:40px;
-   border: 1.5px solid #626c7d;
+background-color: #fff;
+border-radius: 0.20rem;
+font-family: "Montserrat";
+font-size:14px;
+color:#626c7d;
+padding-left:10px;
+padding-right:10px;
+font-weight: 100;
+margin-bottom:40px;
+border: 1.5px solid #626c7d;
 }
-
 /*checkbox*/
-
 .form-check {
-  padding-left:20px;
-  border-radius: 10rem;
-  margin-bottom:40px;
-  margin-top:0px;
+padding-left:20px;
+border-radius: 10rem;
+margin-bottom:40px;
+margin-top:0px;
 }
-
 /*botoncitos*/
-
 .btn{
-  font-family: "Montserrat"
-  font-size:14px;
-  color: white;
-  border-color: #F9B903;
-  background-color:#F9B903;
-  padding-left:20px;
-  padding-right:20px;
-  font-weight:500;
-  margin-bottom:50px;
-  margin-top:0px;
+font-family: "Montserrat"
+font-size:14px;
+color: white;
+border-color: #F9B903;
+background-color:#F9B903;
+padding-left:20px;
+padding-right:20px;
+font-weight:500;
+margin-bottom:50px;
+margin-top:0px;
 }
-
 #solo-candidatos{
-  margin-bottom:20px;
+margin-bottom:20px;
 }
-
 .btn-primary{
 border-radius:0.3rem;
 margin-top:0px;
 }
-
 .btn-primary:hover{
-  background-color:#c0c6d1;
-  border-color:white;
+background-color:#c0c6d1;
+border-color:white;
 }
-
 .custom-switch {
-  padding-left:20px;
+padding-left:20px;
 }
-
 /*columnas*/
-
 .col-12 {
 margin-left:0px;
 margin-right:0px;
 padding-left:0px;
 }
-
 .col-md-8 {
 padding-left:70px;
 }
-
 /*Scrollspy*/
-
 .list-group-item.active{
 border-color: #F9B903;
 background-color:#F9B903;
 }
-
 /*Info boxes*/
-
 #id_judiciary_records-0-date{
-  margin-bottom:10px;
+margin-bottom:10px;
 }
-
 #id_judiciary_records-0-kind{
-  margin-bottom:10px;
+margin-bottom:10px;
 }
-
 #id_judiciary_records-0-number{
-  margin-bottom:10px;
+margin-bottom:10px;
 }
-
 #id_judiciary_records-0-result{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-0-name{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-0-institution{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-0-start{margin-bottom:0px;
 }
-
 #id_work_records-0-name{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-0-institution{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-0-start{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_patrimony_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_work_records-0-end{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-0-end{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_image{
-  margin-bottom:15px;
+margin-bottom:15px;
 }
-
 #id_political_proposal_doc{
-  margin-bottom:30px;
-
+margin-bottom:30px;
 }
-
 #id_interests_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_benefits_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_eth_001_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_eth_002_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_eth_172_doc{
-  margin-bottom:30px;
+margin-bottom:30px;
 }
-
 #id_educational_records-1-name{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-1-institution{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-1-start{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_educational_records-1-end{
-   margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-1-institution{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-1-institution{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-1-start{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
 #id_work_records-1-end{
-  margin-bottom:0px;
+margin-bottom:0px;
 }
-
 #id_work_records-1-name{
-   margin-bottom:0px;
+margin-bottom:0px;
 }
-
 .bootstrap4-multi-input{
-  display:inline-block;
-  padding-top:0px;
-  padding-bottom:0px;
+display:inline-block;
+padding-top:0px;
+padding-bottom:0px;
 }
-
 .form-group {
-    margin-top: 25px;
+margin-top: 25px;
 }
-
 #eth_080_doc-clear_id{
-  display:none;
+display:none;
 }
-
 #eth_002_doc-clear_id{
-  display:none;
+display:none;
 }
-
 #eth_001_doc-clear_id{
-  display:none;
+display:none;
 }
-
 #eth_172_doc-clear_id{
-  display:none;
+display:none;
 }
-
 @media screen and (max-width: 1080px)
 {
 .col-2 {
-   display:none;
-  }
-
+display:none;
+}
 .col-md-8 {
 padding-left:20px;
 padding-right:20px;
 }
-
 }
