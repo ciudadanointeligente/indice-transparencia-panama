@@ -2,48 +2,52 @@
 {% load static %}
 {% block container %}
 
-<div class="row" id="background-image3">
-   <div class="col">
+<section id="intro3">
+   <div class="row intro-content">
+     <div class="col">
+     </div>
+     <div class="col-6">
+        <div class='row'>
+           <div class='col'>
+              <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
+           </div>
+           <div class='col'>
+              <div>
+                 <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
+              </div>
+              <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
+              <span>{{ person.ranking_data.ranking_mark }}%</span>
+              <div class="slice">
+                 <div class="bar"></div>
+                 <div class="fill"></div>
+              </div>
+           </div>
+           <div id="circuito-perfil">
+              {% if person.circuit %}
+              <p>Circuito: {{ person.circuit }}</p>
+              {% endif %}
+           </div>
+           <div id="party-perfil">
+              {% if person.party %}
+              <p>Partido: {{person.party}}</p>
+              {% endif %}
+           </div>
+           <br>
+           <div>
+            <p id="birth-perfil">Fecha nacimiento:<br> {{person.birth_date}}<br><a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
+            <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
+            <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
+            <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
+
+              </p>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="col"></div>
    </div>
-   <div class="col-6">
-      <div class='row'>
-         <div class='col'>
-            <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
-         </div>
-         <div class='col'>
-            <div>
-               <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
-            </div>
-            <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
-            <span>{{ person.ranking_data.ranking_mark }}%</span>
-            <div class="slice">
-               <div class="bar"></div>
-               <div class="fill"></div>
-            </div>
-         </div>
-         <div id="circuito-perfil">
-            {% if person.circuit %}
-            <p>Circuito: {{ person.circuit }}</p>
-            {% endif %}
-         </div>
-         <div id="party-perfil">
-            {% if person.party %}
-            <p>Partido: {{person.party}}</p>
-            {% endif %}
-         </div>
-         <br>
-         <div>
-          <p id="birth-perfil">Fecha nacimiento:<br> {{person.birth_date}}<br><a href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
-          <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
-          <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
-          <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
-    
-            </p>
-         </div>
-      </div>
-   </div>
-</div>
-<div class="col"></div>
-</div>
+</section>
+
+
 {% include 'includes/tabs.html' with person=person%}
 {% endblock container %}
