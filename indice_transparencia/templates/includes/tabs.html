@@ -17,6 +17,23 @@
       <div class="row">
       <div class="col">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              {% if person.educational_records.count < 1 %}
+        <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12ed">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12ed" aria-expanded="false" aria-controls="collapse12ed">
+               <i class="far fa-check-circle"></i> No hay datos<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12ed" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12ed">
+                 <div class="panel-body">
+                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="#">No hay datos</a>
+                 </div>
+             </div>
+         </div>
+    {% endif %}
 
         {% for e in person.educational_records.all %}
 
@@ -52,6 +69,24 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         
+    {% if person.work_records.count < 1 %}
+        <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12w">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12w" aria-expanded="false" aria-controls="collapse12w">
+               <i class="far fa-check-circle"></i> No hay datos<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12w" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12w">
+                 <div class="panel-body">
+                   <i class="far fa-file-pdf"></i> No hay datos
+                 </div>
+             </div>
+         </div>
+    {% endif %}
 
        {% for e in person.work_records.all %}
 
@@ -99,7 +134,11 @@
             </div>
             <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ political_proposal_link }}">Link Propuesta Política</a>
+                    {% if person.political_proposal_link %}
+                  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.political_proposal_link }}" target="_blank">Link Propuesta Política</a>
+                  {% else %}
+                      <i class="fas fa-link"></i> No hay link
+                  {% endif %}
                   </div>
             </div>
         </div>
@@ -114,8 +153,12 @@
             </div>
             <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i>
-                  <a id="link-perfil" href="{{ political_proposal_doc }}">Archivo adjunto Propuesta Política</a>
+                  
+                  {% if person.political_proposal_doc %}
+                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.political_proposal_doc }}">Archivo adjunto Propuesta Política</a>
+                  {% else %}
+                      <i class="fas fa-link"></i> No hay documento
+                  {% endif %}
                 </div>
             </div>
         </div>
@@ -131,6 +174,7 @@
      <div class="row">
      <div class="col">
      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         {% if  person.patrimony_link %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading9">
                   <h4 class="panel-title">
@@ -142,10 +186,12 @@
              </div>
              <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i><a id="link-perfil" href="{{ existing_patrimony_declaration }}"> Link para acceder a declaración de patrimonio actualizada</a>
+                   <i class="fas fa-link"></i><a id="link-perfil" href="{{  person.patrimony_link }}"> Link para acceder a declaración de patrimonio actualizada</a>
                    </div>
              </div>
          </div>
+         {% endif %}
+         {% if  person.patrimony_doc %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading10">
                   <h4 class="panel-title">
@@ -157,11 +203,12 @@
              </div>
              <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ patrimony_doc }}">Archivo adjunto declaración de patrimonio actualizada</a>
+                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.patrimony_doc }}">Archivo adjunto declaración de patrimonio actualizada</a>
                  </div>
              </div>
          </div>
-
+         {% endif %}
+        {% if  person.interests_link %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading11">
                   <h4 class="panel-title">
@@ -173,11 +220,12 @@
              </div>
              <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
                  <div class="panel-body">
-                   <i class="fas fa-link"></i> <a id="link-perfil" href="{{ interests_link }}">Link declaración de intereses actualizada</a>
+                   <i class="fas fa-link"></i> <a id="link-perfil" href="{{  person.interests_link }}">Link declaración de intereses actualizada</a>
                  </div>
              </div>
          </div>
-
+        {% endif %}
+        {% if  person.interests_doc %}
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12">
                   <h4 class="panel-title">
@@ -189,10 +237,28 @@
              </div>
              <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ existing_interests_declaration }}">Archivo adjunto declaración de intereses actualizada</a>
+                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.interests_doc }}">Archivo adjunto declaración de intereses actualizada</a>
                  </div>
              </div>
          </div>
+         {% endif %}
+         {% if not  person.interests_link and not  person.interests_doc and not  person.patrimony_doc and not  person.patrimony_link%}
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading12p">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12p" aria-expanded="false" aria-controls="collapse12p">
+               <i class="far fa-check-circle"></i> No hay datos<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse12p" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12p">
+                 <div class="panel-body">
+                   <i class="far fa-file-pdf"></i> No hay datos
+                 </div>
+             </div>
+         </div>
+         {% endif %}
 
      </div>
      </div>
