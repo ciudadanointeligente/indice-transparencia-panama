@@ -8,13 +8,16 @@
      <div class="col-6">
         <div class='row'>
 
+
            <div class='col'>
               <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
            </div>
 
            <div class='col-md-6'>
               <div> <h2 id="nombre-candidato-perfil">{{person.name}}</h2></div>
+              {% if person.birth_date %}
               <div id="birth-perfil"><p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p></div>
+              {% endif %}
 
 
 
@@ -28,24 +31,23 @@
 
            <div id="circuito-perfil">
               {% if person.circuit %}
-              <p><i class="fas fa-map-marked-alt"></i> Circuito: {{ person.circuit }}</p>
+              <p><i class="fas fa-map-marked-alt"></i> Circuito {{ person.circuit }}</p>
               {% endif %}
            </div>
            <div id="party-perfil">
               {% if person.party %}
-              <p><i class="fas fa-flag"></i> Partido: {{person.party}}</p>
+              <p><i class="fas fa-flag"></i> {{person.party}}</p>
               {% endif %}
            </div>
-
-
 
            <div id="redes">
            <a target="_blank" href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
            <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
            <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
            <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
+           </div>
 
-          </div>
+
         </div>
      </div>
   </div>
