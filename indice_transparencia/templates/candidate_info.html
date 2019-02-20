@@ -15,7 +15,9 @@
 
            <div class='col-md-6'>
               <div> <h2 id="nombre-candidato-perfil">{{person.name}}</h2></div>
+              {% if person.birth_date %}
               <div id="birth-perfil"><p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p></div>
+              {% endif %}
 
 
 
