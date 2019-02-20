@@ -1,29 +1,31 @@
 .table td {
-    padding: 0rem;
+  
     vertical-align: middle;
     border-top: 1px solid #dee2e6;
 }
 
 .table th {
-    padding: 1.55rem;
     vertical-align: middle;
     border-top: 1px solid #dee2e6;
 }
 
 .table thead th {
-    vertical-align: bottom;
+    vertical-align: middle;
     font-size: 14px;
     background-color: #1e262f;
     color:white;
-    padding-left: 50px;
+    padding-left: 30px;
     padding-top:15px;
 }
 
 .table td, .table th {
-    padding: .75rem;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:20px;
     vertical-align: middle;
     border-top: 0px;
-    padding-left: 50px;
+    padding-left: 30px;
     font-size: 14px;
 }
 
