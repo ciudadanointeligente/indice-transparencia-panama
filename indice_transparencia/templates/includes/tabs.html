@@ -547,6 +547,58 @@
    </div>
 
     {% if person.is_deputy %}
+<div class="tab-pane fade" id="nav-otros" role="tabpanel" aria-labelledby="nav-otros-tab">
+     <!--contenido-->
+
+     <div class="row">
+     <div class="col">
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading24at">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24at" aria-expanded="false" aria-controls="collapse24at">
+              <i class="far fa-check-circle"></i> % de asistencia<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse24at" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24at">
+                 <div class="panel-body">
+                {% if person.attendance %}
+                  <i class="far fa-percent"></i> {{ person.attendance }} % 
+                  {% else %}
+                  <i class="fas fa-times"></i> No hay datos 
+                  {% endif %}
+                 </div>
+             </div>
+         </div>
+
+         <div class="panel panel-default">
+             <div class="panel-heading" role="tab" id="heading24lw">
+                  <h4 class="panel-title">
+             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24lw" aria-expanded="false" aria-controls="collapse24lw">
+              <i class="far fa-check-circle"></i> N° de leyes sancionadas<hr>
+             </a>
+           </h4>
+
+             </div>
+             <div id="collapse24lw" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24lw">
+                 <div class="panel-body">
+                {% if person.laws_worked_on %}
+                  <i class="far fa-percent"></i> {{ person.laws_worked_on }}  
+                  {% else %}
+                  <i class="fas fa-times"></i> No hay datos 
+                  {% endif %}
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     </div>
+     </div>
+     <!--contenido-->
+   </div>
 
     {% endif %}
 
