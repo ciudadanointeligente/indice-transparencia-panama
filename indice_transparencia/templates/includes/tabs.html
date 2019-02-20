@@ -5,10 +5,14 @@
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true">Formación<br>Académica</a></div>
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false">Experiencia<br>Profesional</a></div>
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false">Propuesta<br>Política</a></div>
+   {% if person.is_deputy %}
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false">Declaraciones</a></div>
+   {% endif %}
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false">Procesos<br>Judiciales</a></div>
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false">Ética<br>Presupuestaria</a></div>
+   {% if person.is_deputy %}
    <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false">Otros</a></div>
+   {% endif %}
 </div>
 </nav>
 
@@ -184,6 +188,7 @@
     </div>
     <!--contenido-->
    </div>
+   {% if person.is_deputy %}
    <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaracion-tab">
      <!--contenido-->
 
@@ -281,7 +286,7 @@
      </div>
      <!--contenido-->
    </div>
-
+   {% endif %}
    <div class="tab-pane fade" id="nav-procesos" role="tabpanel" aria-labelledby="nav-procesos-tab">
      <!--contenido-->
 
@@ -541,8 +546,9 @@
      <!--contenido-->
    </div>
 
+    {% if person.is_deputy %}
 
-
+    {% endif %}
 
 
 
