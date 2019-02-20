@@ -343,14 +343,18 @@
              <div class="panel-heading" role="tab" id="heading12pj">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pj" aria-expanded="false" aria-controls="collapse12pj">
-               <i class="far fa-check-circle red"></i> No hay datos<hr>
+                 {% if person.declared_intention_to_transparent_judiciary_records %}
+               <i class="far fa-check-circle"></i> No hay datos<hr>
+               {% else %}
+               <i class="fa fa-times"></i> No hay datos<hr>
+               {% endif %}
              </a>
            </h4>
 
              </div>
              <div id="collapse12pj" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pj">
                  <div class="panel-body">
-                   <i class="far fa-file-pdf red"></i> No hay datos
+                   <i class="fa fa-times"></i> No hay datos
                  </div>
              </div>
          </div>
