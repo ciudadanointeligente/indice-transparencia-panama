@@ -11,19 +11,19 @@
         <form method="get" class="filter_form">
            <div class="form-row">
               <div class="label_filter_ranking" id="filter_button">
-                 Filtrar diputados actuales
+                 Por Diputados a reelección
                  {% bootstrap_field filter.form.is_deputy show_label=False %}
               </div>
               <div class="label_filter_ranking">
-                 Filtrar por circuito
+                 Por circuito
                  {% bootstrap_field filter.form.circuit show_label=False %}
               </div>
               <div class="label_filter_ranking">
-                 Filtrar por partido o movimiento
+                 Por Partido
                  {% bootstrap_field filter.form.party show_label=False %}
               </div>
               <div class="label_filter_ranking">
-                 Ordenar por puntaje
+                 Por orden de % de datos obtenidos
                  {% bootstrap_field filter.form.ordering show_label=False %}
               </div>
            </div>
