@@ -252,12 +252,14 @@ margin-bottom: 10px;
 
 .img-fluid-perfil {
     max-height: 200px;
+    min-height:150px;
     border-radius: 100px;
     max-width: 200px;
+    min-widh:150px;
     margin-top: 120px;
     margin-bottom: 120px;
     position: static;
-    float: ;
+    float:right;
 }
 
 #nombre-candidato-perfil{
@@ -506,10 +508,10 @@ margin-bottom: -240px;
 }
 
 .img-fluid {
-height: 50px;
-border-radius:50px;
-width:50px;
-max-width: 50px;
+height: 60px;
+border-radius:60px;
+width:60px;
+max-width: 60px;
 }
 #about {
 font-size: 16px;
@@ -530,7 +532,7 @@ height:500px;
 }
 
 #nombre-candidato-perfil{
-margin-top:120px;
+margin-top:0px;
 color:white;
 font-size:18px;
 margin-bottom: 15px;
@@ -543,8 +545,10 @@ text-align: left;
 
   .img-fluid-perfil {
     max-height: 200px;
+    min-height: 150px;
     border-radius: 100px;
     max-width: 200px;
+    min-width: 150px;
     margin-top: 120px;
     margin-bottom: 120px;
     position: static;
@@ -568,10 +572,10 @@ text-align: left;
   }
 
   #birth-perfil{
-  font-size:12px;
+  font-size:14px;
   color:#fff;
   font-weight: bold;
-  padding-top: 14px;
+  padding-top: 5px;
   font-family: montserrat;
   text-align: centeR;
   }
