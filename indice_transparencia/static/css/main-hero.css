@@ -160,10 +160,10 @@ button.stroke, .button.stroke {
 }
 
 #intro h1 {
-    font-size: 2.8rem;
     line-height: 1.5;
         padding: 0 5%;
         margin-top:0px;
+        font-size: 2.5rem;
 }
 }
 
@@ -172,6 +172,7 @@ button.stroke, .button.stroke {
     border: 3px solid rgba(255, 255, 255, 0.6);
     color: white;
     margin: 0 0.2rem;
+    margin-bottom: 10px;
 }
 
 #intro .buttons .button:hover {
