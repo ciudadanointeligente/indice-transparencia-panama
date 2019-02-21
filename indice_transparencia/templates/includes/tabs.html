@@ -610,7 +610,12 @@
              <div class="panel-heading" role="tab" id="heading24at">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24at" aria-expanded="false" aria-controls="collapse24at">
-              <i class="fas fa-check-circle"></i> % de asistencia<hr>
+                 {% if person.attendance %}
+              <i class="fas fa-check-circle"></i> 
+              {% else %}
+                  <i class="fa fa-times-circle"></i>
+                  {% endif %}
+                  % de asistencia<hr>
              </a>
            </h4>
 
@@ -630,7 +635,12 @@
              <div class="panel-heading" role="tab" id="heading24lw">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24lw" aria-expanded="false" aria-controls="collapse24lw">
-            <i class="fas fa-check-circle"></i> N° de leyes sancionadas<hr>
+                 {% if person.laws_worked_on %}
+                  <i class="fas fa-check-circle"></i>
+                  {% else %}
+                  <i class="fa fa-times-circle"></i> 
+                  {% endif %}
+             N° de leyes sancionadas<hr>
              </a>
            </h4>
 
