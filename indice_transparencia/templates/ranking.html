@@ -7,15 +7,15 @@
    <div class="row intro-content">
      <div class="container-fluid ">
         {% block contenido_head %}
-        <p id="filtro-titulo2">Guía de Políticos</p>
+        <p id="filtro-titulo2">Perfil de candidatos a diputados en Panamá</p>
         <form method="get" class="filter_form">
            <div class="form-row">
               <div class="label_filter_ranking" id="filter_button">
-                 Por Diputados a reelección
+                 Por Diputados a Reelección
                  {% bootstrap_field filter.form.is_deputy show_label=False %}
               </div>
               <div class="label_filter_ranking">
-                 Por circuito
+                 Por Circuito
                  {% bootstrap_field filter.form.circuit show_label=False %}
               </div>
               <div class="label_filter_ranking">
@@ -23,7 +23,7 @@
                  {% bootstrap_field filter.form.party show_label=False %}
               </div>
               <div class="label_filter_ranking">
-                 Por orden de % de datos obtenidos
+                 Por orden de % Datos Obtenidos
                  {% bootstrap_field filter.form.ordering show_label=False %}
               </div>
            </div>
