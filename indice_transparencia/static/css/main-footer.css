@@ -1,17 +1,88 @@
 #comite {
-  font-size:18px;
+  font-size:16px;
   font-family:Montserrat;
   margin-bottom:80px;
-  margin-top:80px;
+  margin-top:40px;
   text-align:Center;
+
+}
+
+#comite2 {
+  font-size:16px;
+  font-family:Montserrat;
+  margin-bottom:30px;
+  margin-top:0px;
+  text-align:center;
+
+}
+
+#comite3 {
+  padding-bottom:40px;
+
+}
+
+#tabs-categorias{
+  padding-left:20px;
 
 }
 
 #comite-asesor{
   font-size:16px;
   font-family:Montserrat;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-right: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  text-align: center;
+}
+
+#metodologia{
+  font-size:16px;
+  font-family:Montserrat;
+  margin-top: 20px;
+  margin-right: 20px;
+
+}
+
+#metodologia-titulo{
+  font-size:16px;
+  font-family:Montserrat;
+  margin-top: 20px;
+  margin-right: 20px;
+
+}
+
+#metodologia ul li{
+    font-size: 16px;
+    font-family: Montserrat;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#h4-about{
+  color:#fdc63b;
+  font-size:40px;
+  margin-top:80px;
+}
+
+.fa-check-circle{
+  color:#20c997;
+  font-size: 14px;
+}
+
+.fa-times-circle{
+  color:red;
+  font-size: 14px;
+}
+@media screen and (max-width: 600px){
+
+  #h4-about{
+    color:#fdc63b;
+    font-size:20px;
+    margin-top:20px;
+    margin-left: 40px;
+    margin-right: 20px;
+    text-align: left;
+    margin-bottom:20px;
+  }
 }
