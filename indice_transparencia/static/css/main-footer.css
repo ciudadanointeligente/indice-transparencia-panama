@@ -76,6 +76,17 @@
 }
 @media screen and (max-width: 600px){
 
+  #nav-tab{
+    background-color:#eab300;
+    display: none;
+  }
+
+  #nav-tab2{
+    background-color:#eab300;
+    display: block;
+
+  }
+
   #h4-about{
     color:#fdc63b;
     font-size:20px;
@@ -85,4 +96,41 @@
     text-align: left;
     margin-bottom:20px;
   }
+
+.nav {
+    display: -ms-flexbox;
+    display: blog;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+}
+
+.btn-secondary{
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 16px;
+    padding-top: 13px;
+      padding-left: 30px;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 16px;
+
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #eab300;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(130,138,145,.0);
 }
