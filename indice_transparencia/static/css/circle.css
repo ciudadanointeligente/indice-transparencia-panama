@@ -241,7 +241,7 @@ box-sizing: content-box;
 }
 .c100.center {
 float: none;
-margin: 0 auto;
+margin: 0;
 }
 .c100.big {
 font-size: 240px;
@@ -1068,4 +1068,12 @@ color:white;
 font-family: Montserrat;
 font-size:12px;
 font-style: italic;
+}
+
+@media screen and (max-width: 600px){
+
+.c100.center {
+float: none;
+margin: 0 auto;
+}
 }
