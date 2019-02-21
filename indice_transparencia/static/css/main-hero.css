@@ -108,7 +108,7 @@
     line-height: 5.4rem;
     padding: 0 3rem;
     margin: 0 .3rem 1.2rem 0;
-    background: #d8d8d8;
+    background:transparent;
     color: #001835;
     text-decoration: none;
     cursor: pointer;
@@ -121,6 +121,33 @@
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
+.btn:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .btn:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+    background-color: transparent;
+    border-color: transparent
+    color: #000000;
+    outline: 0;
+}
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1px 7px 2px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
 .js .animate-this, .js .animate-intro {
     opacity: 0;
 }
@@ -193,4 +220,9 @@ h3{
 
 #nav-tab{
   background-color:#eab300;
+}
+
+#nav-tab2{
+  background-color:#eab300;
+  display: none;
 }
