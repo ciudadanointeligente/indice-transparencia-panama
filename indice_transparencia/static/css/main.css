@@ -242,23 +242,24 @@ padding-top:0px;
 color:#eab300;
 }
 .img-fluid {
-height: 50px;
-border-radius: 50px;
-width: 50px;
-max-width: 50px;
+height: 60px;
+border-radius: 60px;
+width: 60px;
+min-width: 60px;
 margin-top: 10px;
 margin-bottom: 10px;
 }
+
 .img-fluid-perfil {
-    height: 160px;
-    border-radius: 100px;
-    max-width: 200px;
+    min-height: 250px;
+    border-radius: 125px;
+    min-width: 250px;
     margin-top: 120px;
     margin-bottom: 120px;
     position: static;
-    float:right;
-
+    float: right;
 }
+
 #nombre-candidato-perfil{
 margin-top:120px;
 color:white;
@@ -505,10 +506,10 @@ margin-bottom: -240px;
 }
 
 .img-fluid {
-height: 40px;
+height: 50px;
 border-radius:50px;
-width:40px;
-max-width: 40px;
+width:50px;
+max-width: 50px;
 }
 #about {
 font-size: 16px;
@@ -527,21 +528,28 @@ padding-right: 30px;
 .bgimage2 {
 height:500px;
 }
+
+#nombre-candidato-perfil{
+margin-top:120px;
+color:white;
+font-size:18px;
+margin-bottom: 15px;
+text-align: left;
+}
 }
 
 
 @media screen and (max-width: 600px){
 
   .img-fluid-perfil {
-      height: 160px;
-      border-radius: 100px;
-      max-width: 200px;
-      margin-top: 120px;
-      margin-bottom: 120px;
-      position: static;
-      float: left;
-      margin-left: 23%;
-  }
+    min-height: 200px;
+    border-radius: 100px;
+    min-width: 200px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    position: static;
+    float: center;
+}
   #circuito-perfil {
   font-size: 14px;
   font-family: montserrat;
@@ -590,13 +598,7 @@ height:500px;
   font-size: 14px;
   }
 
-  #nombre-candidato-perfil{
-  margin-top:120px;
-  color:white;
-  font-size:18px;
-  margin-bottom: 15px;
-  text-align: left;
-  }
+
   .nav-link {
   font-family:"Montserrat";
   font-size:12px;
@@ -621,10 +623,11 @@ margin-right:20px;
 #nombre-candidato-perfil {
 margin-top: -100px;
 color: white;
-margin-bottom: 0px;
+margin-bottom: 15px;
 text-align: center;
 font-family: montserrat;
 }
+
 
 
 
