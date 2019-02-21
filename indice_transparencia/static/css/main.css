@@ -148,13 +148,13 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 }
 /*links*/
 a{
-color: #eab300;
+color:#fdc63b;
 font-family:"Montserrat";
 font-size:16px;
 font-weight:600;
 }
 a:hover{
-color:#eab300;
+
 font-fmily:"Montserrat";
 font-weight:600;
 }
@@ -339,21 +339,42 @@ min-width:210px;
 #footer{
 padding-bottom:45px;
 padding-top:30px;
-background-color: #1e262f;
+background-color: #161b21;
 margin-top:0px;
 margin-bottom:0px;
 }
 .text-center{
 color: #f0c039;
-font-size: 12px;
+font-size: 21px;
 padding-top:20px;
+
 }
 .text-center a{
 color: white;
-font-size: 14px;
+font-size: 21px;
 padding-top:20px;
+padding-left:20px;
 }
 .text-center a:hover{
+color:#f0c039;
+font-size: 21px;
+}
+
+.text-center2{
+color: #f0c039;
+font-size: 14px;
+padding-top:0px;
+
+
+}
+.text-center2 a{
+color: white;
+font-size: 14px;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+}
+.text-center2 a:hover{
 color:#f0c039;
 font-size: 14px;
 }
@@ -476,10 +497,7 @@ display: table;
 margin-bottom: -240px;
 
 }
-.table td, .table th {
-padding-left: 20px;
-padding-right: 20px;
-}
+
 .img-fluid {
 height: 40px;
 border-radius:50px;
@@ -506,6 +524,7 @@ height:500px;
 }
 @media screen and (max-width: 600px){
 
+
   .nav-link {
   font-family:"Montserrat";
   font-size:12px;
@@ -524,10 +543,6 @@ height:500px;
 height: 480px;
 }
 
-a{
-font-size:12px;
-
-}
 .bgimage h5 {
 margin-right:20px;
 }
@@ -717,6 +732,18 @@ min-height: 786px;
 background-color: #161b21;
 position: sticky;
 display: table;
+background: url('/static/images/intro-bg.jpg');
+
+}
+
+.s-home3 {
+width: 100%;
+height: 100%;
+min-height: 786px;
+background-color: #161b21;
+position: sticky;
+display: table;
+background: url('/static/images/intro-bg.jpg');
 
 }
 
@@ -741,6 +768,27 @@ font-size: 16px;
 margin-left: 0px;
 margin-right:0px;
 }
+
+#h5-info {
+margin-top: 1.5rem;
+margin-bottom: 1.5rem;
+color: white;
+line-height: 2;
+font-size: 16px;
+margin-left: 0px;
+margin-right:0px;
+}
+#h3-info {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 16px;
+    color: #fdc63b;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 1.2rem;
+    margin-left:100px;
+}
 #h3-about {
 font-family: "montserrat-medium", sans-serif;
 font-size: 16px;
@@ -750,6 +798,49 @@ letter-spacing: .3rem;
 position: relative;
 margin-top: 70px;
 margin-bottom: 1.2rem;
+
+}
+
+#h3-info {
+font-family: "montserrat-medium", sans-serif;
+font-size: 14px;
+color: #fdc63b;
+text-transform: uppercase;
+letter-spacing: .3rem;
+position: relative;
+margin-top: 20px;
+margin-bottom: 1.2rem;
+text-align: left;
+margin-left:0px;
+margin-right: 10px;
+
+
+}
+
+#h3-metodologia {
+font-family: "montserrat-medium", sans-serif;
+font-size: 16px;
+color: #fdc63b;
+text-transform: uppercase;
+letter-spacing: .3rem;
+position: relative;
+margin-top: 20px;
+margin-bottom: 0px;
+text-align: left;
+
+}
+
+#h3-metodologia2 {
+font-family: "montserrat-medium", sans-serif;
+font-size: 16px;
+color: #fdc63b;
+text-transform: uppercase;
+letter-spacing: .3rem;
+position: relative;
+margin-top: 10px;
+margin-bottom: 0px;
+text-align: left;
+
 
 }
 
@@ -799,7 +890,6 @@ content: "\f09a";
 .box-e {
 position: relative;
 display: block;
-width: 100%;
 cursor: pointer;
 }
 /*------------------------------------*/
@@ -842,7 +932,7 @@ width: 100%;
 transition: 0.3s ease all;
 }
 #indice-titulo1{
-margin-left:65px;
+margin-left:6px;
 margin-top:100px;
 }
 @media screen and (max-width: 600px){
@@ -851,10 +941,33 @@ font-size: 12px;
 margin-top:0px;
 margin-bottom: .1rem;
 text-align: left;
-margin-left: 38px;
+margin-left: 0%;
+}
+
+#h3-info {
+font-family: "montserrat-medium", sans-serif;
+font-size: 14px;
+color: #fdc63b;
+text-transform: uppercase;
+letter-spacing: .3rem;
+position: relative;
+margin-top: 20px;
+margin-bottom: 1.2rem;
+text-align: left;
+margin-left:40px;
+margin-right: 10px;
+}
+#h3-metodologia {
+margin-left: 35px;
+margin-top:0px;
+font-size: 14px;
+
 }
 .normal-underline, .custom-underline {
-padding-bottom: 30px;
+padding-bottom: 0px;
+text-align: left;
+margin-left: 0px;
+margin-right: 25px;
 }
 .home-social{
 display:none;
@@ -867,6 +980,10 @@ text-align: left;
 margin-left:10%;
 margin-right:20px;
 }
+
+
+
+
 .home-content__line {
 display:none;
 }
@@ -920,4 +1037,15 @@ table{
 width:100%;
 table-layout: fixed;
 }
+}
+
+.far .fa-times{
+  color:green;
+}
+}
+
+
+.fa, .fas {
+    font-weight: 900;
+    padding-right: 10px;
 }
