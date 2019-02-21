@@ -1,22 +1,23 @@
 {% load static %}
-<nav>
 
+<div class="text-center2">
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true">Formación<br>Académica</a></div>
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false">Experiencia<br>Profesional</a></div>
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false">Propuesta<br>Política</a></div>
+   <a class="nav-item nav-link" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
+   <a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
+   <a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
    {% if person.is_deputy %}
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false">Declaraciones</a></div>
+   <a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Declaraciones</a>
    {% endif %}
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false">Procesos<br>Judiciales</a></div>
+   <a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
    {% if person.is_deputy %}
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false">Ética<br>Presupuestaria</a></div>
+   <a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
    {% endif %}
    {% if person.is_deputy %}
-   <div class="col-4 col-md-1" ><a class="nav-item nav-link" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false">Otros</a></div>
+   <a class="nav-item nav-link" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
    {% endif %}
 </div>
-</nav>
+</div>
+
 
 <div class="tab-content" id="nav-tabContent">
    <div class="tab-pane fade show active" id="nav-formacion" role="tabpanel" aria-labelledby="nav-formacion-tab">
@@ -28,15 +29,16 @@
         <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12ed">
                   <h4 class="panel-title">
+                     <i class="fa fa-times-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12ed" aria-expanded="false" aria-controls="collapse12ed">
-               <i class="far fa-times-circle"></i> No hay datos<hr>
+               No hay datos<hr>
              </a>
            </h4>
 
              </div>
              <div id="collapse12ed" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12ed">
                  <div class="panel-body">
-                   <i class="far fa-times-circle"></i> <a id="link-perfil" href="#">No hay datos</a>
+                   <i class="fa fa-times-circle"></i> No hay datos
                  </div>
              </div>
          </div>
@@ -47,8 +49,9 @@
              <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                    <h4 class="panel-title">
+                     <i class="fas fa-check-circle"></i>
               <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-                <i class="far fa-check-circle"></i> {{ e.institution }} <hr>
+                 {{ e.institution }} <hr>
               </a>
             </h4>
 
@@ -81,15 +84,16 @@
         <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12w">
                   <h4 class="panel-title">
+<i class="fa fa-times-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12w" aria-expanded="false" aria-controls="collapse12w">
-               <i class="far fa-times-circle"></i> No hay datos<hr>
+                No hay datos<hr>
              </a>
            </h4>
 
              </div>
              <div id="collapse12w" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12w">
                  <div class="panel-body">
-                   <i class="far fa-times-circle"></i> No hay datos
+                   <i class="fa fa-times-circle"></i> No hay datos
                  </div>
              </div>
          </div>
@@ -100,8 +104,9 @@
           <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                 <h4 class="panel-title">
+                  <i class="fas fa-check-circle"></i>
            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-             <i class="far fa-check-circle"></i> {{ e.name }} <hr>
+              {{ e.name }} <hr>
            </a>
          </h4>
 
@@ -135,8 +140,9 @@
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading7">
                  <h4 class="panel-title">
+                   <i class="fas fa-check-circle"></i>
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
-              <i class="far fa-check-circle"></i> Link Propuesta Política para gestión 2019 - 2024<hr>
+              Link Propuesta Política para gestión 2019 - 2024<hr>
             </a>
           </h4>
 
@@ -154,7 +160,7 @@
             <div class="panel-heading" role="tab" id="heading8">
                  <h4 class="panel-title">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
-              <i class="far fa-check-circle"></i> Archivo adjunto propuesta política para gestión 2019 - 2024<hr>
+              <i class="fas fa-check-circle"></i> Archivo adjunto propuesta política para gestión 2019 - 2024<hr>
             </a>
           </h4>
 
@@ -171,15 +177,16 @@
         <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12pol">
                   <h4 class="panel-title">
+                    <i class="fa fa-times-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pol" aria-expanded="false" aria-controls="collapse12pol">
-               <i class="far fa-times-circle"></i> No hay datos<hr>
+               No hay datos<hr>
              </a>
            </h4>
 
              </div>
              <div id="collapse12pol" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pol">
                  <div class="panel-body">
-                   <i class="far fa-times-circle"></i> No hay datos
+                   <i class="fa fa-times-circle"></i> No hay datos
                  </div>
              </div>
          </div>
@@ -201,8 +208,9 @@
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading9">
                   <h4 class="panel-title">
+                  <i class="fas fa-check-circle"></i>
              <a data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="true" aria-controls="collapse9">
-               <i class="far fa-check-circle"></i> Declaración de patrimonio actualizada<hr>
+                Declaración de patrimonio actualizada<hr>
              </a>
            </h4>
 
@@ -218,8 +226,9 @@
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading10">
                   <h4 class="panel-title">
+                    <i class="fas fa-check-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
-               <i class="far fa-check-circle"></i> Declaración de patrimonio actualizada<hr>
+                Declaración de patrimonio actualizada<hr>
              </a>
            </h4>
 
@@ -235,8 +244,9 @@
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading11">
                   <h4 class="panel-title">
+                    <i class="fas fa-check-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
-               <i class="far fa-check-circle"></i> Link declaración de intereses actualizada<hr>
+                Declaración de intereses actualizada<hr>
              </a>
            </h4>
 
@@ -253,7 +263,7 @@
              <div class="panel-heading" role="tab" id="heading12">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
-               <i class="far fa-check-circle"></i> Archivo adjunto declaración de intereses actualizada<hr>
+               <i class="fas fa-check-circle"></i> Archivo adjunto declaración de intereses actualizada<hr>
              </a>
            </h4>
 
@@ -269,8 +279,9 @@
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading12p">
                   <h4 class="panel-title">
+                  <i class="fa fa-times-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12p" aria-expanded="false" aria-controls="collapse12p">
-               <i class="far fa-check-circle"></i> No hay datos<hr>
+               No hay datos<hr>
              </a>
            </h4>
 
@@ -301,8 +312,9 @@
            <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                  <h4 class="panel-title">
+                   <i class="fas fa-check-circle"></i>
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-              <i class="far fa-check-circle"></i> Registro Judicial:  {{ e.kind}} <hr>
+               Registro Judicial:  {{ e.kind}} <hr>
             </a>
           </h4>
 
@@ -324,8 +336,9 @@
          <div class="panel panel-default">
              <div class="panel-heading" role="tab" id="heading13">
                   <h4 class="panel-title">
+                    <i class="fas fa-check-circle"></i>
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
-              <i class="far fa-check-circle"></i> Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados<hr>
+               Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados<hr>
              </a>
            </h4>
 
@@ -346,9 +359,9 @@
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pj" aria-expanded="false" aria-controls="collapse12pj">
                  {% if person.declared_intention_to_transparent_judiciary_records %}
-               <i class="far fa-check-circle"></i> No hay datos<hr>
+               <i class="fa fa-times-circle"></i> No hay datos<hr>
                {% else %}
-               <i class="fa fa-times"></i> No hay datos<hr>
+               <i class="fa fa-times-circle"></i> No hay datos<hr>
                {% endif %}
              </a>
            </h4>
@@ -356,7 +369,7 @@
              </div>
              <div id="collapse12pj" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pj">
                  <div class="panel-body">
-                   <i class="fa fa-times"></i> No hay datos
+                   <i class="fa fa-times-circle"></i> No hay datos
                  </div>
              </div>
          </div>
@@ -380,7 +393,7 @@
              <div class="panel-heading" role="tab" id="heading16">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
-              <i class="far fa-check-circle"></i> Link montos asociados a uso de beneficios<hr>
+              <i class="fas fa-check-circle"></i> Link montos asociados a uso de beneficios<hr>
              </a>
            </h4>
 
@@ -397,7 +410,7 @@
              <div class="panel-heading" role="tab" id="heading17">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
-              <i class="far fa-check-circle"></i> Archivos adjuntos montos asociados a uso de beneficios<hr>
+              <i class="fas fa-check-circle"></i>Archivos adjuntos montos asociados a uso de beneficios<hr>
              </a>
            </h4>
 
@@ -414,7 +427,7 @@
              <div class="panel-heading" role="tab" id="heading18">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
-              <i class="far fa-check-circle"></i> Link detalle de planilla 001<hr>
+              <i class="fas fa-check-circle"></i>Link detalle de planilla 001<hr>
              </a>
            </h4>
 
@@ -431,7 +444,7 @@
              <div class="panel-heading" role="tab" id="heading19">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
-              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 001<hr>
+              <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 001<hr>
              </a>
            </h4>
 
@@ -448,7 +461,7 @@
              <div class="panel-heading" role="tab" id="heading20">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
-              <i class="far fa-check-circle"></i> Link detalle de planilla 002<hr>
+              <i class="fas fa-check-circle"></i> Link detalle de planilla 002<hr>
              </a>
            </h4>
 
@@ -465,7 +478,7 @@
              <div class="panel-heading" role="tab" id="heading21">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
-              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 002<hr>
+              <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 002<hr>
              </a>
            </h4>
 
@@ -482,7 +495,7 @@
              <div class="panel-heading" role="tab" id="heading21">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
-              <i class="far fa-check-circle"></i> Link detalle de planilla 080<hr>
+              <i class="fas fa-check-circle"></i> Link detalle de planilla 080<hr>
              </a>
            </h4>
 
@@ -499,7 +512,7 @@
              <div class="panel-heading" role="tab" id="heading22">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
-              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 080<hr>
+              <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 080<hr>
              </a>
            </h4>
 
@@ -516,7 +529,7 @@
              <div class="panel-heading" role="tab" id="heading23">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
-              <i class="far fa-check-circle"></i> Link detalle de planilla 172<hr>
+              <i class="fas fa-check-circle"></i> Link detalle de planilla 172<hr>
              </a>
            </h4>
 
@@ -533,7 +546,7 @@
              <div class="panel-heading" role="tab" id="heading24">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapse24">
-              <i class="far fa-check-circle"></i> Archivos adjuntos detalle de plantilla 172<hr>
+              <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 172<hr>
              </a>
            </h4>
 
@@ -564,7 +577,7 @@
              <div class="panel-heading" role="tab" id="heading24at">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24at" aria-expanded="false" aria-controls="collapse24at">
-              <i class="far fa-check-circle"></i> % de asistencia<hr>
+              <i class="fas fa-check-circle"></i> % de asistencia<hr>
              </a>
            </h4>
 
@@ -572,9 +585,9 @@
              <div id="collapse24at" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24at">
                  <div class="panel-body">
                 {% if person.attendance %}
-                  <i class="far fa-percent"></i> {{ person.attendance }} % 
+                  <i class="fas fa-percentage"></i>Porcentaje: {{ person.attendance }} %
                   {% else %}
-                  <i class="fas fa-times"></i> No hay datos 
+                  <i class="fa fa-times-circle"></i>No hay datos
                   {% endif %}
                  </div>
              </div>
@@ -584,7 +597,7 @@
              <div class="panel-heading" role="tab" id="heading24lw">
                   <h4 class="panel-title">
              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24lw" aria-expanded="false" aria-controls="collapse24lw">
-              <i class="far fa-check-circle"></i> N° de leyes sancionadas<hr>
+            <i class="fas fa-check-circle"></i> N° de leyes sancionadas<hr>
              </a>
            </h4>
 
@@ -592,9 +605,9 @@
              <div id="collapse24lw" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24lw">
                  <div class="panel-body">
                 {% if person.laws_worked_on %}
-                  <i class="far fa-percent"></i> {{ person.laws_worked_on }}  
+                  <i class="fas fa-file-contract"></i>Número de leyes: {{ person.laws_worked_on }}
                   {% else %}
-                  <i class="fas fa-times"></i> No hay datos 
+                  <i class="fa fa-times-circle"></i> No hay datos
                   {% endif %}
                  </div>
              </div>
