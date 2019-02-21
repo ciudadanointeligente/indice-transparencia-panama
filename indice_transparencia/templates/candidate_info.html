@@ -4,16 +4,19 @@
 
 <section id="intro3">
    <div class="row intro-content">
-     <div class="col-md-3"></div>
-     <div class="col-6">
+
+
         <div class='row'>
 
 
-           <div class='col'>
-              <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
-           </div>
+          <div class='col-xs-12 col-md-6 center'>
+             <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
+          </div>
 
-           <div class='col-md-6'>
+
+
+
+           <div class='col-xs-12 col-md-6'>
               <div> <h2 id="nombre-candidato-perfil">{{person.name}}</h2></div>
               {% if person.birth_date %}
               <div id="birth-perfil"><p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p></div>
@@ -21,13 +24,15 @@
 
 
 
-              <div class="c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} medium orange">
+              <div class="col-xs-12 center c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
               <span>{{ person.ranking_data.ranking_mark }}%</span>
               <div class="slice">
                  <div class="bar"></div>
                  <div class="fill"></div>
               </div>
             </div>
+
+<br>
 
            <div id="circuito-perfil">
               {% if person.circuit %}
@@ -40,19 +45,22 @@
               {% endif %}
            </div>
 
-           <div id="redes">
-           <a target="_blank" href="{{person.facebook}}"> <i class="fab fa-facebook"></i> </a>
-           <a href="{{person.twitter}}">  <i class="fab fa-twitter-square"></i> </a>
-           <a href="{{person.instagram}}"> <i class="fab fa-instagram"></i> </a>
-           <a href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
-           </div>
+           <div class="text-center2">
+
+                              <a target="_blank" href="{{person.facebook}}"><i class="fab fa-facebook-f"></i> </a>
+                                <a target="_blank" href="{{person.twitter}}"><i class="fab fa-twitter-square"></i> </a>
+                                  <a target="_blank" href="{{person.instagram}}"><i class="fab fa-instagram"></i></a>
+                                    <a target="_blank" href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
 
 
-        </div>
+             </div>
+
+
+
+
      </div>
   </div>
-  <div class="col-md-4"></div>
-   </div>
+
 </section>
 
 
