@@ -8,16 +8,18 @@
 
     <div class="nav nav-tabs" id="nav-tab2" role="tablist">
 
-    
+
    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Variables
    </button>
+
+
    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
      <a class="dropdown-item" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
       <a class="dropdown-item" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
      <a class="dropdown-item" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
      {% if person.is_deputy %}
-     <a class="dropdown-item" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Declaraciones</a>
+     <a class="dropdown-item" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
      {% endif %}
      <a class="dropdown-item"  id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
      {% if person.is_deputy %}
@@ -35,18 +37,18 @@
 
 
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-   <a class="nav-item nav-link" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
-   <a class="nav-item nav-link" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
-   <a class="nav-item nav-link" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias de formación académica más relevantes que ha tenido hasta la fecha" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias profesionales más relevantes que ha tenido hasta la fecha" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Documento que consiste en las formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea (2019-2024)" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Declaraciones</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Declaración de Patrimonio y Declaración de Intereses. Documentos con información sobre los bienes del candidato y las relaciones y vínculos económicos, profesionales, familiares y sociales de este" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
    {% endif %}
-   <a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita a los candidatos que buscan la reelección publicar el detalle del uso de beneficios fiscales como franquicias, pasaporte diplomático, placa oficial, viáticos y otros" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
    {% endif %}
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
+   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias de formación académica más relevantes que ha tenido hasta la fecha" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
    {% endif %}
 </div>
 </div>
