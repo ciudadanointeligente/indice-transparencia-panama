@@ -48,6 +48,7 @@ font-family: montserrat;
 font-size:14px;
 color:#fff;
 font-family: montserrat;
+text-align: left;
 }
 /*about*/
 #about{
@@ -372,6 +373,7 @@ padding-top:10px;
 padding-bottom:10px;
 padding-right: 10px;
 padding-left:0px;
+text-align: left;
 
 
 }
@@ -665,9 +667,9 @@ padding-right: 10px;
 font-size:10px;
 }
 .logo {
-margin-top: 20px;
+margin-top: 0px;
 margin-bottom: 20px;
-margin-left: 10px;
+margin-left: 0px;
 margin-right: 10px;
 text-align: center;
 height: 80px;
