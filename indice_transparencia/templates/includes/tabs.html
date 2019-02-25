@@ -1,662 +1,614 @@
 {% load static %}
 
 
-
-
-
-  <div class="variables">
-
-    <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-
-
-   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Variables
-   </button>
-
-
-   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-     <a class="dropdown-item" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
-      <a class="dropdown-item" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
-     <a class="dropdown-item" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
-     {% if person.is_deputy %}
-     <a class="dropdown-item" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
-     {% endif %}
-     <a class="dropdown-item"  id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
-     {% if person.is_deputy %}
-     <a class="dropdown-item"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
-     {% endif %}
-     {% if person.is_deputy %}
-     <a class="dropdown-item"  id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
-     {% endif %}
+<div class="variables">
+   <div class="nav nav-tabs" id="nav-tab2" role="tablist">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Variables
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         <a class="dropdown-item" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
+         <a class="dropdown-item" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
+         <a class="dropdown-item" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
+         {% if person.is_deputy %}
+         <a class="dropdown-item" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
+         {% endif %}
+         <a class="dropdown-item"  id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
+         {% if person.is_deputy %}
+         <a class="dropdown-item"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
+         {% endif %}
+         {% if person.is_deputy %}
+         <a class="dropdown-item"  id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
+         {% endif %}
+      </div>
    </div>
-
-    </div>
-
-
-  </div>
-
+</div>
 
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias de formación académica más relevantes que ha tenido hasta la fecha" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias profesionales más relevantes que ha tenido hasta la fecha" id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Documento que consiste en las formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea (2019-2024)" id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
+   <a class="nav-item nav-link"  id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica</a>
+   <a class="nav-item nav-link"  id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional</a>
+   <a class="nav-item nav-link"  id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política</a>
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Declaración de Patrimonio y Declaración de Intereses. Documentos con información sobre los bienes del candidato y las relaciones y vínculos económicos, profesionales, familiares y sociales de este" id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
+   <a class="nav-item nav-link"  id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses</a>
    {% endif %}
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
+   <a class="nav-item nav-link" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita a los candidatos que buscan la reelección publicar el detalle del uso de beneficios fiscales como franquicias, pasaporte diplomático, placa oficial, viáticos y otros" id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
+   <a class="nav-item nav-link"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
    {% endif %}
    {% if person.is_deputy %}
-   <a class="nav-item nav-link" data-toggle="tooltip" title="Se le solicita al candidato publicar las tres experiencias de formación académica más relevantes que ha tenido hasta la fecha" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
+   <a class="nav-item nav-link"  id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
    {% endif %}
 </div>
-</div>
-
 
 <div class="tab-content" id="nav-tabContent">
    <div class="tab-pane fade show active" id="nav-formacion" role="tabpanel" aria-labelledby="nav-formacion-tab">
       <!--contenido-->
       <div class="row">
-      <div class="col">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              {% if person.educational_records.count < 1 %}
-        <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12ed">
-                  <h4 class="panel-title">
-                     <i class="fa fa-times-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12ed" aria-expanded="false" aria-controls="collapse12ed">
-               No hay datos<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12ed" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12ed">
-                 <div class="panel-body">
-                   <i class="fa fa-times-circle"></i> No hay datos
-                 </div>
-             </div>
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if person.educational_records.count < 1 %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12ed">
+                     <h4 class="panel-title">
+                        <i class="fa fa-times-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12ed" aria-expanded="false" aria-controls="collapse12ed">
+                           No hay datos
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12ed" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12ed">
+                     <div class="panel-body">
+                        <i class="fa fa-times-circle"></i> No hay datos
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% for e in person.educational_records.all %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+                           {{ e.institution }}
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+                     <div class="panel-body">
+                        <ul>
+                           <li>{{ e.name }}</li>
+                           <li>{{ e.start }}</li>
+                           <li>{{ e.end }}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
          </div>
-    {% endif %}
-
-        {% for e in person.educational_records.all %}
-
-             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
-                   <h4 class="panel-title">
-                     <i class="fas fa-check-circle"></i>
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-                 {{ e.institution }} <hr>
-              </a>
-            </h4>
-
-              </div>
-              <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
-                  <div class="panel-body">
-                    <ul>
-                      <li>{{ e.name }}</li>
-                      <li>{{ e.start }}</li>
-                      <li>{{ e.end }}</li>
-                    </ul>
-                    </div>
-              </div>
-          </div>
-         {% endfor %}
-
-
-      </div>
-      </div>
       </div>
       <!--contenido-->
    </div>
    <div class="tab-pane fade" id="nav-experiencia" role="tabpanel" aria-labelledby="nav-experiencia-tab">
-     <!--contenido-->
-     <div class="row">
-     <div class="col">
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-    {% if person.work_records.count < 1 %}
-        <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12w">
-                  <h4 class="panel-title">
-<i class="fa fa-times-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12w" aria-expanded="false" aria-controls="collapse12w">
-                No hay datos<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12w" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12w">
-                 <div class="panel-body">
-                   <i class="fa fa-times-circle"></i> No hay datos
-                 </div>
-             </div>
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if person.work_records.count < 1 %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12w">
+                     <h4 class="panel-title">
+                        <i class="fa fa-times-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12w" aria-expanded="false" aria-controls="collapse12w">
+                           No hay datos
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12w" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12w">
+                     <div class="panel-body">
+                        <i class="fa fa-times-circle"></i> No hay datos
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% for e in person.work_records.all %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+                           {{ e.name }}
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+                     <div class="panel-body">
+                        <ul>
+                           <li>{{ e.institution }}</li>
+                           <li>{{ e.start }}</li>
+                           <li>{{ e.end }}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
          </div>
-    {% endif %}
-
-       {% for e in person.work_records.all %}
-
-          <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
-                <h4 class="panel-title">
-                  <i class="fas fa-check-circle"></i>
-           <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-              {{ e.name }} <hr>
-           </a>
-         </h4>
-
-           </div>
-           <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
-               <div class="panel-body">
-                 <ul>
-                   <li>{{ e.institution }}</li>
-                   <li>{{ e.start }}</li>
-                   <li>{{ e.end }}</li>
-                 </ul>
-                 </div>
-           </div>
-       </div>
-      {% endfor %}
-
-     </div>
-     </div>
-     </div>
-     <!--contenido-->
-
+      </div>
+      <!--contenido-->
    </div>
    <div class="tab-pane fade" id="nav-propuesta" role="tabpanel" aria-labelledby="nav-propuesta-tab">
-    <!--contenido-->
-
-    <div class="row">
-    <div class="col">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-        {% if person.political_proposal_link %}
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading7">
-                 <h4 class="panel-title">
-                   <i class="fas fa-check-circle"></i>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
-              Link Propuesta Política para gestión 2019 - 2024<hr>
-            </a>
-          </h4>
-
-            </div>
-            <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.political_proposal_link }}" target="_blank">Link Propuesta Política</a>
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if person.political_proposal_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading7">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
+                           Link Propuesta Política para gestión 2019 - 2024
+                           <hr>
+                        </a>
+                     </h4>
                   </div>
+                  <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.political_proposal_link }}" target="_blank">Link Propuesta Política</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.political_proposal_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading8">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                           <i class="fas fa-check-circle"></i> Archivo adjunto propuesta política para gestión 2019 - 2024
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.political_proposal_doc.url }}" target="_blank">Archivo adjunto Propuesta Política</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if not person.political_proposal_link and not person.political_proposal_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12pol">
+                     <h4 class="panel-title">
+                        <i class="fa fa-times-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pol" aria-expanded="false" aria-controls="collapse12pol">
+                           No hay datos
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12pol" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pol">
+                     <div class="panel-body">
+                        <i class="fa fa-times-circle"></i> No hay datos
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
             </div>
-        </div>
-        {% endif %}
-
-        {% if person.political_proposal_doc %}
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading8">
-                 <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
-              <i class="fas fa-check-circle"></i> Archivo adjunto propuesta política para gestión 2019 - 2024<hr>
-            </a>
-          </h4>
-
-            </div>
-            <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
-                <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.political_proposal_doc.url }}" target="_blank">Archivo adjunto Propuesta Política</a>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if not person.political_proposal_link and not person.political_proposal_doc %}
-        <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12pol">
-                  <h4 class="panel-title">
-                    <i class="fa fa-times-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pol" aria-expanded="false" aria-controls="collapse12pol">
-               No hay datos<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12pol" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pol">
-                 <div class="panel-body">
-                   <i class="fa fa-times-circle"></i> No hay datos
-                 </div>
-             </div>
          </div>
-        {% endif %}
-
-    </div>
-    </div>
-    </div>
-    <!--contenido-->
+      </div>
+      <!--contenido-->
    </div>
    {% if person.is_deputy %}
    <div class="tab-pane fade" id="nav-declaracion" role="tabpanel" aria-labelledby="nav-declaracion-tab">
-     <!--contenido-->
-
-     <div class="row">
-     <div class="col">
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-         {% if  person.patrimony_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading9">
-                  <h4 class="panel-title">
-                  <i class="fas fa-check-circle"></i>
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="true" aria-controls="collapse9">
-                Declaración de patrimonio actualizada<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
-                 <div class="panel-body">
-                   <i class="fas fa-link"></i><a id="link-perfil" href="{{  person.patrimony_link }}" target="_blank"> Link para acceder a declaración de patrimonio actualizada</a>
-                   </div>
-             </div>
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if  person.patrimony_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading9">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="true" aria-controls="collapse9">
+                           Declaración de patrimonio actualizada
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading9">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i><a id="link-perfil" href="{{  person.patrimony_link }}" target="_blank"> Link para acceder a declaración de patrimonio actualizada</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if  person.patrimony_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading10">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                           Declaración de patrimonio actualizada
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.patrimony_doc.url }}" target="_blank">Archivo adjunto declaración de patrimonio actualizada</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if  person.interests_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading11">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                           Declaración de intereses actualizada
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{  person.interests_link }}" target="_blank">Link declaración de intereses actualizada</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if  person.interests_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                           <i class="fas fa-check-circle"></i> Archivo adjunto declaración de intereses actualizada
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.interests_doc.url }}" target="_blank">Archivo adjunto declaración de intereses actualizada</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if not  person.interests_link and not  person.interests_doc and not  person.patrimony_doc and not  person.patrimony_link%}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12p">
+                     <h4 class="panel-title">
+                        <i class="fa fa-times-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12p" aria-expanded="false" aria-controls="collapse12p">
+                           No hay datos
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12p" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12p">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> No hay datos
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+            </div>
          </div>
-         {% endif %}
-         {% if  person.patrimony_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading10">
-                  <h4 class="panel-title">
-                    <i class="fas fa-check-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                Declaración de patrimonio actualizada<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
-                 <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.patrimony_doc.url }}" target="_blank">Archivo adjunto declaración de patrimonio actualizada</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-        {% if  person.interests_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading11">
-                  <h4 class="panel-title">
-                    <i class="fas fa-check-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                Declaración de intereses actualizada<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
-                 <div class="panel-body">
-                   <i class="fas fa-link"></i> <a id="link-perfil" href="{{  person.interests_link }}" target="_blank">Link declaración de intereses actualizada</a>
-                 </div>
-             </div>
-         </div>
-        {% endif %}
-        {% if  person.interests_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
-               <i class="fas fa-check-circle"></i> Archivo adjunto declaración de intereses actualizada<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
-                 <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{  person.interests_doc.url }}" target="_blank">Archivo adjunto declaración de intereses actualizada</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if not  person.interests_link and not  person.interests_doc and not  person.patrimony_doc and not  person.patrimony_link%}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12p">
-                  <h4 class="panel-title">
-                  <i class="fa fa-times-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12p" aria-expanded="false" aria-controls="collapse12p">
-               No hay datos<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12p" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12p">
-                 <div class="panel-body">
-                   <i class="far fa-file-pdf"></i> No hay datos
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-
-     </div>
-     </div>
-     </div>
-     <!--contenido-->
+      </div>
+      <!--contenido-->
    </div>
    {% endif %}
    <div class="tab-pane fade" id="nav-procesos" role="tabpanel" aria-labelledby="nav-procesos-tab">
-     <!--contenido-->
-
-     <div class="row">
-     <div class="col">
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-       {% for e in person.judiciary_records.all %}
-
-           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
-                 <h4 class="panel-title">
-                   <i class="fas fa-check-circle"></i>
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
-               Registro Judicial:  {{ e.kind}} <hr>
-            </a>
-          </h4>
-
-            </div>
-            <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
-                <div class="panel-body">
-                  <ul>
-                    <li>Número de proceso judicial: {{ e.number }}</li>
-                    <li>Fecha: {{ e.date }}</li>
-                    <li>Tipo: {{ e.kind }}</li>
-                    <li>Fallo: {{ e.result }}</li>
-                  </ul>
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% for e in person.judiciary_records.all %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }} " aria-expanded="false" aria-controls="collapse{{ forloop.counter }} ">
+                           Registro Judicial:  {{ e.kind}}
+                           <hr>
+                        </a>
+                     </h4>
                   </div>
-            </div>
-        </div>
-       {% endfor %}
-
-       {% if person.judiciary_description %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading13">
-                  <h4 class="panel-title">
-                    <i class="fas fa-check-circle"></i>
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
-               Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
-                 <div class="panel-body">
-                   Descripción: <br>{{ person.judiciary_description }}
-
-                 </div>
-             </div>
-         </div>
-        {% endif %}
-
-
-        {% if not person.judiciary_description and person.judiciary_records.count < 1 %}
-        <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading12pj">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pj" aria-expanded="false" aria-controls="collapse12pj">
-                 {% if person.declared_intention_to_transparent_judiciary_records %}
-               <i class="fa fa-times-circle"></i> No hay datos<hr>
-               {% else %}
-               <i class="fa fa-times-circle"></i> No hay datos<hr>
+                  <div id="collapse{{ forloop.counter }} " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }} ">
+                     <div class="panel-body">
+                        <ul>
+                           <li>Número de proceso judicial: {{ e.number }}</li>
+                           <li>Fecha: {{ e.date }}</li>
+                           <li>Tipo: {{ e.kind }}</li>
+                           <li>Fallo: {{ e.result }}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+               {% if person.judiciary_description %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading13">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                           Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                     <div class="panel-body">
+                        Descripción: <br>{{ person.judiciary_description }}
+                     </div>
+                  </div>
+               </div>
                {% endif %}
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse12pj" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pj">
-                 <div class="panel-body">
-                   <i class="fa fa-times-circle"></i> No hay datos
-                 </div>
-             </div>
+               {% if not person.judiciary_description and person.judiciary_records.count < 1 %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading12pj">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pj" aria-expanded="false" aria-controls="collapse12pj">
+                           {% if person.declared_intention_to_transparent_judiciary_records %}
+                           <i class="fa fa-times-circle"></i> No hay datos
+                           <hr>
+                           {% else %}
+                           <i class="fa fa-times-circle"></i> No hay datos
+                           <hr>
+                           {% endif %}
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse12pj" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pj">
+                     <div class="panel-body">
+                        <i class="fa fa-times-circle"></i> No hay datos
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+            </div>
          </div>
-        {% endif %}
-
-     </div>
-     </div>
-     </div>
-     <!--contenido-->
+      </div>
+      <!--contenido-->
    </div>
-    {% if person.is_deputy %}
+   {% if person.is_deputy %}
    <div class="tab-pane fade" id="nav-etica" role="tabpanel" aria-labelledby="nav-etica-tab">
-     <!--contenido-->
-
-     <div class="row">
-     <div class="col">
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-         {% if person.benefits_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading16">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
-              <i class="fas fa-check-circle"></i> Link montos asociados a uso de beneficios<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
-                 <div class="panel-body">
-                   <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank">Link montos asociados a uso de beneficios </a>
-                 </div>
-             </div>
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if person.benefits_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading16">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                           <i class="fas fa-check-circle"></i> Link montos asociados a uso de beneficios
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank">Link montos asociados a uso de beneficios </a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.benefits_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading17">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                           <i class="fas fa-check-circle"></i>Archivos adjuntos montos asociados a uso de beneficios
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.benefits_doc.url}}" target="_blank">Archivos adjuntos montos asociados a uso de beneficios</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_001_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading18">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                           <i class="fas fa-check-circle"></i>Link detalle de planilla 001
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil"  href="{{ person.eth_001_link }}"  target="_blank">Link detalle de plantilla 001</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_001_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading19">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                           <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 001
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_001_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 001</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_002_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading20">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                           <i class="fas fa-check-circle"></i> Link detalle de planilla 002
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.eth_002_link }}" target="_blank">Link detalle de plantilla 002</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_002_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading21">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                           <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 002
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_002_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 002</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_080_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading21">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                           <i class="fas fa-check-circle"></i> Link detalle de planilla 080
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil"  href="{{ person.eth_080_link }}" target="_blank">Link detalle de plantilla 080</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_080_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading22">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                           <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 080
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_080_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 080</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_172_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading23">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
+                           <i class="fas fa-check-circle"></i> Link detalle de planilla 172
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.eth_172_link }}" target="_blank">Link detalle de plantilla 172</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+               {% if person.eth_172_doc %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading24">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapse24">
+                           <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 172
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24">
+                     <div class="panel-body">
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_172_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 172</a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+            </div>
          </div>
-         {% endif %}
-         {% if person.benefits_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading17">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapse17">
-              <i class="fas fa-check-circle"></i>Archivos adjuntos montos asociados a uso de beneficios<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
-                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.benefits_doc.url}}" target="_blank">Archivos adjuntos montos asociados a uso de beneficios</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_001_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading18">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
-              <i class="fas fa-check-circle"></i>Link detalle de planilla 001<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
-                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil"  href="{{ person.eth_001_link }}"  target="_blank">Link detalle de plantilla 001</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_001_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading19">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapse19">
-              <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 001<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
-                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_001_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 001</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_002_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading20">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapse20">
-              <i class="fas fa-check-circle"></i> Link detalle de planilla 002<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
-                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.eth_002_link }}" target="_blank">Link detalle de plantilla 002</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_002_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading21">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
-              <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 002<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
-                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_002_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 002</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_080_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading21">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
-              <i class="fas fa-check-circle"></i> Link detalle de planilla 080<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
-                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil"  href="{{ person.eth_080_link }}" target="_blank">Link detalle de plantilla 080</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_080_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading22">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22" aria-expanded="false" aria-controls="collapse22">
-              <i class="fas fa-check-circle"></i>Archivos adjuntos detalle de plantilla 080<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
-                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_080_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 080</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-        {% if person.eth_172_link %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading23">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
-              <i class="fas fa-check-circle"></i> Link detalle de planilla 172<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
-                 <div class="panel-body">
-                  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.eth_172_link }}" target="_blank">Link detalle de plantilla 172</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-         {% if person.eth_172_doc %}
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading24">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24" aria-expanded="false" aria-controls="collapse24">
-              <i class="fas fa-check-circle"></i> Archivos adjuntos detalle de plantilla 172<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24">
-                 <div class="panel-body">
-                  <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.eth_172_doc.url }}" target="_blank"> Archivos adjuntos detalle de plantilla 172</a>
-                 </div>
-             </div>
-         </div>
-         {% endif %}
-
-     </div>
-     </div>
-     </div>
-     <!--contenido-->
+      </div>
+      <!--contenido-->
    </div>
-    {% endif %}
-    {% if person.is_deputy %}
-<div class="tab-pane fade" id="nav-otros" role="tabpanel" aria-labelledby="nav-otros-tab">
-     <!--contenido-->
-
-     <div class="row">
-     <div class="col">
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading24at">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24at" aria-expanded="false" aria-controls="collapse24at">
-              <i class="fas fa-check-circle"></i> % de asistencia<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse24at" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24at">
-                 <div class="panel-body">
-                {% if person.attendance %}
-                  <i class="fas fa-percentage"></i>Porcentaje: {{ person.attendance }} %
-                  {% else %}
-                  <i class="fa fa-times-circle"></i>No hay datos
-                  {% endif %}
-                 </div>
-             </div>
+   {% endif %}
+   {% if person.is_deputy %}
+   <div class="tab-pane fade" id="nav-otros" role="tabpanel" aria-labelledby="nav-otros-tab">
+      <!--contenido-->
+      <div class="row">
+         <div class="col">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading24at">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24at" aria-expanded="false" aria-controls="collapse24at">
+                           <i class="fas fa-check-circle"></i> % de asistencia
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse24at" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24at">
+                     <div class="panel-body">
+                        {% if person.attendance %}
+                        <i class="fas fa-percentage"></i>Porcentaje: {{ person.attendance }} %
+                        {% else %}
+                        <i class="fa fa-times-circle"></i>No hay datos
+                        {% endif %}
+                     </div>
+                  </div>
+               </div>
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading24lw">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24lw" aria-expanded="false" aria-controls="collapse24lw">
+                           <i class="fas fa-check-circle"></i> N° de leyes sancionadas
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse24lw" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24lw">
+                     <div class="panel-body">
+                        {% if person.laws_worked_on %}
+                        <i class="fas fa-file-contract"></i>Número de leyes: {{ person.laws_worked_on }}
+                        {% else %}
+                        <i class="fa fa-times-circle"></i> No hay datos
+                        {% endif %}
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
-
-         <div class="panel panel-default">
-             <div class="panel-heading" role="tab" id="heading24lw">
-                  <h4 class="panel-title">
-             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse24lw" aria-expanded="false" aria-controls="collapse24lw">
-            <i class="fas fa-check-circle"></i> N° de leyes sancionadas<hr>
-             </a>
-           </h4>
-
-             </div>
-             <div id="collapse24lw" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading24lw">
-                 <div class="panel-body">
-                {% if person.laws_worked_on %}
-                  <i class="fas fa-file-contract"></i>Número de leyes: {{ person.laws_worked_on }}
-                  {% else %}
-                  <i class="fa fa-times-circle"></i> No hay datos
-                  {% endif %}
-                 </div>
-             </div>
-         </div>
-
-     </div>
-     </div>
-     </div>
-     <!--contenido-->
+      </div>
+      <!--contenido-->
    </div>
-
-    {% endif %}
-
-
-
+   {% endif %}
 </div>
 </div>
