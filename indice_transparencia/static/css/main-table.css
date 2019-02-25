@@ -87,3 +87,7 @@ padding-right:20px;
 tr {
   border-bottom: #dee2e6 2px solid;
 }
+
+.table {
+    margin-bottom: 0rem;
+}
