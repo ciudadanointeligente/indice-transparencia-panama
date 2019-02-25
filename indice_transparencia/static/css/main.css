@@ -395,7 +395,7 @@ transform: rotate(0deg) scale(1) translateZ(0);
 transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
 cursor: pointer;
 margin-top: 20px;
-margin-bottom: 50px;
+margin-bottom: 90px;
 }
 .logo:hover {
 transform: rotate(2deg) scale(1.1);
