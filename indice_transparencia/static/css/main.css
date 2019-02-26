@@ -121,7 +121,7 @@ color: #1e2630;
 
 /*navbar*/
 .navbar {
-padding-left:50px;
+padding-left:28px;
 }
 
 .nav-link {
@@ -1100,7 +1100,7 @@ margin-top:100px;
 @media screen and (max-width: 600px){
 
 .text-center{
-font-size: 14px;
+font-size: 12px;
 }
 
 .intro-guia{
