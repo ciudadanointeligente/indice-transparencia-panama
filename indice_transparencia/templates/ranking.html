@@ -2,45 +2,39 @@
 {% load staticfiles %}
 {% load bootstrap4 %}
 {% block container %}
-
 <section id="intro2">
    <div class="row intro-content">
-     <div class="container-fluid ">
-        {% block contenido_head %}
-        <p id="filtro-titulo2">Perfil de candidatos a diputados en Panamá</p>
-        <form method="get" class="filter_form">
-           <div class="form-row">
-              <div class="label_filter_ranking" id="filter_button">
-                 Por Diputados a Reelección
-                 {% bootstrap_field filter.form.is_deputy show_label=False %}
-              </div>
-              <div class="label_filter_ranking">
-                 Por Circuito
-                 {% bootstrap_field filter.form.circuit show_label=False %}
-              </div>
-              <div class="label_filter_ranking">
-                 Por Partido
-                 {% bootstrap_field filter.form.party show_label=False %}
-              </div>
-              <div class="label_filter_ranking">
-                 Por orden de % Datos Obtenidos
-                 {% bootstrap_field filter.form.ordering show_label=False %}
-              </div>
-           </div>
-           </form>
-     </div>
+      <div class="container-fluid ">
+         {% block contenido_head %}
+         <p id="filtro-titulo2">Perfil de candidatos a diputados en Panamá</p>
+         <form method="get" class="filter_form">
+            <div class="form-row">
+               <div class="label_filter_ranking" id="filter_button">
+                  Por Diputados a Reelección
+                  {% bootstrap_field filter.form.is_deputy show_label=False %}
+               </div>
+               <div class="label_filter_ranking">
+                  Por Circuito
+                  {% bootstrap_field filter.form.circuit show_label=False %}
+               </div>
+               <div class="label_filter_ranking">
+                  Por Partido
+                  {% bootstrap_field filter.form.party show_label=False %}
+               </div>
+               <div class="label_filter_ranking">
+                  Por orden de % Datos Obtenidos
+                  {% bootstrap_field filter.form.ordering show_label=False %}
+               </div>
+            </div>
+         </form>
+      </div>
    </div>
 </section>
-
-
-
-
 <!-- Nati querida, pensé en dejarte una clase, esta ahora no tienen nada
    pero pensé que podrías querer ponerle alguna cosa como esta para que se vea ordenado. Esto hace que todos los labels se vean a la misma altura.-->
 <!--<button type="submit" class="btn btn-primary" id="filter_button">-->
 <!--  <span class="glyphicon glyphicon-search"></span> Search-->
 <!--</button>-->
-
 {% endblock contenido_head %}
 {% include 'includes/lista_candidatos.html' with persons=persons %}
 {% endblock container %}

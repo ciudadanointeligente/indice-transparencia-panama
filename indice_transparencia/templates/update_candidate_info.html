@@ -1,202 +1,176 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
-
 {% block navbar %}
 {% endblock navbar %}
-
 {% block extra_body_attrs%}data-spy="scroll" data-target="#form-nav-sections" data-offset="0" class="scrollspy-example"{% endblock extra_body_attrs %}
-
 {% block extrajs %}
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha384-Dziy8F2VlJQLMShA6FHWNul/veM9bCkRUaLqr199K94ntO5QUrLJBEbYegdSkkqX" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js" integrity="sha384-vtZXrrXR60MGoprJb7ApH4t3Y59IhePhwtXXmbqg//ha9LHwSo3QCNR6XvF5oXVM" crossorigin="anonymous"></script>
 {% endblock extrajs %}
-
 {% block extracss %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <link rel="stylesheet" href='{% static "css/main.css" %}'>
-
 <link rel="stylesheet" href='{% static "css/candidate_form.css" %}'>
 <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
 {% endblock extracss %}
-
 {% block container %}
-
 <div class="row">
-    <div class="col">
-        <h1>Bienvenido/a {{person.name}}:</h1>
-    </div>
-    <div class="w-100"></div>
-    <div class="col">
-        <p>Acá podrás contarnos un poco más sobre ti:</p>
-    </div>
-    <div class="w-100"></div>
-    <div class="col-2">
-      <div id="form-nav-sections" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#datos_personales_section">Datos Personales</a>
-        <a class="list-group-item list-group-item-action" href="#perfil_politico_section">Perfil Político</a>
-        <a class="list-group-item list-group-item-action" href="#educational_records_section">Formación Academica</a>
-        <a class="list-group-item list-group-item-action" href="#work_records_section">Experiencia Laboral</a>
-        <a class="list-group-item list-group-item-action" href="#political_proposal_section">Propuesta Política</a>
-        <a class="list-group-item list-group-item-action" href="#patrimony_interests_section">Patrimonio e Intereses</a>
-        <a class="list-group-item list-group-item-action" href="#judiciary_records_section">Procesos Judiciales</a>
-        <a class="list-group-item list-group-item-action" href="#ethi_section">Ética Presupuestaria</a>
-      </div>
-    </div>
-    <div class="col-12 col-md-8">
-
-
-        <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
-          {% csrf_token %}
-          <div >
-          {% comment %}
-          <div data-spy="scroll" data-target="#form-nav-sections" data-offset="0" class="scrollspy-example">
-          {% endcomment %}
-          <!-- INICIO DEL DATOS PERSONALES -->
-
-          <h5 id="datos_personales_section">Datos Personales</h5>
-
-
-
-              <h6 id="eth_section">Foto para su perfil. La imagen debe estar en una relación 1:1. Es decir, debe ser cuadrada. (p.e: 500 x 500 píxeles)</h6>
-                {% bootstrap_field form.image %}
-                {% bootstrap_field form.birth_date placeholder='Ej: 23/01/1950'%}
-                {% bootstrap_field form.web placeholder='Ej: www.sitioweb.com'%}
-                {% bootstrap_field form.facebook placeholder='Ej: https://www.facebook.com/candidato'%}
-                {% bootstrap_field form.twitter placeholder='Ej: https://twitter.com/candidato'%}
-                {% bootstrap_field form.instagram placeholder='Ej: https://www.instagram.com/candidato'%}
-
-          </section>
-          <hr>
-          <!-- FIN DEL DATOS PERSONALES -->
-          <!-- INICIO DEL PERFIL POLÍTICO -->
-          <section>
-
-          <h5 id="perfil_politico_section">Perfil Político</h5>
-          {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
-              {% bootstrap_field form.circuit %}
-              {% bootstrap_field form.party %}
-              {% bootstrap_field form.has_changed_party %}
-              {% bootstrap_field form.previous_parties %}
-              {% bootstrap_field form.topics %}
-              {% bootstrap_field form.other_topic %}
-
-
-          </section>
-          <hr>
-          <!-- FIN DEL PERFIL POLÍTICO -->
-          <h5 id="{{inlines.0.prefix}}_section">Formación Academica</h5>
-          <section>
-            {% bootstrap_field form.declared_intention_to_transparent_education form_group_class='custom-control custom-switch'%}
-            {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
-          </section>
-          <hr>
-          <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral</h5>
-          <section>
-            {% bootstrap_field form.declared_intention_to_transparent_work form_group_class='custom-control custom-switch'%}
-            {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
-          </section>
-          <hr>
-          <h5 id="political_proposal_section">Propuesta Política</h5>
-          <section>
-            {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
-            {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
-            {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
-            <h6 id="eth_section">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</h6>
-            {% bootstrap_field form.political_proposal_doc %}
-          </section><hr>
-          <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
-          <section>
-            {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
-            {% bootstrap_field form.existing_patrimony_declaration %}
-            {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
-            <h6 id="eth_section">En el siguiente <a href="http://bit.ly/indicepat" target="_blank">link</a> puede descargar una plantilla para crear su declaración y luego cargarla acá</h6>
-
-            {% bootstrap_field form.patrimony_doc %}
-            {% bootstrap_field form.existing_interests_declaration %}
-            {% bootstrap_field form.interests_link placeholder='Especifique link declaración de intereses'%}
-              <h6 id="eth_section">Si no tiene su declaración de intereses, en este <a href="http://bit.ly/indiceint" target="_blank">link</a> puede descargar un formato para crearla y luego cargarla acá</h6>
-            {% bootstrap_field form.interests_doc %}
-          </section>
-          <hr>
-          <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
-          <section>
-
-            {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
-            {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
-            {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
-            {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
-            {% bootstrap_field form.judiciary_link placeholder='Especifique link procesos judiciales' %}
-            {% bootstrap_field form.judiciary_description placeholder='Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados'%}
-          </section><hr>
-          <h5 id="ethi_section">Ética Presupuestaria (Solo para candidatos a la reelección)</h5>
-
-          <section>
-
-            {% bootstrap_field form.is_deputy %}
-            {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
-            {% bootstrap_field form.benefits %}
-            {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
-              <h6 id="eth_section">Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación</h6>
-            {% bootstrap_field form.benefits_doc %}
-
-            {% comment %}
-              {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
-              {% bootstrap_field form.work_plan_link %}
-              {% bootstrap_field form.work_plan_doc %}
-            {% endcomment %}
-
-            {% bootstrap_field form.eth_001_link placeholder='Especifique link planilla 001'%}
-            <h6 id="eth_section">Si su planilla 001 no se encuentra publicada online, puede subir el archivo a continuación</h6>
-            {% bootstrap_field form.eth_001_doc %}
-            {% bootstrap_field form.eth_002_link placeholder='Especifique link planilla 002' %}
-            <h6 id="eth_section">Si su planilla 002 no se encuentra publicada online, puede subir el archivo a continuación</h6>
-            {% bootstrap_field form.eth_002_doc %}
-            {% bootstrap_field form.eth_080_link placeholder='Especifique link planilla 080'%}
-            <h6 id="eth_section">Si su planilla 080 no se encuentra publicada online, puede subir el archivo a continuación</h6>
-            {% bootstrap_field form.eth_080_doc %}
-            {% bootstrap_field form.eth_172_link placeholder='Especifique link planilla 172'%}
-            <h6 id="eth_section">Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación</h6>
-            {% bootstrap_field form.eth_172_doc %}
-            {% bootstrap_field form.attendance placeholder='Especifique % de asistencia a la Asamblea Nacional'%}
-            {% bootstrap_field form.laws_worked_on placeholder='Especifique número de leyes que ud. ha sancionado'%}
-          </section>
-
-
-          {% buttons %}
-            <button type="submit" class="btn btn-primary">
-              Enviar
-            </button>
-          {% endbuttons %}
-          </div>
-        </form>
-
-    </div>
+<div class="col">
+   <h1>Bienvenido/a {{person.name}}:</h1>
 </div>
-
+<div class="w-100"></div>
+<div class="col">
+   <p>Acá podrás contarnos un poco más sobre ti:</p>
+</div>
+<div class="w-100"></div>
+<div class="col-2">
+   <div id="form-nav-sections" class="list-group">
+      <a class="list-group-item list-group-item-action" href="#datos_personales_section">Datos Personales</a>
+      <a class="list-group-item list-group-item-action" href="#perfil_politico_section">Perfil Político</a>
+      <a class="list-group-item list-group-item-action" href="#educational_records_section">Formación Academica</a>
+      <a class="list-group-item list-group-item-action" href="#work_records_section">Experiencia Laboral</a>
+      <a class="list-group-item list-group-item-action" href="#political_proposal_section">Propuesta Política</a>
+      <a class="list-group-item list-group-item-action" href="#patrimony_interests_section">Patrimonio e Intereses</a>
+      <a class="list-group-item list-group-item-action" href="#judiciary_records_section">Procesos Judiciales</a>
+      <a class="list-group-item list-group-item-action" href="#ethi_section">Ética Presupuestaria</a>
+   </div>
+</div>
+<div class="col-12 col-md-8">
+   <form action="{{contact.update_url}}" method="post" class="form"  enctype="multipart/form-data">
+      {% csrf_token %}
+      <div >
+         {% comment %}
+         <div data-spy="scroll" data-target="#form-nav-sections" data-offset="0" class="scrollspy-example">
+            {% endcomment %}
+            <!-- INICIO DEL DATOS PERSONALES -->
+            <h5 id="datos_personales_section">Datos Personales</h5>
+            <h6 id="eth_section">Foto para su perfil. La imagen debe estar en una relación 1:1. Es decir, debe ser cuadrada. (p.e: 500 x 500 píxeles)</h6>
+            {% bootstrap_field form.image %}
+            {% bootstrap_field form.birth_date placeholder='Ej: 23/01/1950'%}
+            {% bootstrap_field form.web placeholder='Ej: www.sitioweb.com'%}
+            {% bootstrap_field form.facebook placeholder='Ej: https://www.facebook.com/candidato'%}
+            {% bootstrap_field form.twitter placeholder='Ej: https://twitter.com/candidato'%}
+            {% bootstrap_field form.instagram placeholder='Ej: https://www.instagram.com/candidato'%}
+            </section>
+            <hr>
+            <!-- FIN DEL DATOS PERSONALES -->
+            <!-- INICIO DEL PERFIL POLÍTICO -->
+            <section>
+               <h5 id="perfil_politico_section">Perfil Político</h5>
+               {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
+               {% bootstrap_field form.circuit %}
+               {% bootstrap_field form.party %}
+               {% bootstrap_field form.has_changed_party %}
+               {% bootstrap_field form.previous_parties %}
+               {% bootstrap_field form.topics %}
+               {% bootstrap_field form.other_topic %}
+            </section>
+            <hr>
+            <!-- FIN DEL PERFIL POLÍTICO -->
+            <h5 id="{{inlines.0.prefix}}_section">Formación Academica</h5>
+            <section>
+               {% bootstrap_field form.declared_intention_to_transparent_education form_group_class='custom-control custom-switch'%}
+               {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
+            </section>
+            <hr>
+            <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral</h5>
+            <section>
+               {% bootstrap_field form.declared_intention_to_transparent_work form_group_class='custom-control custom-switch'%}
+               {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
+            </section>
+            <hr>
+            <h5 id="political_proposal_section">Propuesta Política</h5>
+            <section>
+               {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
+               {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
+               {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
+               <h6 id="eth_section">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</h6>
+               {% bootstrap_field form.political_proposal_doc %}
+            </section>
+            <hr>
+            <h5 id="patrimony_interests_section">Patrimonio e Intereses</h5>
+            <section>
+               {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
+               {% bootstrap_field form.existing_patrimony_declaration %}
+               {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
+               <h6 id="eth_section">En el siguiente <a href="http://bit.ly/indicepat" target="_blank">link</a> puede descargar una plantilla para crear su declaración y luego cargarla acá</h6>
+               {% bootstrap_field form.patrimony_doc %}
+               {% bootstrap_field form.existing_interests_declaration %}
+               {% bootstrap_field form.interests_link placeholder='Especifique link declaración de intereses'%}
+               <h6 id="eth_section">Si no tiene su declaración de intereses, en este <a href="http://bit.ly/indiceint" target="_blank">link</a> puede descargar un formato para crearla y luego cargarla acá</h6>
+               {% bootstrap_field form.interests_doc %}
+            </section>
+            <hr>
+            <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales</h5>
+            <section>
+               {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
+               {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
+               {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
+               {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
+               {% bootstrap_field form.judiciary_link placeholder='Especifique link procesos judiciales' %}
+               {% bootstrap_field form.judiciary_description placeholder='Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados'%}
+            </section>
+            <hr>
+            <h5 id="ethi_section">Ética Presupuestaria (Solo para candidatos a la reelección)</h5>
+            <section>
+               {% bootstrap_field form.is_deputy %}
+               {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
+               {% bootstrap_field form.benefits %}
+               {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
+               <h6 id="eth_section">Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación</h6>
+               {% bootstrap_field form.benefits_doc %}
+               {% comment %}
+               {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
+               {% bootstrap_field form.work_plan_link %}
+               {% bootstrap_field form.work_plan_doc %}
+               {% endcomment %}
+               {% bootstrap_field form.eth_001_link placeholder='Especifique link planilla 001'%}
+               <h6 id="eth_section">Si su planilla 001 no se encuentra publicada online, puede subir el archivo a continuación</h6>
+               {% bootstrap_field form.eth_001_doc %}
+               {% bootstrap_field form.eth_002_link placeholder='Especifique link planilla 002' %}
+               <h6 id="eth_section">Si su planilla 002 no se encuentra publicada online, puede subir el archivo a continuación</h6>
+               {% bootstrap_field form.eth_002_doc %}
+               {% bootstrap_field form.eth_080_link placeholder='Especifique link planilla 080'%}
+               <h6 id="eth_section">Si su planilla 080 no se encuentra publicada online, puede subir el archivo a continuación</h6>
+               {% bootstrap_field form.eth_080_doc %}
+               {% bootstrap_field form.eth_172_link placeholder='Especifique link planilla 172'%}
+               <h6 id="eth_section">Si su planilla 172 no se encuentra publicada online, puede subir el archivo a continuación</h6>
+               {% bootstrap_field form.eth_172_doc %}
+               {% bootstrap_field form.attendance placeholder='Especifique % de asistencia a la Asamblea Nacional'%}
+               {% bootstrap_field form.laws_worked_on placeholder='Especifique número de leyes que ud. ha sancionado'%}
+            </section>
+            {% buttons %}
+            <button type="submit" class="btn btn-primary">
+            Enviar
+            </button>
+            {% endbuttons %}
+         </div>
+   </form>
+   </div>
+</div>
 {% endblock container %}
 {% block extra_end_js %}
-  <script>
-    $(function() {
-      $( ".datepicker" ).datepicker({
-        dateFormat: "yyyy-mm-dd",
-        altFormat: "yyyy-mm-dd",
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "1900:2100",
-      });
-    });
+<script>
+   $(function() {
+     $( ".datepicker" ).datepicker({
+       dateFormat: "yyyy-mm-dd",
+       altFormat: "yyyy-mm-dd",
+       changeMonth: true,
+       changeYear: true,
+       yearRange: "1900:2100",
+     });
+   });
 
-  $(function(){
-    $('.custom-switch .form-check-input').addClass('custom-control-input');
-    $('.custom-switch .form-check-input').addClass('btn-toggle');
-    $('.custom-switch .form-check-label').addClass('custom-control-label');
-    //$(":file").addClass('custom-file-input')
-    //$(".bootstrap4-multi-input .col-12").addClass("invisible")
-  });
-  </script>
+   $(function(){
+   $('.custom-switch .form-check-input').addClass('custom-control-input');
+   $('.custom-switch .form-check-input').addClass('btn-toggle');
+   $('.custom-switch .form-check-label').addClass('custom-control-label');
+   //$(":file").addClass('custom-file-input')
+   //$(".bootstrap4-multi-input .col-12").addClass("invisible")
+   });
+</script>
 {% endblock extra_end_js %}
