@@ -137,8 +137,8 @@ text-align:left;
 .nav-link:hover {
 color:white;
 }
-.navbar-dark{
-background-color: #1e262f;
+.navbar-dark {
+    background-color: rgba(31, 35, 41, 0.85);
 }
 .custom-toggler.navbar-toggler {
 border-color: #eab300;
@@ -1000,6 +1000,11 @@ margin-top:100px;
 }
 @media screen and (max-width: 600px){
 
+  .text-center{
+  font-size: 18px;
+
+  }
+
 .intro-guia{
   display: none;
 }
@@ -1116,4 +1121,24 @@ table-layout: fixed;
 .fa, .fas {
     font-weight: 900;
     padding-right: 10px;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 3.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.navbar-toggler {
+    font-size: 1rem;
+    margin-right: 35px;
+    margin-top: 12px;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
 }
