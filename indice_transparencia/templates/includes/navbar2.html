@@ -1,51 +1,32 @@
 {% load static %}
-
 {% block container %}
-
 <div id=navbar-barra>
 <div class="header-logo">
-    <a class="site-logo" href="{% url "index" %}">
-      <img src="{% static "images/logo-espacio-civico.svg" %}"</a>
-
+   <a class="site-logo" href="{% url "index" %}">
+   <img src="{% static "images/logo-espacio-civico.svg" %}"</a>
 </div>
-
 <nav class="header-nav navbar navbar-dark fixed-top">
-
-
-            <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
-
-            <div class="header-nav__content">
-
-
-                <ul class="header-nav__list">
-                    <li class="current"><a class=""  href="{% url "index" %}">Inicio</a></li>
-                    <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
-                    <li><a class="smoothscroll"  href="{% url "about_index" %}">Sobre la Guía de Políticos</a></li>
-                    <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>
-                    <li><a class="smoothscroll"  href="{% url "about" %}">¿Quiénes somos?</a></li>
-
-
-
-                </ul>
-
-
-
-            </div> <!-- end header-nav__content -->
-
-        </nav>  <!-- end header-nav -->
-
-        <a class="header-menu-toggle" href="#0">
-            <span class="header-menu-text">Menu</span>
-            <span class="header-menu-icon"></span>
-        </a>
-
+   <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
+   <div class="header-nav__content">
+      <ul class="header-nav__list">
+         <li class="current"><a class=""  href="{% url "index" %}">Inicio</a></li>
+         <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
+         <li><a class="smoothscroll"  href="{% url "about_index" %}">Sobre la Guía de Políticos</a></li>
+         <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>
+         <li><a class="smoothscroll"  href="{% url "about" %}">¿Quiénes somos?</a></li>
+      </ul>
+   </div>
+   <!-- end header-nav__content -->
+</nav>
+<!-- end header-nav -->
+<a class="header-menu-toggle" href="#0">
+<span class="header-menu-text">Menu</span>
+<span class="header-menu-icon"></span>
+</a>
 <div>
 {% endblock container %}
-
 {% block extra_end_js %}
-
 {% endblock extra_end_js %}
-
 <!-- BOTON DE BÚSQUEDA
    <form class="form-inline my-2 my-lg-0">
    <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda avanzada" aria-label="Search">
