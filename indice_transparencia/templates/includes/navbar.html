@@ -10,26 +10,15 @@
       <span class="header-menu-text" id="header-menu-text">MENU </span><span class="navbar-toggler-icon"></span>
    </button>
    <div class="navbar-collapse collapse" id="collapsingNavbar4">
-      <ul class="navbar-nav">
-         <li class="nav-item active">
-            <a class="nav-link" href="{% url "index" %}">Inicio <span class="sr-only">(current)</span></a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="{% url "ranking" %}">Índice de Transparencia</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="{% url "ranking" %}">Sobre el índice</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="{% url "about" %}">¿Quiénes somos?</a>
-         </li>
+     <ul class="header-nav__list">
+         <li class="current"><a class=""  href="{% url "index" %}">Inicio</a></li>
+         <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
+         <li><a class="smoothscroll"  href="{% url "about_index" %}">Sobre la Guía de Políticos</a></li>
+         <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>
+         <li><a class="smoothscroll"  href="{% url "about" %}">¿Quiénes somos?</a></li>
+     </ul>
 
-         {% if debug %}
-         <li class="nav-item">
-            <a class="nav-link" href="">dev mode: ON, last commit is:  </a>
-         </li>
-         {% endif %}
-      </ul>
+
    </div>
 </nav>
 
