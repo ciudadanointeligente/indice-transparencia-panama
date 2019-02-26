@@ -1,68 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block container %}
-
 <section id="intro3">
    <div class="row intro-content">
-
-
-        <div class='row'>
-
-
-          <div class='col-xs-12 col-md-6 center'>
-             <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
-          </div>
-
-
-
-
-           <div class='col-xs-12 col-md-6'>
-              <div> <h2 id="nombre-candidato-perfil">{{person.name}}</h2></div>
-              {% if person.birth_date %}
-              <div id="birth-perfil"><p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p></div>
-              {% endif %}
-
-
-
-              <div class="col-xs-12 center c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
-              <span>{{ person.ranking_data.ranking_mark }}%</span>
-              <div class="slice">
-                 <div class="bar"></div>
-                 <div class="fill"></div>
-              </div>
+      <div class='row'>
+         <div class='col-xs-12 col-md-6 center'>
+            <img src="{% if person.image %}{{ person.image.url }}{% else %}{% static "images/person_icon.svg" %}{% endif %}" class="img-fluid-perfil">
+         </div>
+         <div class='col-xs-12 col-md-6'>
+            <div>
+               <h2 id="nombre-candidato-perfil">{{person.name}}</h2>
             </div>
-
-<br>
-
-           <div id="circuito-perfil">
-              {% if person.circuit %}
-              <p><i class="fas fa-map-marked-alt"></i> Circuito {{ person.circuit }}</p>
-              {% endif %}
-           </div>
-           <div id="party-perfil">
-              {% if person.party %}
-              <p><i class="fas fa-flag"></i> {{person.party}}</p>
-              {% endif %}
-           </div>
-
-           <div class="text-center2">
-
-                              <a target="_blank" href="{{person.facebook}}"><i class="fab fa-facebook-f"></i> </a>
-                                <a target="_blank" href="{{person.twitter}}"><i class="fab fa-twitter-square"></i> </a>
-                                  <a target="_blank" href="{{person.instagram}}"><i class="fab fa-instagram"></i></a>
-                                    <a target="_blank" href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
-
-
-             </div>
-
-
-
-
-     </div>
-  </div>
-
+            {% if person.birth_date %}
+            <div id="birth-perfil">
+               <p><i class="fas fa-birthday-cake"></i>  {{person.birth_date}}</p>
+            </div>
+            {% endif %}
+            <div class="col-xs-12 center c100 p{{ person.ranking_data.ranking_mark|floatformat:"0" }} small orange">
+            <span>{{ person.ranking_data.ranking_mark }}%</span>
+            <div class="slice">
+               <div class="bar"></div>
+               <div class="fill"></div>
+            </div>
+         </div>
+         <br>
+         <div id="circuito-perfil">
+            {% if person.circuit %}
+            <p><i class="fas fa-map-marked-alt"></i> Circuito {{ person.circuit }}</p>
+            {% endif %}
+         </div>
+         <div id="party-perfil">
+            {% if person.party %}
+            <p><i class="fas fa-flag"></i> {{person.party}}</p>
+            {% endif %}
+         </div>
+         <div class="text-center2">
+            <a target="_blank" href="{{person.facebook}}"><i class="fab fa-facebook-f"></i> </a>
+            <a target="_blank" href="{{person.twitter}}"><i class="fab fa-twitter-square"></i> </a>
+            <a target="_blank" href="{{person.instagram}}"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="{{person.web}}"><i class="fas fa-share-alt-square"></i> </a>
+         </div>
+      </div>
+   </div>
 </section>
-
-
 {% include 'includes/tabs.html' with person=person%}
 {% endblock container %}
