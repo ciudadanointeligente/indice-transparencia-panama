@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block container %}
-
 <section id="intro">
    <div class="row intro-content">
       <div class="col-twelve">
@@ -14,11 +13,9 @@
             <a class="button stroke smoothscroll animate-intro" href="{% url 'ranking' %}"  title="">Ver guía completa</a>
             <a class="button stroke smoothscroll animate-intro" href="{% url 'info' %}" title="">Información electoral</a>
          </div>
-
       </div>
    </div>
 </section>
-
 {% include 'includes/lista_candidatos.html' with persons=persons %}
 {% include 'includes/alianzas.html' %}
 {% endblock container %}
