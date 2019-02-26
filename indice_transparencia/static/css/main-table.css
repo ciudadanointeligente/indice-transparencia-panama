@@ -60,7 +60,17 @@ table td, .table th {
 }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 600px){
+
+  .table {
+      width: 100%;
+      margin-top:210px;
+      padding-left: 20px;
+      background-color: transparent;
+  }}
+
+  @media screen and (max-width: 900px){
+
 #columna-circuito{
   display: none;
 }
