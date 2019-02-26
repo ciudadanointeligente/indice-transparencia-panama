@@ -199,9 +199,29 @@ button.stroke, .button.stroke {
 }
 
 @media screen and (max-width: 600px){
-  #intro3 {
-      text-align: center;
-  }}
+
+#intro {
+  padding-bottom:
+    1rem;
+  }
+
+  button, a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+      font-size: 1rem;
+
+  }
+
+  #intro h1 {
+          font-size: 2rem;
+  }
+
+  h3{
+        font-size: 1rem;
+        margin-10px;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right:10px;
+  }
+}
 
 
 #intro .buttons .button {
@@ -220,11 +240,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     margin-top: 0.1rem;
 }
 
-h3{
-      font-size: 1.4rem;
-      margin-10px;
-      line-height: 20px;
-}
+
 
 
 #nav-tab{
