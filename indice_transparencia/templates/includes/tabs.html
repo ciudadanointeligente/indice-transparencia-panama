@@ -360,18 +360,22 @@
                      <h4 class="panel-title">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12pj" aria-expanded="false" aria-controls="collapse12pj">
                            {% if person.declared_intention_to_transparent_judiciary_records %}
-                           <i class="fa fa-check-circle"></i> No hay datos
-                           <hr>
+                           <i class="fa fa-check-circle"></i> No hay procesos
                            {% else %}
                            <i class="fa fa-times-circle"></i> No hay datos
-                           <hr>
                            {% endif %}
+                           <hr>
                         </a>
                      </h4>
                   </div>
                   <div id="collapse12pj" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12pj">
                      <div class="panel-body">
-                        <i class="fa fa-times-circle"></i> No hay datos
+                           {% if person.declared_intention_to_transparent_judiciary_records %}
+                           <i class="fa fa-check-circle"></i> No hay procesos
+                           {% else %}
+                           <i class="fa fa-times-circle"></i> No hay datos
+                           {% endif %}
+                           <hr>
                      </div>
                   </div>
                </div>
