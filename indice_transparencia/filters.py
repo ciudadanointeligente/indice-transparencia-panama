@@ -4,8 +4,8 @@ from indice_transparencia.models import Person
 class PersonFilter(django_filters.FilterSet):
 
     CHOICES = (
-        ('asc','de menor a mayor'),
-        ('desc','de mayor a menor')
+        ('desc','de menor a mayor'),
+        ('asc','de mayor a menor')
         )
 
     ordering = django_filters.ChoiceFilter(label='Ordenar según puntaje en índice de transparencia', choices=CHOICES, method='filter_by_order')
