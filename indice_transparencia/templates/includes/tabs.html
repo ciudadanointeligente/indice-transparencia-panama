@@ -300,7 +300,7 @@
                   </div>
                   <div id="collapse12p" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12p">
                      <div class="panel-body">
-                        <i class="far fa-file-pdf"></i> No hay datos
+                        <i class="fa fa-times-circle"></i> No hay datos
                      </div>
                   </div>
                </div>
@@ -414,7 +414,7 @@
                </div>
                {% endif %}
 
-               {% if person.benefits_link %}
+                {% if  person.benefits %}
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading40">
                      <h4 class="panel-title">
@@ -426,11 +426,11 @@
                   </div>
                   <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40">
                      <div class="panel-body">
-                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank"> Link montos asociados a uso de beneficios </a>
+  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank"> Link montos asociados a uso de beneficios </a>
                      </div>
                   </div>
                </div>
-               {% endif %}
+     {% endif %}
 
                {% if person.benefits_doc %}
                <div class="panel panel-default">
@@ -444,11 +444,12 @@
                   </div>
                   <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
                      <div class="panel-body">
-                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.benefits_doc.url}}" target="_blank">Archivos adjuntos montos asociados a uso de beneficios</a>
+                        <i class="far fa-file-pdf"></i> <a id="link-perfil" href="{{ person.benefits}}" target="_blank">Archivos adjuntos montos asociados a uso de beneficios</a>
                      </div>
                   </div>
                </div>
                {% endif %}
+
                {% if person.eth_001_link %}
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading18">
