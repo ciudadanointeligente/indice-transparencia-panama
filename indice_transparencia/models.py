@@ -106,7 +106,7 @@ class Person(models.Model):
     twitter = models.URLField(max_length=255, verbose_name=u"Cuenta de twitter", null=True, blank=True)
     instagram = models.URLField(max_length=255, verbose_name=u"Cuenta de instagram", null=True, blank=True)
     facebook = models.URLField(max_length=255, verbose_name=u"Cuenta de facebook", null=True, blank=True)
-    image = models.ImageField(verbose_name=u"", upload_to='profile_images/%Y/%m/%d/',
+    image = models.ImageField(verbose_name=u"Foto", upload_to='profile_images/%Y/%m/%d/',
                                      null=True, blank=True)
 
     #perfil político
