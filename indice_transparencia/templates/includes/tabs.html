@@ -14,7 +14,7 @@
          {% endif %}
          <a class="dropdown-item"  id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales</a>
          {% if person.is_deputy %}
-         <a class="dropdown-item"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria</a>
+         <a class="dropdown-item"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Declaración de Beneficios</a>
          {% endif %}
          {% if person.is_deputy %}
          <a class="dropdown-item"  id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
@@ -23,24 +23,24 @@
    </div>
 </div>
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-   <a class="nav-item nav-link tooltips" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica<span>Se le solicita al candidato publicar las tres experiencias de formación académica más relevantes que ha tenido hasta la fecha</span></a>
+   <a class="nav-item nav-link tooltips" id="nav-formacion-tab" data-toggle="tab" href="#nav-formacion" role="tab" aria-controls="nav-formacion" aria-selected="true"><i class="fas fa-book"></i>Formación Académica<span>Corresponde a las tres experiencias de formación académica más relevantes del candidato. FUENTE: Informado por candidato u obtenido del Tribunal Electoral</span></a>
 
-   <a class="nav-item nav-link tooltips"  id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional<span>Se le solicita al candidato publicar las tres experiencias profesionales más relevantes que ha tenido hasta la fecha</span></a>
+   <a class="nav-item nav-link tooltips"  id="nav-experiencia-tab" data-toggle="tab" href="#nav-experiencia" role="tab" aria-controls="nav-experiencia" aria-selected="false"><i class="fas fa-briefcase"></i>Experiencia Profesional<span>Corresponde a las tres experiencias profesionales más relevantes del candidato. FUENTE: Informado por candidato u obtenido del Tribunal Electoral</span></a>
 
-   <a class="nav-item nav-link tooltips"  id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política<span>Documento que consiste en las formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea (2019-2024)</span></a>
+   <a class="nav-item nav-link tooltips"  id="nav-propuesta-tab" data-toggle="tab" href="#nav-propuesta" role="tab" aria-controls="nav-propuesta" aria-selected="false"><i class="fas fa-file-powerpoint"></i>Propuesta Política<span>Corresponde al documento con prioridades, formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea. FUENTE: Informado por candidato u obtenido de algún sitio oficial de este</span></a>
    {% if person.is_deputy %}
 
-   <a class="nav-item nav-link tooltips"  id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses<span>Declaración de Patrimonio y Declaración de Intereses. Documentos con información sobre los bienes del candidato y las relaciones y vínculos económicos, profesionales, familiares y sociales de este</span></a>
+   <a class="nav-item nav-link tooltips"  id="nav-declaracion-tab" data-toggle="tab" href="#nav-declaracion" role="tab" aria-controls="nav-declaracion" aria-selected="false"><i class="fas fa-file-invoice-dollar"></i>Patrimonio e intereses<span>Corresponde a documentos con información sobre los bienes del candidato y las relaciones y vínculos económicos, profesionales, familiares y sociales de este. FUENTE: Informado por candidato u obtenido de algún sitio oficial de este</span></a>
    {% endif %}
 
-   <a class="nav-item nav-link tooltips" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales<span>Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado</span></a>
+   <a class="nav-item nav-link tooltips" id="nav-procesos-tab" data-toggle="tab" href="#nav-procesos" role="tab" aria-controls="nav-procesos" aria-selected="false"><i class="fas fa-gavel"></i>Procesos Judiciales<span>Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado. FUENTE: Informado por candidato u obtenido del Órgano Judicial</span></a>
    {% if person.is_deputy %}
 
-   <a class="nav-item nav-link tooltips"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Ética Presupuestaria<span>Se le solicita a los candidatos que buscan la reelección publicar el detalle del uso de beneficios fiscales como franquicias, pasaporte diplomático, placa oficial, viáticos y otros</span></a>
+   <a class="nav-item nav-link tooltips"  id="nav-etica-tab" data-toggle="tab" href="#nav-etica" role="tab" aria-controls="nav-etica" aria-selected="false"><i class="fas fa-archive"></i>Declaración de Beneficios<span>Corresponde al detalle sobre los usos de beneficios fiscales que ha ejercido el candidato que va a la reelección, como franquicias, pasaporte diplomático, placa oficial, viáticos y otros. FUENTE: Informado por candidato u obtenido de algún sitio oficial de este</span></a>
    {% endif %}
    {% if person.is_deputy %}
 
-   <a class="nav-item nav-link" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros</a>
+   <a class="nav-item nav-link tooltips" id="nav-otros-tab" data-toggle="tab" href="#nav-otros" role="tab" aria-controls="nav-otros" aria-selected="false"><i class="fas fa-info-circle"></i>Otros<span>Información que no incide en el cálculo del porcentaje de datos y que corresponde a la actividad del diputado en la Asamblea. FUENTE: Informado por candidato u obtenido directamente desde la Asamblea.</span></a>
    {% endif %}
 </div>
 <div class="tab-content" id="nav-tabContent">
