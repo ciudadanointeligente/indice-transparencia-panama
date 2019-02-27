@@ -295,15 +295,15 @@ class Person(models.Model):
         return self.name
         
     def save(self, *args, **kwargs):
-        # creating = False
-        # if self.id is None:
-        #     creating = True    
-        # if creating:
-        #     ranking_data = RankingData.objects.create(person=self)
-        #     self.ranking_data = ranking_data
-        # else:
-        ranking_data = RankingData.objects.get_or_create(person=self)
-        self.ranking_data = ranking_data[0]
+        creating = False
+        if self.id is None:
+            creating = True    
+        if creating:
+            ranking_data = RankingData.objects.create(person=self)
+            self.ranking_data = ranking_data
+       
+        # ranking_data = RankingData.objects.get_or_create(person=self)
+        # self.ranking_data = ranking_data[0]
         super(Person, self).save(*args, **kwargs)
         self.update_mark()
 
