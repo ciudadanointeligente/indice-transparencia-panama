@@ -130,6 +130,8 @@ font-weight: bold;
 font-family:"Montserrat";
 font-size:14px;
 text-align:left;
+padding: 1rem 4rem;
+
 }
 
 .nav-link:hover {
