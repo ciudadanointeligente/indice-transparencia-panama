@@ -881,7 +881,7 @@ min-height: 786px;
 background-color: transparent;
 position: relative;
 display: table;
-background: url('/static/images/panama.jpg');
+background: url('/static/images/intro-bg.jpg');
 }
 
 .s-home2 {
@@ -1005,9 +1005,13 @@ color: #fdc63b;
 text-transform: uppercase;
 letter-spacing: .3rem;
 position: relative;
-margin-top: 100px;
+margin-top: 10px;
 margin-bottom: 1.2rem;
 text-align: center;
+}
+
+#alianzas{
+padding-top:80px;
 }
 
 .home-content__main {
@@ -1098,6 +1102,10 @@ margin-top:100px;
 }
 
 @media screen and (max-width: 600px){
+
+  #alianzas{
+  padding-top:20px;
+  }
 
 .text-center{
 font-size: 12px;
@@ -1274,4 +1282,17 @@ a:hover.tooltips span {
     left: 50%;
     margin-left: -76px;
     z-index: 999;
+}
+
+.intro-guia-2{
+font-size: 16px;
+padding-top:10px;
+}
+
+.intro-guia{
+font-size:2rem;
+}
+
+.col-md-6 {
+  padding-left: 0;
 }
