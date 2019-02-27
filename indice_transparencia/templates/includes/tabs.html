@@ -394,23 +394,7 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              {% if person.benefits_link %}
-              <div class="panel panel-default">
-                 <div class="panel-heading" role="tab" id="heading40">
-                    <h4 class="panel-title">
-                       <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse40" aria-expanded="false" aria-controls="collapse40">
-                          <i class="fas fa-check-circle"></i> Beneficios utilizados
-                          <hr>
-                       </a>
-                    </h4>
-                 </div>
-                 <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40">
-                    <div class="panel-body">
-                       <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank">Link montos asociados a uso de beneficios </a>
-                    </div>
-                 </div>
-              </div>
-              {% endif %}
+
 
                {% if person.benefits_link %}
                <div class="panel panel-default">
@@ -424,11 +408,30 @@
                   </div>
                   <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
                      <div class="panel-body">
-                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank">Link montos asociados a uso de beneficios </a>
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank"> Link montos asociados a uso de beneficios </a>
                      </div>
                   </div>
                </div>
                {% endif %}
+
+               {% if person.benefits_link %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading40">
+                     <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse40" aria-expanded="false" aria-controls="collapse40">
+                           <i class="fas fa-check-circle"></i> Beneficios utilizados
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40">
+                     <div class="panel-body">
+                        <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank"> Link montos asociados a uso de beneficios </a>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
+
                {% if person.benefits_doc %}
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading17">
@@ -451,7 +454,7 @@
                   <div class="panel-heading" role="tab" id="heading18">
                      <h4 class="panel-title">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapse18">
-                           <i class="fas fa-check-circle"></i>Link detalle de planilla 001
+                           <i class="fas fa-check-circle"></i> Link detalle de planilla 001
                            <hr>
                         </a>
                      </h4>
