@@ -5,10 +5,9 @@ from indice_transparencia.models import Person, Party, Circuit
 
 class Processor(object):
     def process_row(self, row, printer):
-        nombre = row[1].strip() + " " + row[2].strip() + " " +row[3].strip() + " " +row[4].strip()
-        nombre = nombre.replace("  ", " ")
+        nombre = row[1]
         
-        partido, partido_created = Party.objects.get_or_create(name=row[6], initials=row[7])
+        partido, partido_created = Party.objects.get_or_create(name=row[4])
         
         try:
             circuito = Circuit.objects.get(name=row[0].strip())
@@ -16,11 +15,11 @@ class Processor(object):
             printer( 'La persona ' + nombre + " NO FUE CREADA por que su circuito no se encontró")
             return
         
-        email = row[5].strip() or None
-        twitter = row[8].strip() or None
-        facebook = row[9].strip() or None
-        instagram = row[10].strip() or None
-        web = row[11].strip() or None
+        # email = row[5].strip() or None
+        twitter = row[5].strip() or None
+        facebook = row[6].strip() or None
+        instagram = row[8].strip() or None
+        web = row[9].strip() or None
         
         #printer(nombre + circuito +partido + email+ twitter+ facebook+instagram+web)
         
