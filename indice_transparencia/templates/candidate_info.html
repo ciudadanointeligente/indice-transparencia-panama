@@ -33,6 +33,9 @@
             {% if person.party %}
             <p><i class="fas fa-flag"></i> {{person.party}}</p>
             {% endif %}
+            {% for ex_party in person.previous_parties.all %}
+               <p><i class="fas fa-flag"></i> perteneció a: {{ ex_party }}</p>
+            {% endfor %}
          </div>
 
          <div class="text-center2">
