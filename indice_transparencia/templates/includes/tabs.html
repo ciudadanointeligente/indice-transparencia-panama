@@ -414,7 +414,7 @@
                </div>
                {% endif %}
 
-                {% if  person.benefits %}
+               {% if  person.benefits %}
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading40">
                      <h4 class="panel-title">
@@ -424,13 +424,16 @@
                         </a>
                      </h4>
                   </div>
-                  <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40">
-                     <div class="panel-body">
-  <i class="fas fa-link"></i> <a id="link-perfil" href="{{ person.benefits_link }}" target="_blank"> Link montos asociados a uso de beneficios </a>
+                  
+                     <div id="collapse40" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40">
+                        <div class="panel-body">
+                           {% for benefit in person.benefits.all %}
+                          <i class="fas fa-link"></i> {{ benefit }} <br>
+                           {% endfor %}
+                        </div>
                      </div>
-                  </div>
                </div>
-     {% endif %}
+              {% endif %}
 
                {% if person.benefits_doc %}
                <div class="panel panel-default">
