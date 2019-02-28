@@ -31,11 +31,10 @@
          </div>
          <div id="party-perfil">
             {% if person.party %}
-            <p><i class="fas fa-flag"></i> {{person.party}}</p>
+            <p><a href="" class="tooltips"><i class="fas fa-flag"></i> {{person.party}}<span>También perteneció a:{% for ex_party in person.previous_parties.all %} {{ ex_party }}{% endfor %}</span></p></a>
             {% endif %}
-            {% for ex_party in person.previous_parties.all %}
-               <p><i class="fas fa-flag"></i> perteneció a: {{ ex_party }}</p>
-            {% endfor %}
+
+
          </div>
 
          <div class="text-center2">
