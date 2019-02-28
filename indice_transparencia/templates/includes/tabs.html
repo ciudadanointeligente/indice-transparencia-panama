@@ -152,6 +152,31 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+               {% if person.topics.count > 0 or person.other_topic %}
+               <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading-pr">
+                     <h4 class="panel-title">
+                        <i class="fas fa-check-circle"></i>
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-pr " aria-expanded="false" aria-controls="collapse-pr ">
+                           Temas Prioritarios
+                           <hr>
+                        </a>
+                     </h4>
+                  </div>
+                  <div id="collapse-pr " class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-pr ">
+                     <div class="panel-body">
+                        <ul>
+                           {% for subject in person.topics.all %}
+                           <li>{{ subject }}</li>
+                           {% endfor %}
+                           {% if person.other_topic %}
+                           <li>{{ person.other_topic }}</li>
+                           {% endif %}
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               {% endif %}
                {% if person.political_proposal_link %}
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading7">
