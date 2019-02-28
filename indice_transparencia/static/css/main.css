@@ -1298,3 +1298,9 @@ font-size:2rem;
 .col-md-6 {
   padding-left: 0;
 }
+
+.fa-check {
+padding-right: 5px;
+padding-left: 10px;
+
+}
