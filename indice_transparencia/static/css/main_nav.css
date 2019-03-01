@@ -24,7 +24,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 margin-top: 0rem;
 margin-bottom: 0rem;
 }
+
+
 @media only screen and (max-width: 600px) {
+
+
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 margin-top: 5.1rem;
 }
@@ -165,8 +170,29 @@ background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* responsive-header */
+.navbar-toggler{
+  display: none;
+}
 
 @media only screen and (max-width: 1200px) {
+
+
+  .navbar-toggler{
+    display: block;
+    font-size: 1rem;
+    margin-right: 35px;
+    margin-top: 12px;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    }
+
+
+  .mainMenu{
+    display: none;
+  }  }
+
 .section-header {
 max-width: 800px;
 }
@@ -448,6 +474,10 @@ bottom: -9px;
 /*  responsive- header*/
 
 @media only screen and (max-width: 600px) {
+
+
+
+
 .s-header {
 height: 90px;
 }
@@ -895,6 +925,8 @@ right: 5.5rem;
 }
 }
 @media only screen and (max-width: 600px) {
+
+
 .home-content h1 {
 font-size: 3.8rem;
 }
@@ -990,4 +1022,153 @@ width: auto;
 .home-content__main3 {
 width: auto;
 }
+}
+
+
+/*=======================================================================
+// Headers
+=========================================================================*/
+.header{
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+.fixedHeader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .97);
+    transition: all ease 400ms;
+    -moz-transition: all ease 400ms;
+    -webkit-transition: all ease 400ms;
+    -ms-transition: all ease 400ms;
+    -o-transition: all ease 400ms;
+}
+body.menuOpened .fixedHeader{
+    left: -300px;
+}
+
+.fixedHeader .logo{
+    padding-top: 37px;
+    padding-bottom: 32px;
+}
+.logo a{
+    font-family: Roboto;
+    font-size: 22px;
+    color: #FFF;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    line-height: .8;
+}
+.logo a:hover{
+    color: #ffd667;
+}
+.home2 .logo a:hover{
+    color: #b89840;
+}
+.mainMenu{
+    width: 100%;
+    position: relative;
+    text-align: right;
+    line-height: .8;
+    padding-top: 28px;
+    transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -webkit-transition: all ease 500ms;
+    -ms-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+}
+.fixedHeader .mainMenu{
+    padding-top: 40px;
+}
+.mainMenu ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    display: inline-block;
+    transition: all ease 1000ms;
+    -moz-transition: all ease 1000ms;
+    -webkit-transition: all ease 1000ms;
+    -ms-transition: all ease 1000ms;
+    -o-transition: all ease 1000ms;
+}
+.mainMenu ul li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 45px;
+    position: relative;
+    opacity: 1;
+    padding-bottom: 30px;
+    transition: top 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    -moz-transition: top 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    -webkit-transition: top 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    -ms-transition: top 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    -o-transition: top 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    top: 0;
+}
+
+.mainMenu ul.inactive li{
+    top: -5px;
+    opacity: 0;
+}
+.mainMenu ul.active li{
+    top: 0;
+    opacity: 1;
+}
+.fixedHeader .mainMenu > ul > li{
+    padding-bottom: 42px;
+}
+.mainMenu ul li:last-child{
+    padding-right: 45px;
+}
+.mainMenu ul li a{
+    font-size: 13px;
+    color: #FFF;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: .8;
+    display: inline-block;
+    font-weight: 500;
+    width: 100%;
+}
+.mainMenu ul li a:hover, .mainMenu ul li.active > a{
+    color: #ffd667;
+}
+.home2 .mainMenu ul li a:hover, .home2 .mainMenu ul li.active > a{
+    color: #b89840;
+}
+.mainMenu ul li ul{
+    position: absolute;
+    left: 0%;
+    top: 150%;
+    background: rgba(0, 0, 0, .9);
+    width: 230px;
+    transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -webkit-transition: all ease 500ms;
+    -ms-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    opacity: 0;
+    visibility: hidden;
+}
+.mainMenu > ul > li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    top: 100%;
+}
+.mainMenu ul li ul li{
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px dotted #111;
+    padding: 0;
+}
+.mainMenu ul li ul li a{
+    color: #fff;
+    font-size: 11px;
+    padding: 25px 20px;
+    position: relative;
+    text-transform: uppercase;
 }
