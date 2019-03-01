@@ -1064,6 +1064,7 @@ border-color: #eab300 !important;
 .c100.orange.dark:hover > span {
 color: #eab300;
 }
+
 #porcentaje{
 color:white;
 font-family: Montserrat;
@@ -1072,7 +1073,6 @@ font-style: italic;
 }
 
 @media screen and (max-width: 600px){
-
 .c100.center {
 float: none;
 margin: 0 auto;
