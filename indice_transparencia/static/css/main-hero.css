@@ -1,260 +1,215 @@
 #intro {
-    position: relative;
-    background: url(/static/images/intro-bg.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    padding-top: 13rem;
-    padding-bottom: 4rem;
-    overflow: hidden;
+position: relative;
+background: url(/static/images/intro-bg.jpg);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center top;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+text-align: center;
+padding-top: 13rem;
+padding-bottom: 4rem;
+overflow: hidden;
 }
-
 #intro2 {
-    position: relative;
-    background: url(/static/images/intro-bg.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    padding-top: 10rem;
-    padding-bottom: 3rem;
-    overflow: hidden;
+position: relative;
+background: url(/static/images/intro-bg.jpg);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center top;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+text-align: center;
+padding-top: 10rem;
+padding-bottom: 3rem;
+overflow: hidden;
 }
-
 #intro3 {
-    position: relative;
-    background: url(/static/images/intro-bg.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    text-align: left;
-    padding-top: 0rem;
-    padding-bottom: 3rem;
-    overflow: hidden;
+position: relative;
+background: url(/static/images/intro-bg.jpg);
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center top;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+text-align: left;
+padding-top: 0rem;
+padding-bottom: 3rem;
+overflow: hidden;
 }
-
-
 #intro .intro-content {
-    position: relative;
-    z-index: 600;
+position: relative;
+z-index: 600;
 }
-
 .row {
-
-    margin: 0 auto;
+margin: 0 auto;
 }
-
 #row-header {
-
-    margin: 0;
+margin: 0;
 }
-
 .col-twelve, .col-full {
-    width: 100%;
+width: 100%;
 }
-
 #intro h3 {
-    text-transform: uppercase;
-    letter-spacing: .5rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: .6rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    margin-top:10px;
+text-transform: uppercase;
+letter-spacing: .5rem;
+color: rgba(255, 255, 255, 0.8);
+margin-bottom: .6rem;
+text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+margin-top:10px;
 }
-
 #intro h1 {
-    font-family: "montserrat", serif;
-    font-size: 4.5rem;
-    line-height: 1.267;
-    color: #fdc63b;
-    padding: 0 12%;
-    margin-bottom:15px;
-    margin-top: 5px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+font-family: "montserrat", serif;
+font-size: 4.5rem;
+line-height: 1.267;
+color: #fdc63b;
+padding: 0 12%;
+margin-bottom:15px;
+margin-top: 5px;
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 #intro .buttons {
-    margin-bottom: 4.2rem;
+margin-bottom: 4.2rem;
 }
-
 #intro img {
-    vertical-align: bottom;
-    max-width: 840px;
-    width: 100%;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+vertical-align: bottom;
+max-width: 840px;
+width: 100%;
+box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
 }
-
 #intro .buttons .button {
-    border: 3px solid rgba(255, 255, 255, 0.6);
-    color: white;
-    margin: 0 .9rem;
+border: 3px solid rgba(255, 255, 255, 0.6);
+color: white;
+margin: 0 .9rem;
 }
-
 #intro .buttons .button {
-    border: 3px solid rgba(255, 255, 255, 0.6);
-    color: white;
-    margin: 0 .9rem;
+border: 3px solid rgba(255, 255, 255, 0.6);
+color: white;
+margin: 0 .9rem;
 }
-
 .button, a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    height: 5.4rem;
-    line-height: 5.4rem;
-    padding: 0 3rem;
-    margin: 0 .3rem 1.2rem 0;
-    background:transparent;
-    color: #001835;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    white-space: nowrap;
-    border: none;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+display: inline-block;
+font-family: "Montserrat", sans-serif;
+font-size: 1.4rem;
+text-transform: uppercase;
+letter-spacing: .3rem;
+height: 5.4rem;
+line-height: 5.4rem;
+padding: 0 3rem;
+margin: 0 .3rem 1.2rem 0;
+background:transparent;
+color: #001835;
+text-decoration: none;
+cursor: pointer;
+text-align: center;
+white-space: nowrap;
+border: none;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
 }
-
 .btn:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .btn:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
-    background-color: transparent;
-    border-color: transparent
-    color: #000000;
-    outline: 0;
+background-color: transparent;
+border-color: transparent
+color: #000000;
+outline: 0;
 }
-
 input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-    border-color: transparent;
-    border-style: solid;
-    border-width: 1px;
-    padding: 1px 7px 2px;
+border-color: transparent;
+border-style: solid;
+border-width: 1px;
+padding: 1px 7px 2px;
 }
-
 .btn-secondary {
-    color: #fff;
-    background-color: transparent;
-    border-color: transparent;
+color: #fff;
+background-color: transparent;
+border-color: transparent;
 }
-
 .btn-secondary:hover {
-    color: #fff;
-    background-color: transparent;
-    border-color: transparent;
+color: #fff;
+background-color: transparent;
+border-color: transparent;
 }
-
 .js .animate-this, .js .animate-intro {
-    opacity: 0;
+opacity: 0;
 }
-
 button.stroke, .button.stroke {
-    background: transparent !important;
-    border: 3px solid #313131;
-    line-height: 4.8rem;
+background: transparent !important;
+border: 3px solid #313131;
+line-height: 4.8rem;
 }
-
 .fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
+-webkit-animation-name: fadeInUp;
+animation-name: fadeInUp;
 }
-
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
 }
-
 .js .animate-this, .js .animate-intro {
-    opacity: 0;
+opacity: 0;
 }
-
-
 @media screen and (max-width: 1400px){
 .wrap-table100{
- margin-top:-250px;
+margin-top:-250px;
 }
 }
-
 @media screen and (max-width: 900px){
 .wrap-table100{
- margin-top:-200px;
+margin-top:-200px;
 }
-
 #intro h1 {
-    line-height: 1.5;
-        padding: 0 5%;
-        margin-top:0px;
-        font-size: 2.5rem;
+line-height: 1.5;
+padding: 0 5%;
+margin-top:0px;
+font-size: 2.5rem;
 }
-
 #intro3 {
-    text-align: center;
+text-align: center;
 }
 }
-
 @media screen and (max-width: 600px){
-
 #intro {
-  padding-bottom:
-    1rem;
-  }
-
-  button, a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-      font-size: 1rem;
-
-  }
-
-  #intro h1 {
-          font-size: 3rem;
-  }
-
-  h3{
-        font-size: 1rem;
-        margin-10px;
-        line-height: 20px;
-        padding-left: 20px;
-        padding-right:20px;
-  }
+padding-bottom:
+1rem;
 }
-
-
+button, a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+font-size: 1rem;
+}
+#intro h1 {
+font-size: 3rem;
+}
+h3{
+font-size: 1rem;
+margin-10px;
+line-height: 20px;
+padding-left: 20px;
+padding-right:20px;
+}
+}
 #intro .buttons .button {
-    border: 3px solid rgba(255, 255, 255, 0.6);
-    color: white;
-    margin: 0 0.2rem;
-    margin-bottom: 10px;
+border: 3px solid rgba(255, 255, 255, 0.6);
+color: white;
+margin: 0 0.2rem;
+margin-bottom: 10px;
 }
-
 #intro .buttons .button:hover {
-    color:#eab300;
-
+color:#eab300;
 }
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-    margin-top: 0.1rem;
+margin-top: 0.1rem;
 }
-
-
-
-
 #nav-tab{
-  background-color:#eab300;
+background-color:#eab300;
 }
-
 #nav-tab2{
-  background-color:#eab300;
-  display: none;
+background-color:#eab300;
+display: none;
 }
