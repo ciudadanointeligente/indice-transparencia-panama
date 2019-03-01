@@ -1,10 +1,27 @@
 {% load static %}
 {% block container %}
+
 <nav class="navbar navbar-dark fixed-top">
    <a class="navbar-brand" href='{% url "index" %}'><img src="{% static "images/logo-espacio-civico.png" %}"></a>
+
+   <div class="row horizontalmenu" id="row-header">
+       <nav class="mainMenu">
+           <ul>
+             <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
+             <li><a class="smoothscroll"  href="{% url "about_index" %}">Acerca</a></li>
+             <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>
+             <li><a class="smoothscroll"  href="{% url "about" %}">¿Quiénes somos?</a></li>
+           </ul>
+
+       </nav>
+
+
    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
-   <span class="header-menu-text" id="header-menu-text">MENU </span><span class="navbar-toggler-icon"></span>
+   <span class="header-menu-text" id="header-menu-text"></span><span class="navbar-toggler-icon"></span>
    </button>
+
+      </div>
+
    <div class="navbar-collapse collapse" id="collapsingNavbar4">
       <ul class="header-nav__list">
          <li class="current"><a class=""  href="{% url "index" %}">Inicio</a></li>
