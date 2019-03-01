@@ -54,6 +54,11 @@
     margin: 0 auto;
 }
 
+#row-header {
+
+    margin: 0;
+}
+
 .col-twelve, .col-full {
     width: 100%;
 }
