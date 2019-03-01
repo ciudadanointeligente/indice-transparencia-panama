@@ -21,17 +21,16 @@ class Command(BaseCommand):
             person = contact.person
             uuid = contact.identifier
             site = Site.objects.get_current()
-            if email=='dugalde@semah.com':
-                send_templated_mail(
-                                    template_name='initial_2',
-                                    from_email=settings.DEFAULT_FROM_EMAIL,
-                                    recipient_list=[email],
-                                    context={
-                                        'contact': contact,
-                                        'person': person,
-                                        'site': site,
-                                    },
-                            )
-                print('send email to contact: ' + email)
-                counter += 1;
+            send_templated_mail(
+                                template_name='initial_2',
+                                from_email=settings.DEFAULT_FROM_EMAIL,
+                                recipient_list=[email],
+                                context={
+                                    'contact': contact,
+                                    'person': person,
+                                    'site': site,
+                                },
+                        )
+            print('send email to contact: ' + email)
+            counter += 1;
         print('total mails sent: ' + str(counter))
