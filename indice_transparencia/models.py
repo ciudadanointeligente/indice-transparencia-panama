@@ -306,6 +306,7 @@ class Person(models.Model):
         # self.ranking_data = ranking_data[0]
         super(Person, self).save(*args, **kwargs)
         self.update_mark()
+        update_positions_in_ranking()
 
     class Meta:
         verbose_name = "Persona"

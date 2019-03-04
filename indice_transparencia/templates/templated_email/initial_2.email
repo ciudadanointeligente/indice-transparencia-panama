@@ -1,0 +1,26 @@
+{% extends 'templated_email/base.email' %}
+{% block subject %}Índice de Transparencia de Candidatos a Diputados{% endblock %}
+
+
+{% block message %}
+
+  <tr>
+    <td class="wrapper" style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+        <tr>
+          <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hola Sr./Sra. {{person.name}},</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Le saluda Denisse, de parte del equipo de <b>Espacio Cívico</b>. Somos una Fundación sin vínculos partidarios y neutral que busca proveerle información a la ciudadanía sobre el proceso de votación y los candidatos a puestos públicos de elección.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Nuestro primer proyecto –  <b>Guía de Políticos</b>  – es una página web que permite visualizar y comparar, en un solo lugar, el perfil de cada uno de los candidatos a Diputado, con información de relevancia y en un mismo formato. Guía de Políticos se publicará a partir del 14 de Marzo, y busca proveerle al votante información básica sobre todos los candidatos a Diputado en Panamá.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Entre los beneficios de aparecer en la plataforma de Espacio Cívico está: <br> &emsp;1. Estimamos que nuestra plataforma digital será vista por más de 500,000 personas; en su mayoría votantes. <br> &emsp;2. El votante podrá conocer información relevante sobre quién es su candidato/a, permitiéndole emitir un voto informa.            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Para participar debe completar el formulario al que puedes acceder en el siguiente <a href="https://{{site.domain}}{{contact.update_url}}" target="_blank">link</a>,  el cual tiene el acceso a su perfil. De esta forma, la información será cargada a nuestra plataforma.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Quedamos a la orden para cualquier pregunta o duda que tengan.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"><b>*Nota:</b> Si usted ya completó su información en el formulario, por favor ignore esta comunicación.</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Muchas gracias de antemano,</p>
+            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Denisse Ugalde <br> <b>Fundación Espacio Cívico</b><br> info@espaciocivico.org  <br> M: +507 6510-1886.</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+{% endblock %}

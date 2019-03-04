@@ -3,6 +3,7 @@ from django import forms
 from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord, WorkRecord, EducationalRecord,
                                          Benefit, Contact)
 from django.core.exceptions import ValidationError
+from indice_transparencia import normalize_field_name
 
 class PersonForm(ModelForm):
     class Meta:
@@ -28,6 +29,25 @@ class PersonForm(ModelForm):
         if len(self.cleaned_data['topics']) > 3:
             raise forms.ValidationError({'topics':'No se puede tener más de 3 temas'})
         return cleaned_data
+        
+    def save_model(self, request, obj, form, change):
+        ## Esto es una marquita para entender el flujo
+        # print('save_model')
+        for field_name in form.changed_data:
+            field_name = normalize_field_name(field_name)
+            if field_name in obj.volunteer_changed:
+                obj.volunteer_changed.remove(field_name)
+        super().save_model(request, obj, form, change)
+        
+
+    def save_formset(self, request, form, formset, change):
+        ## Esto es una marquita para entender el flujo
+        # print('save_formset')
+        field_name = formset.prefix
+        field_name = normalize_field_name(field_name)
+        if formset.has_changed() and field_name in form.instance.volunteer_changed:
+            form.instance.volunteer_changed.remove(field_name)
+        super().save_formset(request, form, formset, change)
 
 
 class EducationalRecordForm(ModelForm):
