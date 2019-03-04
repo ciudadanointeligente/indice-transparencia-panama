@@ -2,15 +2,12 @@
 {% block container %}
 <div id=navbar-barra>
 <div class="header-logo">
-   <a class="site-logo" href="{% url "index" %}">
-   <img src="{% static "images/logo-espacio-civico.svg" %}"</a>
-
-
+<a class="site-logo" href="{% url "index" %}">
+<img src="{% static "images/logo-espacio-civico.svg" %}"</a>
 <nav class="header-nav navbar navbar-dark fixed-top">
    <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
    <div class="header-nav__content">
       <ul class="header-nav__list">
-
          <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
          <li><a class="smoothscroll"  href="{% url "about_index" %}">Acerca</a></li>
          <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>

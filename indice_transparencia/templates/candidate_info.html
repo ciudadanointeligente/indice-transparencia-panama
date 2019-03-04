@@ -31,12 +31,10 @@
          </div>
          <div id="party-perfil">
             {% if person.party %}
-            <p><a href="" class="tooltips"><i class="fas fa-flag"></i> {{person.party}}{% for ex_party in person.previous_parties.all %}<span>También perteneció a: {{ ex_party }}</span>{% endfor %}</p></a>
+            <p><a href="" class="tooltips"><i class="fas fa-flag"></i> {{person.party}}{% for ex_party in person.previous_parties.all %}<span>También perteneció a: {{ ex_party }}</span>{% endfor %}</p>
+            </a>
             {% endif %}
-
-
          </div>
-
          <div class="text-center2">
             <a target="_blank" href="{{person.facebook}}"><i class="fab fa-facebook-f"></i> </a>
             <a target="_blank" href="{{person.twitter}}"><i class="fab fa-twitter-square"></i> </a>

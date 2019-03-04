@@ -3,14 +3,12 @@
    {% bootstrap_formset formset layout='horizontal' %}
 </div>
 <a href="#" id="add-{{formset.prefix}}-button" class="btn btn-info add-item">Agregar más</a>
-
 <!--- Agregar más comienzo -->
 <script type="text/html" id="{{formset.prefix}}-template">
    <div id="item-__prefix__">
        {% bootstrap_form formset.empty_form layout='horizontal' %}
    </div>
 </script>
-
 <script>
    $(document).ready(function() {
        $('#add-{{formset.prefix}}-button').click(function(ev) {

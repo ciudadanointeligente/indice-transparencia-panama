@@ -61,7 +61,6 @@
             <!-- INICIO DEL PERFIL POLÍTICO -->
             <section>
                <h5 id="perfil_politico_section">Perfil Político</h5>
-
                {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.circuit %}
@@ -74,39 +73,41 @@
             <hr>
             <!-- FIN DEL PERFIL POLÍTICO -->
             <h5 id="{{inlines.0.prefix}}_section">Formación Academica. <br>
-            Descripción de los estudios o cursos que ha realizado.</h5>
+               Descripción de los estudios o cursos que ha realizado.
+            </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_education form_group_class='custom-control custom-switch'%}
-                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
             </section>
             <hr>
             <h5 id="{{inlines.1.prefix}}_section">Experiencia Laboral.<br>
-            Descripción de las actividades o cargos que ha realizado durante sus años de trabajo.</h5>
+               Descripción de las actividades o cargos que ha realizado durante sus años de trabajo.
+            </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_work form_group_class='custom-control custom-switch'%}
-                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
             </section>
             <hr>
             <h5 id="political_proposal_section">Propuesta Política.<br>
-            Documento que consiste en las formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea (2019-2024).</h5>
+               Documento que consiste en las formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea (2019-2024).
+            </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
-
                {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
-
-                 <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
                <h6 id="eth_section">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</h6>
                {% bootstrap_field form.political_proposal_doc %}
             </section>
             <hr>
             <h5 id="patrimony_interests_section">Patrimonio e Intereses.<br>
-            Documento con información de bienes y activos del Candidato a Diputado, para conocer el estado actual de los bienes del Candidato a Diputado y poder monitorear su evolución cuando asuma el cargo a Diputado, verificando que el patrimonio crezca conforme a sus ingresos y el de sus familiares.</h5>
+               Documento con información de bienes y activos del Candidato a Diputado, para conocer el estado actual de los bienes del Candidato a Diputado y poder monitorear su evolución cuando asuma el cargo a Diputado, verificando que el patrimonio crezca conforme a sus ingresos y el de sus familiares.
+            </h5>
             <section>
                {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
-                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.existing_patrimony_declaration %}
                {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
                <h6 id="eth_section">En el siguiente <a href="http://bit.ly/indicepat" target="_blank">link</a> puede descargar una plantilla para crear su declaración y luego cargarla acá</h6>
@@ -118,10 +119,11 @@
             </section>
             <hr>
             <h5 id="{{inlines.2.prefix}}_section">Procesos Judiciales.<br>
-            Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado.</h5>
+               Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado.
+            </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
-                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
                {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
                {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
@@ -129,21 +131,20 @@
                {% bootstrap_field form.judiciary_description placeholder='Comentarios o notas aclaratorias sobre uno o más de los procesos judiciales declarados'%}
             </section>
             <hr>
-            <h5 id="ethi_section">Ética Presupuestaria. (Solo para candidatos a la reelección).</h5><br>
+            <h5 id="ethi_section">Ética Presupuestaria. (Solo para candidatos a la reelección).</h5>
+            <br>
             <h6>Los Diputados de la Asamblea Nacional, por ley tienen acceso a ciertos beneficios afiliados al cargo, como lo son: (i) Franquicia postal y telefónica dentro del territorio nacional, (ii) Importación libre de gravámenes de dos vehículos durante el periodo constitucional para el uso personal y el de sus familiares, (iii) Placa Oficial, (iv) Pasaporte Diplomático, (v) Bono navideño 2014 por $25,000 (vi) Salario, gastos de representación, combustible y dieta ($7000), (vii) Viáticos en el exterior del país ($700 a $400 dólares diarios dependiendo del país), (viii) Viáticos en el interior del país ($100 diarios), (ix) Escolta / conductor. Adicional a esto, han tenido las planillas: 001, 002, 080 y 172.</h6>
-
             <section>
                {% bootstrap_field form.is_deputy %}
                {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
-
-                 <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.benefits %}
                {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
                <h6 id="eth_section">Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación</h6>
                {% bootstrap_field form.benefits_doc %}
                {% comment %}
                {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
-                <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
+               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.work_plan_link %}
                {% bootstrap_field form.work_plan_doc %}
                {% endcomment %}
@@ -162,10 +163,7 @@
                {% bootstrap_field form.attendance placeholder='Especifique % de asistencia a la Asamblea Nacional'%}
                {% bootstrap_field form.laws_worked_on placeholder='Especifique número de leyes que ud. ha sancionado'%}
             </section>
-
-            <h5 id="ethi_section">Al completar el presente formulario confirmo que la información presentada en el formulario de Fundación Espacio Cívico es veraz y completa, y que puede ser publicada por Fundación Espacio Cívico
-</h5>
-
+            <h5 id="ethi_section">Al completar el presente formulario confirmo que la información presentada en el formulario de Fundación Espacio Cívico es veraz y completa, y que puede ser publicada por Fundación Espacio Cívico</h5>
             {% buttons %}
             <button type="submit" class="btn btn-primary">
             Enviar
