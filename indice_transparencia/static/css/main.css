@@ -990,7 +990,7 @@ padding-top:20px;
 font-size: 12px;
 }
 .intro-guia{
-display: none;
+display: block;
 }
 #h3-about {
 font-size: 12px;
