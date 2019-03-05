@@ -85,3 +85,7 @@ border-bottom: #dee2e6 2px solid;
 .table {
 margin-bottom: 0rem;
 }
+
+#nav-tab2{
+background-color:#eab300;
+display: none;
