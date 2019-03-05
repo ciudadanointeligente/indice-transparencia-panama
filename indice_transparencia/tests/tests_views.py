@@ -206,7 +206,7 @@ class PersonUpdateView(TestCase):
         }
         response = self.client.post(url, data=data)
         p.refresh_from_db()
-        assert 'image' in p.volunteer_changed
+        assert 'image' not in p.volunteer_changed
         assert 'birth_date' not in p.volunteer_changed
         assert 'web' not in p.volunteer_changed
         assert 'judiciary_records' not in p.volunteer_changed
