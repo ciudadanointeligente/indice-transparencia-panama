@@ -62,7 +62,6 @@
             <section>
                <h5 id="perfil_politico_section">Perfil Político</h5>
                {% bootstrap_field form.declared_intention_to_transparent_political_profile form_group_class='custom-control custom-switch' %}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.circuit %}
                {% bootstrap_field form.party %}
                {% bootstrap_field form.has_changed_party %}
@@ -77,7 +76,6 @@
             </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_education form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% include 'includes/formset_update_candidate.html' with formset=inlines.0 %}
             </section>
             <hr>
@@ -86,7 +84,6 @@
             </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_work form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% include 'includes/formset_update_candidate.html' with formset=inlines.1 %}
             </section>
             <hr>
@@ -96,7 +93,6 @@
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_political_proposal form_group_class='custom-control custom-switch'%}
                {% bootstrap_field form.has_political_proposal form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.political_proposal_link placeholder='Especifique link propuesta política'%}
                <h6 id="eth_section">Si respondió "sí", pero no tiene una propuesta política online, acá puede adjuntar el archivo</h6>
                {% bootstrap_field form.political_proposal_doc %}
@@ -107,7 +103,6 @@
             </h5>
             <section>
                {% bootstrap_field form.intention_to_transparent_patrimony form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.existing_patrimony_declaration %}
                {% bootstrap_field form.patrimony_link placeholder='Especifique link declaración patrimonio'%}
                <h6 id="eth_section">En el siguiente <a href="http://bit.ly/indicepat" target="_blank">link</a> puede descargar una plantilla para crear su declaración y luego cargarla acá</h6>
@@ -123,7 +118,6 @@
             </h5>
             <section>
                {% bootstrap_field form.declared_intention_to_transparent_judiciary_records form_group_class='custom-control custom-switch' %}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.judiciary_processes_involved placeholder='Especifique un número de procesos judiciales'%}
                {% include 'includes/formset_update_candidate.html' with formset=inlines.2 %}
                {% bootstrap_field form.extra_judiciary_declaration placeholder='Especifique cuales son estos procesos judiciales'%}
@@ -137,14 +131,12 @@
             <section>
                {% bootstrap_field form.is_deputy %}
                {% bootstrap_field form.declared_intention_to_transparent_public_resources_usage form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.benefits %}
                {% bootstrap_field form.benefits_link placeholder='Especifique link beneficios' %}
                <h6 id="eth_section">Si el detalle de su uso de beneficios no se encuentra publicado online, puede subir el archivo a continuación</h6>
                {% bootstrap_field form.benefits_doc %}
                {% comment %}
                {% bootstrap_field form.intention_to_transparent_work_plan form_group_class='custom-control custom-switch'%}
-               <h6>(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)</h6>
                {% bootstrap_field form.work_plan_link %}
                {% bootstrap_field form.work_plan_doc %}
                {% endcomment %}

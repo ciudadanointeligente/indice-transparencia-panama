@@ -110,7 +110,7 @@ class Person(models.Model):
                                      null=True, blank=True)
 
     #perfil político
-    declared_intention_to_transparent_political_profile = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre sus afiliaciones políticas?", blank=True)
+    declared_intention_to_transparent_political_profile = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre sus afiliaciones políticas?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     party = models.ForeignKey(Party, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Partido político o movimiento al que representa")
     circuit = models.ForeignKey(Circuit, null=True, on_delete=models.SET_NULL, related_name="persons", blank=True, verbose_name=u"Circuito al que representa o busca representar")
     has_changed_party = models.BooleanField(default=False, verbose_name=u"¿Ha pertenecido ud. a otros partidos o movimientos políticos?", blank=True)
@@ -119,7 +119,7 @@ class Person(models.Model):
     other_topic = models.CharField(max_length=255, verbose_name=u"Otro tema prioritario", blank=True, null=True)
 
     #formación académica
-    declared_intention_to_transparent_education = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su formación/educación?", blank=True)
+    declared_intention_to_transparent_education = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su formación/educación?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     extra_education = models.TextField(max_length=1024,
                                        null=True,
                                        verbose_name=u"¿Desea compartir alguna otra experiencia relevante de formación? Puede escribirlas a continuación:", blank=True)
@@ -127,12 +127,12 @@ class Person(models.Model):
 
 
     #experiencia_profesional
-    declared_intention_to_transparent_work = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su experiencia laboral?", blank=True)
+    declared_intention_to_transparent_work = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su experiencia laboral?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
 
 
 
     #propuesta política
-    declared_intention_to_transparent_political_proposal = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir su propuesta política de diputado(a) o candidato(a)?", blank=True)
+    declared_intention_to_transparent_political_proposal = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir su propuesta política de diputado(a) o candidato(a)?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     has_political_proposal = models.BooleanField(default=False, verbose_name=u"Ya sea diputado(a) o candidato(a), ¿Cuenta ud. con una propuesta política para su gestión (2019-2024)?", blank=True)
     political_proposal_link = models.URLField(null=True, max_length=255, verbose_name=u"Si respondió \"sí\", indique en qué link se puede acceder a su propuesta política", blank=True)
     political_proposal_doc = models.FileField(upload_to='political_proposals/%Y/%m/%d/',
@@ -141,7 +141,7 @@ class Person(models.Model):
 
 
     #delaracion de patrimonio e intereses
-    intention_to_transparent_patrimony = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir sus declaraciones de Patrimonio e Intereses", blank=True)
+    intention_to_transparent_patrimony = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir sus declaraciones de Patrimonio e Intereses?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     existing_patrimony_declaration = models.BooleanField(default=False, null=True, verbose_name=u"¿Cuenta ud. con una declaración de patrimonio actualizada?", blank=True)
     patrimony_link = models.URLField(null=True,
                                      verbose_name=u"Si respondió 'sí' por favor indique a continuación el link para acceder a su declaración de patrimonio", blank=True)
@@ -158,7 +158,7 @@ class Person(models.Model):
 
     #procesos judiciales
     declared_intention_to_transparent_judiciary_records = models.BooleanField(default=False,
-                                                verbose_name=u"¿Desea Ud. compartir información sobre los procesos judiciales en los que ha estado involucrado(a)?", blank=True)
+                                                verbose_name=u"¿Desea Ud. compartir información sobre los procesos judiciales en los que ha estado involucrado(a)?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     judiciary_processes_involved = models.IntegerField(null=True, blank=True, verbose_name=u"¿En cuántos procesos judiciales ud. se ha visto involucrado en los últimos 10 años?")
     extra_judiciary_declaration = models.TextField(max_length=255,null=True, verbose_name=u"¿Se ha visto involucrado en más procesos judiciales en los últimos 10 años?", blank=True)
     judiciary_link = models.URLField(null=True, verbose_name=u"Si respondió 'sí', por favor indique dónde se puede acceder a esta información (facilite un link u otro recurso)", blank=True)
@@ -167,7 +167,7 @@ class Person(models.Model):
 
     #etica presupuestaria
     is_deputy = models.BooleanField(default=False, null=True, blank=True, verbose_name=u"¿Eres actualmente diputado/a?")
-    declared_intention_to_transparent_public_resources_usage = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su uso de recursos públicos?", blank=True)
+    declared_intention_to_transparent_public_resources_usage = models.BooleanField(default=False, verbose_name=u"¿Desea Ud. compartir información sobre su uso de recursos públicos?(Si Ud. no marca esta casilla, la información que ingrese no se visualizará ni será contabilizada en el cálculo del porcentaje)", blank=True)
     benefits = models.ManyToManyField(Benefit, blank=True)
     benefits_link = models.CharField(max_length=512,
                                      verbose_name=u"Por favor, indique en qué link es posible acceder al detalle sobre los montos asociados a su uso de beneficios",
