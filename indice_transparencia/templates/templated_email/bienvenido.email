@@ -1,5 +1,5 @@
 {% extends 'templated_email/base.email' %}
-{% block subject %}Índice de Transparencia de Candidatos a Diputados{% endblock %}
+{% block subject %}Guia de Políticos{% endblock %}
 
 
 {% block message %}
