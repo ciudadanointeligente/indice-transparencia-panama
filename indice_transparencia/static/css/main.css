@@ -1141,7 +1141,7 @@ font-size: 12px;
 padding-top:10px;
 }
 .intro-guia{
-font-size:2rem;
+font-size:3.5rem;
 }
 .col-md-6 {
 padding-left: 0;
@@ -1211,6 +1211,11 @@ color:red;
 font-size: 14px;
 }
 @media screen and (max-width: 600px){
+
+  .intro-guia{
+  font-size:2rem;
+  }
+
 #nav-tab{
 background-color:#eab300;
 display: none;
