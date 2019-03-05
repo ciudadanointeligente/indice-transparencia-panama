@@ -193,6 +193,10 @@ line-height: 20px;
 padding-left: 20px;
 padding-right:20px;
 }
+#nav-tab2{
+background-color:#eab300;
+display: block;
+}
 }
 #intro .buttons .button {
 border: 3px solid rgba(255, 255, 255, 0.6);
@@ -209,7 +213,5 @@ margin-top: 0.1rem;
 #nav-tab{
 background-color:#eab300;
 }
-#nav-tab2{
-background-color:#eab300;
-display: none;
+
 }
