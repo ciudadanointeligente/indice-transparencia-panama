@@ -112,6 +112,8 @@ font-family: "Montserrat";
 color: #1e2630;
 }
 /*navbar*/
+
+
 .navbar {
 padding-left:25px;
 }
@@ -1213,10 +1215,12 @@ font-size: 14px;
 background-color:#eab300;
 display: none;
 }
-#nav-tab2{
+#variables{
 background-color:#eab300;
 display: block;
 }
+
+
 #h4-about{
 color:#fdc63b;
 font-size:20px;
