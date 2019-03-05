@@ -4,6 +4,8 @@ from indice_transparencia.models import (Person, Party, JudiciaryProcessRecord,
                                          Contact, Circuit, Topic,
                                          update_mark_and_position_in_ranking)
 from indice_transparencia import normalize_field_name
+from indice_transparencia.forms import PersonForm
+from django import forms
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -33,14 +35,25 @@ class JudiciaryProcessRecordInline(admin.TabularInline):
 
 class EducationalRecordInline(admin.TabularInline):
     model = EducationalRecord
+    
+class PersonAdminForm(forms.ModelForm):
+    class Meta:
+        model = Person
+        exclude = ('ranking_data','ranking_mark','position_in_ranking')
+    def clean(self):
+        cleaned_data = super(PersonAdminForm, self).clean()
+        if len(self.cleaned_data['topics']) > 3:
+            raise forms.ValidationError({'topics':'No se puede tener más de 3 temas'})
+        return cleaned_data
 
 class PersonAdmin(admin.ModelAdmin):
+    form = PersonAdminForm
     list_display = ('name',
                     'party',
                     'circuit'
                     )
     search_fields = ['name', 'party__name', 'circuit__name', 'circuit__province', 'circuit__district']
-    exclude = ('extra_education',)
+    exclude = ('extra_education','ranking_data','ranking_mark','position_in_ranking')
 
     inlines = [
         EducationalRecordInline,
