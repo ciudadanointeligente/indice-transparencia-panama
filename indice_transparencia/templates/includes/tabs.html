@@ -40,7 +40,7 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
+              <h4 id="responsive-1">Formación académica</h4><p id="responsive-2">Corresponde a las tres experiencias de formación académica más relevantes del candidato. FUENTE: Informado por candidato u obtenido del Tribunal Electoral</p>
                {% if person.declared_intention_to_transparent_education %}
                   {% if person.educational_records.count < 1 %}
                   <div class="panel panel-default">
@@ -110,6 +110,8 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <h4 id="responsive-1">Experiencia Profesional</h4><p id="responsive-2">Corresponde a las tres experiencias profesionales más relevantes del candidato. FUENTE: Informado por candidato u obtenido del Tribunal Electoral</p>
+
                {% if person.declared_intention_to_transparent_work %}
                   {% if person.work_records.count < 1 %}
                   <div class="panel panel-default">
@@ -179,6 +181,8 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <h4 id="responsive-1">Propuesta Política</h4><p id="responsive-2">Corresponde al documento con prioridades, formas y acciones de gobierno que el candidato a Diputado planea ejecutar durante su periodo en la Asamblea. FUENTE: Informado por candidato u obtenido del Tribunal Electoral</p>
                {% if person.declared_intention_to_transparent_political_proposal %}
                   {% if person.topics.count > 0 or person.other_topic %}
                   <div class="panel panel-default">
@@ -286,6 +290,7 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <h4 id="responsive-1">Patrimonio e Intereses</h4><p id="responsive-2">Corresponde a documentos con información sobre los bienes del candidato y las relaciones y vínculos económicos, profesionales, familiares y sociales de este. FUENTE: Informado por candidato u obtenido de algún sitio oficial de este</p>
                {% if person.intention_to_transparent_patrimony %}
                   {% if  person.patrimony_link %}
                   <div class="panel panel-default">
@@ -404,6 +409,7 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <h4 id="responsive-1">Procesos Judiciales</h4><p id="responsive-2">Listado de los procesos (civiles o penales) en los que el candidato a Diputado haya sido demandado. FUENTE: Informado por candidato u obtenido del Órgano Judicial</p>
                {% if person.declared_intention_to_transparent_judiciary_records %}
                   {% for e in person.judiciary_records.all %}
                   <div class="panel panel-default">
@@ -501,6 +507,7 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <h4 id="responsive-1">Declaración de Beneficios</h4><p id="responsive-2">Corresponde al detalle sobre los usos de beneficios fiscales que ha ejercido el candidato que va a la reelección, como franquicias, pasaporte diplomático, placa oficial, viáticos y otros. FUENTE: Informado por candidato u obtenido de algún sitio oficial de este</p>
                {% if person.declared_intention_to_transparent_public_resources_usage %}
                   {% if person.benefits_link %}
                   <div class="panel panel-default">
@@ -721,6 +728,8 @@
       <div class="row">
          <div class="col">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+<h4 id="responsive-1">Otros</h4><p id="responsive-2">Información que no incide en el cálculo del porcentaje de datos y que corresponde a la actividad del diputado en la Asamblea. FUENTE: Informado por candidato u obtenido directamente desde la Asamblea</p>
                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="heading24at">
                      <h4 class="panel-title">
