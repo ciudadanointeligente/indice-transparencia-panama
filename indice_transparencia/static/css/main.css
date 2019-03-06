@@ -566,7 +566,24 @@ margin-bottom: 15px;
 text-align: left;
 }
 }
+
+#responsive-1{
+  display:none;
+}
+
+#responsive-2{
+  display:none;
+}
+
 @media screen and (max-width: 600px){
+
+#responsive-1{
+  display:block;
+}
+
+#responsive-2{
+  display:block;
+}
 .img-fluid-perfil {
 max-height: 200px;
 min-height: 200px;
