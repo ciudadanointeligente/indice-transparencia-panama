@@ -185,6 +185,9 @@ text-align: center;
 }
 @media screen and (max-width: 600px){
 
+#intro .buttons .button {
+  width:270px;
+}
 
   #intro h3 {
   margin-bottom: 20px;
@@ -206,7 +209,9 @@ button, a.button, button, input[type="submit"], input[type="reset"], input[type=
 font-size: 1rem;
 }
 #intro h1 {
-display:none;
+font-size:24px;
+padding-left:20px;
+padding-right:35px;
 }
 
 h3{
