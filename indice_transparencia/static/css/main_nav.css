@@ -196,7 +196,7 @@ transition: all ease 1000ms;
 .mainMenu ul li{
 list-style: none;
 display: inline-block;
-padding-right: 25px;
+padding-right: 20px;
 position: relative;
 opacity: 1;
 padding-bottom: 30px;
