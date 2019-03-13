@@ -135,6 +135,8 @@ SHOW_UNDER_DEVELOPMENT_TEMPLATE = False
 DIGEST_MAIL_RECEIVER='test@example.com'
 DIGEST_MAIL_DAYS_REPORT=1
 
+FILE_UPLOAD_PERMISSIONS = 0o644
+
 try:
     from .local_settings import *
 except ImportError as e:
