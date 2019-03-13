@@ -196,7 +196,7 @@ transition: all ease 1000ms;
 .mainMenu ul li{
 list-style: none;
 display: inline-block;
-padding-right: 45px;
+padding-right: 25px;
 position: relative;
 opacity: 1;
 padding-bottom: 30px;
@@ -222,7 +222,7 @@ padding-bottom: 42px;
 padding-right: 45px;
 }
 .mainMenu ul li a{
-font-size: 13px;
+font-size: 10px;
 color: #FFF;
 letter-spacing: 2px;
 text-transform: uppercase;
