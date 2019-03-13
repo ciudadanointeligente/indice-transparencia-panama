@@ -14,6 +14,8 @@ from django import forms
 from django.conf import settings
 from django.core.cache import cache
 from indice_transparencia import normalize_field_name
+from django.http import HttpResponse
+import json
 
 class EducationalRecordInline(InlineFormSetFactory):
     model = EducationalRecord
@@ -127,3 +129,21 @@ class IndexView(UnderDevelopmentMixin, TemplateView):
         context['debug'] = settings.DEBUG
         return context    
     
+    
+def get_candidates(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        candidates = Person.objects.filter(name__icontains = q )[:20]
+        results = []
+        for c in candidates:
+            drug_json = {}
+            drug_json['id'] = c.id
+            drug_json['label'] = c.slug
+            drug_json['value'] = c.get_absolute_url()
+            drug_json['url'] = c.get_absolute_url()
+            results.append(drug_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)

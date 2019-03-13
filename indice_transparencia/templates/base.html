@@ -5,18 +5,18 @@
    <head>
       {% analytical_head_top %}
       {% block meta %}
-      {% include 'includes/meta.html' %}
+         {% include 'includes/meta.html' %}
       {% endblock meta %}
       {% comment %}
       {% endcomment %}
       {% block extrajs %}
-      {% include 'includes/scripts.html' %}
+         {% include 'includes/scripts.html' %}
       {% endblock extrajs %}
       {% block extracss %}
-      {% include 'includes/css.html' %}
+         {% include 'includes/css.html' %}
       {% endblock extracss %}
       {% block fb_spy %}
-      {% include 'includes/fb_spy.html' %}
+         {% include 'includes/fb_spy.html' %}
       {% endblock fb_spy %}
       {% analytical_head_bottom %}
    </head>
@@ -35,6 +35,20 @@
       {% endblock %}
    </div>
    {% block extra_end_js %}
+      $(function() {
+        $('#candidates').on('change', function () {
+          alert($this);
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              //window.location = url; // redirect
+          }
+          return false;
+         });
+        $("#candidates").autocomplete({
+          source: "/get_candidates/",
+          minLength: 4,
+        });
+      });
    {% endblock extra_end_js %}
    <script src="{% static "js/main.js" %}" ></script>
    {% analytical_body_bottom %}

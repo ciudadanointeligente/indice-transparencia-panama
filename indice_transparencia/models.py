@@ -100,7 +100,7 @@ TYPES_OF_PERSON = (('parlamentario', 'Parlamentario'), ('candidato', 'Candidato'
 class Person(models.Model):
     #datos personales
     name = models.CharField(max_length=255, verbose_name=u"Nombre Completo")
-    birth_date = models.DateField(verbose_name=u"Fecha de nacimiento", null=True, blank=True)
+    birth_date = models.DateField(verbose_name=u"Fecha de nacimiento.(Formato DD/MM/YYYY)", null=True, blank=True)
     email = models.EmailField(verbose_name=u"Correo electrónico de contacto", null=True, blank=True)
     web = models.URLField(max_length=512, verbose_name=u"Link al sitio web personal (o cuenta oficial en redes sociales)", null=True, blank=True)
     twitter = models.URLField(max_length=255, verbose_name=u"Cuenta de twitter", null=True, blank=True)

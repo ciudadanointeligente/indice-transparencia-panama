@@ -1,3 +1,18 @@
+$(function() {
+        $('#candidates').on('change', function () {
+        //   alert($(this));
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+                alert(url);
+              //window.location = url; // redirect
+          }
+          return false;
+         });
+        $("#candidates").autocomplete({
+          source: "/get_candidates/",
+          minLength: 4,
+        });
+      });
 /* ===================================================================
  * Glint - Main JS
  *
