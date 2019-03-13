@@ -15,6 +15,22 @@ $(function() {
           source: "/get_candidates/",
           minLength: 3,
         });
+        $('#candidates_m').on('change', function () {
+          var url = "/profile/" + $(this).val(); // get selected value
+          $.ajax({
+                type: "GET",
+                url: url,
+                data: "",
+                success: function() {
+                    window.location = url
+                },
+            });
+          return false;
+         });
+        $("#candidates_m").autocomplete({
+          source: "/get_candidates/",
+          minLength: 3,
+        });
       });
 /* ===================================================================
  * Glint - Main JS
