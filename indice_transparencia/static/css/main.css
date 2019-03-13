@@ -1394,3 +1394,7 @@ border-color: #2E2E2E transparent transparent transparent;
   background-color: grey;
   border-radius: 30px;
 }
+.ui-helper-hidden-accessible{
+  visibility: hidden;
+  height: 0px;
+}

@@ -35,20 +35,6 @@
       {% endblock %}
    </div>
    {% block extra_end_js %}
-      $(function() {
-        $('#candidates').on('change', function () {
-          alert($this);
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              //window.location = url; // redirect
-          }
-          return false;
-         });
-        $("#candidates").autocomplete({
-          source: "/get_candidates/",
-          minLength: 4,
-        });
-      });
    {% endblock extra_end_js %}
    <script src="{% static "js/main.js" %}" ></script>
    {% analytical_body_bottom %}
