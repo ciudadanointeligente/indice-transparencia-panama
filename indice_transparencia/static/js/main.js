@@ -1,5 +1,5 @@
 $(function() {
-        $('#candidates').on('focusout', function () {
+        $('#candidates').on('change', function () {
           var url = "/profile/" + $(this).val(); // get selected value
           $.ajax({
                 type: "GET",
