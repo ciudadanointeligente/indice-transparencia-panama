@@ -1,10 +1,14 @@
 $(function() {
         $('#candidates').on('focusout', function () {
           var url = "/profile/" + $(this).val(); // get selected value
-          if ($(this).val().length > 8) { // require a URL
-                // alert(url);
-              window.location = url; // redirect
-          }
+          $.ajax({
+                type: "GET",
+                url: url,
+                data: "",
+                success: function() {
+                    window.location = url
+                },
+            });
           return false;
          });
         $("#candidates").autocomplete({
