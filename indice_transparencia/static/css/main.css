@@ -1324,4 +1324,23 @@ border-color: #2E2E2E transparent transparent transparent;
 .ui-menu{
   color: white;
   background-color: black;
+
+}
+
+.ui-autocomplete-input{
+  border-radius: 30px;
+  width: 200px;
+  height: 25px;
+  padding: 10px;
+}
+
+.busqueda{
+  color: white;
+  font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+display: inline-block;
+font-weight: 500;
+padding-right: 20px;
+
 }
