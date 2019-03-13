@@ -1,16 +1,15 @@
 $(function() {
-        $('#candidates').on('change', function () {
-        //   alert($(this));
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-                alert(url);
-              //window.location = url; // redirect
+        $('#candidates').on('focusout', function () {
+          var url = "/profile/" + $(this).val(); // get selected value
+          if ($(this).val().length > 8) { // require a URL
+                // alert(url);
+              window.location = url; // redirect
           }
           return false;
          });
         $("#candidates").autocomplete({
           source: "/get_candidates/",
-          minLength: 4,
+          minLength: 3,
         });
       });
 /* ===================================================================

@@ -138,9 +138,15 @@ def get_candidates(request):
         for c in candidates:
             drug_json = {}
             drug_json['id'] = c.id
-            drug_json['label'] = c.slug
-            drug_json['value'] = c.get_absolute_url()
+            drug_json['label'] = c.name
+            drug_json['value'] = c.slug
             drug_json['url'] = c.get_absolute_url()
+            results.append(drug_json)
+        if candidates.count() == 0:
+            drug_json = {}
+            drug_json['id'] = 0
+            drug_json['label'] = "No hay resultados"
+            drug_json['value'] = "No hay resultados"
             results.append(drug_json)
         data = json.dumps(results)
     else:
