@@ -1324,36 +1324,41 @@ border-color: #2E2E2E transparent transparent transparent;
 .ui-menu{
   -webkit-appearance: none;
   color: white;
-  background-color:transparent;
   z-index: 1040;
-  font-variant-caps: titling-caps;
+  position:fixed;
+  padding: 10px;
+
 }
 .ui-menu li:hover{
   color: #fdc63b;
   z-index: 1055;
+}
+.ui-menu-item{
+  background-color: black;
+  padding:10px;
 
 }
 
 .ui-autocomplete-input{
   z-index: 100;
   border-radius: 30px;
-  width: 200px;
+  width: 140px;
   height: 25px;
   padding: 10px;
 }
 
 .ui-widget{
-  padding: 10px;
   font-size:10px;
   z-index:1060;
+
 }
 
 .ui-widget li{
-  opacity: 50%;
   font-size:10px;
   list-style: none;
   z-index:1060;
-  margin-right:50px;
+  padding: 5px;
+  padding-left: 10px;
 }
 
 .busqueda{
@@ -1366,10 +1371,16 @@ border-color: #2E2E2E transparent transparent transparent;
   padding-right: 20px;
   z-index:1060;
 }
-
-
-
   .fixed-top {
   z-index:1050;
+}
 
+#go_button{
+  color:white;
+  padding:10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin:0px;
+  background-color: #eab300;
+  border-radius: 30px;
 }
