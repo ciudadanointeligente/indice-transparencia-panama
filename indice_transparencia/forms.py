@@ -20,9 +20,9 @@ class PersonForm(ModelForm):
                 #   'intention_to_transparent_work_plan','work_plan_link', 'work_plan_doc',
                    'eth_001_link','eth_001_doc','eth_002_link','eth_002_doc','eth_080_link','eth_080_doc','eth_172_link','eth_172_doc','attendance',
                    'laws_worked_on','topics', 'other_topic']
-        widgets = {
-            'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
-        }
+        # widgets = {
+        #     'birth_date': forms.DateInput(attrs={'class':'datepicker'}),
+        # }
 
     def clean(self):
         cleaned_data = super(PersonForm, self).clean()
