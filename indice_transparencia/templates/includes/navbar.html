@@ -106,27 +106,33 @@
             <input id="candidates">
           </div>
             </li>
-            <li><a id="go_button" class="smoothscroll" >Ir</a></li>
+            <li><a id="go_button2" class="smoothscroll">Ir</a></li>
          </ul>
       </nav>
       <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
       <span class="header-menu-text" id="header-menu-text"></span><span class="navbar-toggler-icon"></span>
       </button>
+
+
    </div>
+
+
    <div class="navbar-collapse collapse" id="collapsingNavbar4">
+
       <ul class="header-nav__list">
+
+
+             <div class="ui-widget">
+           <label class="busqueda" for="candidates_m">Búsqueda </label>
+           <input id="candidates_m">
+          <a id="go_button" class="smoothscroll"> Ir</a></div>
+
          <li class="current"><a class=""  href="{% url "index" %}">Inicio</a></li>
          <li><a class="smoothscroll"  href="{% url "ranking" %}">Guía de Políticos</a></li>
          <li><a class="smoothscroll"  href="{% url "about_index" %}">Sobre la Guía de Políticos</a></li>
          <li><a class="smoothscroll"  href="{% url "info" %}">Información electoral</a></li>
          <li><a class="smoothscroll"  href="{% url "about" %}">¿Quiénes somos?</a></li>
-         <li>
-              <div class="ui-widget">
-            <label class="busqueda" for="candidates_m">Búsqueda </label>
-            <input id="candidates_m">
-          </div>
-            </li>
-            <li><a id="go_button" class="smoothscroll" >Ir</a></li>
+
       </ul>
    </div>
 </nav>
