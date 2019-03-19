@@ -1,6 +1,7 @@
 $(function() {
-        $('#candidates').on('change', function () {
-          var url = "/profile/" + $(this).val(); // get selected value
+      $('#candidates').focusout(function() {
+        //   alert('focusout');
+          var url = "/profile/" + $(this).val(); 
           $.ajax({
                 type: "GET",
                 url: url,
@@ -11,22 +12,50 @@ $(function() {
             });
           return false;
          });
+         
+        $('#candidates_m').focusout(function() {
+          var url = "/profile/" + $(this).val(); 
+          $.ajax({
+                type: "GET",
+                url: url,
+                data: "",
+                success: function() {
+                    window.location = url
+                },
+            });
+          return false;
+         });
+          //*************************************************************************
+          
+        // $('#candidates').on('change', function () {
+        //     alert("onchange");
+        //   var url = "/profile/" + $(this).val(); 
+        //   $.ajax({
+        //         type: "GET",
+        //         url: url,
+        //         data: "",
+        //         success: function() {
+        //             window.location = url
+        //         },
+        //     });
+        //   return false;
+        //  });
         $("#candidates").autocomplete({
           source: "/get_candidates/",
           minLength: 3,
         });
-        $('#candidates_m').on('change', function () {
-          var url = "/profile/" + $(this).val(); // get selected value
-          $.ajax({
-                type: "GET",
-                url: url,
-                data: "",
-                success: function() {
-                    window.location = url
-                },
-            });
-          return false;
-         });
+        // $('#candidates_m').on('change', function () {
+        //   var url = "/profile/" + $(this).val(); 
+        //   $.ajax({
+        //         type: "GET",
+        //         url: url,
+        //         data: "",
+        //         success: function() {
+        //             window.location = url
+        //         },
+        //     });
+        //   return false;
+        //  });
         $("#candidates_m").autocomplete({
           source: "/get_candidates/",
           minLength: 3,
