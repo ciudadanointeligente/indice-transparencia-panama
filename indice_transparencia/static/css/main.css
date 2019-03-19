@@ -1377,24 +1377,20 @@ border-color: #2E2E2E transparent transparent transparent;
 
 #go_button {
     color: white;
-    padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 10px;
     background-color: #eab300;
     border-radius: 30px;
-    font-size: 14px;
 }
 
 #go_button:hover {
     color: white;
-    padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 10px;
     background-color: grey;
     border-radius: 30px;
-    font-size: 14px;
 }
 
 #go_button2 {
