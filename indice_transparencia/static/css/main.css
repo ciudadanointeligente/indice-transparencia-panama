@@ -882,7 +882,7 @@ color: #fdc63b;
 text-transform: uppercase;
 letter-spacing: .3rem;
 position: relative;
-margin-top: 20px;
+margin-top: 80px;
 margin-bottom: 1.2rem;
 text-align: left;
 margin-left:0px;
@@ -895,7 +895,7 @@ color: #fdc63b;
 text-transform: uppercase;
 letter-spacing: .3rem;
 position: relative;
-margin-top: 20px;
+margin-top: 80px;
 margin-bottom: 0px;
 text-align: left;
 }
@@ -1364,7 +1364,7 @@ border-color: #2E2E2E transparent transparent transparent;
 .busqueda{
   color: white;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   text-transform: uppercase;
   display: inline-block;
   font-weight: 500;
@@ -1382,7 +1382,7 @@ border-color: #2E2E2E transparent transparent transparent;
     margin-left: 10px;
     background-color: #eab300;
     border-radius: 30px;
-  
+
 }
 
 #go_button:hover {
