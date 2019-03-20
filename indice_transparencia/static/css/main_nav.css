@@ -224,7 +224,7 @@ padding-right: 45px;
 .mainMenu ul li a{
 font-size: 10px;
 color: #FFF;
-letter-spacing: 2px;
+letter-spacing: 0px;
 text-transform: uppercase;
 line-height: .8;
 display: inline-block;
