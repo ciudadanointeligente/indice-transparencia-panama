@@ -19,7 +19,7 @@
            $('div#{{formset.prefix}}-container').append(compiledTmpl);
 
            // update form count
-           $('#id_{{formset.prefix}}-TOTAL_FORMS').attr('value', count+1);
+           $('#id_{{formset.prefix}}-TOTAL_FORMS').attr('value', +count+1);
 
            // some animate to scroll to view our new form
            $('html, body').animate({
