@@ -226,61 +226,81 @@ class Person(models.Model):
     def get_mark(self):
         final_mark = 0
         if self.educational_records.exists():
-            final_mark += 2.5
+            final_mark += 0.5
         if self.work_records.exists():
-            final_mark += 2.5
-        if self.patrimony_link or self.patrimony_doc:
-            if 'patrimony' in self.volunteer_changed:
-                final_mark += 12.5
-            else:
-                final_mark += 25
-        if self.interests_link or self.interests_doc:
-            if 'interests' in self.volunteer_changed:
-                final_mark += 12.5
-            else:
-                final_mark += 25
+            final_mark += 0.5
+        # if self.patrimony_link or self.patrimony_doc:
+        #     if 'patrimony' in self.volunteer_changed:
+        #         final_mark += 1
+        #     else:
+        #         final_mark += 1
+        # if self.interests_link or self.interests_doc:
+        #     if 'interests' in self.volunteer_changed:
+        #         final_mark += 1
+        #     else:
+        #         final_mark += 1
         if self.is_deputy:
+            if self.patrimony_link or self.patrimony_doc:
+                if 'patrimony' in self.volunteer_changed:
+                    final_mark += 1
+                else:
+                    final_mark += 1
+            if self.interests_link or self.interests_doc:
+                if 'interests' in self.volunteer_changed:
+                    final_mark += 1
+                else:
+                    final_mark += 1
             if self.declared_intention_to_transparent_judiciary_records:
                 if 'declared_intention_to_transparent_judiciary_records' in self.volunteer_changed:
-                    final_mark += 10
+                    final_mark += 2
                 else:
-                    final_mark += 20
+                    final_mark += 2
             if self.political_proposal_link or self.political_proposal_doc:
                 # volunteer_changed_politcal_proposal = 'political_proposal_link' in self.volunteer_changed or 'political_proposal_doc' in self.volunteer_changed
-                final_mark += 5
+                final_mark += 2
             if self.benefits_link or self.benefits_doc:
                 if 'benefits' in self.volunteer_changed:
-                    final_mark += 5
+                    final_mark += 0.5
                 else:
-                    final_mark += 10
+                    final_mark += 0.5
             if self.eth_001_link or self.eth_001_doc:
                 if 'eth_001' in self.volunteer_changed:
-                    final_mark += 1.25
+                    final_mark += 0.25
                 else:
-                    final_mark += 2.5
+                    final_mark += 0.25
             if self.eth_002_link or self.eth_002_doc:
                 if 'eth_002' in self.volunteer_changed:
-                    final_mark += 1.25
+                    final_mark += 0.25
                 else:
-                    final_mark += 2.5
+                    final_mark += 0.25
             if self.eth_080_link or self.eth_080_doc:
                 if 'eth_080' in self.volunteer_changed:
-                    final_mark += 1.25
+                    final_mark += 0.25
                 else:
-                    final_mark += 2.5
+                    final_mark += 0.25
             if self.eth_172_link or self.eth_172_doc:
                 if 'eth_172' in self.volunteer_changed:
-                    final_mark += 1.25
+                    final_mark += 0.25
                 else:
-                    final_mark += 2.5
+                    final_mark += 0.25
         else:
-            if self.political_proposal_link or self.political_proposal_doc:
-                final_mark += 10
-            if self.declared_intention_to_transparent_judiciary_records:
-                if 'declared_intention_to_transparent_judiciary_records' in self.volunteer_changed:
-                    final_mark += 17.5
+            if self.patrimony_link or self.patrimony_doc:
+                if 'patrimony' in self.volunteer_changed:
+                    final_mark += 1.75
                 else:
-                    final_mark += 35
+                    final_mark += 1.75
+            if self.interests_link or self.interests_doc:
+                if 'interests' in self.volunteer_changed:
+                    final_mark += 1.75
+                else:
+                    final_mark += 1.75
+            if self.political_proposal_link or self.political_proposal_doc:
+                final_mark += 2
+            if self.declared_intention_to_transparent_judiciary_records:
+                if 'declared_intention_to_transparent_judiciar75y_records' in self.volunteer_changed:
+                    final_mark += 2
+                else:
+                    final_mark += 2
 
         return final_mark
 
