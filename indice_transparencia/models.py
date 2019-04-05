@@ -301,6 +301,9 @@ class Person(models.Model):
                     final_mark += 2
                 else:
                     final_mark += 2
+        tmp = 100*(final_mark / 8.5)
+        
+        final_mark = round(tmp,1)
 
         return final_mark
 
