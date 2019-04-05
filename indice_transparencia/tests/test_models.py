@@ -153,14 +153,14 @@ class RankingCalculation(TestCase):
         p = Person.objects.create(name=u'Fiera')
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 2.5
+        assert p.ranking_data.ranking_mark == 0.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 5
+        assert p.ranking_data.ranking_mark == 1
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 15 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
+        assert p.ranking_data.ranking_mark == 3 ## <======================= Cacha que la wea suma 15, porque en la columna "Peso variable" y fila "Propuesta Política"
         # De aquel que es NO es diputado suma 10% además de lo que ya está antes.
 
     def test_person_has_a_update_mark_method(self):
@@ -169,21 +169,21 @@ class RankingCalculation(TestCase):
         ed_record.save()
         p.update_mark()
         # p.refresh_from_db()
-        assert p.ranking_data.ranking_mark == 2.5
+        assert p.ranking_data.ranking_mark == 0.5
 
     def test_it_calculates_a_mark_currently_deputy(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=True) ## <======== incumbente por que is_deputy=True
         p.update_mark()
         ed_record = EducationalRecord.objects.create(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 2.5
+        assert p.ranking_data.ranking_mark == 0.5
         work_record = WorkRecord(name='Junior de la empresa', institution='FCI', start='04/07/2011', end='31/01/2018', person=p)
         work_record.save()
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 5
+        assert p.ranking_data.ranking_mark == 1
         p.political_proposal_link = 'https://ellinkalprogramapuntocom.com'
         p.update_mark()
-        assert p.ranking_data.ranking_mark == 10
+        assert p.ranking_data.ranking_mark == 3
         ## Este es para el caso de que sea un incumbente, es decir que está llendo a la reelección.
 
     def test_ranking(self):
@@ -264,7 +264,7 @@ class RankingCalculation(TestCase):
         
         p.patrimony_link = 'http://perrito.com'
         p.interests_link = 'http://perrito.com'
-        assert p.get_mark() == 100, 'en realidad da: ' + str(p.get_mark())
+        assert p.get_mark() == 8.5, 'en realidad da: ' + str(p.get_mark())
     
     def test_not_deputy_100(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=False)
@@ -274,7 +274,7 @@ class RankingCalculation(TestCase):
         p.declared_intention_to_transparent_judiciary_records = True
         p.patrimony_link = 'http://perrito.com'
         p.interests_link = 'http://perrito.com'
-        assert p.get_mark() == 100, 'en realidad da: ' + str(p.get_mark())
+        assert p.get_mark() == 8.5, 'en realidad da: ' + str(p.get_mark())
     
     def test_deputy_55(self):
         p = Person.objects.create(name=u'Fiera',
@@ -302,7 +302,7 @@ class RankingCalculation(TestCase):
         
         p.patrimony_link = 'http://perrito.com'
         p.interests_link = 'http://perrito.com'
-        assert p.get_mark() == 55, 'en realidad da: ' + str(p.get_mark())
+        assert p.get_mark() == 8.5, 'en realidad da: ' + str(p.get_mark())
     
     def test_not_deputy_57_5(self):
         p = Person.objects.create(name=u'Fiera', is_deputy=False,
@@ -323,4 +323,4 @@ class RankingCalculation(TestCase):
         p.declared_intention_to_transparent_judiciary_records = True
         p.patrimony_link = 'http://perrito.com'
         p.interests_link = 'http://perrito.com'
-        assert p.get_mark() == 57.5, 'en realidad da: ' + str(p.get_mark())
+        assert p.get_mark() == 8.5, 'en realidad da: ' + str(p.get_mark())
