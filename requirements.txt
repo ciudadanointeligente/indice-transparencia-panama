@@ -1,4 +1,4 @@
-Django==2.1.5
+Django==2.1.11
 pytest-django
 pytest
 -e git+https://github.com/justinmayer/django-autoslug.git#egg=django-autoslug
